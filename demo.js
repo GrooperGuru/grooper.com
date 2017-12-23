@@ -1,5 +1,5 @@
 function menuTransition(){
-	$("#menu").css("transition", "margin 1s cubic-bezier(0.77,0.2,0.05,1.0)");
+	$("#menu").css("transition", "margin .3s linear");
 }
 function noScroll(){
 	var checkbox_click = document.getElementById("checkbox_click")
