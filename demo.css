@@ -1,77 +1,92 @@
 /* 1 - GLOBAL RESETS */
 
 
-  /* 1.1 - DO NOT DELETE... or IE will break - 1.1 */
-    html                          { box-sizing: content-box; }
-    *, *:before, *:after          { box-sizing: inherit; }
+  /* 1.1 - Normalize box model -- DO NOT DELETE... or IE will break - 1.1 */
+    html														{ box-sizing: content-box; }
+    *, *:before, *:after						{ box-sizing: inherit; }
+
 
   /* 1.2 - Remove margin, border, and padding from all - 1.2 */
     html, body, div, section, figure, figcaption, span, iframe, h1, h2, h3, h4, h5, h6, div, p, a, img, ol, ul, li, table, tbody, tfoot, thead, tr, th, td, button {
-    	margin: 0;
-    	padding: 0;
-    	border: 0;
-    }
+																			margin: 0;
+																			padding: 0;
+																			border: 0;
+																		}
+
 
   /* 1.3 - Eliminate default input button styles imposed by browsers like safari - 1.3 */
-    input, button {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      border-radius: 0px;
-      height: 36px;
-    }
+    input, button										{
+																			-webkit-appearance: none;
+																			-moz-appearance: none;
+																			appearance: none;
+																			border-radius: 0px;
+																			height: 36px;
+																		}
+
 
   /* 1.4 - Reset cursor to default - 1.4 */
     #nav-primary ul, #nav-primary ul a, .btn-sml, .btn-lrg {
-      cursor: default;
-    }
+																			cursor: default;
+																		}
+
 
   /* 1.5 - Set basic background colors - 1.5 */
-    body                            { background: #000; } /* black */
-    main, section, figure,
-    figcaption, div                 { background: #fefefe; } /* white */
-    #nav-primary ul ul,
-    #AdvancerLeft, #AdvancerRight,
-    #Indicator, footer div,
-		#brands div, #map *							{ background: transparent; } /* transparent */
-    #calltoaction > div:first-child { background: #4db6ac; } /* medium teal */
-    #calltoaction > div:last-child  { background: #ff8a65; } /* medium orange */
-		/*#brands, #brands div						{ background: #4a4a4a; }*/
-    header {
-    	background: #00796b; /* For browsers that do not support gradients */
-      background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Safari 5.1 to 6.0 */
-      background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Opera 11.1 to 12.0 */
-      background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Firefox 3.6 to 15 */
-      background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* Standard syntax (must be last) */
-    }
-		#brands { background: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,0.5)), url("images/header_tile_gray.jpg") top; } /* Standard syntax (must be last) */
+
+		/* 1.5.1 - Solid Backgrounds - 1.5.1 */
+			body                            { background: #000; } /* black */
+			main, section, figure,
+			figcaption, div                 { background: #fefefe; } /* white */
+			#nav-primary ul ul,
+			#AdvancerLeft, #AdvancerRight,
+			#Indicator, footer div,
+			#brands div, #map *							{ background: transparent; } /* transparent */
+			#calltoaction > div:first-child { background: #4db6ac; } /* medium teal */
+			#calltoaction > div:last-child  { background: #ff8a65; } /* medium orange */
+
+		/* 1.5.2 - Tiled Backgrounds - 1.5.2 */
+			header													{
+																				background: #00796b; /* For browsers that do not support gradients */
+																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Safari 5.1 to 6.0 */
+																				background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Opera 11.1 to 12.0 */
+																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Firefox 3.6 to 15 */
+																				background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* Standard syntax (must be last) */
+																			}
+			#brands													{
+																				background: #4a4a4a; /* For browsers that do not support gradients */
+																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("images/header_tile_gray.jpg") top; /* For Safari 5.1 to 6.0 */
+																				background: -o-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("images/header_tile_gray.jpg") top; /* For Opera 11.1 to 12.0 */
+																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("images/header_tile_gray.jpg") top; /* For Firefox 3.6 to 15 */
+																				background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("images/header_tile_gray.jpg") top; /* Standard syntax (must be last) */
+																			}
+
 
 
 /* 2 - TEXT STYLING - 2 */
 
 
   /* 2.1 - Font Selection - 2.1 */
-    body {
-    	font-family: 'Roboto', Arial, sans-serif;
-    	/*overflow-x: hidden;*/
-    }
+    body														{ font-family: 'Roboto', Arial, sans-serif; }
+
 
   /* 2.2 - Font Smoothing - 2.2 */
-    p {
-      text-rendering: optimizeLegibility !important;
-      -webkit-font-smoothing: antialiased !important;
-      -moz-osx-font-smoothing: grayscale !important;
-    }
+    p																{
+																			text-rendering: optimizeLegibility !important;
+																			-webkit-font-smoothing: antialiased !important;
+																			-moz-osx-font-smoothing: grayscale !important;
+																		}
+
 
   /* 2.3 - Text Decoration and Font Style - 2.3 */
     a                               { text-decoration: none; } /*remove underlines from hyperlinks */
     em                              { font-style: normal; } /* removes italics from emphasized text within a paragraph */
+
 
   /* 2.4 - Text Alignment - 2.4 */
     #nav-primary, #next_feature,
     #calltoaction, #social,
     #copyright,
     h1, h2, h3, h4, h5, h6, p, img  { text-align: center; }
+
 
   /* 2.5 - Font Size - 2.5 */
     h1                              { font-size: 72px; }
@@ -90,12 +105,14 @@
     #nav-primary ul ul li a         { font-size: 14px; }
     #copyright, .btn-sml            { font-size: 12px; }
 
+
   /* 2.6 - Font Weight - 2.6 */
     *                               { font-weight: 300; }
     h1                              { font-weight: 100; }
     h2                              { font-weight: 200; }
     em, .btn-lrg, .btn-sml, #social { font-weight: 400; }
     .field-wrapper input            { font-weight: 500; }
+
 
   /* 2.7 - Color - 2.7 */
     p                               { color: rgba(17,17,17,.7); }
@@ -104,6 +121,8 @@
     #footer_links label, #social a	{ color: #fff; }
     h2, em                          { color: #f4511e; }
 		#brands p												{ color: #999; }
+		.col-1 p												{ color: #000; }
+
 
   /* 2.8 - Line Height and Spacing - 2.8 */
     h1, h2, h3, h4, h5, h6, p, img  { display: block; }
@@ -131,47 +150,42 @@
 
 
   /* 4.1 - Flex Control - 4.1 */
-    .col-2, .col-3, .col-3 > figure, .col-3 > div, #brands div, #calltoaction, #calltoaction > div, #footer_links {
-      display: -webkit-box;
-      display: -webkit-flex;
-      display: -ms-flexbox;
-      display: flex;
-      justify-content: center;
-    }
-    #footer_links, #brands div, #calltoaction > div {
-      flex-wrap: wrap;
-    }
-    .col-2 > div, #calltoaction > div {
-      flex-basis: 50%;
-      -ms-flex: 50%;
-    }
-    .col-3 > figure, .col-3 > div, #contact, #discover, #signup {
-      flex-basis: 33.33%;
-      -ms-flex: 33.33%;
-    }
-    .col-3 figure, .col-3 > div, #calltoaction > div {
-      flex-direction: column;
-    }
-    .col-3 figcaption {
-      flex-basis: 100%;
-      -ms-flex: 100%;
-    }
 
-		#calltoaction > div {
-			justify-content: flex-start ; /* inserts additional */
-		}
-		#calltoaction > div > * {
-			/*align-self: flex-start;*/
-			flex-shrink: 0; /* prevents ios devices from being able to shrink the container if everything doesn't fit within the container */
-		}
-		#calltoaction p {
-			margin: 0 0 auto 0;
-		}
-    #calltoaction a {
-			align-self: flex-end; /* forces only the buttoms to go to the bottom of the container if there is extra space */
-			margin-left: auto;
-			margin-right: auto;
-    }
+		/* 4.1.1 - Flex Display - 4.1.1 */
+	    .col-2, .col-3, .col-3 > figure, .col-3 > div, #brands div, #calltoaction, #calltoaction > div,
+			#footer_links									{
+																			display: -webkit-box;
+																			display: -webkit-flex;
+																			display: -ms-flexbox;
+																			display: flex;
+																		}
+
+		/* 4.1.2 - Flex Direction - 4.1.2 */
+			#calltoaction > div,
+			.col-3 > figure, .col-3 > div	{ flex-direction: column; }
+
+		/* 4.1.3 - Flex Wrapping - 4.1.3 */
+	    #footer_links, #brands div,
+			#calltoaction > div						{ flex-wrap: wrap; }
+
+		/* 4.1.4 - Flex Basis - 4.1.4 */
+	    .col-2 > div,
+	    .col-3 figcaption							{ flex-basis: 100%; -ms-flex: 100%; }
+			#calltoaction > div						{ flex-basis: 50%; -ms-flex: 50%; }
+	    .col-3 > figure, .col-3 > div,
+			#contact, #discover, #signup	{ flex-basis: 33.33%; -ms-flex: 33.33%; }
+
+		/* 4.1.5 - Flex Alignment and Justification - 4.1.5 */
+	    .col-2, .col-3, #brands div, #calltoaction,
+			#footer_links									{ justify-content: center; }
+			.col-3 figure, .col-3 > div,
+			#calltoaction > div						{ justify-content: flex-start ; } /* allows items to generally align to the top of the column */
+			#calltoaction a								{ align-self: flex-end; } /* forces only the buttons to go to the bottom of the container if there is extra space */
+
+		/* 4.1.6 - Flex Shrink and Grow - 4.1.6 */
+		#calltoaction > div > *					{ flex-shrink: 0; } /* prevents ios devices from being able to shrink the container if everything doesn't fit within the container */
+		#calltoaction p									{ margin: 0 0 auto 0; } /* adds extra space between the paragraph and button on the smaller of the two calltoaction divs, thus keeping the bottom buttons aligned. */
+
 
 
   /* 4.2 - Margin & Padding - 4.2 */
@@ -180,6 +194,7 @@
     section                         { padding: 0 48px; } /* the sections themselves should not have any top or bottom padding as we want to give the child divs the ability to adapt to different styling requests, including full utilization of height of section */
     section > figure, section > div { padding: 48px 48px 96px 48px; } /* left/right padding should be the same as the parent section left/right padding to provide the appearance of even spacing on the inside gaps between divs */
     .col-1 > div                    { padding: 96px 48px 48px 48px; } /*we make the bottom padding here smaller so that the content generally related to the h1 moves closer */
+		.col-1 p												{ padding: 0 15%; }
     .col-2 p                        { padding: 0 96px; } /*should be wider in most cases than the .col-3 p as we don't want the text to stretch too far within the narrower 2 column structure */
     .col-3 figcaption               { padding: 0 48px; }
     footer                          { padding: 96px 336px 16px 336px; }
@@ -201,12 +216,6 @@
     .col-1                          { border-bottom: 0; } /* then we remove the above mentioned border for col-1 as these are intended to be headers directly related to the content below them */
     .comparison > div:last-child    { border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
     .shadow img                     { border: 1px solid #b2dfdb; }
-
-/* Single Column Layout */
-  .col-1 p {
-  	color: #000000;
-  	padding: 0 15%;
-  }
 
 
 
@@ -487,7 +496,7 @@
 
 /* CONVENIENCE CLASSES */
 
-  /* The snap-bottom class is designed to allow large primary images to snap to the bottom of their section so that they appear to be covered by the next section */
+  /* The snap-bottom class allows large primary images to snap to the bottom of their section so that they appear to be emerging from behind the following */
 	.snap-bottom div {
 		padding-bottom: 0 !important;
     border-bottom: 1px solid #b2dfdb;
@@ -497,54 +506,56 @@
 	}
 
 
-  /* The bg-teal and bg-orange classes are intended to apply background color to large div sections and to alter the color of the text therein appropriately */
+  /* The bg-teal and bg-orange classes apply background color to main sections and alter the color of the text therein appropriately */
   .bg-teal                              { background: #4db6ac; }
   .bg-orange                            { background: #ff8a65; }
 	.bg-teal div, .bg-orange div,
   .bg-teal figure, .bg-orange figure,
   .bg-teal figcaption,
   .bg-orange figcaption                 { background: transparent !important; }
-
 	.bg-teal h2, .bg-teal h3,
   .bg-orange h2, .bg-orange h3          { color: #fff !important; }
   .bg-teal p, .bg-orange p              { color: rgba(255,255,255,.8); }
 
-  .btn-sml, .btn-lrg {
-  	display: inline-block;
-  	vertical-align: middle;
-  	text-transform: uppercase;
-  	border-radius: 3px;
-  	border: 1px solid rgba(255,255,255,.6);
-  	color: #ffffff;
-  	background: rgba(255,255,255,.066);
-  }
-  .btn-sml {
-    padding: 6px 12px;
-    margin-top: 16px;
-  }
-  .btn-lrg {
-  	padding: 16px 32px;
-  	margin-top: 32px;
-  }
-  .btn-sml:hover, .btn-lrg:hover {
-  	box-shadow: 2px 2px 4px rgba(0,0,0,.2) !important;
-  	background: rgba(255,255,255,.97) !important;
-  	color: rgba(0,0,0,.8) !important;
-  }
+
+	/* The btn-sml and btn-lrg classes are used on <a> elements to turn them into styled buttons in one of two sizes. */
+	/* It is assumed that these will always be on a line by themselves and should be horizontally centered within the parent container */
+  .btn-sml, .btn-lrg										{
+																					display: inline-block;
+																					vertical-align: middle;
+																					text-transform: uppercase;
+																					border-radius: 3px;
+																					border: 1px solid rgba(255,255,255,.6);
+																					color: #ffffff;
+																					background: rgba(255,255,255,.066);
+																				}
+  .btn-sml															{
+																					padding: 6px 12px;
+																					margin: 16px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
+																				}
+	.btn-lrg															{
+																					padding: 16px 32px;
+																					margin: 32px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
+																				}
+	.btn-sml:hover, .btn-lrg:hover				{
+																					box-shadow: 2px 2px 4px rgba(0,0,0,.2) !important;
+																					background: rgba(255,255,255,.97) !important;
+																					color: rgba(0,0,0,.8) !important;
+																				}
 
 
 /* TRANSITIONS */
 
-  .noScroll {
-    overflow: hidden;
-    width: 100%;
-    position: fixed;
-  }
+  .noScroll															{
+																					overflow: hidden;
+																					width: 100%;
+																					position: fixed;
+																				}
   #nav-primary > ul > li > a:before, #nav-primary ul ul, #nav-primary ul ul li, #nav-primary ul ul li a,
-  .btn-lrg, .btn-sml, #social a, .fa {
-    -webkit-transition: all 0.2s ease-in-out 0s !important; /* hover animation control (webkit only) */
-    transition: all 0.2s ease-in-out 0s !important;  /* hover animation control (non-webkit) */
-  }
+  .btn-lrg, .btn-sml, #social a, .fa		{
+																					-webkit-transition: all 0.2s ease-in-out 0s !important; /* hover animation control (webkit only) */
+																					transition: all 0.2s ease-in-out 0s !important;  /* hover animation control (non-webkit) */
+																				}
 
 
 
@@ -552,7 +563,7 @@
 
   @media only screen and (max-width: 1680px) {
     h1                          { font-size: 68px; }
-    header p                    { font-size: 28px; }
+    header p, #brands p					{ font-size: 28px; }
     header                      { padding: 96px 144px 192px 144px }
     section                     { padding: 0 36px; }
     section > figure,
@@ -571,7 +582,7 @@
     h3                          { font-size: 26px; }
     h4                          { font-size: 18px; }
     p                           { font-size: 17px; }
-    header p                    { font-size: 26px; }
+    header p, #brands p					{ font-size: 26px; }
     .col-1 p                    { font-size: 20px; }
     #calltoaction h3		        { font-size: 40px; }
     #calltoaction p			        { font-size: 18px; }
@@ -600,7 +611,7 @@
     h2                          { font-size: 42px; }
     h3                          { font-size: 24px; }
     p                           { font-size: 16px; }
-    header p                    { font-size: 24px; }
+    header p, #brands p					{ font-size: 24px; }
     .col-1 p                    { font-size: 19px; }
     #next_feature a             { font-size: 20px; }
     #nav-primary                { padding: 0 48px; }
@@ -628,7 +639,7 @@
     h3                          { font-size: 24px; }
     h4                          { font-size: 20px; }
     p                           { font-size: 15px; }
-    header p                    { font-size: 21px; }
+    header p, #brands p					{ font-size: 21px; }
     #ProductNavContents > a     { font-size: 14px; }
     .col-1 p                    { font-size: 18px; }
     figcaption                  {	font-size: 16px; }
@@ -686,36 +697,36 @@
 
 
   @media (max-width: 768px){
-    h1                           { font-size: 36px; }
-    h2                           { font-size: 34px; }
-    h3                           { font-size: 26px; }
-  	p                            { font-size: 16px; }
-    header p                     { font-size: 18px; }
-    .col-1 p                     { font-size: 18px; }
-    #calltoaction h3             { font-size: 36px; }
-    #calltoaction p              { font-size: 18px; }
-    #footer_links h4             { text-align: center; }
-    section                      { padding: 0 64px; }
+    h1													{ font-size: 36px; }
+    h2													{ font-size: 34px; }
+    h3													{ font-size: 26px; }
+  	p														{ font-size: 16px; }
+    header p, #brands p					{ font-size: 18px; }
+    .col-1 p										{ font-size: 18px; }
+    #calltoaction h3						{ font-size: 36px; }
+    #calltoaction p							{ font-size: 18px; }
+    #footer_links h4						{ text-align: center; }
+    section											{ padding: 0 64px; }
     section > figure,
     section > div,
-    col-3 > figure               { padding: 32px 96px !important; }
-  	.col-1 > div                 { padding: 64px 0 48px 0 !important; }
+    col-3 > figure							{ padding: 32px 96px !important; }
+  	.col-1 > div								{ padding: 64px 0 48px 0 !important; }
     .col-3 > figure:last-child,
-    .col-3 > div:last-child      { padding: 32px 96px 64px 96px !important; }
-    #calltoaction div            { padding: 64px 128px !important; }
-    #footer_links > div          { padding: 32px 0 !important; }
-  	#signup                      { margin: 32px 32px 0 32px; }
-  	#contact, #discover          { flex-basis: 50% !important; -ms-flex: 50% !important; }
-  	#signup                      { flex-basis: 100% !important; -ms-flex: 100% !important; }
-  	#footer_links,
-    .col-2, .col-3, #calltoaction{ display: block !important; } /*this prevents divs from overlaying on ie11 and android mobile default browser */
-    .grooper_logo                 {
-                                    background: url(images/g_color_32.png);
-                                    height: 32px;
-                                    width: 33px;
-                                    margin-top: 16px;
-                                  }
-		.comparison > div:last-child    { border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
+    .col-3 > div:last-child			{ padding: 32px 96px 64px 96px !important; }
+    #calltoaction div						{ padding: 64px 128px !important; }
+    #footer_links > div					{ padding: 32px 0 !important; }
+  	#signup											{ margin: 32px 32px 0 32px; }
+  	#contact, #discover					{ flex-basis: 50% !important; -ms-flex: 50% !important; }
+  	#signup											{ flex-basis: 100% !important; -ms-flex: 100% !important; }
+  	#footer_links, .col-2, .col-3,
+		#calltoaction								{ display: block !important; } /*this prevents divs from overlaying on ie11 and android mobile default browser */
+    .grooper_logo								{
+																	background: url(images/g_color_32.png);
+																	height: 32px;
+																	width: 33px;
+																	margin-top: 16px;
+																}
+		.comparison > div:last-child{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
   }
 
 
