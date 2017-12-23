@@ -152,21 +152,22 @@
     .col-3 figure, .col-3 > div, #calltoaction > div {
       flex-direction: column;
     }
-    .col-3 figcaption, #calltoaction p {
+    .col-3 figcaption/*, #calltoaction p*/ {
       flex-basis: 100%;
       -ms-flex: 100%;
     }
+
+		#calltoaction > div {
+			align-items: flex-start; /* makes all items start from top of container and work their way down */
+			/*justify-content: space-between;*/
+		}
     #calltoaction a {
-			align-self: flex-end;
+			align-self: flex-end; /* forces only the buttoms to go to the bottom of the container if there is extra space */
 			margin-left: auto;
 			margin-right: auto;
     }
-		#calltoaction > div {
-			align-items: flex-start;
-			justify-content: space-between;
-		}
 		#calltoaction > div * {
-			flex-shrink: 0;
+			flex-shrink: 0; /* prevents ios devices from being able to shrink the container if everything doesn't fit within the container */
 		}
 
   /* 4.2 - Margin & Padding - 4.2 */
