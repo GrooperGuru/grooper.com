@@ -138,7 +138,7 @@
       display: flex;
       justify-content: center;
     }
-    #footer_links {
+    #footer_links, #brands div {
       flex-wrap: wrap;
     }
     .col-2 > div, #calltoaction > div {
@@ -162,24 +162,20 @@
     }
 
   /* 4.2 - Margin & Padding - 4.2 */
-    header                          { margin-top: 96px; /* needs to be equal to the full height of the main nav bar */
-                                      padding: 144px 256px 240px 256px; /* bottom padding should be equal to top padding + margin-top */
-    }
+    header                          { margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
+    header													{ padding: 144px 256px 240px 256px;} /* bottom padding should be equal to top padding + margin-top */
     section                         { padding: 0 48px; } /* the sections themselves should not have any top or bottom padding as we want to give the child divs the ability to adapt to different styling requests, including full utilization of height of section */
     section > figure, section > div { padding: 48px 48px 96px 48px; } /* left/right padding should be the same as the parent section left/right padding to provide the appearance of even spacing on the inside gaps between divs */
     .col-1 > div                    { padding: 96px 48px 48px 48px; } /*we make the bottom padding here smaller so that the content generally related to the h1 moves closer */
     .col-2 p                        { padding: 0 96px; } /*should be wider in most cases than the .col-3 p as we don't want the text to stretch too far within the narrower 2 column structure */
     .col-3 figcaption               { padding: 0 48px; }
-		#brands													{ padding: 128px 0; }
+    footer                          { padding: 96px 336px 16px 336px; }
+		#brands													{ padding: 128px 64px; }
+		#brands div											{ padding: 0 128px; }
     #next_feature                   { padding: 48px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
     #calltoaction div               { padding: 144px; }
-    footer                          { padding: 96px 336px 16px 336px; }
-    #brands div,
 		#contact, #discover, #signup    { padding: 0; }
-    #social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
-    /*.comparison                     { padding: 0; }*/ /* The comparison class is designed to highlight pairs of images that represent before and after shots */
-    /*.comparison > div               { padding: 32px 48px; }*/
-    /*.comparison p                   { padding: 0 96px; }*/
+		#social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
 
 
   /* 4.3 - Shadows - 4.3 */
