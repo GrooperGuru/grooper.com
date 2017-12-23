@@ -159,7 +159,7 @@
 
 		#calltoaction > div, #calltoaction > div > * {
 			align-items: flex-start; /* makes all items start from top of container and work their way down */
-			justify-content: space-between; /* inserts additional */
+			/*justify-content: space-between;*/ /* inserts additional */
 		}
 		#calltoaction p {
 			margin: 0 0 auto 0;
