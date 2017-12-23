@@ -1,0 +1,827 @@
+/* 1 - GLOBAL RESETS */
+
+
+  /* 1.1 - DO NOT DELETE... or IE will break - 1.1 */
+    html                          { box-sizing: content-box; }
+    *, *:before, *:after          { box-sizing: inherit; }
+
+  /* 1.2 - Remove margin, border, and padding from all - 1.2 */
+    html, body, div, section, figure, figcaption, span, iframe, h1, h2, h3, h4, h5, h6, div, p, a, img, ol, ul, li, table, tbody, tfoot, thead, tr, th, td, button {
+    	margin: 0;
+    	padding: 0;
+    	border: 0;
+    }
+
+  /* 1.3 - Eliminate default input button styles imposed by browsers like safari - 1.3 */
+    input, button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border-radius: 0px;
+      height: 36px;
+    }
+
+  /* 1.4 - Reset cursor to default - 1.4 */
+    #nav-primary ul, #nav-primary ul a, .btn-sml, .btn-lrg {
+      cursor: default;
+    }
+
+  /* 1.5 - Set basic background colors - 1.5 */
+    body                            { background: #000; } /* black */
+    main, section, figure,
+    figcaption, div                 { background: #fff; } /* white */
+    #nav-primary ul ul,
+    #AdvancerLeft, #AdvancerRight,
+    #Indicator, footer div, #map *  { background: transparent; } /* transparent */
+    #calltoaction > div:first-child { background: #4db6ac; } /* medium teal */
+    #calltoaction > div:last-child  { background:#ff8a65; } /* medium orange */
+    header {
+    	background: #00796b; /* For browsers that do not support gradients */
+      background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Safari 5.1 to 6.0 */
+      background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Opera 11.1 to 12.0 */
+      background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Firefox 3.6 to 15 */
+      background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* Standard syntax (must be last) */
+    }
+
+
+/* 2 - TEXT STYLING - 2 */
+
+
+  /* 2.1 - Font Selection - 2.1 */
+    body {
+    	font-family: 'Roboto', Arial, sans-serif;
+    	/*overflow-x: hidden;*/
+    }
+
+  /* 2.2 - Font Smoothing - 2.2 */
+    p {
+      text-rendering: optimizeLegibility !important;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+    }
+
+  /* 2.3 - Text Decoration and Font Style - 2.3 */
+    a                               { text-decoration: none; } /*remove underlines from hyperlinks */
+    em                              { font-style: normal; } /* removes italics from emphasized text within a paragraph */
+
+  /* 2.4 - Text Alignment - 2.4 */
+    #nav-primary, #next_feature,
+    #calltoaction, #social,
+    #copyright,
+    h1, h2, h3, h4, h5, h6, p, img  { text-align: center; }
+
+  /* 2.5 - Font Size - 2.5 */
+    h1                              { font-size: 72px; }
+    h2                              { font-size: 58px; }
+    #calltoaction h3                { font-size: 48px; }
+    #nav-primary i, #social a, h3   { font-size: 32px; }
+    header p                        { font-size: 30px; }
+    .col-1 p, #next_feature, h4     { font-size: 24px; }
+    #calltoaction p, .btn-lrg       { font-size: 20px; }
+    p                               { font-size: 18px; }
+    #nav-primary > ul > li > a,
+    #footer_links li,
+    #footer_links label,
+    #footer_links input             { font-size: 16px; }
+    #nav-primary ul ul li a         { font-size: 14px; }
+    #copyright, .btn-sml            { font-size: 12px; }
+
+  /* 2.6 - Font Weight - 2.6 */
+    *                               { font-weight: 300; }
+    h1                              { font-weight: 100; }
+    h2                              { font-weight: 200; }
+    em, .btn-lrg, .btn-sml, #social { font-weight: 400; }
+    .field-wrapper input            { font-weight: 500; }
+
+  /* 2.7 - Color - 2.7 */
+    p                               { color: rgba(17,17,17,.7); }
+    h1, h4, header p,
+    #footer_links a:hover,
+    #footer_links label, #social a  { color: #fff; }
+    h2, em                          { color: #f4511e; }
+
+  /* 2.8 - Line Height and Spacing - 2.8 */
+    h1, h2, h3, h4, h5, h6, p, img  { display: block; }
+    h1, h2, h3, h4, h5, h6          { margin-bottom: 0.6em; }
+    p                               { line-height: 1.5em; }
+
+
+
+/* 3 - IMAGES - 3 */
+
+
+  /* 3.1 - Base Image Handling - 3.1 */
+    img                             {
+                                      max-width: 100%; /*no image should ever exceed the width of its container */
+                                      height: auto;
+                                      margin: 0 auto;
+                                    }
+    .img-top img                    { margin-bottom: 24px; } /* adds margin below images when the image is directly above text */
+    .img-btm img                    { margin-top: 24px; } /* adds margin above images when the image is directly below text */
+
+
+
+/* 4 - LAYOUT - 4 */
+
+
+  /* 4.1 - Flex Control - 4.1 */
+    .col-2, .col-3, .col-3 > figure, .col-3 > div, #calltoaction, #calltoaction > div, #footer_links {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: center;
+    }
+    #footer_links {
+      flex-wrap: wrap;
+    }
+    .col-2 > div, #calltoaction > div {
+      flex-basis: 50%;
+      -ms-flex: 50%;
+    }
+    .col-3 > figure, .col-3 > div, #contact, #discover, #signup {
+      flex-basis: 33.33%;
+      -ms-flex: 33.33%;
+    }
+    .col-3 figure, .col-3 > div, #calltoaction > div {
+      flex-direction: column;
+    }
+    .col-3 figcaption, #calltoaction p {
+      flex-basis: 100%;
+      -ms-flex: 100%;
+    }
+    #calltoaction a {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  /* 4.2 - Margin & Padding - 4.2 */
+    header                          { margin-top: 96px; /* needs to be equal to the full height of the main nav bar */
+                                      padding: 144px 256px 240px 256px; /* bottom padding should be equal to top padding + margin-top */
+    }
+    section                         { padding: 0 48px; } /* the sections themselves should not have any top or bottom padding as we want to give the child divs the ability to adapt to different styling requests, including full utilization of height of section */
+    section > figure, section > div { padding: 48px 48px 96px 48px; } /* left/right padding should be the same as the parent section left/right padding to provide the appearance of even spacing on the inside gaps between divs */
+    .col-1 > div                    { padding: 96px 48px 48px 48px; } /*we make the bottom padding here smaller so that the content generally related to the h1 moves closer */
+    .col-2 p                        { padding: 0 96px; } /*should be wider in most cases than the .col-3 p as we don't want the text to stretch too far within the narrower 2 column structure */
+    .col-3 figcaption               { padding: 0 48px; }
+    #next_feature                   { padding: 48px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
+    #calltoaction div               { padding: 144px; }
+    footer                          { padding: 96px 336px 16px 336px; }
+    #contact, #discover, #signup    { padding: 0; }
+    #social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
+    /*.comparison                     { padding: 0; }*/ /* The comparison class is designed to highlight pairs of images that represent before and after shots */
+    /*.comparison > div               { padding: 32px 48px; }*/
+    /*.comparison p                   { padding: 0 96px; }*/
+
+
+  /* 4.3 - Shadows - 4.3 */
+    main                            { box-shadow: 0 -2px 6px rgba(0,0,0,.3); }
+    /*.shadow img                     { box-shadow: 0 2px 6px rgba(0,0,0,.15); }*/
+
+
+  /* 4.4 - Borders - 4.4 */
+    section                         { border-bottom: 1px solid #b2dfdb; } /* gives each section a light teal bottom border */
+    .col-1                          { border-bottom: 0; } /* then we remove the above mentioned border for col-1 as these are intended to be headers directly related to the content below them */
+    .comparison                     { border-bottom: 1px solid #b2dfdb; }
+    .comparison > div:last-child    { border-left: 1px solid #b2dfdb; }
+    .shadow img                     { border: 1px solid #b2dfdb; }
+
+/* Single Column Layout */
+  .col-1 p {
+  	color: #000000;
+  	padding: 0 15%;
+  }
+
+
+
+/* 5 - NAVIGATION - 5 */
+
+
+  /* 5.1 - Primary Navigation - 5.1 */
+    #nav-primary {
+    	z-index: 10000;
+    	position: fixed; /*keeps navbar fixed to top of screen at all times */
+    	top: 0; /* start navbar at absolute top */
+    	left: 0; /*start navbar at absolute left */
+    	width: calc(100% - (96px * 2)); /* the combination of left/right padding must be subtracted from this to retain a centered position */
+    	background: rgba(0,0,0,.94); /*this should be set to the same color as the top color used in the gradient of the header so that it appears to be blending in */
+    	height: 96px;
+    	padding: 0 96px;
+    	box-shadow: 0 1px 24px rgba(0,0,0,.6);
+    }
+    .grooper_logo {
+    	float: left; /*floats the logo to left hand side of nav bar */
+    	background: url(images/grooper_logo_214x64.png); /*logo image used in navbar */
+    	height: 64px; /*set to actual height of logo image */
+    	width: 214px; /*set to actual width of logo image */
+    	margin-top: 18px; /* arbitrary value that vertically centers logo within navbar to compensate for the inherent offset built into the grooper logo */
+    }
+    #nav-primary input { display: none; }
+    #nav-primary i {
+      display: none; /*hide hamburger icon until requested by mobile media query */
+      float: right;
+      padding-right: 48px;
+      margin-top: 8px;
+      color: #666666;
+    }
+    #nav-primary i:hover {
+      color: rgba(255,255,255,.86);
+    }
+    #nav-primary ul {
+    	float: right; /*floats the ul for main menu links to right hand side of page */
+    }
+    #nav-primary li {
+      display: inline-flex; /* this display mode allows the items to be vertically centered without the use of margin and padding */
+      align-items: center; /* vertically center menu items */
+    	position: relative;
+      height: 96px; /* must match the height of #nav-primary */
+    }
+    #nav-primary ul a {
+    	display: block;
+    	position: relative;
+      vertical-align: middle;
+    	color: #f5faf9;
+    }
+    #nav-primary > ul > li > a {
+    	line-height: 36px; /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
+    	margin: 0 16px; /*top margin should equal ( navbar height - this line height ) / 2  */
+    }
+    #nav-primary > ul > li:last-child > a {
+    	margin-right: 0 !important; /*removes the unnecessary right margin from the last menu item, as the navbar itself already has sufficient padding. top amrgin should be same as margin above */
+    }
+    #nav-primary > ul > li > a:before {
+    	content: "";
+      position: absolute; /* locks underlining in position without being impacted by text size or line height */
+    	bottom: 0; /* ensures line will snap to bottom edge of item */
+      left: 0; /* ensures line will start to left-most edge of item */
+    	height: 1px; /* sets height of the primary nav link underlines that will appear during hover */
+    	width: 100%; /*ensures line consumes full width of item */
+    	background: #fff; /* set color of underline */
+      visibility: hidden; /* sets initial state of nav link underline to hidden so it can animate to visible during hover */
+      -webkit-transform: scaleX(0); /* sets the initial scale of the nav link hover to 0 so it can later animate to full scale (webkit only) */
+      transform: scaleX(0); /* sets the initial scale of the nav link hover to 0 so it can later animate to full scale (non-webkit) */
+    }
+    #nav-primary > ul > li > a:hover:before {
+      visibility: visible; /* transforms primary nav underlines to visible */
+      -webkit-transform: scaleX(1); /* transforms primary nav underlines from the inside to the outside (webkit only) */
+      transform: scaleX(1); /* transforms primary nav underlines from the inside to the outside (non-webkit) */
+    }
+    #nav-primary ul ul {
+    	visibility: hidden; /* forces the dropdown menu to be hidden until displayed by hover state */
+    	opacity: 0; /* sets the initial opacity of the dropdown menu to 0 so that we have the ability to animate the opacity to 1 during a hover of the parent li */
+    	position: absolute; /* ensures that parent li does not stretch to the width of this ul */
+    	left: calc(-50% - 6px); /* horizontally centers dropdown menu to the parent, the 6px represents half of the left padding of the parent li */
+    	top: calc(100% - 32px); /* adjusts the location of the dropdown menu upward to cover the parent link's underlining */
+    	box-shadow: 1px 1px 24px rgba(0,0,0,.1); /* applies shadow to dropdown menu */
+    }
+    #nav-primary > ul > li:hover > ul {
+    	display: block;
+    	visibility: visible;
+    	opacity: 1;
+    }
+    #nav-primary ul ul li {
+      display: inline-block; /* changes submenu items to inline-block as the top level menu uses inline-flex for vertical centering */
+      height: 48px; /* determines height of submenu items */
+    	width: 200px; /* determines width of submenu items */
+    	background: rgba(255,255,255,.94); /* sets background of non-hovered submenu items to a semi transparent white */
+    }
+    #nav-primary ul ul li a {
+      color: #333; /* sets the base color of submenu links before hover */
+    	padding: 16px 0; /* establishes the vertical spacing of submenu items */
+      margin: 0 auto;
+    }
+    #nav-primary ul ul li:hover a {
+    	color: #009688; /*highlights the text of submenu links during hover */
+    }
+
+  /* 5.2 - Secondary Navigation - 5.2 */
+    #nav-secondary {
+      position: relative;
+      padding: 0;
+      box-sizing: border-box;
+      height: 48px;
+      box-shadow: 0 2px 6px rgba(0,0,0,.2), 0 -2px 6px rgba(0,0,0,.3);
+    }
+    #ProductNav {
+      overflow-x: auto; /* allow horizontal scroll if enough items exist */
+      overflow-y: hidden; /* prevent vertical scroll */
+      -webkit-overflow-scrolling: touch; /* inertia scrolling for webkit */
+      white-space: nowrap; /* We don't want internal inline elements to wrap */
+      /*position: relative;*/ /* positioning context for advancers */
+      /*font-size: 0;*/
+      width: calc(100% - 96px);
+      margin: 0 auto;
+    }
+    /*#ProductNav {-ms-overflow-style: -ms-autohiding-scrollbar; }*/ /* Make an auto-hiding scroller for the 3 people using a IE */
+    #ProductNav {-ms-overflow-style: none; } /* Make an auto-hiding scroller for the 3 people using IE */
+    #ProductNav::-webkit-scrollbar { display: none; } /* Remove the default scrollbar for WebKit implementations */
+    #ProductNav {overflow: -moz-scrollbars-none;}
+    .pn-ProductNav_Contents {
+      float: left;
+      -webkit-transition: -webkit-transform .2s ease-in-out;
+      transition: -webkit-transform .2s ease-in-out;
+      transition: transform .2s ease-in-out;
+      /*transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;*/
+      position: relative; /*keeps underlines centered underneath each item */
+    }
+    .no-transition {
+      -webkit-transition: none;
+      transition: none;
+    }
+    #ProductNavContents > a {
+      color: #888;
+      font-size: 16px;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      min-height: 48px;
+      height: 48px; /*must match min-height to allow vertical flex alignment to find true center across all browsers */
+      padding: 0 12px;
+    }
+    #ProductNavContents > a [aria-selected="true"] {
+      color: #111;
+    }
+    #AdvancerLeft, #AdvancerRight {
+      width: 48px;
+      height: 48px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      opacity: 0; /* Set the buttons invisible by default */
+      -webkit-transition: opacity .3s;
+      transition: opacity .3s;
+    }
+    #AdvancerLeft:focus, #AdvancerRight:focus { outline: 0; } /*removes blue outline during focus */
+    #AdvancerLeft:hover, #AdvancerRight:hover { cursor: pointer; }
+    #AdvancerLeft { left: 0; } /*push left button to left side of navbar */
+    #AdvancerRight { right: 0; } /*push right button to right side of navbar */
+    [data-overflowing="both"] ~ #AdvancerLeft, [data-overflowing="left"] ~ #AdvancerLeft,
+    [data-overflowing="both"] ~ #AdvancerRight, [data-overflowing="right"] ~ #AdvancerRight {
+      opacity: 1;
+    }
+    .AdvancerIcon {
+      width: 20px;
+      height: 32px;
+      margin: 0 auto;
+      fill: #bbb;
+    }
+    #Indicator {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      width: 100px;
+      -webkit-transform-origin: 0 0;
+      transform-origin: 0 0;
+      -webkit-transition: background-color .2s ease-in-out, -webkit-transform .2s ease-in-out;
+      transition: background-color .2s ease-in-out, -webkit-transform .2s ease-in-out;
+      transition: transform .2s ease-in-out, background-color .2s ease-in-out;
+      transition: transform .2s ease-in-out, background-color .2s ease-in-out, -webkit-transform .2s ease-in-out;
+    }
+
+
+
+
+/* NEXT FEATURE */
+
+  #next_feature a                 { color: #009688; }
+
+
+
+/* FOOTER */
+
+  footer                          { background: #091413; }
+  #footer_links h4                { text-align: left; }
+  #footer_links ul                { list-style: none; }
+  #footer_links li                { padding: 4px 0; color: rgba(255,255,255,.46); }
+  #footer_links a                 { color: rgba(255,255,255,.46); }
+  footer form                     { margin-top: 23px; }
+  .field-wrapper, .content__button {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  	margin: 4px 0;
+  	width: 100%;
+  }
+  .content__button {
+    -ms-flex-pack: end;
+  	justify-content: flex-end;
+  }
+  #footer_links label {
+  	float: left;
+  	height: 32px;
+  	width: 40%;
+  	padding-top: 8px;
+  }
+  #footer_links input {
+  	float: right;
+  	height: 32px;
+  	width: 100%;
+  	border: none;
+  	padding: 0 8px;
+  }
+  .field-wrapper input {
+    background: rgba(255,255,255,.86);
+  }
+  .field-wrapper input::-webkit-input-placeholder {
+  	color: rgba(0,0,0,.4) !important;
+  }
+  #footer_links .content__button input {
+  	color: #bbb !important;
+  	background: #444 !important;
+  	padding: 4px 0;
+  }
+  #footer_links .content__button input:hover {
+  	color: #fff !important;
+  	background: #555 !important;
+  }
+
+
+/* SOCIAL NAVIGATION */
+
+  #social {
+  	width: 100%;
+  }
+  #social a {
+  	display: inline-block;
+  	height: 128px;
+  	width: 128px;
+  	box-sizing: border-box;
+  	padding-top: 44px;
+  	margin: 6px;
+  	border: 1px solid rgba(255,255,255,.26);
+  }
+  #social a:hover                   { box-shadow: 2px 2px 24px rgba(0,0,0,.26) !important; transform: scale(1.1); }
+  #social a:hover .fa               { color: #fff}
+  #social a:nth-child(1):hover      { background: #3b5998; } /* facebook */
+  #social a:nth-child(2):hover      { background: #dd4b39; } /* google plus */
+  #social a:nth-child(3):hover      { background: #55acee; } /* twitter */
+  #social a:nth-child(4):hover      { background: #0976b4; } /* linkedin */
+  #social a:nth-child(5):hover      { background: #cd201f; } /* youtube */
+  .fa                               { color: rgba(255,255,255,.26); }
+  #copyright                        { color: #666666; }
+  #copyright img                    { margin: 16px auto; }
+
+
+
+
+/* CONVENIENCE CLASSES */
+
+  /* The snap-bottom class is designed to allow large primary images to snap to the bottom of their section so that they appear to be covered by the next section */
+	.snap-bottom div {
+		padding-bottom: 0 !important;
+    border-bottom: 1px solid #b2dfdb;
+	}
+	.snap-bottom img {
+		margin: 96px auto 0 auto;
+	}
+
+
+  /* The bg-teal and bg-orange classes are intended to apply background color to large div sections and to alter the color of the text therein appropriately */
+  .bg-teal                              { background: #4db6ac; }
+  .bg-orange                            { background: #ff8a65; }
+	.bg-teal div, .bg-orange div,
+  .bg-teal figure, .bg-orange figure,
+  .bg-teal figcaption,
+  .bg-orange figcaption                 { background: transparent !important; }
+
+	.bg-teal h2, .bg-teal h3,
+  .bg-orange h2, .bg-orange h3          { color: #fff !important; }
+  .bg-teal p, .bg-orange p              { color: rgba(255,255,255,.8); }
+
+  .btn-sml, .btn-lrg {
+  	display: inline-block;
+  	vertical-align: middle;
+  	text-transform: uppercase;
+  	border-radius: 3px;
+  	border: 1px solid rgba(255,255,255,.6);
+  	color: #ffffff;
+  	background: rgba(255,255,255,.066);
+  }
+  .btn-sml {
+    padding: 6px 12px;
+    margin-top: 16px;
+  }
+  .btn-lrg {
+  	padding: 16px 32px;
+  	margin-top: 32px;
+  }
+  .btn-sml:hover, .btn-lrg:hover {
+  	box-shadow: 2px 2px 4px rgba(0,0,0,.2) !important;
+  	background: rgba(255,255,255,.97) !important;
+  	color: rgba(0,0,0,.8) !important;
+  }
+
+
+/* TRANSITIONS */
+
+  .noScroll {
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+  }
+  #nav-primary > ul > li > a:before, #nav-primary ul ul, #nav-primary ul ul li, #nav-primary ul ul li a,
+  .btn-lrg, .btn-sml, #social a, .fa {
+    -webkit-transition: all 0.2s ease-in-out 0s !important; /* hover animation control (webkit only) */
+    transition: all 0.2s ease-in-out 0s !important;  /* hover animation control (non-webkit) */
+  }
+
+
+
+/* MEDIA QUERIES */
+
+  @media only screen and (max-width: 1680px) {
+    h1                          { font-size: 68px; }
+    header p                    { font-size: 28px; }
+    header                      { padding: 96px 144px 192px 144px }
+    section                     { padding: 0 36px; }
+    section > figure,
+    section > div               { padding: 36px 36px 72px 36px; }
+    .col-1 > div                { padding: 72px 36px 36px 36px; }
+    .col-2 p                    { padding: 0 72px; }
+    .col-3 figcaption           { padding: 0 36px; }
+    #calltoaction div           { padding: 96px; }
+    footer                      { padding: 72px 336px 16px 336px; }
+  }
+
+
+  @media only screen and (max-width: 1440px) {
+    h1                          { font-size: 62px; }
+    h2                          { font-size: 48px; }
+    h3                          { font-size: 26px; }
+    h4                          { font-size: 18px; }
+    p                           { font-size: 17px; }
+    header p                    { font-size: 26px; }
+    .col-1 p                    { font-size: 20px; }
+    #calltoaction h3		        { font-size: 40px; }
+    #calltoaction p			        { font-size: 18px; }
+    .btn-lrg						        {	font-size: 18px; }
+    #footer_links li            { font-size: 16px; }
+    .field-wrapper input        { font-size: 12px; }
+    #copyright                  { font-size: 12px; }
+    #social a                   { font-size: 24px; }
+    #footer_links .content__button input {
+                                  font-size: 14px;
+                                }
+    header                      { padding: 96px 128px 192px 128px; }
+    #nav-secondary              { padding: 0; }
+    footer                      { padding: 64px 144px 16px 144px; }
+  	#social a                   { padding-top: 32px; }
+    #AdvancerLeft               { left: 0; }
+    #AdvancerRight              { right: 0; }
+  	#footer_links input         { height: 28px; }
+  	#social a                   { height: 96px; width: 96px; }
+  	#copyright img              { height: 38px; }
+  }
+
+
+  @media only screen and (max-width: 1280px) {
+    h1                          { font-size: 52px; }
+    h2                          { font-size: 42px; }
+    h3                          { font-size: 24px; }
+    p                           { font-size: 16px; }
+    header p                    { font-size: 24px; }
+    .col-1 p                    { font-size: 19px; }
+    #next_feature a             { font-size: 20px; }
+    #nav-primary                { padding: 0 48px; }
+    header                      { padding: 88px 96px 152px 96px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
+    section                     { padding: 0 24px; }
+    section > figure,
+    section > div               { padding: 32px 24px 64px 24px; }
+    .col-1 > div                { padding: 64px 24px 32px 24px; }
+    .col-2 p                    { padding: 0 48px; }
+    .col-3 figcaption           { padding: 0 16px; }
+    #calltoaction div           { padding: 72px; }
+    #social                     { margin: 72px auto 16px auto; }
+    #nav-primary                { width: calc(100% - 96px); height: 64px; } /* Shrink the height of the navbar for the first time */
+    .grooper_logo               { background: url(images/grooper_logo_140x42.png); height: 42px; width: 140px; margin-top: 14px; }
+    #nav-primary li             { height: 64px; } /* shrink to match the new height of the navbar */
+    #nav-primary ul ul          { top: calc(100% - 16px); }
+    #nav-primary > ul > li > a  { margin: 0 12px; } /* lessen the horizontal space between main menu items */
+
+  }
+
+
+  @media only screen and (max-width: 1024px) {
+    h1                          { font-size: 42px; }
+    h2                          { font-size: 40px; }
+    h3                          { font-size: 24px; }
+    h4                          { font-size: 20px; }
+    p                           { font-size: 15px; }
+    header p                    { font-size: 21px; }
+    #ProductNavContents > a     { font-size: 14px; }
+    .col-1 p                    { font-size: 18px; }
+    figcaption                  {	font-size: 16px; }
+    #calltoaction h3            { font-size: 32px; }
+    #calltoaction p             {	font-size: 16px; }
+    .btn-lrg                    { font-size: 16px; }
+    #footer_links li            { font-size: 16px; }
+    #social a                   { font-size: 24px; }
+    header                      { padding: 64px 64px 112px 64px; }
+    .col-1 p                    { padding: 0 10%; }
+    .col-2                      { padding: 0 32px; }
+    .col-3                      { padding: 0 24px; }
+    .col-3 figure, .col-3 div   { padding: 32px 24px 32px 24px; }
+    .col-3 figure:last-child,
+    .col-3 div:last-child       { padding: 0 24px 64px 24px; } /* adds the additional bottom padding only to the third (wrapped) figure, as needed to produce a clean finish to the section */
+    figcaption                  { padding: 0 32px; }
+    .col-3                      { flex-wrap: wrap; }
+    .col-3 figure, .col-3 div   { flex-basis: calc(50% - 48px); } /* must equal 50% minus the total amount of padding on the current row's divs and it's container */
+    #nav-primary                {
+                                  width: calc(100% - 96px);
+                                  padding: 0 48px;
+                                }
+    #nav-primary > ul > li > a  { margin: 0 8px; }
+    #nav-primary ul ul a        { padding: 8px 0; }
+    #nav-secondary              {
+                                  height: 36px;
+                                  padding: 0;
+                                }
+    #ProductNav                 { width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
+    #ProductNavContents > a     {
+                                  min-height: 36px;
+                                  height: 36px;
+                                }
+    #AdvancerLeft,
+    #AdvancerRight              {
+                                  height: 36px;
+                                  width: 36px;
+                                }
+    .AdvancerIcon               { height: 28px; }
+    #AdvancerLeft               { left: 0; }
+    #AdvancerRight              { right: 0; }
+    #Indicator                  { height: 2px; }
+    #calltoaction div           { padding: 64px; }
+    .btn-lrg                    { padding: 8px 32px; }
+    .btn-sml                    { margin-top: 8px; }
+    footer                      { padding: 48px 32px 8px 32px; }
+    #social                     { margin: 64px auto 8px auto; }
+    #social a                   {
+                                  height: 96px;
+                                  width: 96px;
+                                  padding-top: 32px;
+                                }
+    #copyright img              { margin: 8px auto; }
+  }
+
+
+  @media (max-width: 768px){
+    h1                           { font-size: 36px; }
+    h2                           { font-size: 34px; }
+    h3                           { font-size: 26px; }
+  	p                            { font-size: 16px; }
+    header p                     { font-size: 18px; }
+    .col-1 p                     { font-size: 18px; }
+    #calltoaction h3             { font-size: 36px; }
+    #calltoaction p              { font-size: 18px; }
+    #footer_links h4             { text-align: center; }
+    section                      { padding: 0 64px; }
+    section > figure,
+    section > div,
+    col-3 > figure               { padding: 32px 96px !important; }
+  	.col-1 > div                 { padding: 64px 0 48px 0 !important; }
+    .col-3 > figure:last-child,
+    .col-3 > div:last-child      { padding: 32px 96px 64px 96px !important; }
+    #calltoaction div            { padding: 64px 128px !important; }
+    #footer_links > div          { padding: 32px 0 !important; }
+  	#signup                      { margin: 32px 32px 0 32px; }
+  	#contact, #discover          { flex-basis: 50% !important; -ms-flex: 50% !important; }
+  	#signup                      { flex-basis: 100% !important; -ms-flex: 100% !important; }
+  	#footer_links,
+    .col-2, .col-3, #calltoaction{ display: block !important; } /*this prevents divs from overlaying on ie11 and android mobile default browser */
+    .grooper_logo                 {
+                                    background: url(images/g_color_32.png);
+                                    height: 32px;
+                                    width: 33px;
+                                    margin-top: 16px;
+                                  }
+  }
+
+
+@media (max-width: 600px){
+  #footer_links h4            { font-size: 28px; }
+  #footer_links li            { font-size: 18px; }
+  #nav-primary > ul > li > a  { font-size: 18px; }
+  #footer_links h4,
+  #footer_links ul            { text-align: center; }
+  header                      { padding: 64px 48px 112px 48px; margin-top: 48px; }
+  section > figure,
+  section > div               { padding: 32px 48px; }
+  #calltoaction div           { padding: 64px 48px !important; }
+  #nav-primary                { height: 48px; }
+  .grooper_logo               { margin-top: 8px; }
+  #bars                       { display: inline-block !important; padding-right: 48px; }
+  #contact, #discover         { flex-basis: 100% !important; -ms-flex: 100% !important; } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
+  #signup                     { margin: 0; }
+  #social                     { margin: 8px 0 16px 0; }
+  #social a                   { height: 32px; width: 32px; padding-top: 0; border: none; }
+  #social a:nth-child(1) i    { color: #3b5998; } /* facebook */
+  #social a:nth-child(2) i    { color: #dd4b39; } /* google plus */
+  #social a:nth-child(3) i    { color: #55acee; } /* twitter */
+  #social a:nth-child(4) i    { color: #0976b4; } /* linkedin */
+  #social a:nth-child(5) i    { color: #cd201f; } /* youtube */
+  #social a, #social a:hover  {
+                                background: transparent !important;
+                                box-shadow: none !important;
+                                transform: none !important;
+                              }
+  #nav-primary                {
+                                width: 100%;
+                                padding: 0;
+                              }
+  #nav-primary > a            { margin-left: 48px; }
+  #mobile-menu                {
+                                display: block;
+                                position: relative;
+                                top: 50px;
+                                left: 50px;
+                                z-index: 1;
+                                -webkit-user-select: none;
+                                user-select: none;
+                              }
+  #nav-primary input          {
+                                display: block;
+                                width: 40px;
+                                height: 32px;
+                                position: absolute;
+                                top: 6px;
+                                right: 38px;
+                                cursor: pointer;
+                                opacity: 0;
+                                z-index: 20000;
+                                -webkit-touch-callout: none;
+                              }
+  #menu                       {
+                                position: fixed;
+                                margin-left: 100%;
+                                top: 48px;
+                                width: 100%;
+                                height: calc(100vh - 48px); /*100% of the browser screen*/
+                                padding: 96px 0;
+                                opacity: 0.93;
+                                background: #000000;
+                                list-style-type: none;
+                                -webkit-font-smoothing: antialiased; /* to stop flickering of text in safari */
+                              }
+  #nav-primary input:checked ~ i      { display: none !important; } /*the 3 bars goes away*/
+  #nav-primary input:checked ~ i ~ i  { display: inline-block !important; } /*the X is display*/
+  #nav-primary input:checked ~ ul     { margin-left: 0; } /* this removes the transform element resulting in the perceived slid in menu*/
+  #nav-primary ul                     { display: block; }
+  #nav-primary li                     { display: block !important; }
+  #nav-primary ul                     { float: none; } /*we are no longer floating the entire nav menu to the right as these will be centered horizontally on mobile devices */
+  #nav-primary > ul > li > ul         {
+                                        position: relative !important;
+                                        visibility: visible;
+                                        opacity: 1;
+                                        top: 0;
+                                        left: 0;
+                                        z-index: 1000;
+                                        transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+                                      }
+  #nav-primary ul ul li               {
+                                        background: transparent;
+                                        height: 24px;
+                                        width: auto;
+                                      }
+  #nav-primary ul ul li a             {
+                                        color: #fff;
+                                        padding: 0;
+                                      }
+  /* temporarily hiding second level dropdown menus on mobile devices. may bring these back */
+  #nav-primary ul ul                  { display:none; }
+  #nav-primary ul li:hover ul         { display:none; }
+  /*#nav-primary > ul > li:nth-child(2) {padding-top: 64px;}*/ /*move the pricing tab down */
+  #nav-social                         {
+                                        display: block;
+                                        margin-left: 100%;
+                                        width: 100%;
+                                        position: fixed;
+                                        background: rgba(1, 1, 1, 0);
+                                        visibility: visible;
+                                        bottom: 0;
+                                        left: 0;
+                                        padding-bottom: 16px;
+                                      }
+  #nav-social, .grooper_logo          { transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0); }
+  #nav-social a, #nav-social i        { display: inline-block; }
+  #nav-social i                       {
+                                        padding: 0 !important;
+                                        width: 32px;
+                                      }
+  #nav-social a:nth-child(1) i        { color: #3b5998; } /* facebook */
+  #nav-social a:nth-child(2) i        { color: #dd4b39; } /* google plus */
+  #nav-social a:nth-child(3) i        { color: #55acee; padding-left: 12px !important;} /* twitter */
+  #nav-social a:nth-child(4) i        { color: #0976b4; } /* linkedin */
+  #nav-social a:nth-child(5) i        { color: #cd201f; } /* youtube */
+}
+
+
+@media (max-width: 432px){
+  section > figure,
+  section > div                 { padding: 32px 0; }
+	#calltoaction div             { padding: 32px !important; }
+}
