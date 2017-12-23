@@ -160,6 +160,9 @@
       margin-left: auto;
       margin-right: auto;
     }
+		#calltoaction > div {
+			align-items: flex-start;
+		}
 
   /* 4.2 - Margin & Padding - 4.2 */
     header                          { margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
@@ -171,7 +174,7 @@
     .col-3 figcaption               { padding: 0 48px; }
     footer                          { padding: 96px 336px 16px 336px; }
 		#brands													{ padding: 128px 64px; }
-		#brands div											{ padding: 0 128px; }
+		#brands p												{ padding: 0 128px; }
     #next_feature                   { padding: 48px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
     #calltoaction div               { padding: 144px; }
 		#contact, #discover, #signup    { padding: 0; }
@@ -186,8 +189,7 @@
   /* 4.4 - Borders - 4.4 */
     section                         { border-bottom: 1px solid #b2dfdb; } /* gives each section a light teal bottom border */
     .col-1                          { border-bottom: 0; } /* then we remove the above mentioned border for col-1 as these are intended to be headers directly related to the content below them */
-    .comparison                     { border-bottom: 1px solid #b2dfdb; }
-    .comparison > div:last-child    { border-left: 1px solid #b2dfdb; }
+    .comparison > div:last-child    { border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
     .shadow img                     { border: 1px solid #b2dfdb; }
 
 /* Single Column Layout */
@@ -703,6 +705,7 @@
                                     width: 33px;
                                     margin-top: 16px;
                                   }
+		.comparison > div:last-child    { border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
   }
 
 
@@ -826,6 +829,6 @@
 
 @media (max-width: 432px){
   section > figure,
-  section > div                 { padding: 32px 0; }
+  section > div                 { padding: 32px 0 !important; }
 	#calltoaction div             { padding: 32px !important; }
 }
