@@ -29,12 +29,14 @@
   /* 1.5 - Set basic background colors - 1.5 */
     body                            { background: #000; } /* black */
     main, section, figure,
-    figcaption, div                 { background: #fff; } /* white */
+    figcaption, div                 { background: #fefefe; } /* white */
     #nav-primary ul ul,
     #AdvancerLeft, #AdvancerRight,
-    #Indicator, footer div, #map *  { background: transparent; } /* transparent */
+    #Indicator, footer div,
+		#brands div, #map *							{ background: transparent; } /* transparent */
     #calltoaction > div:first-child { background: #4db6ac; } /* medium teal */
-    #calltoaction > div:last-child  { background:#ff8a65; } /* medium orange */
+    #calltoaction > div:last-child  { background: #ff8a65; } /* medium orange */
+		/*#brands, #brands div						{ background: #4a4a4a; }*/
     header {
     	background: #00796b; /* For browsers that do not support gradients */
       background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Safari 5.1 to 6.0 */
@@ -42,6 +44,7 @@
       background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Firefox 3.6 to 15 */
       background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* Standard syntax (must be last) */
     }
+		#brands { background: linear-gradient(to bottom, rgba(0,0,0,.9), rgba(0,0,0,0.5)), url("images/header_tile_gray.jpg") top; } /* Standard syntax (must be last) */
 
 
 /* 2 - TEXT STYLING - 2 */
@@ -74,7 +77,8 @@
     h1                              { font-size: 72px; }
     h2                              { font-size: 58px; }
     #calltoaction h3                { font-size: 48px; }
-    #nav-primary i, #social a, h3   { font-size: 32px; }
+    #nav-primary i, #social a, h3,
+		#brands p												{ font-size: 32px; }
     header p                        { font-size: 30px; }
     .col-1 p, #next_feature, h4     { font-size: 24px; }
     #calltoaction p, .btn-lrg       { font-size: 20px; }
@@ -97,8 +101,9 @@
     p                               { color: rgba(17,17,17,.7); }
     h1, h4, header p,
     #footer_links a:hover,
-    #footer_links label, #social a  { color: #fff; }
+    #footer_links label, #social a	{ color: #fff; }
     h2, em                          { color: #f4511e; }
+		#brands p												{ color: #999; }
 
   /* 2.8 - Line Height and Spacing - 2.8 */
     h1, h2, h3, h4, h5, h6, p, img  { display: block; }
@@ -118,6 +123,7 @@
                                     }
     .img-top img                    { margin-bottom: 24px; } /* adds margin below images when the image is directly above text */
     .img-btm img                    { margin-top: 24px; } /* adds margin above images when the image is directly below text */
+		#brands img											{ height: 72px; margin: 24px 24px 0 24px; opacity: .6; }
 
 
 
@@ -125,7 +131,7 @@
 
 
   /* 4.1 - Flex Control - 4.1 */
-    .col-2, .col-3, .col-3 > figure, .col-3 > div, #calltoaction, #calltoaction > div, #footer_links {
+    .col-2, .col-3, .col-3 > figure, .col-3 > div, #brands div, #calltoaction, #calltoaction > div, #footer_links {
       display: -webkit-box;
       display: -webkit-flex;
       display: -ms-flexbox;
@@ -164,10 +170,12 @@
     .col-1 > div                    { padding: 96px 48px 48px 48px; } /*we make the bottom padding here smaller so that the content generally related to the h1 moves closer */
     .col-2 p                        { padding: 0 96px; } /*should be wider in most cases than the .col-3 p as we don't want the text to stretch too far within the narrower 2 column structure */
     .col-3 figcaption               { padding: 0 48px; }
+		#brands													{ padding: 128px 0; }
     #next_feature                   { padding: 48px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
     #calltoaction div               { padding: 144px; }
     footer                          { padding: 96px 336px 16px 336px; }
-    #contact, #discover, #signup    { padding: 0; }
+    #brands div,
+		#contact, #discover, #signup    { padding: 0; }
     #social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
     /*.comparison                     { padding: 0; }*/ /* The comparison class is designed to highlight pairs of images that represent before and after shots */
     /*.comparison > div               { padding: 32px 48px; }*/
