@@ -149,43 +149,116 @@
 /* 4 - LAYOUT - 4 */
 
 
-  /* 4.1 - Flex Control - 4.1 */
+  /* 4.1 - Flexible Box Model Control - 4.1 */
 
-		/* 4.1.1 - Flex Display - 4.1.1 */
-	    .col-2, .col-3, .col-3 > figure, .col-3 > div, #brands div, #calltoaction, #calltoaction > div,
-			#footer_links									{
+		/* 4.1.1 - Flex Containers - 4.1.1 */
+		/* Properties impacting the container which will be used to hold flexing items */
+
+			/* 4.1.1.1 - Flex Display - 4.1.1.1 */
+			/* Tells a container to display its contents using a flexible box model */
+		    .col-2, .col-3, .col-3 > *,
+				#brands div, #calltoaction,
+				#calltoaction > div,
+				#footer_links,
+				.field-wrapper,
+				.content__button						{
 																			display: -webkit-box;
-																			display: -webkit-flex;
 																			display: -ms-flexbox;
+																			display: -webkit-flex;
 																			display: flex;
 																		}
+				#nav-primary li,
+				#ProductNavContents > a			{
+																			display: -webkit-inline-box;
+																			display: -ms-inline-flexbox;
+																			display: -webkit-inline-flex;
+																			display: inline-flex;
+																		}
 
-		/* 4.1.2 - Flex Direction - 4.1.2 */
-			#calltoaction > div,
-			.col-3 > figure, .col-3 > div	{ flex-direction: column; }
+			/* 4.1.1.2 - Flex Direction - 4.1.1.2 */
+			/* Direction of the flex container's main axis */
+				#calltoaction > div,
+				.col-3 > *									{
+																			-webkit-flex-direction: column;
+																			-ms-flex-direction: column;
+																			flex-direction: column;
+																		}
 
-		/* 4.1.3 - Flex Wrapping - 4.1.3 */
-	    #footer_links, #brands div,
-			#calltoaction > div						{ flex-wrap: wrap; }
+			/* 4.1.1.3 - Flex Wrap - 4.1.1.3 */
+			/* Controls whether the flex container is single-line or multi-line, and the direction of the cross axis */
+		    #footer_links, #brands div,
+				#calltoaction > div					{
+																			-webkit-flex-wrap: wrap;
+																			-ms-flex-wrap: wrap;
+																			flex-wrap: wrap;
+																		}
 
-		/* 4.1.4 - Flex Basis - 4.1.4 */
-	    .col-2 > div,
-	    .col-3 figcaption							{ flex-basis: 100%; -ms-flex: 100%; }
-			#calltoaction > div						{ flex-basis: 50%; -ms-flex: 50%; }
-	    .col-3 > figure, .col-3 > div,
-			#contact, #discover, #signup	{ flex-basis: 33.33%; -ms-flex: 33.33%; }
+			/* 4.1.1.4 - Justify Content - 4.1.1.4 */
+			/* Align all items along the main axis of a flexible container */
+				#calltoaction > div					{
+																			-webkit-justify-content: flex-start;
+																			-ms-flex-pack: start;
+																			justify-content: flex-start;
+																		}
+		    .col-2, .col-3,
+				#brands div, #calltoaction,
+				#footer_links								{
+																			-webkit-justify-content: center;
+																			-ms-flex-pack: center;
+																			justify-content: center;
+																		}
+				.col-3 > *
 
-		/* 4.1.5 - Flex Alignment and Justification - 4.1.5 */
-	    .col-2, .col-3, #brands div, #calltoaction,
-			#footer_links									{ justify-content: center; }
-			.col-3 figure, .col-3 > div,
-			#calltoaction > div						{ justify-content: flex-start ; } /* allows items to generally align to the top of the column */
-			#calltoaction a								{ align-self: flex-end; } /* forces only the buttons to go to the bottom of the container if there is extra space */
+				.content__button						{
+																			-webkit-justify-content: flex-end;
+																			-ms-flex-pack: end;
+																			justify-content: flex-end;
+																		}
 
-		/* 4.1.6 - Flex Shrink and Grow - 4.1.6 */
-		#calltoaction > div > *					{ flex-shrink: 0; } /* prevents ios devices from being able to shrink the container if everything doesn't fit within the container */
-		#calltoaction p									{ margin: 0 0 auto 0; } /* adds extra space between the paragraph and button on the smaller of the two calltoaction divs, thus keeping the bottom buttons aligned. */
+			/* 4.1.1.5 - Align Items - 4.1.1.5 */
+			/* Align all items along the cross axis of a flexible container */
+				#nav-primary li,
+				#ProductNavContents > a			{
+																			-webkit-box-align: center;
+																			-webkit-align-items: center;
+																			-ms-flex-align: center;
+																			align-items: center;
+																		}
 
+
+		/* 4.1.2 - Flex Items - 4.1.2 */
+		/* Properties impacting the individual items within a flexible container */
+
+			/* 4.1.2.1 - Order - 4.1.2.1 */
+			/* Controls the order in which flex items appear within their flex container. */
+
+
+			/* 4.1.2.2 - Grow - 4.1.2.2 */
+			/* Number which determines how much the flex item will grow relative to the rest of the flex items in the flexible container when positive free space is distributed. */
+
+
+			/* 4.1.2.3 - Shrink - 4.1.2.3 */
+			/* Number which determines how much the flex item will shrink relative to the rest of the flex items in the flexible container when negative free space is distributed. */
+				#calltoaction > div > *			{ flex-shrink: 0; } /* prevents ios devices from being able to shrink the container if everything doesn't fit within the container */
+				#calltoaction p							{ margin: 0 0 auto 0; } /* adds extra space between the paragraph and button on the smaller of the two calltoaction divs, thus keeping the bottom buttons aligned. */
+
+
+			/* 4.1.2.4 - Flex Basis - 4.1.2.4 */
+			/* The initial width or height (whichever is on the main axis) of the flex item, before free space is distributed according to the flex factors. */
+				.col-3 > *, #contact,
+				#discover, #signup					{ flex-basis: 33.33%; -ms-flex: 33.33%; }
+				#calltoaction > div					{ flex-basis: 50%; -ms-flex: 50%; }
+				.col-2 > *,
+				.col-3 figcaption						{ flex-basis: 100%; -ms-flex: 100%; }
+
+
+			/* 4.1.2.5 - Align Self - 4.1.2.5 */
+			/* Allows the alignment to be overridden for individual flex items */
+				#calltoaction a							{
+																			-webkit-align-self: flex-end;
+																			-ms-flex-item-align: end;
+																			align-self: flex-end;
+																		}
 
 
   /* 4.2 - Margin & Padding - 4.2 */
@@ -214,7 +287,7 @@
   /* 4.4 - Borders - 4.4 */
     section                         { border-bottom: 1px solid #b2dfdb; } /* gives each section a light teal bottom border */
     .col-1                          { border-bottom: 0; } /* then we remove the above mentioned border for col-1 as these are intended to be headers directly related to the content below them */
-    .comparison > div:last-child    { border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
+    .comparison > *:last-child			{ border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
     .shadow img                     { border: 1px solid #b2dfdb; }
 
 
@@ -256,8 +329,6 @@
     	float: right; /*floats the ul for main menu links to right hand side of page */
     }
     #nav-primary li {
-      display: inline-flex; /* this display mode allows the items to be vertically centered without the use of margin and padding */
-      align-items: center; /* vertically center menu items */
     	position: relative;
       height: 96px; /* must match the height of #nav-primary */
     }
@@ -305,7 +376,7 @@
     	opacity: 1;
     }
     #nav-primary ul ul li {
-      display: inline-block; /* changes submenu items to inline-block as the top level menu uses inline-flex for vertical centering */
+      display: inline-block; /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
       height: 48px; /* determines height of submenu items */
     	width: 200px; /* determines width of submenu items */
     	background: rgba(255,255,255,.94); /* sets background of non-hovered submenu items to a semi transparent white */
@@ -356,12 +427,6 @@
     #ProductNavContents > a {
       color: #888;
       font-size: 16px;
-      display: -webkit-inline-box;
-      display: -ms-inline-flexbox;
-      display: inline-flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
       min-height: 48px;
       height: 48px; /*must match min-height to allow vertical flex alignment to find true center across all browsers */
       padding: 0 12px;
@@ -425,16 +490,8 @@
   #footer_links a                 { color: rgba(255,255,255,.46); }
   footer form                     { margin-top: 23px; }
   .field-wrapper, .content__button {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
   	margin: 4px 0;
   	width: 100%;
-  }
-  .content__button {
-    -ms-flex-pack: end;
-  	justify-content: flex-end;
   }
   #footer_links label {
   	float: left;
@@ -634,65 +691,64 @@
 
 
   @media only screen and (max-width: 1024px) {
-    h1                          { font-size: 42px; }
-    h2                          { font-size: 40px; }
-    h3                          { font-size: 24px; }
-    h4                          { font-size: 20px; }
-    p                           { font-size: 15px; }
-    header p, #brands p					{ font-size: 21px; }
-    #ProductNavContents > a     { font-size: 14px; }
-    .col-1 p                    { font-size: 18px; }
-    figcaption                  {	font-size: 16px; }
-    #calltoaction h3            { font-size: 32px; }
-    #calltoaction p             {	font-size: 16px; }
-    .btn-lrg                    { font-size: 16px; }
-    #footer_links li            { font-size: 16px; }
-    #social a                   { font-size: 24px; }
-    header                      { padding: 64px 64px 112px 64px; }
-    .col-1 p                    { padding: 0 10%; }
-    .col-2                      { padding: 0 32px; }
-    .col-3                      { padding: 0 24px; }
-    .col-3 figure, .col-3 div   { padding: 32px 24px 32px 24px; }
-    .col-3 figure:last-child,
-    .col-3 div:last-child       { padding: 0 24px 64px 24px; } /* adds the additional bottom padding only to the third (wrapped) figure, as needed to produce a clean finish to the section */
-    figcaption                  { padding: 0 32px; }
-    .col-3                      { flex-wrap: wrap; }
-    .col-3 figure, .col-3 div   { flex-basis: calc(50% - 48px); } /* must equal 50% minus the total amount of padding on the current row's divs and it's container */
-    #nav-primary                {
-                                  width: calc(100% - 96px);
-                                  padding: 0 48px;
-                                }
-    #nav-primary > ul > li > a  { margin: 0 8px; }
-    #nav-primary ul ul a        { padding: 8px 0; }
-    #nav-secondary              {
-                                  height: 36px;
-                                  padding: 0;
-                                }
-    #ProductNav                 { width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
-    #ProductNavContents > a     {
-                                  min-height: 36px;
-                                  height: 36px;
-                                }
-    #AdvancerLeft,
-    #AdvancerRight              {
-                                  height: 36px;
-                                  width: 36px;
-                                }
-    .AdvancerIcon               { height: 28px; }
-    #AdvancerLeft               { left: 0; }
-    #AdvancerRight              { right: 0; }
-    #Indicator                  { height: 2px; }
-    #calltoaction div           { padding: 64px; }
-    .btn-lrg                    { padding: 8px 32px; }
-    .btn-sml                    { margin-top: 8px; }
-    footer                      { padding: 48px 32px 8px 32px; }
-    #social                     { margin: 64px auto 8px auto; }
-    #social a                   {
-                                  height: 96px;
-                                  width: 96px;
-                                  padding-top: 32px;
-                                }
-    #copyright img              { margin: 8px auto; }
+		h1													{ font-size: 42px; }
+		h2													{ font-size: 40px; }
+		h3													{ font-size: 24px; }
+		h4													{ font-size: 20px; }
+		p														{ font-size: 15px; }
+		header p, #brands p					{ font-size: 21px; }
+		#ProductNavContents > a			{ font-size: 14px; }
+		.col-1 p										{ font-size: 18px; }
+		figcaption									{	font-size: 16px; }
+		#calltoaction h3						{ font-size: 32px; }
+		#calltoaction p							{	font-size: 16px; }
+		.btn-lrg										{ font-size: 16px; }
+		#footer_links li						{ font-size: 16px; }
+		#social a										{ font-size: 24px; }
+		header											{ padding: 64px 64px 112px 64px; }
+		.col-1 p										{ padding: 0 10%; }
+		.col-2											{ padding: 0 32px; }
+		.col-3											{ padding: 0 24px; }
+		.col-3 > *									{ padding: 32px 24px 32px 24px; }
+		.col-3 > *:last-child				{ padding: 0 24px 64px 24px; } /* adds the additional bottom padding only to the third (wrapped) figure, as needed to produce a clean finish to the section */
+		figcaption									{ padding: 0 32px; }
+		.col-3											{ flex-wrap: wrap; }
+		.col-3 > *									{ flex-basis: calc(50% - 48px); } /* must equal 50% minus the total amount of padding on the current row's divs and it's container */
+		#nav-primary								{
+																	width: calc(100% - 96px);
+																	padding: 0 48px;
+																}
+		#nav-primary > ul > li > a	{ margin: 0 8px; }
+		#nav-primary ul ul a				{ padding: 8px 0; }
+		#nav-secondary							{
+		                              height: 36px;
+		                              padding: 0;
+		                            }
+		#ProductNav									{ width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
+		#ProductNavContents > a			{
+																	min-height: 36px;
+																	height: 36px;
+																}
+		#AdvancerLeft,
+		#AdvancerRight							{
+																	height: 36px;
+																	width: 36px;
+																}
+		.AdvancerIcon								{ height: 28px; }
+		#AdvancerLeft								{ left: 0; }
+		#AdvancerRight							{ right: 0; }
+		#Indicator									{ height: 2px; }
+		#calltoaction div						{ padding: 64px; }
+		.btn-lrg										{ padding: 8px 32px; }
+		.btn-sml										{ margin-top: 8px; }
+		footer											{ padding: 48px 32px 8px 32px; }
+		#social											{ margin: 64px auto 8px auto; }
+		#social a										{
+																	height: 96px;
+																	width: 96px;
+																	padding-top: 32px;
+																}
+		#copyright img							{ margin: 8px auto; }
   }
 
 
@@ -701,7 +757,7 @@
     h2													{ font-size: 34px; }
     h3													{ font-size: 26px; }
   	p														{ font-size: 16px; }
-    header p, #brands p					{ font-size: 18px; }
+    header p										{ font-size: 18px; }
     .col-1 p										{ font-size: 18px; }
     #calltoaction h3						{ font-size: 36px; }
     #calltoaction p							{ font-size: 18px; }
@@ -709,10 +765,9 @@
     section											{ padding: 0 64px; }
     section > figure,
     section > div,
-    col-3 > figure							{ padding: 32px 96px !important; }
+    col-3 > *										{ padding: 32px 96px !important; }
   	.col-1 > div								{ padding: 64px 0 48px 0 !important; }
-    .col-3 > figure:last-child,
-    .col-3 > div:last-child			{ padding: 32px 96px 64px 96px !important; }
+    .col-3 > *:last-child				{ padding: 32px 96px 64px 96px !important; }
     #calltoaction div						{ padding: 64px 128px !important; }
     #footer_links > div					{ padding: 32px 0 !important; }
   	#signup											{ margin: 32px 32px 0 32px; }
@@ -726,7 +781,7 @@
 																	width: 33px;
 																	margin-top: 16px;
 																}
-		.comparison > div:last-child{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
+		.comparison > *:last-child{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
   }
 
 
