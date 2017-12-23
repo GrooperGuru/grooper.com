@@ -149,28 +149,30 @@
       flex-basis: 33.33%;
       -ms-flex: 33.33%;
     }
-    .col-3 figure, .col-3 > div {
+    .col-3 figure, .col-3 > div, #calltoaction > div {
       flex-direction: column;
     }
-    .col-3 figcaption, #calltoaction h3, #calltoaction p {
+    .col-3 figcaption {
       flex-basis: 100%;
       -ms-flex: 100%;
     }
 
-		#calltoaction > div, #calltoaction > div > * {
-			align-items: flex-start; /* makes all items start from top of container and work their way down */
+		#calltoaction > div {
+			justify-content: flex-start ; /* inserts additional */
 		}
-		#calltoaction p {
-			/*margin: 0 0 auto 0;*/ /* forces the shorter of the two middle paragraphs to automatically consume the remaining space in the middle of the container */
-		}
-    #calltoaction a {
-			align-self: flex-end; /* forces only the buttons to go to the bottom of the container if there is extra space */
-			/*margin-left: auto;
-			margin-right: auto;*/
-    }
-		#calltoaction > div * {
+		#calltoaction > div > * {
+			/*align-self: flex-start;*/
 			flex-shrink: 0; /* prevents ios devices from being able to shrink the container if everything doesn't fit within the container */
 		}
+		#calltoaction p {
+			margin: 0 0 auto 0;
+		}
+    #calltoaction a {
+			align-self: flex-end; /* forces only the buttoms to go to the bottom of the container if there is extra space */
+			margin-left: auto;
+			margin-right: auto;
+    }
+
 
   /* 4.2 - Margin & Padding - 4.2 */
     header                          { margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
