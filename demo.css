@@ -161,7 +161,7 @@
       margin-right: auto;
     }
 		#calltoaction > div {
-			align-items: flex-start;
+			align-items:flex-end;
 		}
 
   /* 4.2 - Margin & Padding - 4.2 */
