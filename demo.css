@@ -138,7 +138,7 @@
       display: flex;
       justify-content: center;
     }
-    #footer_links, #brands div {
+    #footer_links, #brands div, #calltoaction > div {
       flex-wrap: wrap;
     }
     .col-2 > div, #calltoaction > div {
@@ -149,10 +149,10 @@
       flex-basis: 33.33%;
       -ms-flex: 33.33%;
     }
-    .col-3 figure, .col-3 > div, #calltoaction > div {
+    .col-3 figure, .col-3 > div {
       flex-direction: column;
     }
-    .col-3 figcaption/*, #calltoaction p*/ {
+    .col-3 figcaption, #calltoaction h3, #calltoaction p {
       flex-basis: 100%;
       -ms-flex: 100%;
     }
