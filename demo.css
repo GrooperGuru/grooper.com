@@ -165,6 +165,9 @@
 			align-items: flex-start;
 			justify-content: space-between;
 		}
+		#calltoaction > div * {
+			flex-shrink: 0;
+		}
 
   /* 4.2 - Margin & Padding - 4.2 */
     header                          { margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
