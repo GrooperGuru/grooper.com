@@ -1,0 +1,15 @@
+#nav-primary input,
+#nav-primary i, /*hide hamburger icon until requested by mobile media query */
+#ProductNav::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
+{
+display: none;
+}
+#nav-primary ul a,
+#nav-primary > ul > li:hover > ul {
+	display: block;
+}
+#nav-primary ul ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
+#social a
+{
+	display: inline-block;
+}
