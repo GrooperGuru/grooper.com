@@ -7,7 +7,7 @@
 
 
   /* 1.2 - Remove margin, border, and padding from all - 1.2 */
-    html, body, div, section, figure, figcaption, span, iframe, h1, h2, h3, h4, h5, h6, div, p, a, img, ol, ul, li, table, tbody, tfoot, thead, tr, th, td, button {
+    html, body, div, section, figure, figcaption, blockquote, span, iframe, h1, h2, h3, h4, h5, h6, div, p, a, img, ol, ul, li, table, tbody, tfoot, thead, tr, th, td, button {
 																			margin: 0;
 																			padding: 0;
 																			border: 0;
@@ -40,24 +40,35 @@
 			#AdvancerLeft, #AdvancerRight,
 			#Indicator, footer div,
 			#brands div, #map *							{ background: transparent; } /* transparent */
-			#calltoaction > div:first-child { background: #4db6ac; } /* medium teal */
-			#calltoaction > div:last-child  { background: #ff8a65; } /* medium orange */
+			.bg-gray, .bg-gray-tile					{ background: #4a4a4a; } /* medium gray */
+			#calltoaction > div:last-child,
+			.bg-orange, .bg-orange-tile			{ background: #ff8a65; } /* medium orange */
+			#calltoaction > div:first-child,
+			.bg-teal, .bg-teal-tile					{ background: #4db6ac; } /* medium teal */
+			header													{ background: #00796b; } /*darker teal, currently only used in header when bg gradients not supported */
+
+
 
 		/* 1.5.2 - Tiled Backgrounds - 1.5.2 */
-			header													{
-																				background: #00796b; /* For browsers that do not support gradients */
-																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Safari 5.1 to 6.0 */
-																				background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Opera 11.1 to 12.0 */
-																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Firefox 3.6 to 15 */
-																				background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* Standard syntax (must be last) */
-																			}
-			#brands													{
-																				background: #4a4a4a; /* For browsers that do not support gradients */
+			.bg-gray-tile										{
 																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* For Safari 5.1 to 6.0 */
 																				background: -o-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* For Opera 11.1 to 12.0 */
 																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* For Firefox 3.6 to 15 */
 																				background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* Standard syntax (must be last) */
 																			}
+			.bg-orange-tile									{
+																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* For Safari 5.1 to 6.0 */
+																				background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* For Opera 11.1 to 12.0 */
+																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* For Firefox 3.6 to 15 */
+																				background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* Standard syntax (must be last) */
+																			}
+			.bg-teal-tile, header						{
+																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Safari 5.1 to 6.0 */
+																				background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Opera 11.1 to 12.0 */
+																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Firefox 3.6 to 15 */
+																				background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* Standard syntax (must be last) */
+																			}
+
 
 
 
@@ -175,7 +186,8 @@
 
 			/* 4.2.1.1 - Flex Display - 4.2.1.1 */
 			/* Tells a container to display its contents using a flexible box model */
-		    .col-2, .col-3, .col-3 > *,
+				.col-2, .col-3, .col-3 > *,
+				.col-1-2, .col-2-1,
 				#brands div, #calltoaction,
 				#calltoaction > div,
 				#footer_links,
@@ -269,9 +281,13 @@
 
 			/* 4.2.2.4 - Flex Basis - 4.2.2.4 */
 			/* The initial width or height (whichever is on the main axis) of the flex item, before free space is distributed according to the flex factors. */
+				.col-1-2 > *:first-child,
+				.col-2-1 > *:last-child,
 				.col-3 > *, #contact,
 				#discover, #signup					{ flex-basis: 33.33%; -ms-flex: 33.33%; }
 				#calltoaction > div					{ flex-basis: 50%; -ms-flex: 50%; }
+				.col-1-2 > *:last-child,
+				.col-2-1 > *:first-child		{ flex-basis: 66.66%; -ms-flex: 66.66%; }
 				.col-2 > *,
 				.col-3 figcaption						{ flex-basis: 100%; -ms-flex: 100%; }
 
@@ -289,15 +305,17 @@
     header                          { margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
     header													{ padding: 144px 256px 240px 256px;} /* bottom padding should be equal to top padding + margin-top */
     section                         { padding: 0 48px; } /* the sections themselves should not have any top or bottom padding as we want to give the child divs the ability to adapt to different styling requests, including full utilization of height of section */
-    section > figure, section > div { padding: 48px 48px 96px 48px; } /* left/right padding should be the same as the parent section left/right padding to provide the appearance of even spacing on the inside gaps between divs */
+    section > *											{ padding: 48px 48px 96px 48px; } /* left/right padding should be the same as the parent section left/right padding to provide the appearance of even spacing on the inside gaps between divs */
     .col-1 > div                    { padding: 96px 48px 48px 48px; } /*we make the bottom padding here smaller so that the content generally related to the h1 moves closer */
 		.col-1 p												{ padding: 0 15%; }
     .col-2 p                        { padding: 0 96px; } /*should be wider in most cases than the .col-3 p as we don't want the text to stretch too far within the narrower 2 column structure */
     .col-3 figcaption               { padding: 0 48px; }
     footer                          { padding: 96px 336px 16px 336px; }
 		#brands													{ padding: 128px 64px; }
+		#brands div											{ padding: 48px 48px 0 48px; }
 		#brands p												{ padding: 0 128px; }
     #next_feature                   { padding: 48px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
+		#next_feature a									{ padding: 0; }
     #calltoaction div               { padding: 144px; }
 		#contact, #discover, #signup    { padding: 0; }
 		#social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
@@ -337,7 +355,7 @@
 
 
   /* 4.6 - Borders - 4.6 */
-    section                         { border-bottom: 1px solid #b2dfdb; } /* gives each section a light teal bottom border */
+    section, blockquote							{ border-bottom: 1px solid #b2dfdb; } /* gives each section & blockquote a light teal bottom border */
     .col-1                          { border-bottom: 0; } /* then we remove the above mentioned border for col-1 as these are intended to be headers directly related to the content below them */
     .comparison > *:last-child			{ border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
     .shadow img                     { border: 1px solid #b2dfdb; }
@@ -577,12 +595,9 @@
 
 
   /* The bg-teal and bg-orange classes apply background color to main sections and alter the color of the text therein appropriately */
-  .bg-teal                              { background: #4db6ac; }
-  .bg-orange                            { background: #ff8a65; }
-	.bg-teal div, .bg-orange div,
-  .bg-teal figure, .bg-orange figure,
-  .bg-teal figcaption,
-  .bg-orange figcaption                 { background: transparent !important; }
+  .bg-gray *, .bg-gray-tile *,
+  .bg-orange *, .bg-orange-tile *,
+	.bg-teal *, .bg-teal-tile *						{ background: transparent !important; }
 	.bg-teal h2, .bg-teal h3,
   .bg-orange h2, .bg-orange h3          { color: #fff !important; }
   .bg-teal p, .bg-orange p              { color: rgba(255,255,255,.8); }
@@ -756,6 +771,7 @@
     #calltoaction p			        { font-size: 18px; }
     .btn-lrg						        {	font-size: 18px; }
     #footer_links li            { font-size: 16px; }
+		#footer_links input					{ font-size: 14px; }
     .field-wrapper input        { font-size: 12px; }
     #copyright                  { font-size: 12px; }
     #social a                   { font-size: 24px; }
@@ -785,11 +801,11 @@
     #nav-primary                { padding: 0 48px; }
     header                      { padding: 88px 96px 152px 96px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
     section                     { padding: 0 24px; }
-    section > figure,
-    section > div               { padding: 32px 24px 64px 24px; }
+    section > *									{ padding: 32px 24px 64px 24px; }
     .col-1 > div                { padding: 64px 24px 32px 24px; }
     .col-2 p                    { padding: 0 48px; }
     .col-3 figcaption           { padding: 0 16px; }
+		#next_feature               { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
     #calltoaction div           { padding: 72px; }
     #social                     { margin: 72px auto 16px auto; }
     #nav-primary                { width: calc(100% - 96px); height: 64px; } /* Shrink the height of the navbar for the first time */
@@ -807,7 +823,7 @@
 		h3													{ font-size: 24px; }
 		h4													{ font-size: 20px; }
 		p														{ font-size: 15px; }
-		header p, #brands p					{ font-size: 21px; }
+		header p										{ font-size: 21px; }
 		#ProductNavContents > a			{ font-size: 14px; }
 		.col-1 p										{ font-size: 18px; }
 		figcaption									{	font-size: 16px; }
@@ -820,9 +836,10 @@
 		.col-1 p										{ padding: 0 10%; }
 		.col-2											{ padding: 0 32px; }
 		.col-3											{ padding: 0 24px; }
-		.col-3 > *									{ padding: 32px 24px 32px 24px; }
+		.col-3 > *									{ padding: 32px 24px; }
 		.col-3 > *:last-child				{ padding: 0 24px 64px 24px; } /* adds the additional bottom padding only to the third (wrapped) figure, as needed to produce a clean finish to the section */
 		figcaption									{ padding: 0 32px; }
+		#brands p										{ padding: 0 96px; }
 		.col-3											{
 																	-webkit-flex-wrap: wrap;
 																	-ms-flex-wrap: wrap;
@@ -879,19 +896,21 @@
     .col-1 p										{ font-size: 18px; }
     #calltoaction h3						{ font-size: 36px; }
     #calltoaction p							{ font-size: 18px; }
-    #footer_links h4						{ text-align: center; }
-    section											{ padding: 0 64px; }
-    section > figure,
-    section > div,
-    col-3 > *										{ padding: 32px 96px !important; }
-  	.col-1 > div								{ padding: 64px 0 48px 0 !important; }
-    .col-3 > *:last-child				{ padding: 32px 96px 64px 96px !important; }
-    #calltoaction div						{ padding: 64px 128px !important; }
-    #footer_links > div					{ padding: 32px 0 !important; }
+    footer, #footer_links h4		{ text-align: center; }
+    section											{ padding: 0 64px !important; } /*this is now important because at 768 we change to a column based flex layout and thus introduced top/bottom padding to .col-1, .col-2, and .col-3 directly */
+    section > *									{ padding: 32px 96px; }
+		#brands											{ padding: 64px 0 !important; }
+		#brands p										{ padding: 0 64px; }
+		#brands div									{ padding: 24px 24px 0 24px; }
+  	.col-1 > div								{ padding: 64px 0 48px 0; }
+    .col-3 > *:last-child				{ padding: 32px 32px 64px 32px; }
+		#next_feature								{ padding: 32px 0 !important; }
+    #calltoaction div						{ padding: 64px 128px; }
+    #footer_links > div					{ padding: 32px 0; }
   	#signup											{ margin: 32px 32px 0 32px; }
   	#contact, #discover					{ flex-basis: 50% !important; -ms-flex: 50% !important; }
   	#signup											{ flex-basis: 100% !important; -ms-flex: 100% !important; }
-  	#footer_links, .col-2, .col-3,
+  	/*#footer_links, */.col-2, .col-3,
 		#calltoaction								{ display: block !important; } /*this prevents divs from overlaying on ie11 and android mobile default browser */
     .grooper_logo								{
 																	background: url(../images/g_color_32.png);
@@ -904,54 +923,82 @@
 
 
 @media (max-width: 600px){
-  #footer_links h4            { font-size: 28px; }
-  #footer_links li            { font-size: 18px; }
-  #nav-primary > ul > li > a  { font-size: 18px; }
+  #footer_links h4							{ font-size: 28px; }
+  #footer_links li							{ font-size: 18px; }
+  #nav-primary > ul > li > a		{ font-size: 18px; }
   #footer_links h4,
-  #footer_links ul            { text-align: center; }
-  header                      { padding: 64px 48px 112px 48px; margin-top: 48px; }
-  section > figure,
-  section > div               { padding: 32px 48px; }
-  #calltoaction div           { padding: 64px 48px !important; }
-  #nav-primary                { height: 48px; }
-  .grooper_logo               { margin-top: 8px; }
-  #bars                       { display: inline-block !important; padding-right: 48px; }
-  #contact, #discover         { flex-basis: 100% !important; -ms-flex: 100% !important; } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
-  #signup                     { margin: 0; }
-  #social                     { margin: 8px 0 16px 0; }
-  #social a                   { height: 32px; width: 32px; padding-top: 0; border: none; }
-  #social a:nth-child(1) i    { color: #3b5998; } /* facebook */
-  #social a:nth-child(2) i    { color: #dd4b39; } /* google plus */
-  #social a:nth-child(3) i    { color: #55acee; } /* twitter */
-  #social a:nth-child(4) i    { color: #0976b4; } /* linkedin */
-  #social a:nth-child(5) i    { color: #cd201f; } /* youtube */
-  #social a, #social a:hover  {
-                                background: transparent !important;
-																-webkit-box-shadow: none !important;
-																        box-shadow: none !important;
-																-webkit-transform: none !important;
-																    -ms-transform: none !important;
-																        transform: none !important;
-                              }
-  #nav-primary                {
-                                width: 100%;
-                                padding: 0;
-                              }
-  #nav-primary > a            { margin-left: 48px; }
+  #footer_links ul							{ text-align: center; }
+  #mobile-menu,
+	#nav-primary ul,
+	#nav-primary li,
+	#nav-primary input,
+	#nav-social										{ display: block !important; }
+	#nav-primary input:checked ~ i ~ i,
+	#nav-social a, #nav-social i,
+	#bars													{ display: inline-block !important; }
+	#nav-primary input:checked ~ i,
+  #nav-primary ul ul,
+  #nav-primary ul li:hover ul		{ display: none !important; } /*the 3 bars goes away*/
+	#nav-primary > ul > li > ul,
+	#mobile-menu									{ position: relative !important; }
+	#nav-primary input						{ position: absolute; }
+	#menu, #nav-social						{ position: fixed; }
+	header												{ margin-top: 48px; }
+	.grooper_logo									{ margin-top: 8px; }
+  #signup												{ margin: 0; }
+  #social												{ margin: 8px 0 16px 0; }
+  #menu, #nav-social						{ margin-left: 100%; }
+  #nav-primary > a							{ margin-left: 48px; }
+  #nav-primary input:checked ~ ul{ margin-left: 0; } /* this removes the transform element resulting in the perceived slid in menu*/
+  header												{ padding: 64px 48px 112px 48px; }
+	#nav-primary,
+	#nav-primary ul ul a,
+	#nav-social i,
+	section												{ padding: 0 !important; }
+	#brands												{ padding: 48px 0 !important; }
+	#brands p											{ padding: 0 64px; }
+  #menu													{ padding: 96px 0; }
+	.col-1 p											{ padding: 0 24px; }
+  .col-1 > div									{ padding: 64px 0 48px 0; }
+	.col-2 > *, .col-3 > *				{ padding: 24px; }
+  .col-2 > *:last-child,
+	.col-3 > *:last-child					{ padding: 24px 24px 48px 24px; }
+
+
+
+  section > *										{ padding: 32px 48px; }
+  #calltoaction div							{ padding: 64px 48px; }
+	#social a											{ padding-top: 0; }
+	#bars													{ padding-right: 48px; }
+	#nav-social										{ padding-bottom: 16px; }
+  #nav-primary									{ height: 48px; }
+	#social a											{ height: 32px; width: 32px; border: none; }
+  #nav-primary									{ width: 100%; }
+	#brands img										{ height: 48px; }
+  #contact, #discover						{ flex-basis: 100% !important; -ms-flex: 100% !important; } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
+  #social a:nth-child(1) i			{ color: #3b5998; } /* facebook */
+  #social a:nth-child(2) i			{ color: #dd4b39; } /* google plus */
+  #social a:nth-child(3) i			{ color: #55acee; } /* twitter */
+  #social a:nth-child(4) i			{ color: #0976b4; } /* linkedin */
+  #social a:nth-child(5) i			{ color: #cd201f; } /* youtube */
+  #social a, #social a:hover		{
+																	background: transparent !important;
+																	-webkit-box-shadow: none !important;
+																	        box-shadow: none !important;
+																	-webkit-transform: none !important;
+																	    -ms-transform: none !important;
+																	        transform: none !important;
+																}
   #mobile-menu                {
-                                display: block;
-                                position: relative;
-                                top: 50px;
-                                left: 50px;
-                                z-index: 1;
-                                -webkit-user-select: none;
-                                user-select: none;
-                              }
+	                                top: 50px;
+	                                left: 50px;
+	                                z-index: 1;
+	                                -webkit-user-select: none;
+	                                user-select: none;
+	                              }
   #nav-primary input          {
-                                display: block;
                                 width: 40px;
                                 height: 32px;
-                                position: absolute;
                                 top: 6px;
                                 right: 38px;
                                 cursor: pointer;
@@ -960,55 +1007,38 @@
                                 -webkit-touch-callout: none;
                               }
   #menu                       {
-                                position: fixed;
-                                margin-left: 100%;
                                 top: 48px;
                                 width: 100%;
                                 height: calc(100vh - 48px); /*100% of the browser screen*/
-                                padding: 96px 0;
                                 opacity: 0.93;
                                 background: #000000;
                                 list-style-type: none;
                                 -webkit-font-smoothing: antialiased; /* to stop flickering of text in safari */
                               }
-  #nav-primary input:checked ~ i      { display: none !important; } /*the 3 bars goes away*/
-  #nav-primary input:checked ~ i ~ i  { display: inline-block !important; } /*the X is display*/
-  #nav-primary input:checked ~ ul     { margin-left: 0; } /* this removes the transform element resulting in the perceived slid in menu*/
-  #nav-primary ul                     { display: block; }
-  #nav-primary li                     { display: block !important; }
   #nav-primary ul                     { float: none; } /*we are no longer floating the entire nav menu to the right as these will be centered horizontally on mobile devices */
   #nav-primary > ul > li > ul         {
-                                        position: relative !important;
                                         visibility: visible;
                                         opacity: 1;
                                         top: 0;
                                         left: 0;
                                         z-index: 1000;
-                                        /*transition: all 0.5s cubic-bezier(0.77,0.2,0.05,1.0) !important;*/
                                       }
   #nav-primary ul ul li               {
                                         background: transparent;
                                         height: 24px;
                                         width: auto;
                                       }
-  #nav-primary ul ul li a             {
+  #nav-primary ul ul a             {
                                         color: #fff;
-                                        padding: 0;
                                       }
-  /* temporarily hiding second level dropdown menus on mobile devices. may bring these back */
-  #nav-primary ul ul                  { display:none; }
-  #nav-primary ul li:hover ul         { display:none; }
+
   /*#nav-primary > ul > li:nth-child(2) {padding-top: 64px;}*/ /*move the pricing tab down */
   #nav-social                         {
-                                        display: block;
-                                        margin-left: 100%;
                                         width: 100%;
-                                        position: fixed;
                                         background: rgba(1, 1, 1, 0);
                                         visibility: visible;
                                         bottom: 0;
                                         left: 0;
-                                        padding-bottom: 16px;
                                       }
   /*#nav-social,*/
 	.grooper_logo												{
@@ -1016,11 +1046,7 @@
 																				     -o-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																				        transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																			}
-  #nav-social a, #nav-social i        { display: inline-block; }
-  #nav-social i                       {
-                                        padding: 0 !important;
-                                        width: 32px;
-                                      }
+  #nav-social i                       { width: 32px; }
   #nav-social a:nth-child(1) i        { color: #3b5998; } /* facebook */
   #nav-social a:nth-child(2) i        { color: #dd4b39; } /* google plus */
   #nav-social a:nth-child(3) i        { color: #55acee; padding-left: 12px !important;} /* twitter */
@@ -1030,7 +1056,7 @@
 
 
 @media (max-width: 432px){
-  section > figure,
-  section > div                 { padding: 32px 0 !important; }
-	#calltoaction div             { padding: 32px !important; }
+	#next_feature a											{ font-size: 18px; }
+  section > *													{ padding: 32px 0; }
+	#calltoaction div										{ padding: 32px; }
 }
