@@ -6,15 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
   <title>Grooper</title>
+  <!--link rel="stylesheet" href="touch_scroll.css"-->
   <link rel="stylesheet" href="styles/main.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzoi6Yz7L4zatJ-eTqxD3yMVZkKGfMgAs"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/googlemaps.js"></script>
+
 </head>
 
 <body>
+
   <nav id="nav-primary">
     <a href="#" class="grooper_logo"></a>
     <input id="checkbox_click" type="checkbox" onclick="noScroll()"/>
@@ -42,12 +45,35 @@
     </div>
   </nav>
 
-  <header>
-		<h1>The Future of ETL</h1>
-		<p>
-			No Matter your objective, your success depends on you ability to fully leverage the value in your data. Grooper is a re-imagining of how document-based ETL should be done, and data scientists love it.
-		</p>
-	</header>
+  <section id="top_map">
+    <div class="overlay col-3">
+      <div id="contact">
+        <h4>Business Development</h4>
+        <ul>
+          <li><a href="mailto:info@grooper.com">info@grooper.com</a></li>
+          <li><a href="tel:1-800-408-5668">Support: 1-800-408-5668</a></li>
+        </ul>
+      </div>
+
+      <div id="discover">
+        <h4>Careers</h4>
+        <ul>
+          <li><a href="#">Features</a></li>
+          <li><a href="#">Plans & Pricing</a></li>
+        </ul>
+      </div>
+      <div id="Press Inquiries">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@grooper.com">info@grooper.com</a></li>
+          <li><a href="tel:1-800-408-5668">Support: 1-800-408-5668</a></li>
+        </ul>
+      </div>
+    </div>
+		<div id="map" class="desaturate"></div>
+  </section>
+  <!--header>
+  </header-->
 
   <main>
 		<section class="col-1 snap-bottom">
@@ -59,7 +85,6 @@
 		</section>
 
     <section class="col-2">
-      <div id="map"></div>
       <div class="form">
         <!--form action="/action_page.php"-->
         <form action="mail.php">
@@ -75,9 +100,10 @@
 
           <textarea id="subject" name="subject" placeholder="Tell us about your project..." style="height:200px"></textarea>
 
-          <input type="submit" value="Send">
+          <input type="submit" value="Send" class="btn-lrg">
         </form>
       </div>
+
     </section>
 
   </main>
@@ -169,8 +195,6 @@
       <img class="logo" src="images/g_symbol_64.png" />
     </div>
   </footer>
-
-  <script src="js/nav-primary.js"></script>
 
 </body>
 </html>
