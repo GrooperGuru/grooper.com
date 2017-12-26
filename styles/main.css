@@ -725,6 +725,7 @@
   z-index: 0;
 }
 
+#top_map{ padding: 0 !important;}
 .overlay{
   overflow: hidden;
   z-index: 9999;
