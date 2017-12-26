@@ -743,40 +743,29 @@
 #top_map{ padding: 0 !important;}
 .overlay{
   overflow: hidden;
-  z-index: 9999;
-  position: absolute;
-  padding-left: 10%;
-  flex-wrap: wrap;
-  top: 96px;
-  height: 100%;
-  width: 79.9%;
-  background: rgba(0,0,0,.70) !important;
+  padding: 288px 128px 0px 128px !important;
+  height: 100vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
+  background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/map.jpg") center; /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/map.jpg") center; /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/map.jpg") center; /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/map.jpg") center; /* Standard syntax (must be last) */
 }
 .overlay > div {
   background: transparent;
+  text-align: center;
 }
-
 .overlay li           { font-size: 16px; padding: 16px 0 !important;}
-
 .overlay a:hover, .overlay a  { color: #fff;}
-
-.overlay h4                { text-align: left; }
+.overlay h4                { text-align: center; }
 .overlay ul                { list-style: none; }
 .overlay li                { padding: 4px 0; color: rgba(255,255,255,.46); }
 .overlay a                 { color: rgba(255,255,255,.46); }
-
-.overlay label {
-  float: left;
-  height: 32px;
-  width: 40%;
-  padding-top: 8px;
-}
-
 
 /* MEDIA QUERIES */
 
