@@ -46,17 +46,17 @@
 		/* 1.5.2 - Tiled Backgrounds - 1.5.2 */
 			header													{
 																				background: #00796b; /* For browsers that do not support gradients */
-																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Safari 5.1 to 6.0 */
-																				background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Opera 11.1 to 12.0 */
-																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* For Firefox 3.6 to 15 */
-																				background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("images/header_tile_teal.jpg") center; /* Standard syntax (must be last) */
+																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Safari 5.1 to 6.0 */
+																				background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Opera 11.1 to 12.0 */
+																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Firefox 3.6 to 15 */
+																				background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* Standard syntax (must be last) */
 																			}
 			#brands													{
 																				background: #4a4a4a; /* For browsers that do not support gradients */
-																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("images/header_tile_gray.jpg") top; /* For Safari 5.1 to 6.0 */
-																				background: -o-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("images/header_tile_gray.jpg") top; /* For Opera 11.1 to 12.0 */
-																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("images/header_tile_gray.jpg") top; /* For Firefox 3.6 to 15 */
-																				background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("images/header_tile_gray.jpg") top; /* Standard syntax (must be last) */
+																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* For Safari 5.1 to 6.0 */
+																				background: -o-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* For Opera 11.1 to 12.0 */
+																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* For Firefox 3.6 to 15 */
+																				background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* Standard syntax (must be last) */
 																			}
 
 
@@ -359,7 +359,7 @@
     	padding: 0 96px;
     }
     .grooper_logo {
-    	background: url(images/grooper_logo_214x64.png); /*logo image used in navbar */
+    	background: url(../images/grooper_logo_214x64.png); /*logo image used in navbar */
     	height: 64px; /*set to actual height of logo image */
     	width: 214px; /*set to actual width of logo image */
     	margin-top: 18px; /* arbitrary value that vertically centers logo within navbar to compensate for the inherent offset built into the grooper logo */
@@ -793,7 +793,7 @@
     #calltoaction div           { padding: 72px; }
     #social                     { margin: 72px auto 16px auto; }
     #nav-primary                { width: calc(100% - 96px); height: 64px; } /* Shrink the height of the navbar for the first time */
-    .grooper_logo               { background: url(images/grooper_logo_140x42.png); height: 42px; width: 140px; margin-top: 14px; }
+    .grooper_logo               { background: url(../images/grooper_logo_140x42.png); height: 42px; width: 140px; margin-top: 14px; }
     #nav-primary li             { height: 64px; } /* shrink to match the new height of the navbar */
     #nav-primary ul ul          { top: calc(100% - 16px); }
     #nav-primary > ul > li > a  { margin: 0 12px; } /* lessen the horizontal space between main menu items */
@@ -894,7 +894,7 @@
   	#footer_links, .col-2, .col-3,
 		#calltoaction								{ display: block !important; } /*this prevents divs from overlaying on ie11 and android mobile default browser */
     .grooper_logo								{
-																	background: url(images/g_color_32.png);
+																	background: url(../images/g_color_32.png);
 																	height: 32px;
 																	width: 33px;
 																	margin-top: 16px;
