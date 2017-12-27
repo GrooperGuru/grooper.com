@@ -346,25 +346,29 @@
 
 
   /* 4.3 - Margin & Padding - 4.3 */
-    header                          { margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
+    header													{ margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
     header													{ padding: 144px 256px 240px 256px;} /* bottom padding should be equal to top padding + margin-top */
-    section                         { padding: 0 48px; } /* the sections themselves should not have any top or bottom padding as we want to give the child divs the ability to adapt to different styling requests, including full utilization of height of section */
-    section > *											{ padding: 48px 48px 96px 48px; } /* left/right padding should be the same as the parent section left/right padding to provide the appearance of even spacing on the inside gaps between divs */
-    .col-1 > div                    { padding: 96px 48px 48px 48px; } /*we make the bottom padding here smaller so that the content generally related to the h1 moves closer */
-		.col-1 p												{ padding: 0 15%; }
-    .col-2 p                        { padding: 0 96px; } /*should be wider in most cases than the .col-3 p as we don't want the text to stretch too far within the narrower 2 column structure */
-    .col-3 figcaption               { padding: 0 48px; }
+    section													{ padding: 0 48px; } /* the sections themselves should not have any top or bottom padding as we want to give the child divs the ability to adapt to different styling requests, including full utilization of height of section */
 		blockquote											{ padding: 72px 192px; }
-    footer                          { padding: 96px 336px 16px 336px; }
+    footer													{ padding: 96px 336px 16px 336px; }
+    section > *											{ padding: 48px 48px 96px 48px; } /* left/right padding should be the same as the parent section left/right padding to provide the appearance of even spacing on the inside gaps between divs */
+    .col-1 > div										{ padding: 96px 48px 48px 48px; } /*we make the bottom padding here smaller so that the content generally related to the h1 moves closer */
+		.col-1 p												{ padding: 0 15%; }
+		.col-2-1 figure:first-child figcaption,
+		.col-1-2 figure:last-child figcaption,
+    .col-2 figcaption								{ padding: 0 96px; } /*should be wider in most cases than the .col-3 p as we don't want the text to stretch too far within the narrower 2 column structure */
+		.col-1-2 figure:first-child figcaption,
+		.col-2-1 figure:last-child figcaption,
+    .col-3 figcaption               { padding: 0 48px; }
 		#nav-primary										{ padding: 0 96px; }
 		#brands													{ padding: 128px 64px; }
 		#brands p												{ padding: 0 128px 12px 128px; }
 		#brands img											{ padding: 0; }
-    #next_feature                   { padding: 48px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
+    #next_feature										{ padding: 48px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
 		#next_feature a									{ padding: 0; }
-    #calltoaction div               { padding: 144px; }
-		#contact, #discover, #signup    { padding: 0; }
-		#social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
+    #calltoaction div								{ padding: 144px; }
+		#contact, #discover, #signup		{ padding: 0; }
+		#social													{ margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
 
 
 
@@ -575,16 +579,14 @@
 
 /* SOCIAL NAVIGATION */
 
-  #social {
-  	width: 100%;
-  }
-  #social a {
-  	height: 128px;
-  	width: 128px;
-  	padding-top: 44px;
-  	margin: 6px;
-  	border: 1px solid rgba(255,255,255,.26);
-  }
+	#social														{ width: 100%; }
+	#social a													{
+																			height: 128px;
+																			width: 128px;
+																			padding-top: 44px;
+																			margin: 6px;
+																			border: 1px solid rgba(255,255,255,.26);
+																		}
   #social a:hover .fa               { color: #fff}
   #social a:nth-child(1):hover      { background: #3b5998; } /* facebook */
   #social a:nth-child(2):hover      { background: #dd4b39; } /* google plus */
@@ -788,17 +790,22 @@
 /* MEDIA QUERIES */
 
   @media only screen and (max-width: 1680px) {
-    h1                          { font-size: 68px; }
+    h1													{ font-size: 68px; }
     header p, #brands p					{ font-size: 28px; }
-    header                      { padding: 96px 144px 192px 144px }
-    section                     { padding: 0 36px; }
+    header											{ padding: 96px 144px 192px 144px }
+    section											{ padding: 0 36px; }
     section > figure,
-    section > div               { padding: 36px 36px 72px 36px; }
-    .col-1 > div                { padding: 72px 36px 36px 36px; }
-    .col-2 p                    { padding: 0 72px; }
-    .col-3 figcaption           { padding: 0 36px; }
-    #calltoaction div           { padding: 96px; }
-    footer                      { padding: 72px 336px 16px 336px; }
+    section > div								{ padding: 36px 36px 72px 36px; }
+		footer											{ padding: 72px 336px 16px 336px; }
+    .col-1 > div								{ padding: 72px 36px 36px 36px; }
+		.col-2-1 figure:first-child figcaption,
+		.col-1-2 figure:last-child figcaption,
+    .col-2 figcaption						{ padding: 0 72px; }
+		.col-1-2 figure:first-child figcaption,
+		.col-2-1 figure:last-child figcaption,
+    .col-3 figcaption						{ padding: 0 36px; }
+    #calltoaction div						{ padding: 96px; }
+
   }
 
 
@@ -811,20 +818,18 @@
     header p, #brands p					{ font-size: 26px; }
 		blockquote p								{ font-size: 22px; }
     .col-1 p                    { font-size: 20px; }
+    .btn-lrg						        {	font-size: 18px; }
+    .field-wrapper input        { font-size: 12px; }
+		.content__button input			{ font-size: 14px; }
     #calltoaction h3		        { font-size: 40px; }
     #calltoaction p			        { font-size: 18px; }
-    .btn-lrg						        {	font-size: 18px; }
     #footer_links li            { font-size: 16px; }
 		#footer_links input					{ font-size: 14px; }
-    .field-wrapper input        { font-size: 12px; }
     #copyright                  { font-size: 12px; }
     #social a                   { font-size: 24px; }
-    #footer_links .content__button input {
-                                  font-size: 14px;
-                                }
     header                      { padding: 96px 128px 192px 128px; }
-    #nav-secondary              { padding: 0; }
     footer                      { padding: 64px 144px 16px 144px; }
+    #nav-secondary              { padding: 0; }
   	#social a                   { padding-top: 32px; }
     #AdvancerLeft               { left: 0; }
     #AdvancerRight              { right: 0; }
@@ -850,7 +855,11 @@
 		blockquote									{ padding: 72px 144px; }
     section > *									{ padding: 32px 24px 64px 24px; }
     .col-1 > div                { padding: 64px 24px 32px 24px; }
-    .col-2 p                    { padding: 0 48px; }
+		.col-2-1 figure:first-child figcaption,
+		.col-1-2 figure:last-child figcaption,
+    .col-2 figcaption						{ padding: 0 48px; }
+		.col-1-2 figure:first-child figcaption,
+		.col-2-1 figure:last-child figcaption,
     .col-3 figcaption           { padding: 0 16px; }
 		#next_feature               { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
     #calltoaction div           { padding: 72px; }
@@ -888,15 +897,15 @@
 		blockquote									{ padding: 72px 96px; }
 		.col-1 p										{ padding: 0 10%; }
 		.col-2											{ padding: 0 32px; }
-		.col-2 p										{ padding: 0; }
+		.col-2 figcaption						{ padding: 0; }
 		.col-3											{ padding: 0 24px; }
 		.col-3 > *									{ padding: 32px 24px; }
 		.col-3 > *:last-child				{ padding: 0 24px 64px 24px; } /* adds the additional bottom padding only to the third (wrapped) figure, as needed to produce a clean finish to the section */
 		#brands p										{ padding: 0 96px; }
 		.col-3											{
 																	-webkit-flex-wrap: wrap;
-																	-ms-flex-wrap: wrap;
-																	flex-wrap: wrap;
+																	    -ms-flex-wrap: wrap;
+																	        flex-wrap: wrap;
 																}
 		.col-3 > *									{ /* must equal 50% minus the total amount of padding on the current row's divs and it's container */
 																	flex-basis: calc(50% - 48px);
@@ -930,7 +939,7 @@
 		.btn-lrg										{ padding: 8px 32px; }
 		.btn-sml										{ margin-top: 8px; }
 		blockquote::before					{ left: 32px; }
-		blockquote::after						{ right: 30px; }
+		blockquote::after						{ right: 30px; bottom: -30px; }
 		footer											{ padding: 48px 32px 8px 32px; }
 		#social											{ margin: 64px auto 8px auto; }
 		#social a										{
@@ -958,6 +967,8 @@
     section											{ padding: 0 64px !important; } /*this is now important because at 768 we change to a column based flex layout and thus introduced top/bottom padding to .col-1, .col-2, and .col-3 directly */
     section > *									{ padding: 32px 96px; }
   	.col-1 > div								{ padding: 64px 0 48px 0; }
+		.col-1-2, .col-2-1					{ padding: 0 16px !important; }
+		.col-1-2 > *, .col-1-2 > *	{ padding: 32px 16px 64px 16px !important; }
     .col-3 > *:last-child				{ padding: 32px 32px 64px 32px; }
 		#brands											{ padding: 64px 0 !important; }
 		#brands p										{ padding: 0 64px; }
@@ -1017,15 +1028,18 @@
 	#nav-primary ul ul a,
 	#nav-social i,
 	section												{ padding: 0 !important; }
-	#brands												{ padding: 48px 0 !important; }
-	#brands p											{ padding: 0 64px; }
-  #menu													{ padding: 96px 0; }
 	.col-1 p											{ padding: 0 24px; }
   .col-1 > div									{ padding: 64px 0 48px 0; }
 	.col-2 > *, .col-3 > *				{ padding: 24px; }
   .col-2 > *:last-child,
 	.col-3 > *:last-child					{ padding: 24px 24px 48px 24px; }
-
+	.col-1-2 > *:first-child,
+	.col-2-1 > *:last-child				{ padding: 32px 96px 36px 96px !important; }
+	.col-2-1 > *:first-child,
+	.col-1-2 > *:last-child				{ padding: 16px 24px 36px 24px !important; }
+	#brands												{ padding: 48px 0 !important; }
+	#brands p											{ padding: 0 64px; }
+  #menu													{ padding: 96px 0; }
 
 
   section > *										{ padding: 32px 48px; }
@@ -1037,6 +1051,7 @@
 	#social a											{ height: 32px; width: 32px; border: none; }
   #nav-primary									{ width: 100%; }
 	#brands img										{ height: 48px; }
+	.col-1-2, .col-2-1						{ flex-direction: column; }
   #contact, #discover						{ flex-basis: 100% !important; -ms-flex: 100% !important; } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
   #social a:nth-child(1) i			{ color: #3b5998; } /* facebook */
   #social a:nth-child(2) i			{ color: #dd4b39; } /* google plus */
@@ -1051,13 +1066,13 @@
 																	    -ms-transform: none !important;
 																	        transform: none !important;
 																}
-  #mobile-menu                {
-	                                top: 50px;
-	                                left: 50px;
-	                                z-index: 1;
-	                                -webkit-user-select: none;
-	                                user-select: none;
-	                              }
+	#mobile-menu									{
+																	top: 50px;
+																	left: 50px;
+																	z-index: 1;
+																	-webkit-user-select: none;
+																	user-select: none;
+																}
   #nav-primary input          {
                                 width: 40px;
                                 height: 32px;
@@ -1123,5 +1138,9 @@
 @media (max-width: 432px){
 	#next_feature a											{ font-size: 18px; }
   section > *													{ padding: 32px 0; }
+	.col-1-2 > *:first-child,
+	.col-2-1 > *:last-child							{ padding: 32px 48px 36px 48px !important; }
+	.col-2-1 > *:first-child,
+	.col-1-2 > *:last-child							{ padding: 16px 12px 36px 12px !important; }
 	#calltoaction div										{ padding: 32px; }
 }
