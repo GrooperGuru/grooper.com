@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="styles/main.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzoi6Yz7L4zatJ-eTqxD3yMVZkKGfMgAs"></script>
+  <!--script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzoi6Yz7L4zatJ-eTqxD3yMVZkKGfMgAs"></script-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
@@ -44,30 +44,28 @@
     </div>
   </nav>
 
-  <section id="top_map">
-    <div class="overlay col-3">
-      <div id="contact">
-        <h4>Business Development</h4>
-        <ul>
-          <li><a href="mailto:info@grooper.com">info@grooper.com</a></li>
-          <li><a href="tel:1-800-408-5668">Support: 1-800-408-5668</a></li>
-        </ul>
-      </div>
+  <section id="top_map" class=" col-3">
+    <div>
+      <h4>Business Development</h4>
+      <ul>
+        <li><a href="mailto:info@grooper.com">info@grooper.com</a></li>
+        <li><a href="tel:1-800-408-5668">Support: 1-800-408-5668</a></li>
+      </ul>
+    </div>
 
-      <div id="discover">
-        <h4>Careers</h4>
-        <ul>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Plans & Pricing</a></li>
-        </ul>
-      </div>
-      <div id="Press Inquiries">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="mailto:info@grooper.com">info@grooper.com</a></li>
-          <li><a href="tel:1-800-408-5668">Support: 1-800-408-5668</a></li>
-        </ul>
-      </div>
+    <div>
+      <h4>Careers</h4>
+      <ul>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Plans & Pricing</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:info@grooper.com">info@grooper.com</a></li>
+        <li><a href="tel:1-800-408-5668">Support: 1-800-408-5668</a></li>
+      </ul>
     </div>
 		<!--div id="map" class="desaturate"></div-->
   </section>
@@ -83,10 +81,10 @@
 			</div>
 		</section>
 
-    <section class="col-2">
+    <section id="form_signup">
       <div class="form">
         <!--form action="/action_page.php"-->
-        <form action="mail.php">
+        <form action="mail.php" method="POST">
           <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
           <input type="text" id="lname" name="lastname" placeholder="Your last name..">
