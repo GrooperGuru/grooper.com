@@ -39,30 +39,28 @@
 			#nav-primary ul ul,
 			#AdvancerLeft, #AdvancerRight,
 			#Indicator, footer div,
-			#brands div, #map *							{ background: transparent; } /* transparent */
-			.bg-gray, .bg-gray-tile					{ background: #4a4a4a; } /* medium gray */
-			#calltoaction > div:last-child,
-			.bg-orange, .bg-orange-tile			{ background: #ff8a65; } /* medium orange */
-			#calltoaction > div:first-child,
-			.bg-teal, .bg-teal-tile					{ background: #4db6ac; } /* medium teal */
-			header													{ background: #00796b; } /*darker teal, currently only used in header when bg gradients not supported */
+			#map *													{ background: transparent; } /* transparent */
+			.bg-light.orange								{ background: #ff8a65; } /* medium orange */
+			.bg-light.teal									{ background: #4db6ac; } /* medium teal */
+			.bg-dark.gray										{ background: #4a4a4a; } /* medium gray */
+			.bg-dark.teal, header						{ background: #00796b; } /*darker teal, currently only used in header when bg gradients not supported */
 
 
 
 		/* 1.5.2 - Tiled Backgrounds - 1.5.2 */
-			.bg-gray-tile										{
+			.bg-dark.gray.tile							{
 																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* For Safari 5.1 to 6.0 */
 																				background: -o-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* For Opera 11.1 to 12.0 */
 																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* For Firefox 3.6 to 15 */
 																				background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* Standard syntax (must be last) */
 																			}
-			.bg-orange-tile									{
+			.bg-light.orange.tile						{
 																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* For Safari 5.1 to 6.0 */
 																				background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* For Opera 11.1 to 12.0 */
 																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* For Firefox 3.6 to 15 */
 																				background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* Standard syntax (must be last) */
 																			}
-			.bg-teal-tile, header						{
+			.bg-light.teal.tile, header			{
 																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Safari 5.1 to 6.0 */
 																				background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Opera 11.1 to 12.0 */
 																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Firefox 3.6 to 15 */
@@ -77,6 +75,8 @@
 
   /* 2.1 - Font Selection - 2.1 */
     body														{ font-family: 'Roboto', Arial, sans-serif; }
+		blockquote::before,
+		blockquote::after								{ font-family: Arial, sans-serif; }
 
 
   /* 2.2 - Font Smoothing - 2.2 */
@@ -96,19 +96,25 @@
     #nav-primary, #next_feature,
     #calltoaction, #social,
     #copyright,
-    h1, h2, h3, h4, h5, h6, p, img  { text-align: center; }
+    h1, h2, h3, h4, h5, h6,
+		p, img, blockquote							{ text-align: center; }
 
 
   /* 2.5 - Font Size - 2.5 */
-    h1                              { font-size: 72px; }
-    h2                              { font-size: 58px; }
-    #calltoaction h3                { font-size: 48px; }
+    h1															{ font-size: 72px; }
+    h2															{ font-size: 58px; }
+		h4															{ font-size: 24px; }
+		p																{ font-size: 18px; }
+		blockquote::before,
+		blockquote::after								{ font-size: 256px; }
+    #calltoaction h3								{ font-size: 48px; }
     #nav-primary i, #social a, h3,
 		#brands p												{ font-size: 32px; }
-    header p                        { font-size: 30px; }
-    .col-1 p, #next_feature, h4     { font-size: 24px; }
-    #calltoaction p, .btn-lrg       { font-size: 20px; }
-    p                               { font-size: 18px; }
+    header p												{ font-size: 30px; }
+    .col-1 p, #next_feature,
+		blockquote p										{ font-size: 24px; }
+    #calltoaction p, .btn-lrg				{ font-size: 20px; }
+		blockquote span									{ font-size: 18px; }
     #nav-primary > ul > li > a,
     #footer_links li,
     #footer_links label,
@@ -131,8 +137,10 @@
     #footer_links a:hover,
     #footer_links label, #social a	{ color: #fff; }
     h2, em                          { color: #f4511e; }
-		#brands p												{ color: #999; }
 		.col-1 p												{ color: #000; }
+		blockquote::before,
+		blockquote::after								{ color: #4db6ac; } /*#78C0A8;*/
+
 
 
   /* 2.8 - Line Height and Spacing - 2.8 */
@@ -169,7 +177,8 @@
 																		}
 		h1, h2, h3, h4, h5, h6, p, img,
 		#nav-primary ul a,
-		#nav-primary > ul > li:hover > ul {
+		#nav-primary > ul > li:hover > ul,
+		blockquote span									{
 																			display: block;
 																		}
 		#nav-primary ul ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
@@ -188,7 +197,7 @@
 			/* Tells a container to display its contents using a flexible box model */
 				.col-2, .col-3, .col-3 > *,
 				.col-1-2, .col-2-1,
-				#brands div, #calltoaction,
+				#brands, #calltoaction,
 				#calltoaction > div,
 				#footer_links,
 				.field-wrapper,
@@ -219,7 +228,7 @@
 
 			/* 4.2.1.3 - Flex Wrap - 4.2.1.3 */
 			/* Controls whether the flex container is single-line or multi-line, and the direction of the cross axis */
-		    #footer_links, #brands div,
+		    #footer_links, #brands,
 				#calltoaction > div					{
 																			-webkit-flex-wrap: wrap;
 																			-ms-flex-wrap: wrap;
@@ -235,7 +244,7 @@
 																			justify-content: flex-start;
 																		}
 		    .col-2, .col-3,
-				#brands div, #calltoaction,
+				#brands, #calltoaction,
 				#footer_links								{
 																			-webkit-justify-content: center;
 																			-ms-flex-pack: center;
@@ -289,7 +298,8 @@
 				.col-1-2 > *:last-child,
 				.col-2-1 > *:first-child		{ flex-basis: 60%; -ms-flex: 60%; }
 				.col-2 > *,
-				.col-3 figcaption						{ flex-basis: 100%; -ms-flex: 100%; }
+				.col-3 figcaption,
+				#brands p										{ flex-basis: 100%; -ms-flex: 100%; }
 
 
 			/* 4.2.2.5 - Align Self - 4.2.2.5 */
@@ -310,9 +320,9 @@
 		.col-1 p												{ padding: 0 15%; }
     .col-2 p                        { padding: 0 96px; } /*should be wider in most cases than the .col-3 p as we don't want the text to stretch too far within the narrower 2 column structure */
     .col-3 figcaption               { padding: 0 48px; }
+		blockquote											{ padding: 72px 192px; }
     footer                          { padding: 96px 336px 16px 336px; }
 		#brands													{ padding: 128px 64px; }
-		#brands div											{ padding: 48px 48px 0 48px; }
 		#brands p												{ padding: 0 128px; }
     #next_feature                   { padding: 48px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
 		#next_feature a									{ padding: 0; }
@@ -321,7 +331,22 @@
 		#social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
 
 
-  /* 4.4 - Float - 4.4 */
+	/* 4.4 - Position - 4.4 */
+		#nav-primary, /*keeps navbar fixed to top of screen at all times */
+		.noScroll												{ position: fixed; }
+		#nav-primary li,
+		#nav-primary ul a,
+		#nav-secondary,
+		.pn-ProductNav_Contents, /*keeps underlines centered underneath each item */
+		blockquote											{ position: relative; }
+		#nav-primary > ul > li > a:before, /* locks underlining in position without being impacted by text size or line height */
+		#nav-primary ul ul, /* ensures that parent li does not stretch to the width of this ul */
+		#AdvancerLeft, #AdvancerRight,
+		#Indicator,
+		blockquote::before,
+		blockquote::after								{ position: absolute; }
+
+  /* 4.5 - Float - 4.5 */
 		.grooper_logo,
 		.pn-ProductNav_Contents,
 		#footer_links label							{ float: left; }
@@ -330,7 +355,7 @@
 		#nav-primary i									{ float: right; }
 
 
-  /* 4.5 - Shadows - 4.5 */
+  /* 4.6 - Shadows - 4.6 */
     main                            {
 																			-webkit-box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
 																			        box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
@@ -354,15 +379,17 @@
     /*.shadow img                     { box-shadow: 0 2px 6px rgba(0,0,0,.15); }*/
 
 
-  /* 4.6 - Borders - 4.6 */
+  /* 4.7 - Borders - 4.7 */
     section, blockquote							{ border-bottom: 1px solid #b2dfdb; } /* gives each section & blockquote a light teal bottom border */
     .col-1                          { border-bottom: 0; } /* then we remove the above mentioned border for col-1 as these are intended to be headers directly related to the content below them */
     .comparison > *:last-child			{ border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
     .shadow img                     { border: 1px solid #b2dfdb; }
 
 
-	/* 4.7 - Z-Index - 4.7 */
+	/* 4.8 - Z-Index - 4.8 */
+		#nav-primary										{ z-index: 10000; }
 		#nav-secondary									{ z-index: 1; }
+
 
 
 /* 5 - NAVIGATION - 5 */
@@ -370,8 +397,6 @@
 
   /* 5.1 - Primary Navigation - 5.1 */
     #nav-primary {
-    	z-index: 10000;
-    	position: fixed; /*keeps navbar fixed to top of screen at all times */
     	top: 0; /* start navbar at absolute top */
     	left: 0; /*start navbar at absolute left */
     	width: calc(100% - (96px * 2)); /* the combination of left/right padding must be subtracted from this to retain a centered position */
@@ -394,11 +419,9 @@
       color: rgba(255,255,255,.86);
     }
     #nav-primary li {
-    	position: relative;
       height: 96px; /* must match the height of #nav-primary */
     }
     #nav-primary ul a {
-    	position: relative;
       vertical-align: middle;
     	color: #f5faf9;
     }
@@ -411,7 +434,6 @@
     }
     #nav-primary > ul > li > a:before {
     	content: "";
-      position: absolute; /* locks underlining in position without being impacted by text size or line height */
     	bottom: 0; /* ensures line will snap to bottom edge of item */
       left: 0; /* ensures line will start to left-most edge of item */
     	height: 1px; /* sets height of the primary nav link underlines that will appear during hover */
@@ -425,7 +447,6 @@
     #nav-primary ul ul {
     	visibility: hidden; /* forces the dropdown menu to be hidden until displayed by hover state */
     	opacity: 0; /* sets the initial opacity of the dropdown menu to 0 so that we have the ability to animate the opacity to 1 during a hover of the parent li */
-    	position: absolute; /* ensures that parent li does not stretch to the width of this ul */
     	left: calc(-50% - 6px); /* horizontally centers dropdown menu to the parent, the 6px represents half of the left padding of the parent li */
     	top: calc(100% - 32px); /* adjusts the location of the dropdown menu upward to cover the parent link's underlining */
     }
@@ -445,11 +466,11 @@
     }
     #nav-primary ul ul li:hover a {
     	color: #009688; /*highlights the text of submenu links during hover */
+			background: rgba(255,255,255,1); /* sets background of hovered submenu items to a semi transparent white */
     }
 
   /* 5.2 - Secondary Navigation - 5.2 */
     #nav-secondary {
-      position: relative;
       padding: 0;
       box-sizing: border-box;
       height: 48px;
@@ -459,17 +480,12 @@
       overflow-y: hidden; /* prevent vertical scroll */
       -webkit-overflow-scrolling: touch; /* inertia scrolling for webkit */
       white-space: nowrap; /* We don't want internal inline elements to wrap */
-      /*position: relative;*/ /* positioning context for advancers */
-      /*font-size: 0;*/
       width: calc(100% - 96px);
       margin: 0 auto;
     }
     /*#ProductNav {-ms-overflow-style: -ms-autohiding-scrollbar; }*/ /* Make an auto-hiding scroller for the 3 people using a IE */
     #ProductNav {-ms-overflow-style: none; } /* Make an auto-hiding scroller for the 3 people using IE */
     #ProductNav {overflow: -moz-scrollbars-none;}
-    .pn-ProductNav_Contents {
-      position: relative; /*keeps underlines centered underneath each item */
-    }
     #ProductNavContents > a {
       color: #888;
       font-size: 16px;
@@ -483,7 +499,6 @@
     #AdvancerLeft, #AdvancerRight {
       width: 48px;
       height: 48px;
-      position: absolute;
       top: 0;
       bottom: 0;
       opacity: 0; /* Set the buttons invisible by default */
@@ -503,7 +518,6 @@
       fill: #bbb;
     }
     #Indicator {
-      position: absolute;
       bottom: 0;
       left: 0;
       height: 2px;
@@ -588,22 +602,37 @@
 /* CONVENIENCE CLASSES */
 
   /* The snap-bottom class allows large primary images to snap to the bottom of their section so that they appear to be emerging from behind the following */
-	.snap-bottom div {
-		padding-bottom: 0 !important;
-    border-bottom: 1px solid #b2dfdb;
-	}
-	.snap-bottom img {
-		margin: 96px auto 0 auto;
-	}
+	.snap-bottom > *									{
+																			padding-bottom: 0 !important;
+																			border-bottom: 1px solid #b2dfdb;
+																		}
+	.snap-bottom img									{ margin: 96px auto 0 auto; }
 
 
   /* The bg-teal and bg-orange classes apply background color to main sections and alter the color of the text therein appropriately */
-  .bg-gray *, .bg-gray-tile *,
-  .bg-orange *, .bg-orange-tile *,
-	.bg-teal *, .bg-teal-tile *						{ background: transparent !important; }
-	.bg-teal h2, .bg-teal h3,
-  .bg-orange h2, .bg-orange h3          { color: #fff !important; }
-  .bg-teal p, .bg-orange p              { color: rgba(255,255,255,.8); }
+	.bg-dark *,	.bg-light *								{ background: transparent !important; }
+	.bg-dark *														{ color: rgba(238,238,238,.7); }
+	.bg-dark h2, .bg-dark h3,
+	.bg-dark span													{ color: #fff !important; }
+	.bg-light *														{ color: rgba(17,17,17,.7); }
+	.bg-light h2, .bg-light h3
+	.bg-light span												{ color: #000 !important; }
+
+
+
+	blockquote														{ border-left: 8px solid #4db6ac; }
+	blockquote span												{ margin-top: 36px; }
+	blockquote::before										{
+																					content: "\201C";
+																					left: 96px;
+																					top: -12px;
+																				}
+	blockquote::after											{
+																					content: "\201D";
+																					right: 96px;
+																					bottom: -84px;
+																				}
+
 
 
 	/* The btn-sml and btn-lrg classes are used on <a> elements to turn them into styled buttons in one of two sizes. */
@@ -638,7 +667,6 @@
   .noScroll																{
 																						overflow: hidden;
 																						width: 100%;
-																						position: fixed;
 																					}
 	#Indicator															{
 																						-webkit-transform-origin: 0 0;
@@ -797,6 +825,7 @@
     h4                          { font-size: 18px; }
     p                           { font-size: 17px; }
     header p, #brands p					{ font-size: 26px; }
+		blockquote p								{ font-size: 22px; }
     .col-1 p                    { font-size: 20px; }
     #calltoaction h3		        { font-size: 40px; }
     #calltoaction p			        { font-size: 18px; }
@@ -826,12 +855,14 @@
     h2                          { font-size: 42px; }
     h3                          { font-size: 24px; }
     p                           { font-size: 16px; }
+		blockquote p								{ font-size: 20px; }
     header p, #brands p					{ font-size: 24px; }
     .col-1 p                    { font-size: 19px; }
     #next_feature a             { font-size: 20px; }
     #nav-primary                { padding: 0 48px; }
     header                      { padding: 88px 96px 152px 96px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
     section                     { padding: 0 24px; }
+		blockquote									{ padding: 72px 144px; }
     section > *									{ padding: 32px 24px 64px 24px; }
     .col-1 > div                { padding: 64px 24px 32px 24px; }
     .col-2 p                    { padding: 0 48px; }
@@ -844,6 +875,8 @@
     #nav-primary li             { height: 64px; } /* shrink to match the new height of the navbar */
     #nav-primary ul ul          { top: calc(100% - 16px); }
     #nav-primary > ul > li > a  { margin: 0 12px; } /* lessen the horizontal space between main menu items */
+		blockquote::before					{ left: 56px; }
+		blockquote::after						{ right: 54px; }
 
   }
 
@@ -854,22 +887,26 @@
 		h3													{ font-size: 24px; }
 		h4													{ font-size: 20px; }
 		p														{ font-size: 15px; }
-		header p										{ font-size: 21px; }
-		#ProductNavContents > a			{ font-size: 14px; }
-		.col-1 p										{ font-size: 18px; }
 		figcaption									{	font-size: 16px; }
+		header p										{ font-size: 21px; }
+		blockquote::before,
+		blockquote::after						{ font-size: 192px; }
+		.col-1 p										{ font-size: 18px; }
+		.btn-lrg										{ font-size: 16px; }
+		#ProductNavContents > a			{ font-size: 14px; }
 		#calltoaction h3						{ font-size: 32px; }
 		#calltoaction p							{	font-size: 16px; }
-		.btn-lrg										{ font-size: 16px; }
 		#footer_links li						{ font-size: 16px; }
 		#social a										{ font-size: 24px; }
 		header											{ padding: 64px 64px 112px 64px; }
+		figcaption									{ padding: 0 32px; }
+		blockquote									{ padding: 72px 96px; }
 		.col-1 p										{ padding: 0 10%; }
 		.col-2											{ padding: 0 32px; }
+		.col-2 p										{ padding: 0; }
 		.col-3											{ padding: 0 24px; }
 		.col-3 > *									{ padding: 32px 24px; }
 		.col-3 > *:last-child				{ padding: 0 24px 64px 24px; } /* adds the additional bottom padding only to the third (wrapped) figure, as needed to produce a clean finish to the section */
-		figcaption									{ padding: 0 32px; }
 		#brands p										{ padding: 0 96px; }
 		.col-3											{
 																	-webkit-flex-wrap: wrap;
@@ -907,6 +944,8 @@
 		#calltoaction div						{ padding: 64px; }
 		.btn-lrg										{ padding: 8px 32px; }
 		.btn-sml										{ margin-top: 8px; }
+		blockquote::before					{ left: 32px; }
+		blockquote::after						{ right: 30px; }
 		footer											{ padding: 48px 32px 8px 32px; }
 		#social											{ margin: 64px auto 8px auto; }
 		#social a										{
@@ -924,24 +963,25 @@
     h3													{ font-size: 26px; }
   	p														{ font-size: 16px; }
     header p										{ font-size: 18px; }
+		blockquote p								{ font-size: 18px; }
     .col-1 p										{ font-size: 18px; }
     #calltoaction h3						{ font-size: 36px; }
     #calltoaction p							{ font-size: 18px; }
     footer, #footer_links h4		{ text-align: center; }
     section											{ padding: 0 64px !important; } /*this is now important because at 768 we change to a column based flex layout and thus introduced top/bottom padding to .col-1, .col-2, and .col-3 directly */
     section > *									{ padding: 32px 96px; }
+  	.col-1 > div								{ padding: 64px 0 48px 0; }
+    .col-3 > *:last-child				{ padding: 32px 32px 64px 32px; }
 		#brands											{ padding: 64px 0 !important; }
 		#brands p										{ padding: 0 64px; }
 		#brands div									{ padding: 24px 24px 0 24px; }
-  	.col-1 > div								{ padding: 64px 0 48px 0; }
-    .col-3 > *:last-child				{ padding: 32px 32px 64px 32px; }
 		#next_feature								{ padding: 32px 0 !important; }
     #calltoaction div						{ padding: 64px 128px; }
     #footer_links > div					{ padding: 32px 0; }
   	#signup											{ margin: 32px 32px 0 32px; }
   	#contact, #discover					{ flex-basis: 50% !important; -ms-flex: 50% !important; }
   	#signup											{ flex-basis: 100% !important; -ms-flex: 100% !important; }
-  	/*#footer_links, */.col-2, .col-3,
+  	.col-2, .col-3,
 		#calltoaction								{ display: block !important; } /*this prevents divs from overlaying on ie11 and android mobile default browser */
     .grooper_logo								{
 																	background: url(../images/g_color_32.png);
