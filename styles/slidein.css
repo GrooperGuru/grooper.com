@@ -6,17 +6,18 @@
 */
 section > * { overflow: hidden; }
 .come-in {
-  transform: translateY(900px);
+	-webkit-transform: translateY(900px);
+	    -ms-transform: translateY(900px);
+	        transform: translateY(900px);
   animation: come-in .5s ease forwards;
 }
-.come-in:nth-child(odd) {
-  animation-duration: 1s;
-}
+.come-in:nth-child(2) { -webkit-animation-duration: 1.0s; animation-duration: 1.0s; }
+.come-in:nth-child(3) { -webkit-animation-duration: 1.3s; animation-duration: 1.3s; }
 .already-visible {
-  transform: translateY(1px);
+  transform: translateY(0);
   animation: none;
 }
 
 @keyframes come-in {
-  to { transform: translateY(1px); }
+  to { transform: translateY(0); }
 }
