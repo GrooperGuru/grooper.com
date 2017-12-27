@@ -61,7 +61,7 @@
       </ul>
     </div>
     <div>
-      <h4>Contact</h4>
+      <h4>Press Inquiries</h4>
       <ul>
         <li><a href="mailto:info@grooper.com">info@grooper.com</a></li>
         <li><a href="tel:1-800-408-5668">Support: 1-800-408-5668</a></li>
@@ -85,17 +85,17 @@
       <div class="form">
         <!--form action="/action_page.php"-->
         <form action="mail.php" method="POST">
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          <input type="text" id="fname" name="firstname" class="form_text" placeholder="Your name..">
 
-          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          <input type="text" id="lname" name="lastname" class="form_text" placeholder="Your last name..">
 
-          <input type="text" id="email" name="e_mail" placeholder="example@domain.com">
+          <input type="text" id="email" name="e_mail" class="form_text" placeholder="example@domain.com">
 
-          <input type="text" id="phoneNumber" name="phone" placeholder="Phone">
+          <input type="text" id="phoneNumber" name="phone" class="form_text" placeholder="Phone">
 
-          <input type="text" id="cname" name="company" placeholder="Company">
+          <input type="text" id="cname" name="company" class="form_text" placeholder="Company">
 
-          <textarea id="subject" name="subject" placeholder="Tell us about your project..." style="height:200px"></textarea>
+          <textarea id="subject" name="subject" class="form_text" placeholder="Tell us about your project..." style="height:200px"></textarea>
 
           <input type="submit" value="Send" class="btn-lrg">
         </form>
@@ -193,5 +193,6 @@
     </div>
   </footer>
 
+  <script src="js/nav-primary.js"></script>
 </body>
 </html>

@@ -747,11 +747,9 @@
     background-color: #f2f2f2;
     padding: 20px !important;
 }
-#form_signup{
-  padding: 96px 512px;
-}
+#form_signup{ padding: 96px 336px;}
 /*input form*/
- #subject, #lname, #fname, #email, #phoneNumber, #cname {
+ .form_text {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
@@ -770,17 +768,22 @@
   overflow: hidden;
   padding: 288px 128px 0px 128px !important;
   height: calc(100vh - 288px);
+  min-height: 586px !important;
 }
 
 #top_map > div {
   background: transparent;
   text-align: center;
 }
-#top_map li           { font-size: 16px; padding: 16px 0 !important;}
-#top_map a:hover, #top_map a  { color: #fff;}
 #top_map h4                { text-align: center; }
+<<<<<<< HEAD
 #top_map li                { padding: 4px 0; color: rgba(255,255,255,.46); }
+=======
+#top_map ul                { list-style: none; }
+#top_map li                { font-size: 16px; padding: 16px 0 ; color: rgba(255,255,255,.46);}
+>>>>>>> ae398e37dcfee320abcc929ae7538cee59f0c6b1
 #top_map a                 { color: rgba(255,255,255,.46); }
+#top_map a:hover           { color: #fff;}
 
 /* MEDIA QUERIES */
 
@@ -828,6 +831,7 @@
   	#footer_links input         { height: 28px; }
   	#social a                   { height: 96px; width: 96px; }
   	#copyright img              { height: 38px; }
+    #form_signup                { padding: 96px 336px;}
   }
 
 
@@ -858,7 +862,7 @@
     #nav-primary > ul > li > a  { margin: 0 12px; } /* lessen the horizontal space between main menu items */
 		blockquote::before					{ left: 56px; }
 		blockquote::after						{ right: 54px; }
-
+    #form_signup                { padding: 96px 192px;}
   }
 
 
@@ -935,6 +939,7 @@
 																	padding-top: 32px;
 																}
 		#copyright img							{ margin: 8px auto; }
+    #form_signup                { padding: 96px 96px;}
   }
 
 
@@ -972,6 +977,10 @@
 																	margin-top: 16px;
 																}
 		.comparison > *:last-child{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
+    #top_map                    {
+                                  padding: 144px 128px 0 128px !important; /*top should match with the deduction from height*/
+                                  height: calc(100vh - 144px);
+                                }
   }
 
 
@@ -1104,6 +1113,10 @@
   #nav-social a:nth-child(3) i        { color: #55acee; padding-left: 12px !important;} /* twitter */
   #nav-social a:nth-child(4) i        { color: #0976b4; } /* linkedin */
   #nav-social a:nth-child(5) i        { color: #cd201f; } /* youtube */
+
+  #top_map                            { padding: 48px 0 0 0 !important;}
+  #top_map li                         { padding: 6px 0 ;}
+
 }
 
 
