@@ -361,6 +361,9 @@
     .shadow img                     { border: 1px solid #b2dfdb; }
 
 
+	/* 4.7 - Z-Index - 4.7 */
+		#nav-secondary									{ z-index: 1; }
+
 
 /* 5 - NAVIGATION - 5 */
 
