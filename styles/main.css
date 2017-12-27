@@ -7,10 +7,14 @@
 
 
   /* 1.2 - Remove margin, border, and padding from all - 1.2 */
-    html, body, div, section, figure, figcaption, blockquote, span, iframe, h1, h2, h3, h4, h5, h6, div, p, a, img, ol, ul, li, table, tbody, tfoot, thead, tr, th, td, button {
+    html, body, div,
+		header, footer, menu, nav, section, figure, figcaption, article, aside, blockquote,
+		span, iframe, h1, h2, h3, h4, h5, h6, div, p, a, img, ol, ul, li,
+		table, tbody, tfoot, thead, tr, th, td, form, input, fieldset, button {
 																			margin: 0;
 																			padding: 0;
 																			border: 0;
+																			background: transparent;
 																		}
 
 
@@ -29,22 +33,36 @@
 																			cursor: default;
 																		}
 
+  /* 1.5 - Rest Lists and Tables - 1.5 */
+		ul															{ list-style: none; }
+		table														{
+																			border-collapse: collapse;
+																			border-spacing: 0;
+																		}
+		th															{ vertical-align: bottom; }
+		td															{ vertical-align: top; }
+
 
   /* 1.5 - Set basic background colors - 1.5 */
 
 		/* 1.5.1 - Solid Backgrounds - 1.5.1 */
 			body                            { background: #000; } /* black */
 			main, section, figure,
-			figcaption, div                 { background: #fefefe; } /* white */
-			#nav-primary ul ul,
-			#AdvancerLeft, #AdvancerRight,
-			#Indicator, footer div,
+			figcaption, div                 { background: #fefefe; } /* off-white */
+			footer													{ background: #091413; } /* off-black */
+			footer div,
 			#map *													{ background: transparent; } /* transparent */
 			.bg-light.orange								{ background: #ff8a65; } /* medium orange */
 			.bg-light.teal									{ background: #4db6ac; } /* medium teal */
 			.bg-dark.gray										{ background: #4a4a4a; } /* medium gray */
 			.bg-dark.teal, header						{ background: #00796b; } /*darker teal, currently only used in header when bg gradients not supported */
-
+			#nav-primary > ul > li > a:before,
+			#nav-primary ul ul li:hover a		{ background: #fff; }
+			.field-wrapper input						{ background: rgba(255,255,255,.86); }
+			#nav-primary ul ul li						{ background: rgba(255,255,255,.94); }
+			#nav-primary										{ background: rgba(0,0,0,.94); }
+			.content__button input					{ background: #444 !important; }
+			.content__button input:hover		{ background: #555 !important; }
 
 
 		/* 1.5.2 - Tiled Backgrounds - 1.5.2 */
@@ -93,11 +111,10 @@
 
 
   /* 2.4 - Text Alignment - 2.4 */
-    #nav-primary, #next_feature,
-    #calltoaction, #social,
-    #copyright,
-    h1, h2, h3, h4, h5, h6,
-		p, img, blockquote							{ text-align: center; }
+    div, section, figure, figcaption,
+		blockquote, ul, p, img,
+		h1, h2, h3, h4, h5, h6					{ text-align: center; }
+		footer h4, footer ul						{ text-align: left; }
 
 
   /* 2.5 - Font Size - 2.5 */
@@ -133,13 +150,30 @@
 
   /* 2.7 - Color - 2.7 */
     p                               { color: rgba(17,17,17,.7); }
-    h1, h4, header p,
-    #footer_links a:hover,
-    #footer_links label, #social a	{ color: #fff; }
     h2, em                          { color: #f4511e; }
-		.col-1 p												{ color: #000; }
+		h1, h4													{ color: #fff; }
 		blockquote::before,
 		blockquote::after								{ color: #4db6ac; } /*#78C0A8;*/
+		.col-1 p												{ color: #000; }
+    #ProductNavContents > a [aria-selected="true"]	{ color: #111; }
+		#nav-primary ul ul li a					{ color: #333; }
+  	#nav-primary i, #copyright			{ color: #666; }
+    #ProductNavContents > a					{ color: #888; }
+		.content__button input					{ color: #bbb !important; }
+    #nav-primary ul > li > a				{ color: #f5faf9; }
+    header p,
+    #footer_links a:hover,
+    #footer_links label, #social a	{ color: #fff; }
+		.content__button input:hover		{ color: #fff !important; }
+    #nav-primary ul ul li:hover a,
+		#next_feature a									{ color: #009688; }
+		#footer_links li,
+		#footer_links a									{ color: rgba(255,255,255,.46); }
+    #nav-primary i:hover						{ color: rgba(255,255,255,.86); }
+		input::-webkit-input-placeholder{ color: rgba(0,0,0,.4) !important; }
+
+
+
 
 
 
@@ -322,8 +356,10 @@
     .col-3 figcaption               { padding: 0 48px; }
 		blockquote											{ padding: 72px 192px; }
     footer                          { padding: 96px 336px 16px 336px; }
+		#nav-primary										{ padding: 0 96px; }
 		#brands													{ padding: 128px 64px; }
-		#brands p												{ padding: 0 128px; }
+		#brands p												{ padding: 0 128px 12px 128px; }
+		#brands img											{ padding: 0; }
     #next_feature                   { padding: 48px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
 		#next_feature a									{ padding: 0; }
     #calltoaction div               { padding: 144px; }
@@ -331,20 +367,21 @@
 		#social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
 
 
+
 	/* 4.4 - Position - 4.4 */
-		#nav-primary, /*keeps navbar fixed to top of screen at all times */
-		.noScroll												{ position: fixed; }
+		.noScroll, #nav-primary					{ position: fixed; }
+		blockquote,
+		.pn-ProductNav_Contents,
 		#nav-primary li,
 		#nav-primary ul a,
-		#nav-secondary,
-		.pn-ProductNav_Contents, /*keeps underlines centered underneath each item */
-		blockquote											{ position: relative; }
-		#nav-primary > ul > li > a:before, /* locks underlining in position without being impacted by text size or line height */
-		#nav-primary ul ul, /* ensures that parent li does not stretch to the width of this ul */
-		#AdvancerLeft, #AdvancerRight,
-		#Indicator,
+		#nav-secondary									{ position: relative; }
 		blockquote::before,
-		blockquote::after								{ position: absolute; }
+		blockquote::after,
+		#nav-primary > ul > li > a:before,
+		#nav-primary ul ul,
+		#AdvancerLeft, #AdvancerRight,
+		#Indicator											{ position: absolute; }
+
 
   /* 4.5 - Float - 4.5 */
 		.grooper_logo,
@@ -391,6 +428,18 @@
 		#nav-secondary									{ z-index: 1; }
 
 
+	/* 4.9 - Box Sizing - 4.9 */
+		#nav-secondary, #social a				{ box-sizing: border-box; }
+
+
+	/* 4.99 - Visibility - 4.99 */
+		#nav-primary > ul > li > a:before,
+		#nav-primary ul ul								{ visibility: hidden; }
+
+		#nav-primary > ul > li > a:hover:before,
+		#nav-primary > ul > li:hover > ul	{ visibility: visible; }
+
+
 
 /* 5 - NAVIGATION - 5 */
 
@@ -400,9 +449,7 @@
     	top: 0; /* start navbar at absolute top */
     	left: 0; /*start navbar at absolute left */
     	width: calc(100% - (96px * 2)); /* the combination of left/right padding must be subtracted from this to retain a centered position */
-    	background: rgba(0,0,0,.94); /*this should be set to the same color as the top color used in the gradient of the header so that it appears to be blending in */
     	height: 96px;
-    	padding: 0 96px;
     }
     .grooper_logo {
     	background: url(../images/grooper_logo_214x64.png); /*logo image used in navbar */
@@ -413,17 +460,12 @@
     #nav-primary i {
       padding-right: 48px;
       margin-top: 8px;
-      color: #666666;
-    }
-    #nav-primary i:hover {
-      color: rgba(255,255,255,.86);
     }
     #nav-primary li {
       height: 96px; /* must match the height of #nav-primary */
     }
     #nav-primary ul a {
       vertical-align: middle;
-    	color: #f5faf9;
     }
     #nav-primary > ul > li > a {
     	line-height: 36px; /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
@@ -438,41 +480,27 @@
       left: 0; /* ensures line will start to left-most edge of item */
     	height: 1px; /* sets height of the primary nav link underlines that will appear during hover */
     	width: 100%; /*ensures line consumes full width of item */
-    	background: #fff; /* set color of underline */
-      visibility: hidden; /* sets initial state of nav link underline to hidden so it can animate to visible during hover */
-    }
-    #nav-primary > ul > li > a:hover:before {
-      visibility: visible; /* transforms primary nav underlines to visible */
     }
     #nav-primary ul ul {
-    	visibility: hidden; /* forces the dropdown menu to be hidden until displayed by hover state */
     	opacity: 0; /* sets the initial opacity of the dropdown menu to 0 so that we have the ability to animate the opacity to 1 during a hover of the parent li */
     	left: calc(-50% - 6px); /* horizontally centers dropdown menu to the parent, the 6px represents half of the left padding of the parent li */
     	top: calc(100% - 32px); /* adjusts the location of the dropdown menu upward to cover the parent link's underlining */
     }
     #nav-primary > ul > li:hover > ul {
-    	visibility: visible;
     	opacity: 1;
     }
     #nav-primary ul ul li {
       height: 48px; /* determines height of submenu items */
     	width: 200px; /* determines width of submenu items */
-    	background: rgba(255,255,255,.94); /* sets background of non-hovered submenu items to a semi transparent white */
     }
     #nav-primary ul ul li a {
-      color: #333; /* sets the base color of submenu links before hover */
     	padding: 16px 0; /* establishes the vertical spacing of submenu items */
       margin: 0 auto;
-    }
-    #nav-primary ul ul li:hover a {
-    	color: #009688; /*highlights the text of submenu links during hover */
-			background: rgba(255,255,255,1); /* sets background of hovered submenu items to a semi transparent white */
     }
 
   /* 5.2 - Secondary Navigation - 5.2 */
     #nav-secondary {
       padding: 0;
-      box-sizing: border-box;
       height: 48px;
     }
     #ProductNav {
@@ -487,14 +515,10 @@
     #ProductNav {-ms-overflow-style: none; } /* Make an auto-hiding scroller for the 3 people using IE */
     #ProductNav {overflow: -moz-scrollbars-none;}
     #ProductNavContents > a {
-      color: #888;
       font-size: 16px;
       min-height: 48px;
       height: 48px; /*must match min-height to allow vertical flex alignment to find true center across all browsers */
       padding: 0 12px;
-    }
-    #ProductNavContents > a [aria-selected="true"] {
-      color: #111;
     }
     #AdvancerLeft, #AdvancerRight {
       width: 48px;
@@ -525,52 +549,28 @@
     }
 
 
-
-
-/* NEXT FEATURE */
-
-  #next_feature a                 { color: #009688; }
-
-
-
 /* FOOTER */
 
-  footer                          { background: #091413; }
-  #footer_links h4                { text-align: left; }
-  #footer_links ul                { list-style: none; }
-  #footer_links li                { padding: 4px 0; color: rgba(255,255,255,.46); }
-  #footer_links a                 { color: rgba(255,255,255,.46); }
-  footer form                     { margin-top: 23px; }
-  .field-wrapper, .content__button {
-  	margin: 4px 0;
-  	width: 100%;
-  }
-  #footer_links label {
-  	height: 32px;
-  	width: 40%;
-  	padding-top: 8px;
-  }
-  #footer_links input {
-  	height: 32px;
-  	width: 100%;
-  	border: none;
-  	padding: 0 8px;
-  }
-  .field-wrapper input {
-    background: rgba(255,255,255,.86);
-  }
-  .field-wrapper input::-webkit-input-placeholder {
-  	color: rgba(0,0,0,.4) !important;
-  }
-  #footer_links .content__button input {
-  	color: #bbb !important;
-  	background: #444 !important;
-  	padding: 4px 0;
-  }
-  #footer_links .content__button input:hover {
-  	color: #fff !important;
-  	background: #555 !important;
-  }
+	#footer_links li									{ padding: 4px 0; }
+	footer form												{ margin-top: 23px; }
+	.field-wrapper, .content__button	{
+																			margin: 4px 0;
+																			width: 100%;
+																		}
+	#footer_links label								{
+																			height: 32px;
+																			width: 40%;
+																			padding-top: 8px;
+																		}
+	#footer_links input								{
+																			height: 32px;
+																			width: 100%;
+																			border: none;
+																			padding: 0 8px;
+																		}
+	#footer_links .content__button input {
+																			padding: 4px 0;
+																		}
 
 
 /* SOCIAL NAVIGATION */
@@ -581,7 +581,6 @@
   #social a {
   	height: 128px;
   	width: 128px;
-  	box-sizing: border-box;
   	padding-top: 44px;
   	margin: 6px;
   	border: 1px solid rgba(255,255,255,.26);
@@ -593,7 +592,6 @@
   #social a:nth-child(4):hover      { background: #0976b4; } /* linkedin */
   #social a:nth-child(5):hover      { background: #cd201f; } /* youtube */
   .fa                               { color: rgba(255,255,255,.26); }
-  #copyright                        { color: #666666; }
   #copyright img                    { margin: 16px auto; }
 
 
@@ -606,10 +604,11 @@
 																			padding-bottom: 0 !important;
 																			border-bottom: 1px solid #b2dfdb;
 																		}
-	.snap-bottom img									{ margin: 96px auto 0 auto; }
+	.snap-bottom img									{ margin: 48px auto 0 auto; }
 
 
-  /* The bg-teal and bg-orange classes apply background color to main sections and alter the color of the text therein appropriately */
+  /* The bg-dark and bg-light classes control the child elements of the colored container, the specific color is added via the adition of a specific color class */
+	/* The teal and orange classes can then be added to apply background color to main sections and alter the color of the text therein appropriately */
 	.bg-dark *,	.bg-light *								{ background: transparent !important; }
 	.bg-dark *														{ color: rgba(238,238,238,.7); }
 	.bg-dark h2, .bg-dark h3,
@@ -619,40 +618,40 @@
 	.bg-light span												{ color: #000 !important; }
 
 
-
-	blockquote														{ border-left: 8px solid #4db6ac; }
-	blockquote span												{ margin-top: 36px; }
-	blockquote::before										{
-																					content: "\201C";
-																					left: 96px;
-																					top: -12px;
-																				}
-	blockquote::after											{
-																					content: "\201D";
-																					right: 96px;
-																					bottom: -84px;
-																				}
-
+	/* blockquotes should be added directly to the main section of the page */
+	/* to produce the color styling of the blockquote, use the bg-color class on the blockquote itself */
+		blockquote														{ border-left: 8px solid #4db6ac; }
+		blockquote span												{ margin-top: 36px; }
+		blockquote::before										{
+																						content: "\201C";
+																						left: 96px;
+																						top: -12px;
+																					}
+		blockquote::after											{
+																						content: "\201D";
+																						right: 96px;
+																						bottom: -84px;
+																					}
 
 
 	/* The btn-sml and btn-lrg classes are used on <a> elements to turn them into styled buttons in one of two sizes. */
 	/* It is assumed that these will always be on a line by themselves and should be horizontally centered within the parent container */
   .btn-sml, .btn-lrg										{
-																					display: inline-block;
-																					vertical-align: middle;
+																					/*display: inline-block;*/
+																					/*vertical-align: middle;*/
 																					text-transform: uppercase;
-																					border-radius: 3px;
-																					border: 1px solid rgba(255,255,255,0.6);
-																					color: #ffffff;
 																					background: rgba(255,255,255,.066);
+																					border: 1px solid rgba(255,255,255,0.6);
+																					border-radius: 3px;
+																					color: #ffffff;
 																				}
   .btn-sml															{
-																					padding: 6px 12px;
 																					margin: 16px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
+																					padding: 6px 12px;
 																				}
 	.btn-lrg															{
-																					padding: 16px 32px;
 																					margin: 32px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
+																					padding: 16px 32px;
 																				}
 	.btn-sml:hover, .btn-lrg:hover				{
 																					-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
@@ -661,6 +660,15 @@
 																					color: rgba(0,0,0,0.8) !important;
 																				}
 
+	.desaturate														{
+																					display:        flex;
+																					flex-wrap:      wrap;
+																					height:         48px;
+																					-webkit-filter: grayscale(1);
+																					-webkit-filter: grayscale(100%);
+																					        filter: gray;
+																					        filter: grayscale(100%);
+																				}
 
 /* TRANSFORMS AND TRANSITIONS */
 
@@ -688,32 +696,34 @@
 																						    -ms-transform: scale(1.1);
 																						        transform: scale(1.1);
 																					}
-
 	#nav-primary > ul > li > a:before,
 	#nav-primary ul ul,
 	#nav-primary ul ul li,
 	#nav-primary ul ul li a,
 	#AdvancerLeft, #AdvancerRight,
-
-  .btn-lrg, .btn-sml, #social a, .fa		{
-																					-webkit-transition: all 0.2s linear 0s !important;
-																					     -o-transition: all 0.2s linear 0s !important;
-																					        transition: all 0.2s linear 0s !important;
-																				}
-
-	.pn-ProductNav_Contents								{
-																					-webkit-transition: -webkit-transform .2s ease-in-out;
-																					        transition: -webkit-transform .2s ease-in-out;
-																					     -o-transition: transform .2s ease-in-out;
-																					        transition: transform .2s ease-in-out;
-																					        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
-																				}
+  .btn-lrg, .btn-sml, #social a, .fa			{
+																						-webkit-transition: all 0.2s linear 0s !important;
+																						     -o-transition: all 0.2s linear 0s !important;
+																						        transition: all 0.2s linear 0s !important;
+																					}
+	.pn-ProductNav_Contents									{
+																						-webkit-transition: -webkit-transform .2s ease-in-out;
+																						        transition: -webkit-transform .2s ease-in-out;
+																						     -o-transition: transform .2s ease-in-out;
+																						        transition: transform .2s ease-in-out;
+																						        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+																					}
 	#nav-primary > ul > li > ul,
-	#nav-social														{
-																					-webkit-transition: all 0.3s linear !important;
-																					     -o-transition: all 0.3s linear !important;
-																					        transition: all 0.3s linear !important;
-																				}
+	#nav-social															{
+																						-webkit-transition: all 0.3s linear !important;
+																						     -o-transition: all 0.3s linear !important;
+																						        transition: all 0.3s linear !important;
+																					}
+	.no-transition													{
+																						-webkit-transition: none;
+																						     -o-transition: none;
+																						        transition: none;
+																					}
 																				/* thinking that we probably don't need transitions here since clicking on the link will immediately load another page. but i will leave it here for now in case we change this to a single page structure down the road. */
 /*
 	#Indicator														{
@@ -724,22 +734,10 @@
 																					        transition: transform .2s ease-in-out, background-color .2s ease-in-out, -webkit-transform .2s ease-in-out;
 																				}
 */
-	.no-transition												{
-																					-webkit-transition: none;
-																					     -o-transition: none;
-																					        transition: none;
-																				}
 
 
-.desaturate{
-  display:        flex;
-  flex-wrap:      wrap;
-  height:         48px;
-  -webkit-filter: grascale(1);
-  -webkit-filter: grayscale(100%);
-  filter:         gray;
-  filter:         grayscale(100%);
-}
+
+
 
 /*signup form*/
 .form {
@@ -781,7 +779,6 @@
 #top_map li           { font-size: 16px; padding: 16px 0 !important;}
 #top_map a:hover, #top_map a  { color: #fff;}
 #top_map h4                { text-align: center; }
-#top_map ul                { list-style: none; }
 #top_map li                { padding: 4px 0; color: rgba(255,255,255,.46); }
 #top_map a                 { color: rgba(255,255,255,.46); }
 
@@ -951,7 +948,8 @@
     .col-1 p										{ font-size: 18px; }
     #calltoaction h3						{ font-size: 36px; }
     #calltoaction p							{ font-size: 18px; }
-    footer, #footer_links h4		{ text-align: center; }
+    footer,
+		footer h4, footer ul				{ text-align: center; }
     section											{ padding: 0 64px !important; } /*this is now important because at 768 we change to a column based flex layout and thus introduced top/bottom padding to .col-1, .col-2, and .col-3 directly */
     section > *									{ padding: 32px 96px; }
   	.col-1 > div								{ padding: 64px 0 48px 0; }
@@ -1067,7 +1065,6 @@
                                 height: calc(100vh - 48px); /*100% of the browser screen*/
                                 opacity: 0.93;
                                 background: #000000;
-                                list-style-type: none;
                                 -webkit-font-smoothing: antialiased; /* to stop flickering of text in safari */
                               }
   #nav-primary ul                     { float: none; } /*we are no longer floating the entire nav menu to the right as these will be centered horizontally on mobile devices */
