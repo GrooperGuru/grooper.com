@@ -15,7 +15,8 @@
 
       var $t            = $(this),
           $w            = $(window),
-          viewTop       = $w.scrollTop(),
+          //viewTop       = $w.scrollTop(),
+					viewTop       = document.scrollingElement.scrollTop
           viewBottom    = viewTop + $w.height(),
           _top          = $t.offset().top,
           _bottom       = _top + $t.height (),
