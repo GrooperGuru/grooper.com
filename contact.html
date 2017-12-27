@@ -10,6 +10,7 @@
         #form, #iframeTest {
             height:500px;
             border:1px solid #000;
+            padding: 0!important;
         }
     </style>
   <!--link rel="stylesheet" href="touch_scroll.css"-->
@@ -91,9 +92,12 @@
 
     <section id="form_signup">
       <!-- Change the width and height values to suit you best -->
-      <div id="form">
-        <iframe id="iframeTest" class="formlets-iframe" src="https://www.formlets.com/forms/ehz94nrxcpMe4lgL/?iframe=true" frameborder="0" width="100%"></iframe>
-      </div>
+      <!--div id="form"-->
+        <div class="cognito">
+          <script src="https://services.cognitoforms.com/s/rneN-Q0JJkuKBC1jushVsw"></script>
+          <script>Cognito.load("forms", { id: "1" });</script>
+        </div>
+      <!--/div-->
 
       <!--div class="form"-->
         <!--form action="/action_page.php"-->

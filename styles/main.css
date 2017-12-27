@@ -749,7 +749,8 @@
     background-color: #f2f2f2;
     padding: 20px !important;
 }
-#form_signup{ padding: 96px 336px;}
+
+#form_signup{ padding: 0 512px;}
 /*input form*/
  .form_text {
     width: 100%;
@@ -841,7 +842,7 @@
   	#footer_links input         { height: 28px; }
   	#social a                   { height: 96px; width: 96px; }
   	#copyright img              { height: 38px; }
-    #form_signup                { padding: 96px 336px;}
+    #form_signup                { padding: 0 336px;}
   }
 
 
@@ -876,7 +877,7 @@
     #nav-primary > ul > li > a  { margin: 0 12px; } /* lessen the horizontal space between main menu items */
 		blockquote::before					{ left: 56px; }
 		blockquote::after						{ right: 54px; }
-    #form_signup                { padding: 96px 192px;}
+    #form_signup                { padding: 0 192px;}
   }
 
 
@@ -953,7 +954,7 @@
 																	padding-top: 32px;
 																}
 		#copyright img							{ margin: 8px auto; }
-    #form_signup                { padding: 96px 96px;}
+    #form_signup                { padding: 0 96px;}
   }
 
 
