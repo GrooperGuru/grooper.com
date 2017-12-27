@@ -6,12 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
   <title>Grooper</title>
+  <style>
+        #form, #iframeTest {
+            height:500px;
+            border:1px solid #000;
+            padding: 0!important;
+        }
+    </style>
   <!--link rel="stylesheet" href="touch_scroll.css"-->
   <link rel="stylesheet" href="styles/main.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!--script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCzoi6Yz7L4zatJ-eTqxD3yMVZkKGfMgAs"></script-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://www.formlets.com/static/js/iframeResizer.min.js"></script>
+  <script type="text/javascript" src="https://www.formlets.com/static/js/iframe.js"></script>
 
 </head>
 
@@ -82,9 +91,14 @@
 		</section>
 
     <section id="form_signup">
-      <div class="form">
+      <!-- Change the width and height values to suit you best -->
+      <div id="form">
+        <iframe id="iframeTest" class="formlets-iframe" src="https://www.formlets.com/forms/ehz94nrxcpMe4lgL/?iframe=true" frameborder="0" width="100%"></iframe>
+      </div>
+
+      <!--div class="form"-->
         <!--form action="/action_page.php"-->
-        <form action="mail.php" method="POST">
+        <!--form action="mail.php" method="POST">
           <input type="text" id="fname" name="firstname" class="form_text" placeholder="Your name..">
 
           <input type="text" id="lname" name="lastname" class="form_text" placeholder="Your last name..">
@@ -99,7 +113,7 @@
 
           <input type="submit" value="Send" class="btn-lrg">
         </form>
-      </div>
+      </div-->
 
     </section>
 
