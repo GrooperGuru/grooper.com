@@ -281,13 +281,13 @@
 
 			/* 4.2.2.4 - Flex Basis - 4.2.2.4 */
 			/* The initial width or height (whichever is on the main axis) of the flex item, before free space is distributed according to the flex factors. */
-				.col-1-2 > *:first-child,
-				.col-2-1 > *:last-child,
 				.col-3 > *, #contact,
 				#discover, #signup					{ flex-basis: 33.33%; -ms-flex: 33.33%; }
+				.col-1-2 > *:first-child,
+				.col-2-1 > *:last-child			{ flex-basis: 40%; -ms-flex: 40%; }
 				#calltoaction > div					{ flex-basis: 50%; -ms-flex: 50%; }
 				.col-1-2 > *:last-child,
-				.col-2-1 > *:first-child		{ flex-basis: 66.66%; -ms-flex: 66.66%; }
+				.col-2-1 > *:first-child		{ flex-basis: 60%; -ms-flex: 60%; }
 				.col-2 > *,
 				.col-3 figcaption						{ flex-basis: 100%; -ms-flex: 100%; }
 
