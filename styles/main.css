@@ -736,11 +736,11 @@
     resize: vertical;
 }
 
-/* google map size*/
+/* google map size
 #map {
   height: calc(100vh - 96px);
   z-index: 0;
-}
+}*/
 
 #top_map{
   padding: 0 !important;
