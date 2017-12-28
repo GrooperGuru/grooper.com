@@ -48,13 +48,15 @@
 		/* 1.5.1 - Solid Backgrounds - 1.5.1 */
 			body                            { background: #000; } /* black */
 			main, section, figure,
-			figcaption, div                 { background: #fefefe; } /* off-white */
+			figcaption, div                 { background: #fbfdfe; /*#fefefe;*/ } /* off-white */
 			footer													{ background: #091413; } /* off-black */
 			footer div,
 			#map *													{ background: transparent; } /* transparent */
+			.bg-light.gray									{ background: #e0e0e0; } /* light medium gray */
 			.bg-light.orange								{ background: #ff8a65; } /* medium orange */
 			.bg-light.teal									{ background: #4db6ac; } /* medium teal */
-			.bg-dark.gray										{ background: #4a4a4a; } /* medium gray */
+			.bg-dark.gray										{ background: #424242; } /* dark gray */
+			.bg-dark.orange									{ background: #ce3e11; } /* medium orange */
 			.bg-dark.teal, header						{ background: #00796b; } /*darker teal, currently only used in header when bg gradients not supported */
 			#nav-primary > ul > li > a:before,
 			#nav-primary ul ul li:hover a		{ background: #fff; }
@@ -72,13 +74,31 @@
 																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* For Firefox 3.6 to 15 */
 																				background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* Standard syntax (must be last) */
 																			}
-			.bg-light.orange.tile						{
+			.bg-dark.orange.tile						{
 																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* For Safari 5.1 to 6.0 */
 																				background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* For Opera 11.1 to 12.0 */
 																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* For Firefox 3.6 to 15 */
 																				background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* Standard syntax (must be last) */
 																			}
-			.bg-light.teal.tile, header			{
+			.bg-light.gray.tile							{
+																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(255,255,255,.4)), url("../images/bg-light-gray-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																				background: -o-linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(255,255,255,.4)), url("../images/bg-light-gray-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(255,255,255,.4)), url("../images/bg-light-gray-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																				background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(255,255,255,.4)), url("../images/bg-light-gray-tile.jpg") center; /* Standard syntax (must be last) */
+																			}
+			.bg-light.orange.tile						{
+																				background: -webkit-linear-gradient(to bottom, rgba(255,36,126,0.5), rgba(255,255,255,.3)), url("../images/bg-light-orange-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																				background: -o-linear-gradient(to bottom, rgba(255,36,126,0.5), rgba(255,255,255,.3)), url("../images/bg-light-orange-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																				background: -moz-linear-gradient(to bottom, rgba(255,36,126,0.5), rgba(255,255,255,.3)), url("../images/bg-light-orange-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																				background: linear-gradient(to bottom, rgba(255,36,126,0.5), rgba(255,255,255,.3)), url("../images/bg-light-orange-tile.jpg") center; /* Standard syntax (must be last) */
+																			}
+			.bg-light.teal.tile							{
+																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,.3), rgba(128,177,255,0.3)), url("../images/bg-light-teal-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																				background: -o-linear-gradient(to bottom, rgba(0,0,0,.3), rgba(128,177,255,0.3)), url("../images/bg-light-teal-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,.3), rgba(128,177,255,0.3)), url("../images/bg-light-teal-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																				background: linear-gradient(to bottom, rgba(0,0,0,.3), rgba(128,177,255,0.3)), url("../images/bg-light-teal-tile.jpg") center; /* Standard syntax (must be last) */
+																			}
+			header													{
 																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Safari 5.1 to 6.0 */
 																				background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Opera 11.1 to 12.0 */
 																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Firefox 3.6 to 15 */
@@ -612,10 +632,10 @@
   /* The bg-dark and bg-light classes control the child elements of the colored container, the specific color is added via the adition of a specific color class */
 	/* The teal and orange classes can then be added to apply background color to main sections and alter the color of the text therein appropriately */
 	.bg-dark *,	.bg-light *								{ background: transparent !important; }
-	.bg-dark *														{ color: rgba(238,238,238,.7); }
+	.bg-dark *														{ color: rgba(238,238,238,.75); }
 	.bg-dark h2, .bg-dark h3,
 	.bg-dark span													{ color: #fff !important; }
-	.bg-light *														{ color: rgba(17,17,17,.7); }
+	.bg-light *														{ color: rgba(17,17,17,.75); }
 	.bg-light h2, .bg-light h3
 	.bg-light span												{ color: #000 !important; }
 
@@ -634,6 +654,15 @@
 																						right: 96px;
 																						bottom: -84px;
 																					}
+	blockquote.bg-dark::before,
+	blockquote.bg-dark::after								{ color: rgba(0,0,0,.2)}
+	blockquote.bg-light::before,
+	blockquote.bg-light::after							{ color: rgba(255,255,255,.2)}
+	blockquote.gray													{ border-left: 8px solid #616161;}
+	blockquote.orange												{ border-left: 8px solid #e64a19;}
+	blockquote.teal													{ border-left: 8px solid #00897b;}
+
+
 
 
 	/* The btn-sml and btn-lrg classes are used on <a> elements to turn them into styled buttons in one of two sizes. */
@@ -892,6 +921,7 @@
 		blockquote::after						{ font-size: 192px; }
 		.col-1 p										{ font-size: 18px; }
 		.btn-lrg										{ font-size: 16px; }
+		#brands p										{ font-size: 22px; }
 		#ProductNavContents > a			{ font-size: 14px; }
 		#calltoaction h3						{ font-size: 32px; }
 		#calltoaction p							{	font-size: 16px; }
@@ -943,7 +973,7 @@
 		#calltoaction div						{ padding: 64px; }
 		.btn-lrg										{ padding: 8px 32px; }
 		.btn-sml										{ margin-top: 8px; }
-		blockquote::before					{ left: 32px; }
+		blockquote::before					{ left: 32px; top: 6px; }
 		blockquote::after						{ right: 30px; bottom: -30px; }
 		footer											{ padding: 48px 32px 8px 32px; }
 		#social											{ margin: 64px auto 8px auto; }
@@ -965,6 +995,7 @@
     header p										{ font-size: 18px; }
 		blockquote p								{ font-size: 18px; }
     .col-1 p										{ font-size: 18px; }
+		#brands p										{ font-size: 20px; }
     #calltoaction h3						{ font-size: 36px; }
     #calltoaction p							{ font-size: 18px; }
     footer,
@@ -1043,7 +1074,7 @@
 	.col-2-1 > *:first-child,
 	.col-1-2 > *:last-child				{ padding: 16px 24px 36px 24px !important; }
 	#brands												{ padding: 48px 0 !important; }
-	#brands p											{ padding: 0 64px; }
+	#brands p											{ padding: 0 32px; }
   #menu													{ padding: 96px 0; }
 
 
