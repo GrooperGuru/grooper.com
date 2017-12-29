@@ -336,6 +336,9 @@
 																		}
 		    .col-2, .col-3,
 				.col-1-2, .col-2-1					{
+																			-webkit-justify-content: space-between;
+																			          -ms-flex-pack: space-between;
+																			        justify-content: space-between;
 																			-webkit-justify-content: space-evenly;
 																			          -ms-flex-pack: space-evenly;
 																			        justify-content: space-evenly;
