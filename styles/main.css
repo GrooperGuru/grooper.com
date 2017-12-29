@@ -29,9 +29,11 @@
 
 
   /* 1.4 - Reset cursor to default - 1.4 */
-    #nav-primary ul, #nav-primary ul a, .btn-sml, .btn-lrg {
-																			cursor: default;
-																		}
+    #nav-primary ul,
+		#nav-primary ul a,
+		.btn-sml, .btn-lrg,
+		table														{ cursor: default; }
+
 
   /* 1.5 - Rest Lists and Tables - 1.5 */
 		ul															{ list-style: none; }
@@ -110,18 +112,6 @@
 																				background:    -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
 																				background:         linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
 																			}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -638,12 +628,53 @@
 
 /* CONVENIENCE CLASSES */
 
-  /* The snap-bottom class allows large primary images to snap to the bottom of their section so that they appear to be emerging from behind the following */
-	.snap-bottom > *									{
+	/* The typography class should be applied to text-heavy sections, like FAQs, and other long, informatoinal articles needing a more consistent and condensed text layout to increase legibility and reduce reader fatigue */
+	.typography, .typography *				{ text-align:left !important; }
+	.typography, .typography *				{ font: 300 16px/24px "Roboto",sans-serif !important; }
+	.typography h2										{ font: 300 34px/40px "Roboto",sans-serif !important; }
+	.typography h3										{ font: 400 22px/36px "Roboto",sans-serif !important; }
+	.typography h4										{ font: 400 18px/32px "Roboto",sans-serif !important; }
+	.typography, .typography *				{	color: rgba(17,17,17,.8) !important; }
+	.typography h3, .typography h4		{ color: rgba(0,0,0,1) !important; }
+	.typography ul, .typography li		{ color: rgba(17,17,17,1) !important; }
+	.typography div *									{
+																			margin: 0 !important;
+																			padding: 0 !important;
+																		}
+	.typography h2										{ margin: 0 0 20px !important; }
+	.typography h3, .typography h4		{ margin: 32px 0 16px !important; }
+	.typography p											{ margin: 16px 0 !important; }
+	.typography li										{ margin: 8px 0 !important; }
+	.typography ul										{
+																			list-style: disc outside;
+																			padding-left: 40px !important;
+																		}
+	.typography table									{ display: table; }
+	.typography tr										{ display: table-row; }
+	.typography td, .typography th		{ display: table-cell; }
+	.typography table									{
+																			border-collapse: collapse;
+																			width: 100%;
+																		}
+	.typography thead, .typography tr	{ border-bottom: 1px solid #d0d0d0; }
+	.typography th										{ font-weight: 500 !important; }
+	.typography td										{ font-weight: 400 !important; }
+	.typography td, .typography th		{
+																			padding: 16px 5px 14px !important;
+																			vertical-align: middle;
+																			border-radius: 2px;
+																		}
+	.typography tbody tr:hover				{
+																			background: #f2f2f2;
+																			transition: background .25s ease;
+																		}
+
+  /* The align-bottom class allows large primary images to align to the bottom of their section so that they appear to be emerging from behind the following */
+	.align-bottom > *									{
 																			padding-bottom: 0 !important;
 																			border-bottom: 1px solid #b2dfdb;
 																		}
-	.snap-bottom img									{ margin: 48px auto 0 auto; }
+	.align-bottom img									{ margin: 48px auto 0 auto; }
 
 
   /* The bg-dark and bg-light classes control the child elements of the colored container, the specific color is added via the adition of a specific color class */
