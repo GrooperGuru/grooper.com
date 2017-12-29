@@ -396,10 +396,10 @@
 				.col-2 > *, .col-3 > *,
 				.col-1-2 > *, .col-2-1 > *					{ flex-basis: 100%; -ms-flex: 100%; } /* this is a catch-all for direct h2, p, and other potential text elements inside a section that don't fall inside a specific column */
 				.col-1 > figure, .col-1 > div				{ flex-basis: 100%; -ms-flex: 100%; }
-				.col-2 > figure, .col-2 > div				{ flex-basis: 42.5%; -ms-flex: 42.5%; }
-				.col-3 > figure, .col-3 > div				{ flex-basis: 28.33%; -ms-flex: 28.33%; }
-				.col-1-2 > .first, .col-2-1 > .last	{ flex-basis: 34%; -ms-flex: 34%; }
-				.col-2-1 > .first, .col-1-2 > .last	{ flex-basis: 51%; -ms-flex: 51%; }
+				.col-2 > figure, .col-2 > div				{ flex-basis: 47.21%; -ms-flex: 47.21%; } /*42.5%*/
+				.col-3 > figure, .col-3 > div				{ flex-basis: 29.629%; -ms-flex: 29.629%; } /*28.33*/
+				.col-1-2 > .first, .col-2-1 > .last	{ flex-basis: 37.77%; -ms-flex: 37.77%; } /*34*/
+				.col-2-1 > .first, .col-1-2 > .last	{ flex-basis: 56.66%; -ms-flex: 56.66%; } /*51*/
 				#contact, #discover, #signup				{ flex-basis: 33.33%; -ms-flex: 33.33%; }
 				#calltoaction > div									{ flex-basis: 50%; -ms-flex: 50%; }
 				#brands p														{ flex-basis: 100%; -ms-flex: 100%; }
@@ -424,6 +424,8 @@
 		.col-1 > figure, .col-1 > div		{ padding-top: 0; }
 		section > p											{ padding-bottom: 0; }
 		#brands													{ padding-top: 144px; padding-bottom: 144px; }
+		.col-2, .col-3,
+		.col-1-2, .col-2-1							{ padding-left: 5%; padding-right: 5%; }
 		section > h2, section > p				{ padding-left: 15%; padding-right: 15%; }
 		blockquote											{ padding-left: 18%; padding-right: 18%; }
 		#nav_primary										{ padding: 0 96px; }
