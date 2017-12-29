@@ -1,10 +1,10 @@
 /* 1 - GLOBAL RESETS */
 
 
-  /* 1.1 - Normalize box model -- DO NOT DELETE... or IE will break - 1.1 */
+  /* 1.1 - Normalize box model * overflow -- DO NOT DELETE... or IE will break - 1.1 */
     html														{ box-sizing: content-box; }
     *, *:before, *:after						{ box-sizing: inherit; }
-
+		html, body											{ overflow-x: hidden }
 
   /* 1.2 - Remove margin, border, and padding from all - 1.2 */
     html, body, div,
@@ -223,10 +223,7 @@
 																			vertical-align: middle;
 																			border-radius: 2px;
 																		}
-		tbody tr:hover									{
-																			background: #f2f2f2;
-																			transition: background .25s ease;
-																		}
+		tbody tr:hover									{ background: #ede7f6; }
 
 
 		/* 2.9.2 - Lists - 2.9.2 */
@@ -678,48 +675,53 @@
 																			border-bottom: 1px solid #b2dfdb;
 																		}
 	.align-bottom img									{ margin: 48px auto 0 auto; }
+	/* just figured out that this is how I can make the aligned images stretch to fill the screen and overflow past the left/right edges on smaller devices */
+	/* the negative bottom margin will keep the parent section from enlarging too much and the positive top margin will make up for the change in space */
+	/* will have to think about how I'll decide the values of these margins to keep this from looking bad, scale must be by percentage */
+	/* the margins being specified in percents will be percents of a container, not the img itself, so the numbers won't match as-is */
+	/*.align-bottom img {transform: scale(1.2); margin: 100px 0 -100px 0; }*/
 
 
   /* The bg-dark and bg-light classes control the child elements of the colored container, the specific color is added via the adition of a specific color class */
 	/* The teal and orange classes can then be added to apply background color to main sections and alter the color of the text therein appropriately */
-	.bg-dark *,	.bg-light *								{ background: transparent !important; }
-	.bg-dark *														{ color: rgba(238,238,238,.75); }
+	.bg-dark *,	.bg-light *						{ background: transparent !important; }
+	.bg-dark *												{ color: rgba(238,238,238,.75); }
 	.bg-dark h2, .bg-dark h3,
-	.bg-dark span													{ color: #fff !important; }
-	.bg-light *														{ color: rgba(17,17,17,.75); }
+	.bg-dark span											{ color: #fff !important; }
+	.bg-light *												{ color: rgba(17,17,17,.75); }
 	.bg-light h2, .bg-light h3
-	.bg-light span												{ color: #000 !important; }
+	.bg-light span										{ color: #000 !important; }
 
 
 	/* blockquotes should be added directly to the main section of the page */
 	/* to produce the color styling of the blockquote, use the bg-color class on the blockquote itself */
-		blockquote														{ border-left: 8px solid #4db6ac; }
-		blockquote p													{
-																						font-weight: 400;
-																						color: rgba(17,17,17.8)
-																					}
-		blockquote span												{
-																						margin-top: 36px;
-																						font-weight: 500;
-																						color: rgba(0,0,0.75)
-																					}
-		blockquote::before										{
-																						content: "\201C";
-																						left: 96px;
-																						top: -12px;
-																					}
-		blockquote::after											{
-																						content: "\201D";
-																						right: 96px;
-																						bottom: -84px;
-																					}
-	blockquote.bg-dark::before,
-	blockquote.bg-dark::after								{ color: rgba(0,0,0,.2)}
-	blockquote.bg-light::before,
-	blockquote.bg-light::after							{ color: rgba(255,255,255,.2)}
-	blockquote.gray													{ border-left: 8px solid #616161;}
-	blockquote.orange												{ border-left: 8px solid #e64a19;}
-	blockquote.teal													{ border-left: 8px solid #00897b;}
+		blockquote											{ border-left: 8px solid #4db6ac; }
+		blockquote p										{
+																			font-weight: 400;
+																			color: rgba(17,17,17.8)
+																		}
+		blockquote span									{
+																			margin-top: 36px;
+																			font-weight: 500;
+																			color: rgba(0,0,0.75)
+																		}
+		blockquote::before							{
+																			content: "\201C";
+																			left: 96px;
+																			top: -12px;
+																		}
+		blockquote::after								{
+																			content: "\201D";
+																			right: 96px;
+																			bottom: -84px;
+																		}
+		blockquote.bg-dark::before,
+		blockquote.bg-dark::after				{ color: rgba(0,0,0,.2)}
+		blockquote.bg-light::before,
+		blockquote.bg-light::after			{ color: rgba(255,255,255,.2)}
+		blockquote.gray									{ border-left: 8px solid #616161;}
+		blockquote.orange								{ border-left: 8px solid #e64a19;}
+		blockquote.teal									{ border-left: 8px solid #00897b;}
 
 
 
@@ -785,6 +787,11 @@
 																						-webkit-transform: scale(1.1);
 																						    -ms-transform: scale(1.1);
 																						        transform: scale(1.1);
+																					}
+	tbody tr:hover													{
+																						-webkit-transition: background 0.4s ease 0s;
+																						     -o-transition: background 0.4s ease 0s;
+																						        transition: background 0.4s ease 0s;
 																					}
 	#menu > li > a:before,
 	#menu ul,
