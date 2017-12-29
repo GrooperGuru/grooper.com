@@ -148,21 +148,23 @@
 		footer h4, ul										{ text-align: left; }
 
   /* 2.5 - Font Size - 2.5 */
-    h1															{ font-size: 72px; }
-    h2															{ font-size: 58px; }
-		h4															{ font-size: 24px; }
-		p																{ font-size: 18px; }
+		html, body											{ font-size: 16px; }
+    h1															{ font-size: 450%; }
+    h2															{ font-size: 362.5%; }
+		h3															{ font-size: 200%; }
+		h4															{ font-size: 150%; }
+		p																{ font-size: 112.5%; }
 		blockquote::before,
-		blockquote::after								{ font-size: 256px; }
-    #calltoaction h3								{ font-size: 48px; }
-    #nav_primary i, #social a, h3,
-		#brands p												{ font-size: 32px; }
-    header p												{ font-size: 30px; }
+		blockquote::after								{ font-size: 1600%; }
+    #calltoaction h3								{ font-size: 300%; }
+    #nav_primary i, #social a				{ font-size: 32px; }
+		#brands p												{ font-size: 200%; }
+    header p												{ font-size: 187.5%; }
     .col-1 p, .col-2 > p, .col-3 > p,
 		.col-1-2 > p, .col-2-1 > p,
-		#next_feature, blockquote p			{ font-size: 24px; }
-    #calltoaction p, .btn-lrg				{ font-size: 20px; }
-		blockquote span									{ font-size: 18px; }
+		#next_feature, blockquote p			{ font-size: 150%; }
+    #calltoaction p, .btn-lrg				{ font-size: 125%; }
+		blockquote span									{ font-size: 112.5%; }
     #menu > li > a,
     #footer_links li,
     #footer_links label,
@@ -426,8 +428,18 @@
 		#brands													{ padding-top: 144px; padding-bottom: 144px; }
 		.col-2, .col-3,
 		.col-1-2, .col-2-1							{ padding-left: 5%; padding-right: 5%; }
+/*
 		section > figure:last-child:nth-child(odd),
 		section > div:last-child:nth-child(odd) { margin: 0 auto; }
+*/
+/*
+		figure.test:nth-child(4):last-child,
+		section > figure:nth-child(5):last-child,
+		section > figure:nth-child(4):nth-last-child(2)	{ margin: 0 auto !important; }
+*/
+
+
+
 		section > h2, section > p				{ padding-left: 15%; padding-right: 15%; }
 		blockquote											{ padding-left: 18%; padding-right: 18%; }
 		#nav_primary										{ padding: 0 96px; }
@@ -904,14 +916,18 @@
 /* MEDIA QUERIES */
 
   @media only screen and (max-width: 1680px) {
-    h1													{ font-size: 68px; }
-    header p, #brands p					{ font-size: 28px; }
+/*
+    h1													{ font-size: 425%; }
+    header p, #brands p					{ font-size: 175%; }
+*/
     header											{ padding: 96px 144px 192px 144px }
 		footer											{ padding: 72px 336px 16px 336px; }
 	}
 
 
   @media only screen and (max-width: 1440px) {
+		html, body									{ font-size: 15px; }
+/*
     h1                          { font-size: 62px; }
     h2                          { font-size: 48px; }
     h3                          { font-size: 26px; }
@@ -922,14 +938,18 @@
     .col-1 p,
 		.col-2 > p, .col-3 > p			{ font-size: 20px; }
     .btn-lrg						        {	font-size: 18px; }
+*/
     .field-wrapper input        { font-size: 12px; }
 		.content__button input			{ font-size: 14px; }
+/*
     #calltoaction h3		        { font-size: 40px; }
     #calltoaction p			        { font-size: 18px; }
+*/
     #footer_links li            { font-size: 16px; }
 		#footer_links input					{ font-size: 14px; }
     #copyright                  { font-size: 12px; }
     #social a                   { font-size: 24px; }
+
     header                      { padding: 96px 128px 192px 128px; }
     footer                      { padding: 64px 144px 16px 144px; }
     #nav_secondary              { padding: 0; }
@@ -942,6 +962,8 @@
 
 
   @media only screen and (max-width: 1280px) {
+		html, body									{ font-size: 14px; }
+/*
     h1                          { font-size: 52px; }
     h2                          { font-size: 42px; }
     h3                          { font-size: 24px; }
@@ -951,6 +973,7 @@
     .col-1 p,
 		.col-2 > p, .col-3 > p			{ font-size: 19px; }
     #next_feature a             { font-size: 20px; }
+*/
     #nav_primary                { padding: 0 48px; }
     header                      { padding: 88px 96px 152px 96px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
 		#next_feature               { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
@@ -968,6 +991,8 @@
 
 
   @media only screen and (max-width: 1024px) {
+		html, body									{ font-size: 13px; }
+/*
 		h1													{ font-size: 42px; }
 		h2													{ font-size: 40px; }
 		h3													{ font-size: 24px; }
@@ -981,11 +1006,15 @@
 		.col-2 > p, .col-3 > p			{ font-size: 18px; }
 		.btn-lrg										{ font-size: 16px; }
 		#brands p										{ font-size: 22px; }
+*/
 		#nav_secondary_contents > a	{ font-size: 14px; }
+/*
 		#calltoaction h3						{ font-size: 32px; }
 		#calltoaction p							{	font-size: 16px; }
+*/
 		#footer_links li						{ font-size: 16px; }
 		#social a										{ font-size: 24px; }
+
 		header											{ padding: 64px 64px 112px 64px; }
 		footer											{ padding: 48px 32px 8px 32px; }
 		.btn-lrg										{ padding: 8px 32px; }
@@ -1008,6 +1037,10 @@
     #next_feature										{ padding: 32px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
 		.img-btm img										{ margin-top: 32px !important; }
 		.img-top img										{ margin-bottom: 32px !important; }
+		section > figure:last-child:nth-child(odd),
+		section > div:last-child:nth-child(odd) { margin: 0 auto; }
+
+
 
 		#nav_secondary							{ height: 36px; }
 		#nav_secondary_contents > a,
@@ -1032,6 +1065,8 @@
 
 
   @media (max-width: 768px){
+		html, body									{ font-size: 12px; }
+/*
     h1													{ font-size: 36px; }
     h2													{ font-size: 34px; }
     h3													{ font-size: 26px; }
@@ -1043,6 +1078,7 @@
 		#brands p										{ font-size: 20px; }
     #calltoaction h3						{ font-size: 36px; }
     #calltoaction p							{ font-size: 18px; }
+*/
     footer,
 		footer h4, footer ul				{ text-align: center; }
 		section, blockquote,
@@ -1070,6 +1106,7 @@
 
 
 @media (max-width: 600px){
+	html, body										{ font-size: 11px; }
   #footer_links h4							{ font-size: 28px; }
   #footer_links li							{ font-size: 18px; }
   #menu > li > a								{ font-size: 18px; }
