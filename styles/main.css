@@ -426,6 +426,8 @@
 		#brands													{ padding-top: 144px; padding-bottom: 144px; }
 		.col-2, .col-3,
 		.col-1-2, .col-2-1							{ padding-left: 5%; padding-right: 5%; }
+		section > figure:last-child:nth-child(odd),
+		section > div:last-child:nth-child(odd) { margin: 0 auto; }
 		section > h2, section > p				{ padding-left: 15%; padding-right: 15%; }
 		blockquote											{ padding-left: 18%; padding-right: 18%; }
 		#nav_primary										{ padding: 0 96px; }
@@ -996,7 +998,8 @@
 		.btn-sml										{ margin-top: 8px; }
 		#social											{ margin: 64px auto 8px auto; }
 
-		.col-3 > figure, .col-3 > div		{ flex-basis: 42.5%; -ms-flex: 42.5%; }
+
+		.col-3 > figure, .col-3 > div		{ flex-basis: 47.21%; -ms-flex: 47.21%; }
 		.col-3 figcaption								{ width: 80%; }
 		section, blockquote,
 		figure, section > div						{ padding-top: 64px; }
