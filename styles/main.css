@@ -29,89 +29,90 @@
 
 
   /* 1.4 - Reset cursor to default - 1.4 */
+		table, i,
+		.btn-sml, .btn-lrg,
     #nav-primary ul,
 		#nav-primary ul a,
-		.btn-sml, .btn-lrg,
-		table														{ cursor: default; }
+		#nav-social, #nav-social a			{ cursor: default; }
 
 
-  /* 1.5 - Rest Lists and Tables - 1.5 */
-		ul															{ list-style: none; }
+  /* 1.5 - Reset Lists and Tables - 1.5 */
+		table														{ display: table; }
+		tr															{ display: table-row; }
+		td, th													{ display: table-cell; }
 		table														{
 																			border-collapse: collapse;
 																			border-spacing: 0;
 																		}
-		th															{ vertical-align: bottom; }
-		td															{ vertical-align: top; }
 
 
-  /* 1.5 - Set basic background colors - 1.5 */
+  /* 1.6 - Set basic background colors - 1.6 */
 
-		/* 1.5.1 - Solid Backgrounds - 1.5.1 */
-			body                            { background: #000; } /* black */
+		/* 1.6.1 - Solid Backgrounds - 1.6.1 */
+			body													{ background: #000; } /* black */
 			main, section, figure,
-			figcaption, div                 { background: #fbfdfe; /*#fefefe;*/ } /* off-white */
-			footer													{ background: #091413; } /* off-black */
+			figcaption, div								{ background: #fbfdfe; /*#fefefe;*/ } /* off-white */
+			footer												{ background: #091413; } /* off-black */
 			footer div,
-			#map *													{ background: transparent; } /* transparent */
-			.bg-light.gray									{ background: #e0e0e0; } /* light medium gray */
-			.bg-light.orange								{ background: #ff8a65; } /* medium orange */
-			.bg-light.teal									{ background: #4db6ac; } /* medium teal */
-			.bg-dark.gray										{ background: #424242; } /* dark gray */
-			.bg-dark.orange									{ background: #ce3e11; } /* medium orange */
-			.bg-dark.teal, header						{ background: #00796b; } /*darker teal, currently only used in header when bg gradients not supported */
-			#nav-primary > ul > li > a:before,
-			#nav-primary ul ul li:hover a		{ background: #fff; }
-			.field-wrapper input						{ background: rgba(255,255,255,.86); }
-			#nav-primary ul ul li						{ background: rgba(255,255,255,.94); }
-			#nav-primary										{ background: rgba(0,0,0,.94); }
-			.content__button input					{ background: #444 !important; }
-			.content__button input:hover		{ background: #555 !important; }
+			#map *												{ background: transparent; } /* transparent */
+			.bg-light.gray								{ background: #e0e0e0; } /* light medium gray */
+			.bg-light.orange							{ background: #ff8a65; } /* medium orange */
+			.bg-light.teal								{ background: #4db6ac; } /* medium teal */
+			.bg-dark.gray									{ background: #424242; } /* dark gray */
+			.bg-dark.orange								{ background: #ce3e11; } /* medium orange */
+			.bg-dark.teal, header					{ background: #00796b; } /*darker teal, currently only used in header when bg gradients not supported */
+			#menu > li > a:before,
+			#menu ul li:hover a						{ background: #fff; }
+			.field-wrapper input					{ background: rgba(255,255,255,.86); }
+			#menu ul li										{ background: rgba(255,255,255,.94); }
+			#nav-primary									{ background: rgba(0,0,0,.94); }
+			.content__button input				{ background: #444 !important; }
+			.content__button input:hover	{ background: #555 !important; }
 
 
-		/* 1.5.2 - Tiled Backgrounds - 1.5.2 */
-			.bg-dark.gray.tile							{
-																				background: -webkit-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Safari 5.1 to 6.0 */
-																				background:      -o-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Opera 11.1 to 12.0 */
-																				background:    -moz-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Firefox 3.6 to 15 */
-																				background:         linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* Standard syntax (must be last) */
-																			}
-			.bg-dark.orange.tile						{
-																				background: -webkit-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
-																				background:      -o-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
-																				background:    -moz-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
-																				background:         linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
-																			}
-			.bg-dark.teal.tile							{
-																				background: -webkit-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
-																				background:      -o-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
-																				background:    -moz-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
-																				background:         linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
-																			}
-			.bg-light.gray.tile							{
-																				background: -webkit-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
-																				background:      -o-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
-																				background:    -moz-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
-																				background:         linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
-																			}
-			.bg-light.orange.tile						{
-																				background: -webkit-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
-																				background:      -o-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
-																				background:    -moz-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
-																				background:         linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
-																			}
-			.bg-light.teal.tile							{
-																				background: -webkit-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
-																				background:      -o-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
-																				background:    -moz-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
-																				background:         linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
-																			}
-			header													{
-																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
-																				background:      -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
-																				background:    -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
-																				background:         linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
-																			}
+		/* 1.6.2 - Tiled Backgrounds - 1.6.2 */
+			.bg-dark.gray.tile						{
+																			background: -webkit-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* Standard syntax (must be last) */
+																		}
+			.bg-dark.orange.tile					{
+																			background: -webkit-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			.bg-dark.teal.tile						{
+																			background: -webkit-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			.bg-light.gray.tile						{
+																			background: -webkit-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			.bg-light.orange.tile					{
+																			background: -webkit-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			.bg-light.teal.tile						{
+																			background: -webkit-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			header												{
+																			background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
 
 
 
@@ -133,16 +134,17 @@
 
 
   /* 2.3 - Text Decoration and Font Style - 2.3 */
-    a                               { text-decoration: none; } /*remove underlines from hyperlinks */
-    em                              { font-style: normal; } /* removes italics from emphasized text within a paragraph */
+		a																{ text-decoration: none; } /*remove underlines from hyperlinks */
+		strong, em											{ font-style: normal; } /* removes italics from emphasized text within a paragraph */
 
 
   /* 2.4 - Text Alignment - 2.4 */
     div, section, figure, figcaption,
 		blockquote, ul, p, img,
 		h1, h2, h3, h4, h5, h6					{ text-align: center; }
-		footer h4, footer ul						{ text-align: left; }
-
+		ul															{ text-align: left; }
+		#nav-primary ul									{ text-align: center; }
+		footer h4, ul										{ text-align: left; }
 
   /* 2.5 - Font Size - 2.5 */
     h1															{ font-size: 72px; }
@@ -159,11 +161,11 @@
 		blockquote p										{ font-size: 24px; }
     #calltoaction p, .btn-lrg				{ font-size: 20px; }
 		blockquote span									{ font-size: 18px; }
-    #nav-primary > ul > li > a,
+    #menu > li > a,
     #footer_links li,
     #footer_links label,
     #footer_links input             { font-size: 16px; }
-    #nav-primary ul ul li a         { font-size: 14px; }
+    #menu ul li a										{ font-size: 14px; }
     #copyright, .btn-sml            { font-size: 12px; }
 
 
@@ -181,6 +183,8 @@
 		h1, h4													{ color: #fff; }
 		blockquote::before,
 		blockquote::after								{ color: #4db6ac; } /*#78C0A8;*/
+		a:link, a:visited								{ color: #039be5; } /* normal state links */
+		a:hover, a:active								{ color: #29b6f6; } /* links during hover and click */
 		.col-1 p												{ color: #000; }
     #ProductNavContents > a [aria-selected="true"]	{ color: #111; }
 		#nav-primary ul ul li a					{ color: #333; }
@@ -192,7 +196,7 @@
     #footer_links a:hover,
     #footer_links label, #social a	{ color: #fff; }
 		.content__button input:hover		{ color: #fff !important; }
-    #nav-primary ul ul li:hover a,
+    #menu ul li:hover a,
 		#next_feature a									{ color: #009688; }
 		#footer_links li,
 		#footer_links a									{ color: rgba(255,255,255,.46); }
@@ -200,14 +204,38 @@
 		input::-webkit-input-placeholder{ color: rgba(0,0,0,.4) !important; }
 
 
-
-
-
-
   /* 2.8 - Line Height and Spacing - 2.8 */
     h1, h2, h3, h4, h5, h6          { margin-bottom: 0.6em; }
     p                               { line-height: 1.5em; }
 
+
+	/* 2.9 - Tables and Lists - 2.9 */
+
+		/* 2.9.1 - Tables - 2.9.1 */
+		th															{ vertical-align: bottom; }
+		td															{ vertical-align: top; }
+		table														{ width: 100%; }
+		thead, tr												{ border-bottom: 1px solid #d0d0d0; }
+		th															{ font-weight: 500 !important; }
+		td															{ font-weight: 400 !important; }
+		td, th													{
+																			padding: 16px 5px 14px !important;
+																			vertical-align: middle;
+																			border-radius: 2px;
+																		}
+		tbody tr:hover									{
+																			background: #f2f2f2;
+																			transition: background .25s ease;
+																		}
+
+
+		/* 2.9.2 - Lists - 2.9.2 */
+		ul															{ list-style: disc outside; }
+		#footer_links ul								{ list-style: none; }
+		.typography ul									{
+																			list-style: disc outside;
+																			padding-left: 40px !important;
+																		}
 
 
 /* 3 - IMAGES - 3 */
@@ -237,15 +265,12 @@
 																			display: none;
 																		}
 		h1, h2, h3, h4, h5, h6, p, img,
-		#nav-primary ul a,
-		#nav-primary > ul > li:hover > ul,
-		blockquote span									{
-																			display: block;
-																		}
-		#nav-primary ul ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
-		#social a												{
-																			display: inline-block;
-																		}
+		#menu a,
+		#menu > li:hover > ul,
+		blockquote span									{ display: block; }
+		#menu ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
+		#social a												{ display: inline-block; }
+
 
   /* 4.2 - Flexible Box Model Control - 4.2 */
 
@@ -408,8 +433,8 @@
 		#nav-secondary									{ position: relative; }
 		blockquote::before,
 		blockquote::after,
-		#nav-primary > ul > li > a:before,
-		#nav-primary ul ul,
+		#menu > li > a:before,
+		#menu ul,
 		#AdvancerLeft, #AdvancerRight,
 		#Indicator											{ position: absolute; }
 
@@ -432,7 +457,7 @@
 																			-webkit-box-shadow: 0 1px 24px rgba(0,0,0,0.6);
 																			        box-shadow: 0 1px 24px rgba(0,0,0,0.6);
 																		}
-		#nav-primary ul ul							{
+		#menu ul							{
 																			-webkit-box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
 																			        box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
 																		}
@@ -464,11 +489,10 @@
 
 
 	/* 4.99 - Visibility - 4.99 */
-		#nav-primary > ul > li > a:before,
-		#nav-primary ul ul								{ visibility: hidden; }
-
-		#nav-primary > ul > li > a:hover:before,
-		#nav-primary > ul > li:hover > ul	{ visibility: visible; }
+		#menu > li > a:before,
+		#menu ul												{ visibility: hidden; }
+		#menu > li > a:hover:before,
+		#menu > li:hover > ul						{ visibility: visible; }
 
 
 
@@ -492,39 +516,39 @@
       padding-right: 48px;
       margin-top: 8px;
     }
-    #nav-primary li {
+    #menu li				{
       height: 96px; /* must match the height of #nav-primary */
     }
-    #nav-primary ul a {
+    #menu a								{
       vertical-align: middle;
     }
-    #nav-primary > ul > li > a {
+    #menu > li > a {
     	line-height: 36px; /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
     	margin: 0 16px; /*top margin should equal ( navbar height - this line height ) / 2  */
     }
-    #nav-primary > ul > li:last-child > a {
+    #menu > li:last-child > a {
     	margin-right: 0 !important; /*removes the unnecessary right margin from the last menu item, as the navbar itself already has sufficient padding. top amrgin should be same as margin above */
     }
-    #nav-primary > ul > li > a:before {
+    #menu > li > a:before {
     	content: "";
     	bottom: 0; /* ensures line will snap to bottom edge of item */
       left: 0; /* ensures line will start to left-most edge of item */
     	height: 1px; /* sets height of the primary nav link underlines that will appear during hover */
     	width: 100%; /*ensures line consumes full width of item */
     }
-    #nav-primary ul ul {
+    #menu ul {
     	opacity: 0; /* sets the initial opacity of the dropdown menu to 0 so that we have the ability to animate the opacity to 1 during a hover of the parent li */
     	left: calc(-50% - 6px); /* horizontally centers dropdown menu to the parent, the 6px represents half of the left padding of the parent li */
     	top: calc(100% - 32px); /* adjusts the location of the dropdown menu upward to cover the parent link's underlining */
     }
-    #nav-primary > ul > li:hover > ul {
+    #menu > li:hover > ul {
     	opacity: 1;
     }
-    #nav-primary ul ul li {
+    #menu ul li {
       height: 48px; /* determines height of submenu items */
     	width: 200px; /* determines width of submenu items */
     }
-    #nav-primary ul ul li a {
+    #menu ul li a {
     	padding: 16px 0; /* establishes the vertical spacing of submenu items */
       margin: 0 auto;
     }
@@ -645,29 +669,8 @@
 	.typography h3, .typography h4		{ margin: 32px 0 16px !important; }
 	.typography p											{ margin: 16px 0 !important; }
 	.typography li										{ margin: 8px 0 !important; }
-	.typography ul										{
-																			list-style: disc outside;
-																			padding-left: 40px !important;
-																		}
-	.typography table									{ display: table; }
-	.typography tr										{ display: table-row; }
-	.typography td, .typography th		{ display: table-cell; }
-	.typography table									{
-																			border-collapse: collapse;
-																			width: 100%;
-																		}
-	.typography thead, .typography tr	{ border-bottom: 1px solid #d0d0d0; }
-	.typography th										{ font-weight: 500 !important; }
-	.typography td										{ font-weight: 400 !important; }
-	.typography td, .typography th		{
-																			padding: 16px 5px 14px !important;
-																			vertical-align: middle;
-																			border-radius: 2px;
-																		}
-	.typography tbody tr:hover				{
-																			background: #f2f2f2;
-																			transition: background .25s ease;
-																		}
+
+
 
   /* The align-bottom class allows large primary images to align to the bottom of their section so that they appear to be emerging from behind the following */
 	.align-bottom > *									{
@@ -768,12 +771,12 @@
 																						    -ms-transform-origin: 0 0;
 																						        transform-origin: 0 0;
 																					}
-	#nav-primary > ul > li > a:before				{ /* sets the initial scale of the nav link hover to 0 so it can later animate to full scale */
+	#menu > li > a:before										{ /* sets the initial scale of the nav link hover to 0 so it can later animate to full scale */
 																						-webkit-transform: scaleX(0);
 																						    -ms-transform: scaleX(0);
 																						        transform: scaleX(0);
 																					}
-	#nav-primary > ul > li > a:hover:before { /* transforms primary nav underlines from the inside to the outside */
+	#menu > li > a:hover:before							{ /* transforms primary nav underlines from the inside to the outside */
 																						-webkit-transform: scaleX(1);
 																						    -ms-transform: scaleX(1);
 																						        transform: scaleX(1);
@@ -783,10 +786,10 @@
 																						    -ms-transform: scale(1.1);
 																						        transform: scale(1.1);
 																					}
-	#nav-primary > ul > li > a:before,
-	#nav-primary ul ul,
-	#nav-primary ul ul li,
-	#nav-primary ul ul li a,
+	#menu > li > a:before,
+	#menu ul,
+	#menu ul li,
+	#menu ul li a,
 	#AdvancerLeft, #AdvancerRight,
   .btn-lrg, .btn-sml, #social a, .fa			{
 																						-webkit-transition: all 0.2s linear 0s !important;
@@ -800,7 +803,7 @@
 																						        transition: transform .2s ease-in-out;
 																						        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
 																					}
-	#nav-primary > ul > li > ul,
+	#menu > li > ul,
 	#nav-social															{
 																						-webkit-transition: all 0.3s linear !important;
 																						     -o-transition: all 0.3s linear !important;
@@ -811,20 +814,6 @@
 																						     -o-transition: none;
 																						        transition: none;
 																					}
-																				/* thinking that we probably don't need transitions here since clicking on the link will immediately load another page. but i will leave it here for now in case we change this to a single page structure down the road. */
-/*
-	#Indicator														{
-																					-webkit-transition: background-color .2s ease-in-out, -webkit-transform .2s ease-in-out;
-																					        transition: background-color .2s ease-in-out, -webkit-transform .2s ease-in-out;
-																					     -o-transition: transform .2s ease-in-out, background-color .2s ease-in-out;
-																					        transition: transform .2s ease-in-out, background-color .2s ease-in-out;
-																					        transition: transform .2s ease-in-out, background-color .2s ease-in-out, -webkit-transform .2s ease-in-out;
-																				}
-*/
-
-
-
-
 
 /*signup form*/
 .form {
@@ -864,15 +853,14 @@
   text-align: center;
 }
 #top_map h4                { text-align: center; }
-<<<<<<< HEAD
+/*<<<<<<< HEAD*/
 #top_map li                { padding: 4px 0; color: rgba(255,255,255,.46); }
 =======
 #top_map ul                { list-style: none; }
 #top_map li                { font-size: 16px; padding: 16px 0 ; color: rgba(255,255,255,.46);}
->>>>>>> ae398e37dcfee320abcc929ae7538cee59f0c6b1
+/*>>>>>>> ae398e37dcfee320abcc929ae7538cee59f0c6b1*/
 #top_map a                 { color: rgba(255,255,255,.46); }
 #top_map a:hover           { color: #fff;}
-
 #iframe{
   width: 100%;
   height: 100%;
@@ -921,13 +909,13 @@
     header                      { padding: 96px 128px 192px 128px; }
     footer                      { padding: 64px 144px 16px 144px; }
     #nav-secondary              { padding: 0; }
+    #form_signup                { padding: 0 336px;}
   	#social a                   { padding-top: 32px; }
     #AdvancerLeft               { left: 0; }
     #AdvancerRight              { right: 0; }
   	#footer_links input         { height: 28px; }
   	#social a                   { height: 96px; width: 96px; }
   	#copyright img              { height: 38px; }
-    #form_signup                { padding: 0 336px;}
   }
 
 
@@ -954,15 +942,16 @@
     .col-3 figcaption           { padding: 0 16px; }
 		#next_feature               { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
     #calltoaction div           { padding: 72px; }
+    #form_signup                { padding: 0 192px;}
     #social                     { margin: 72px auto 16px auto; }
+    #menu > li > a							{ margin: 0 12px; } /* lessen the horizontal space between main menu items */
+    #nav-primary li             { height: 64px; } /* shrink to match the new height of the navbar */
     #nav-primary                { width: calc(100% - 96px); height: 64px; } /* Shrink the height of the navbar for the first time */
     .grooper_logo               { background: url(../images/grooper_logo_140x42.png); height: 42px; width: 140px; margin-top: 14px; }
-    #nav-primary li             { height: 64px; } /* shrink to match the new height of the navbar */
-    #nav-primary ul ul          { top: calc(100% - 16px); }
-    #nav-primary > ul > li > a  { margin: 0 12px; } /* lessen the horizontal space between main menu items */
+    #menu ul										{ top: calc(100% - 16px); }
 		blockquote::before					{ left: 56px; }
 		blockquote::after						{ right: 54px; }
-    #form_signup                { padding: 0 192px;}
+
   }
 
 
@@ -987,13 +976,24 @@
 		header											{ padding: 64px 64px 112px 64px; }
 		figcaption									{ padding: 0 32px; }
 		blockquote									{ padding: 72px 96px; }
+		footer											{ padding: 48px 32px 8px 32px; }
 		.col-1 p										{ padding: 0 10%; }
 		.col-2											{ padding: 0 32px; }
 		.col-2 figcaption						{ padding: 0; }
 		.col-3											{ padding: 0 24px; }
 		.col-3 > *									{ padding: 32px 24px; }
 		.col-3 > *:last-child				{ padding: 0 24px 64px 24px; } /* adds the additional bottom padding only to the third (wrapped) figure, as needed to produce a clean finish to the section */
+		.btn-lrg										{ padding: 8px 32px; }
 		#brands p										{ padding: 0 96px; }
+		#menu ul a									{ padding: 8px 0; }
+		#calltoaction div						{ padding: 64px; }
+    #form_signup                { padding: 0 96px;}
+		#nav-secondary							{ padding: 0; }
+		#nav-primary								{ padding: 0 48px; }
+		#menu > li > a							{ margin: 0 8px; }
+		#copyright img							{ margin: 8px auto; }
+		.btn-sml										{ margin-top: 8px; }
+		#social											{ margin: 64px auto 8px auto; }
 		.col-3											{
 																	-webkit-flex-wrap: wrap;
 																	    -ms-flex-wrap: wrap;
@@ -1001,46 +1001,28 @@
 																}
 		.col-3 > *									{ /* must equal 50% minus the total amount of padding on the current row's divs and it's container */
 																	flex-basis: calc(50% - 48px);
-																	-ms-flex: calc(50% - 48px);
+																	  -ms-flex: calc(50% - 48px);
 																}
-		#nav-primary								{
-																	width: calc(100% - 96px);
-																	padding: 0 48px;
-																}
-		#nav-primary > ul > li > a	{ margin: 0 8px; }
-		#nav-primary ul ul a				{ padding: 8px 0; }
-		#nav-secondary							{
-		                              height: 36px;
-		                              padding: 0;
-		                            }
-		#ProductNav									{ width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
-		#ProductNavContents > a			{
-																	min-height: 36px;
-																	height: 36px;
-																}
+		#nav-secondary							{ height: 36px; }
+		#ProductNavContents > a,
 		#AdvancerLeft,
-		#AdvancerRight							{
-																	height: 36px;
-																	width: 36px;
-																}
+		#AdvancerRight							{ height: 36px; }
 		.AdvancerIcon								{ height: 28px; }
-		#AdvancerLeft								{ left: 0; }
-		#AdvancerRight							{ right: 0; }
 		#Indicator									{ height: 2px; }
-		#calltoaction div						{ padding: 64px; }
-		.btn-lrg										{ padding: 8px 32px; }
-		.btn-sml										{ margin-top: 8px; }
-		blockquote::before					{ left: 32px; top: 6px; }
-		blockquote::after						{ right: 30px; bottom: -30px; }
-		footer											{ padding: 48px 32px 8px 32px; }
-		#social											{ margin: 64px auto 8px auto; }
+		#nav-primary								{ width: calc(100% - 96px); }
+		#ProductNav									{ width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
+		#AdvancerLeft,
+		#AdvancerRight							{ width: 36px; }
+		#ProductNavContents > a			{ min-height: 36px; }
 		#social a										{
 																	height: 96px;
 																	width: 96px;
 																	padding-top: 32px;
 																}
-		#copyright img							{ margin: 8px auto; }
-    #form_signup                { padding: 0 96px;}
+		#AdvancerLeft								{ left: 0; }
+		#AdvancerRight							{ right: 0; }
+		blockquote::before					{ left: 32px; top: 6px; }
+		blockquote::after						{ right: 30px; bottom: -30px; }
   }
 
 
@@ -1069,6 +1051,7 @@
 		#next_feature								{ padding: 32px 0 !important; }
     #calltoaction div						{ padding: 64px 128px; }
     #footer_links > div					{ padding: 32px 0; }
+		#top_map										{ padding: 144px 128px 0 128px !important; } /*top should match with the deduction from height*/
   	#signup											{ margin: 32px 32px 0 32px; }
   	#contact, #discover					{ flex-basis: 50% !important; -ms-flex: 50% !important; }
   	#signup											{ flex-basis: 100% !important; -ms-flex: 100% !important; }
@@ -1080,18 +1063,15 @@
 																	width: 33px;
 																	margin-top: 16px;
 																}
-		.comparison > *:last-child{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
-    #top_map                    {
-                                  padding: 144px 128px 0 128px !important; /*top should match with the deduction from height*/
-                                  height: calc(100vh - 144px);
-                                }
+		.comparison > *:last-child	{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
+    #top_map                    { height: calc(100vh - 144px); }
   }
 
 
 @media (max-width: 600px){
   #footer_links h4							{ font-size: 28px; }
   #footer_links li							{ font-size: 18px; }
-  #nav-primary > ul > li > a		{ font-size: 18px; }
+  #menu > li > a								{ font-size: 18px; }
   #footer_links h4,
   #footer_links ul							{ text-align: center; }
   #mobile-menu,
@@ -1103,9 +1083,9 @@
 	#nav-social a, #nav-social i,
 	#bars													{ display: inline-block !important; }
 	#nav-primary input:checked ~ i,
-  #nav-primary ul ul,
+  #menu ul,
   #nav-primary ul li:hover ul		{ display: none !important; } /*the 3 bars goes away*/
-	#nav-primary > ul > li > ul,
+	#menu > li > ul,
 	#mobile-menu									{ position: relative !important; }
 	#nav-primary input						{ position: absolute; }
 	#menu, #nav-social						{ position: fixed; }
@@ -1117,10 +1097,10 @@
   #nav-primary > a							{ margin-left: 48px; }
   #nav-primary input:checked ~ ul{ margin-left: 0; } /* this removes the transform element resulting in the perceived slid in menu*/
   header												{ padding: 64px 48px 112px 48px; }
+	section,
 	#nav-primary,
-	#nav-primary ul ul a,
-	#nav-social i,
-	section												{ padding: 0 !important; }
+	#menu ul a,
+	#nav-social i									{ padding: 0 !important; }
 	.col-1 p											{ padding: 0 24px; }
   .col-1 > div									{ padding: 64px 0 48px 0; }
 	.col-2 > *, .col-3 > *				{ padding: 24px; }
@@ -1137,13 +1117,15 @@
 
   section > *										{ padding: 32px 48px; }
   #calltoaction div							{ padding: 64px 48px; }
+  #top_map											{ padding: 48px 0 0 0 !important;}
+  #top_map li										{ padding: 6px 0 ;}
 	#social a											{ padding-top: 0; }
 	#bars													{ padding-right: 48px; }
 	#nav-social										{ padding-bottom: 16px; }
   #nav-primary									{ height: 48px; }
 	#social a											{ height: 32px; width: 32px; border: none; }
-  #nav-primary									{ width: 100%; }
 	#brands img										{ height: 48px; }
+  #nav-primary									{ width: 100%; }
 	.col-1-2, .col-2-1						{ flex-direction: column; }
   #contact, #discover						{ flex-basis: 100% !important; -ms-flex: 100% !important; } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
   #social a:nth-child(1) i			{ color: #3b5998; } /* facebook */
@@ -1166,50 +1148,45 @@
 																	-webkit-user-select: none;
 																	user-select: none;
 																}
-  #nav-primary input          {
-                                width: 40px;
-                                height: 32px;
-                                top: 6px;
-                                right: 38px;
-                                cursor: pointer;
-                                opacity: 0;
-                                z-index: 20000;
-                                -webkit-touch-callout: none;
-                              }
-  #menu                       {
-                                top: 48px;
-                                width: 100%;
-                                height: calc(100vh - 48px); /*100% of the browser screen*/
-                                opacity: 0.93;
-                                background: #000000;
-                                -webkit-font-smoothing: antialiased; /* to stop flickering of text in safari */
-                              }
-  #nav-primary ul                     { float: none; } /*we are no longer floating the entire nav menu to the right as these will be centered horizontally on mobile devices */
-  #nav-primary > ul > li > ul         {
-                                        visibility: visible;
-                                        opacity: 1;
-                                        top: 0;
-                                        left: 0;
-                                        z-index: 1000;
-                                      }
-  #nav-primary ul ul li               {
-                                        background: transparent;
-                                        height: 24px;
-                                        width: auto;
-                                      }
-  #nav-primary ul ul a             {
-                                        color: #fff;
-                                      }
-
-  /*#nav-primary > ul > li:nth-child(2) {padding-top: 64px;}*/ /*move the pricing tab down */
-  #nav-social                         {
-                                        width: 100%;
-                                        background: rgba(1, 1, 1, 0);
-                                        visibility: visible;
-                                        bottom: 0;
-                                        left: 0;
-                                      }
-  /*#nav-social,*/
+  #nav-primary input          	{
+	                                width: 40px;
+	                                height: 32px;
+	                                top: 6px;
+	                                right: 38px;
+	                                cursor: pointer;
+	                                opacity: 0;
+	                                z-index: 20000;
+	                                -webkit-touch-callout: none;
+	                              }
+  #menu													{
+	                                top: 48px;
+	                                width: 100%;
+	                                height: calc(100vh - 48px); /*100% of the browser screen*/
+	                                opacity: 0.93;
+	                                background: #000000;
+	                                -webkit-font-smoothing: antialiased; /* to stop flickering of text in safari */
+	                              }
+  #nav-primary ul								{ float: none; } /*we are no longer floating the entire nav menu to the right as these will be centered horizontally on mobile devices */
+  #menu > li > ul								{
+																	visibility: visible;
+																	opacity: 1;
+																	top: 0;
+																	left: 0;
+																	z-index: 1000;
+																}
+  #menu ul li										{
+																	background: transparent;
+																	height: 24px;
+																	width: auto;
+																}
+  #menu ul a										{ color: #fff; }
+  #nav-social										{
+																	width: 100%;
+																	background: rgba(1, 1, 1, 0);
+																	visibility: visible;
+																	bottom: 0;
+																	left: 0;
+																}
 	.grooper_logo												{
 																				-webkit-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																				     -o-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
@@ -1221,10 +1198,6 @@
   #nav-social a:nth-child(3) i        { color: #55acee; padding-left: 12px !important;} /* twitter */
   #nav-social a:nth-child(4) i        { color: #0976b4; } /* linkedin */
   #nav-social a:nth-child(5) i        { color: #cd201f; } /* youtube */
-
-  #top_map                            { padding: 48px 0 0 0 !important;}
-  #top_map li                         { padding: 6px 0 ;}
-
 }
 
 
