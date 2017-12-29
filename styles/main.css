@@ -317,6 +317,7 @@
 
 			/* 4.2.1.3 - Flex Wrap - 4.2.1.3 */
 			/* Controls whether the flex container is single-line or multi-line, and the direction of the cross axis */
+
 				.col-2, .col-3,
 				.col-1-2, .col-2-1,
 				#footer_links, #brands,
@@ -339,9 +340,11 @@
 																			-webkit-justify-content: space-between;
 																			          -ms-flex-pack: space-between;
 																			        justify-content: space-between;
+/*
 																			-webkit-justify-content: space-evenly;
 																			          -ms-flex-pack: space-evenly;
 																			        justify-content: space-evenly;
+																							*/
 																		}
 				#brands, #calltoaction,
 				#footer_links								{
