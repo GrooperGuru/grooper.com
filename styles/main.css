@@ -6,6 +6,7 @@
     *, *:before, *:after						{ box-sizing: inherit; }
 		html, body											{ overflow-x: hidden }
 
+
   /* 1.2 - Remove margin, border, and padding from all - 1.2 */
     html, body, div,
 		header, footer, menu, nav, section, figure, figcaption, article, aside, blockquote,
@@ -31,9 +32,9 @@
   /* 1.4 - Reset cursor to default - 1.4 */
 		table, i,
 		.btn-sml, .btn-lrg,
-    #nav-primary ul,
-		#nav-primary ul a,
-		#nav-social, #nav-social a			{ cursor: default; }
+    #nav_primary ul,
+		#nav_primary ul a,
+		#nav_social, #nav_social a			{ cursor: default; }
 
 
   /* 1.5 - Reset Lists and Tables - 1.5 */
@@ -65,7 +66,7 @@
 			#menu ul li:hover a						{ background: #fff; }
 			.field-wrapper input					{ background: rgba(255,255,255,.86); }
 			#menu ul li										{ background: rgba(255,255,255,.94); }
-			#nav-primary									{ background: rgba(0,0,0,.94); }
+			#nav_primary									{ background: rgba(0,0,0,.94); }
 			.content__button input				{ background: #444 !important; }
 			.content__button input:hover	{ background: #555 !important; }
 
@@ -143,7 +144,7 @@
 		blockquote, ul, p, img,
 		h1, h2, h3, h4, h5, h6					{ text-align: center; }
 		ul															{ text-align: left; }
-		#nav-primary ul									{ text-align: center; }
+		#nav_primary ul									{ text-align: center; }
 		footer h4, ul										{ text-align: left; }
 
   /* 2.5 - Font Size - 2.5 */
@@ -154,7 +155,7 @@
 		blockquote::before,
 		blockquote::after								{ font-size: 256px; }
     #calltoaction h3								{ font-size: 48px; }
-    #nav-primary i, #social a, h3,
+    #nav_primary i, #social a, h3,
 		#brands p												{ font-size: 32px; }
     header p												{ font-size: 30px; }
     .col-1 p, #next_feature,
@@ -186,12 +187,12 @@
 		a:link, a:visited								{ color: #039be5; } /* normal state links */
 		a:hover, a:active								{ color: #29b6f6; } /* links during hover and click */
 		.col-1 p												{ color: #000; }
-    #ProductNavContents > a [aria-selected="true"]	{ color: #111; }
-		#nav-primary ul ul li a					{ color: #333; }
-  	#nav-primary i, #copyright			{ color: #666; }
-    #ProductNavContents > a					{ color: #888; }
+    #nav_secondary_contents > a [aria-selected="true"]	{ color: #111; }
+		#nav_primary ul ul li a					{ color: #333; }
+  	#nav_primary i, #copyright			{ color: #666; }
+    #nav_secondary_contents > a			{ color: #888; }
 		.content__button input					{ color: #bbb !important; }
-    #nav-primary ul > li > a				{ color: #f5faf9; }
+    #nav_primary ul > li > a				{ color: #f5faf9; }
     header p,
     #footer_links a:hover,
     #footer_links label, #social a	{ color: #fff; }
@@ -200,7 +201,7 @@
 		#next_feature a									{ color: #009688; }
 		#footer_links li,
 		#footer_links a									{ color: rgba(255,255,255,.46); }
-    #nav-primary i:hover						{ color: rgba(255,255,255,.86); }
+    #nav_primary i:hover						{ color: rgba(255,255,255,.86); }
 		input::-webkit-input-placeholder{ color: rgba(0,0,0,.4) !important; }
 
 
@@ -255,9 +256,9 @@
 
 	/* 4.1 - Display - 4.1 */
 
-		#nav-primary input,
-		#nav-primary i, /*hide hamburger icon until requested by mobile media query */
-		#ProductNav::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
+		#nav_primary input,
+		#nav_primary i, /*hide hamburger icon until requested by mobile media query */
+		#nav_secondary_container::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
 																		{
 																			display: none;
 																		}
@@ -290,8 +291,8 @@
 																			display: -webkit-flex;
 																			display: flex;
 																		}
-				#nav-primary li,
-				#ProductNavContents > a			{
+				#nav_primary li,
+				#nav_secondary_contents > a	{
 																			display: -webkit-inline-box;
 																			display: -ms-inline-flexbox;
 																			display: -webkit-inline-flex;
@@ -344,8 +345,8 @@
 
 			/* 4.2.1.5 - Align Items - 4.2.1.5 */
 			/* Align all items along the cross axis of a flexible container */
-				#nav-primary li,
-				#ProductNavContents > a			{
+				#nav_primary li,
+				#nav_secondary_contents > a	{
 																			-webkit-box-align: center;
 																			-webkit-align-items: center;
 																			-ms-flex-align: center;
@@ -409,7 +410,7 @@
 		.col-1-2 figure:first-child figcaption,
 		.col-2-1 figure:last-child figcaption,
     .col-3 figcaption               { padding: 0 48px; }
-		#nav-primary										{ padding: 0 96px; }
+		#nav_primary										{ padding: 0 96px; }
 		#brands													{ padding: 128px 64px; }
 		#brands p												{ padding: 0 128px 12px 128px; }
 		#brands img											{ padding: 0; }
@@ -422,18 +423,18 @@
 
 
 	/* 4.4 - Position - 4.4 */
-		.noScroll, #nav-primary					{ position: fixed; }
+		.noScroll, #nav_primary					{ position: fixed; }
 		blockquote,
 		.pn-ProductNav_Contents,
-		#nav-primary li,
-		#nav-primary ul a,
-		#nav-secondary									{ position: relative; }
+		#nav_primary li,
+		#nav_primary ul a,
+		#nav_secondary									{ position: relative; }
 		blockquote::before,
 		blockquote::after,
 		#menu > li > a:before,
 		#menu ul,
-		#AdvancerLeft, #AdvancerRight,
-		#Indicator											{ position: absolute; }
+		#nav_secondary_left, #nav_secondary_right,
+		#nav_secondary_indicator				{ position: absolute; }
 
 
   /* 4.5 - Float - 4.5 */
@@ -441,8 +442,8 @@
 		.pn-ProductNav_Contents,
 		#footer_links label							{ float: left; }
 		#footer_links input,
-		#nav-primary ul,
-		#nav-primary i									{ float: right; }
+		#nav_primary ul,
+		#nav_primary i									{ float: right; }
 
 
   /* 4.6 - Shadows - 4.6 */
@@ -450,7 +451,7 @@
 																			-webkit-box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
 																			        box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
 																		}
-		#nav-primary										{
+		#nav_primary										{
 																			-webkit-box-shadow: 0 1px 24px rgba(0,0,0,0.6);
 																			        box-shadow: 0 1px 24px rgba(0,0,0,0.6);
 																		}
@@ -458,7 +459,7 @@
 																			-webkit-box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
 																			        box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
 																		}
-		#nav-secondary									{
+		#nav_secondary									{
 																			-webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.2), 0 -2px 6px rgba(0,0,0,0.3);
 																			        box-shadow: 0 2px 6px rgba(0,0,0,0.2), 0 -2px 6px rgba(0,0,0,0.3);
 																		}
@@ -477,12 +478,12 @@
 
 
 	/* 4.8 - Z-Index - 4.8 */
-		#nav-primary										{ z-index: 10000; }
-		#nav-secondary									{ z-index: 1; }
+		#nav_primary										{ z-index: 10000; }
+		#nav_secondary									{ z-index: 1; }
 
 
 	/* 4.9 - Box Sizing - 4.9 */
-		#nav-secondary, #social a				{ box-sizing: border-box; }
+		#nav_secondary, #social a				{ box-sizing: border-box; }
 
 
 	/* 4.99 - Visibility - 4.99 */
@@ -497,7 +498,7 @@
 
 
   /* 5.1 - Primary Navigation - 5.1 */
-    #nav-primary {
+    #nav_primary {
     	top: 0; /* start navbar at absolute top */
     	left: 0; /*start navbar at absolute left */
     	width: calc(100% - (96px * 2)); /* the combination of left/right padding must be subtracted from this to retain a centered position */
@@ -509,12 +510,12 @@
     	width: 214px; /*set to actual width of logo image */
     	margin-top: 18px; /* arbitrary value that vertically centers logo within navbar to compensate for the inherent offset built into the grooper logo */
     }
-    #nav-primary i {
+    #nav_primary i {
       padding-right: 48px;
       margin-top: 8px;
     }
     #menu li				{
-      height: 96px; /* must match the height of #nav-primary */
+      height: 96px; /* must match the height of #nav_primary */
     }
     #menu a								{
       vertical-align: middle;
@@ -551,11 +552,11 @@
     }
 
   /* 5.2 - Secondary Navigation - 5.2 */
-    #nav-secondary {
+    #nav_secondary {
       padding: 0;
       height: 48px;
     }
-    #ProductNav {
+    #nav_secondary_container {
       overflow-x: auto; /* allow horizontal scroll if enough items exist */
       overflow-y: hidden; /* prevent vertical scroll */
       -webkit-overflow-scrolling: touch; /* inertia scrolling for webkit */
@@ -563,37 +564,37 @@
       width: calc(100% - 96px);
       margin: 0 auto;
     }
-    /*#ProductNav {-ms-overflow-style: -ms-autohiding-scrollbar; }*/ /* Make an auto-hiding scroller for the 3 people using a IE */
-    #ProductNav {-ms-overflow-style: none; } /* Make an auto-hiding scroller for the 3 people using IE */
-    #ProductNav {overflow: -moz-scrollbars-none;}
-    #ProductNavContents > a {
+    /*#nav_secondary_container {-ms-overflow-style: -ms-autohiding-scrollbar; }*/ /* Make an auto-hiding scroller for the 3 people using a IE */
+    #nav_secondary_container {-ms-overflow-style: none; } /* Make an auto-hiding scroller for the 3 people using IE */
+    #nav_secondary_container {overflow: -moz-scrollbars-none;}
+    #nav_secondary_contents > a {
       font-size: 16px;
       min-height: 48px;
       height: 48px; /*must match min-height to allow vertical flex alignment to find true center across all browsers */
       padding: 0 12px;
     }
-    #AdvancerLeft, #AdvancerRight {
+    #nav_secondary_left, #nav_secondary_right {
       width: 48px;
       height: 48px;
       top: 0;
       bottom: 0;
       opacity: 0; /* Set the buttons invisible by default */
     }
-    #AdvancerLeft:focus, #AdvancerRight:focus { outline: 0; } /*removes blue outline during focus */
-    #AdvancerLeft:hover, #AdvancerRight:hover { cursor: pointer; }
-    #AdvancerLeft { left: 0; } /*push left button to left side of navbar */
-    #AdvancerRight { right: 0; } /*push right button to right side of navbar */
-    [data-overflowing="both"] ~ #AdvancerLeft, [data-overflowing="left"] ~ #AdvancerLeft,
-    [data-overflowing="both"] ~ #AdvancerRight, [data-overflowing="right"] ~ #AdvancerRight {
+    #nav_secondary_left:focus, #nav_secondary_right:focus { outline: 0; } /*removes blue outline during focus */
+    #nav_secondary_left:hover, #nav_secondary_right:hover { cursor: pointer; }
+    #nav_secondary_left { left: 0; } /*push left button to left side of navbar */
+    #nav_secondary_right { right: 0; } /*push right button to right side of navbar */
+    [data-overflowing="both"] ~ #nav_secondary_left, [data-overflowing="left"] ~ #nav_secondary_left,
+    [data-overflowing="both"] ~ #nav_secondary_right, [data-overflowing="right"] ~ #nav_secondary_right {
       opacity: 1;
     }
-    .AdvancerIcon {
+    .nav_advancer_icon {
       width: 20px;
       height: 32px;
       margin: 0 auto;
       fill: #bbb;
     }
-    #Indicator {
+    #nav_secondary_indicator {
       bottom: 0;
       left: 0;
       height: 2px;
@@ -768,7 +769,7 @@
 																						overflow: hidden;
 																						width: 100%;
 																					}
-	#Indicator															{
+	#nav_secondary_indicator								{
 																						-webkit-transform-origin: 0 0;
 																						    -ms-transform-origin: 0 0;
 																						        transform-origin: 0 0;
@@ -797,7 +798,7 @@
 	#menu ul,
 	#menu ul li,
 	#menu ul li a,
-	#AdvancerLeft, #AdvancerRight,
+	#nav_secondary_left, #nav_secondary_right,
   .btn-lrg, .btn-sml, #social a, .fa			{
 																						-webkit-transition: all 0.2s linear 0s !important;
 																						     -o-transition: all 0.2s linear 0s !important;
@@ -811,7 +812,7 @@
 																						        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
 																					}
 	#menu > li > ul,
-	#nav-social															{
+	#nav_social															{
 																						-webkit-transition: all 0.3s linear !important;
 																						     -o-transition: all 0.3s linear !important;
 																						        transition: all 0.3s linear !important;
@@ -891,7 +892,6 @@
 		.col-2-1 figure:last-child figcaption,
     .col-3 figcaption						{ padding: 0 36px; }
     #calltoaction div						{ padding: 96px; }
-
   }
 
 
@@ -915,11 +915,11 @@
     #social a                   { font-size: 24px; }
     header                      { padding: 96px 128px 192px 128px; }
     footer                      { padding: 64px 144px 16px 144px; }
-    #nav-secondary              { padding: 0; }
+    #nav_secondary              { padding: 0; }
     #form_signup                { padding: 0 336px;}
   	#social a                   { padding-top: 32px; }
-    #AdvancerLeft               { left: 0; }
-    #AdvancerRight              { right: 0; }
+    #nav_secondary_left					{ left: 0; }
+    #nav_secondary_right				{ right: 0; }
   	#footer_links input         { height: 28px; }
   	#social a                   { height: 96px; width: 96px; }
   	#copyright img              { height: 38px; }
@@ -935,7 +935,7 @@
     header p, #brands p					{ font-size: 24px; }
     .col-1 p                    { font-size: 19px; }
     #next_feature a             { font-size: 20px; }
-    #nav-primary                { padding: 0 48px; }
+    #nav_primary                { padding: 0 48px; }
     header                      { padding: 88px 96px 152px 96px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
     section                     { padding: 0 24px; }
 		blockquote									{ padding: 72px 144px; }
@@ -952,8 +952,8 @@
     #form_signup                { padding: 0 192px;}
     #social                     { margin: 72px auto 16px auto; }
     #menu > li > a							{ margin: 0 12px; } /* lessen the horizontal space between main menu items */
-    #nav-primary li             { height: 64px; } /* shrink to match the new height of the navbar */
-    #nav-primary                { width: calc(100% - 96px); height: 64px; } /* Shrink the height of the navbar for the first time */
+    #nav_primary li             { height: 64px; } /* shrink to match the new height of the navbar */
+    #nav_primary                { width: calc(100% - 96px); height: 64px; } /* Shrink the height of the navbar for the first time */
     .grooper_logo               { background: url(../images/grooper_logo_140x42.png); height: 42px; width: 140px; margin-top: 14px; }
     #menu ul										{ top: calc(100% - 16px); }
 		blockquote::before					{ left: 56px; }
@@ -975,7 +975,7 @@
 		.col-1 p										{ font-size: 18px; }
 		.btn-lrg										{ font-size: 16px; }
 		#brands p										{ font-size: 22px; }
-		#ProductNavContents > a			{ font-size: 14px; }
+		#nav_secondary_contents > a	{ font-size: 14px; }
 		#calltoaction h3						{ font-size: 32px; }
 		#calltoaction p							{	font-size: 16px; }
 		#footer_links li						{ font-size: 16px; }
@@ -995,8 +995,8 @@
 		#menu ul a									{ padding: 8px 0; }
 		#calltoaction div						{ padding: 64px; }
     #form_signup                { padding: 0 96px;}
-		#nav-secondary							{ padding: 0; }
-		#nav-primary								{ padding: 0 48px; }
+		#nav_secondary							{ padding: 0; }
+		#nav_primary								{ padding: 0 48px; }
 		#menu > li > a							{ margin: 0 8px; }
 		#copyright img							{ margin: 8px auto; }
 		.btn-sml										{ margin-top: 8px; }
@@ -1010,24 +1010,23 @@
 																	flex-basis: calc(50% - 48px);
 																	  -ms-flex: calc(50% - 48px);
 																}
-		#nav-secondary							{ height: 36px; }
-		#ProductNavContents > a,
-		#AdvancerLeft,
-		#AdvancerRight							{ height: 36px; }
-		.AdvancerIcon								{ height: 28px; }
-		#Indicator									{ height: 2px; }
-		#nav-primary								{ width: calc(100% - 96px); }
-		#ProductNav									{ width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
-		#AdvancerLeft,
-		#AdvancerRight							{ width: 36px; }
-		#ProductNavContents > a			{ min-height: 36px; }
+		#nav_secondary							{ height: 36px; }
+		#nav_secondary_contents > a,
+		#nav_secondary_left,
+		#nav_secondary_right				{ height: 36px; }
+		.nav_advancer_icon					{ height: 28px; }
+		#nav_primary								{ width: calc(100% - 96px); }
+		#nav_secondary_container		{ width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
+		#nav_secondary_left,
+		#nav_secondary_right				{ width: 36px; }
+		#nav_secondary_contents > a { min-height: 36px; }
 		#social a										{
 																	height: 96px;
 																	width: 96px;
 																	padding-top: 32px;
 																}
-		#AdvancerLeft								{ left: 0; }
-		#AdvancerRight							{ right: 0; }
+		#nav_secondary_left					{ left: 0; }
+		#nav_secondary_right				{ right: 0; }
 		blockquote::before					{ left: 32px; top: 6px; }
 		blockquote::after						{ right: 30px; bottom: -30px; }
   }
@@ -1082,32 +1081,32 @@
   #footer_links h4,
   #footer_links ul							{ text-align: center; }
   #mobile-menu,
-	#nav-primary ul,
-	#nav-primary li,
-	#nav-primary input,
-	#nav-social										{ display: block !important; }
-	#nav-primary input:checked ~ i ~ i,
-	#nav-social a, #nav-social i,
+	#nav_primary ul,
+	#nav_primary li,
+	#nav_primary input,
+	#nav_social										{ display: block !important; }
+	#nav_primary input:checked ~ i ~ i,
+	#nav_social a, #nav_social i,
 	#bars													{ display: inline-block !important; }
-	#nav-primary input:checked ~ i,
+	#nav_primary input:checked ~ i,
   #menu ul,
-  #nav-primary ul li:hover ul		{ display: none !important; } /*the 3 bars goes away*/
+  #nav_primary ul li:hover ul		{ display: none !important; } /*the 3 bars goes away*/
 	#menu > li > ul,
 	#mobile-menu									{ position: relative !important; }
-	#nav-primary input						{ position: absolute; }
-	#menu, #nav-social						{ position: fixed; }
+	#nav_primary input						{ position: absolute; }
+	#menu, #nav_social						{ position: fixed; }
 	header												{ margin-top: 48px; }
 	.grooper_logo									{ margin-top: 8px; }
   #signup												{ margin: 0; }
   #social												{ margin: 8px 0 16px 0; }
-  #menu, #nav-social						{ margin-left: 100%; }
-  #nav-primary > a							{ margin-left: 48px; }
-  #nav-primary input:checked ~ ul{ margin-left: 0; } /* this removes the transform element resulting in the perceived slid in menu*/
+  #menu, #nav_social						{ margin-left: 100%; }
+  #nav_primary > a							{ margin-left: 48px; }
+  #nav_primary input:checked ~ ul{ margin-left: 0; } /* this removes the transform element resulting in the perceived slid in menu*/
   header												{ padding: 64px 48px 112px 48px; }
 	section,
-	#nav-primary,
+	#nav_primary,
 	#menu ul a,
-	#nav-social i									{ padding: 0 !important; }
+	#nav_social i									{ padding: 0 !important; }
 	.col-1 p											{ padding: 0 24px; }
   .col-1 > div									{ padding: 64px 0 48px 0; }
 	.col-2 > *, .col-3 > *				{ padding: 24px; }
@@ -1128,11 +1127,11 @@
   #top_map li										{ padding: 6px 0 ;}
 	#social a											{ padding-top: 0; }
 	#bars													{ padding-right: 48px; }
-	#nav-social										{ padding-bottom: 16px; }
-  #nav-primary									{ height: 48px; }
+	#nav_social										{ padding-bottom: 16px; }
+  #nav_primary									{ height: 48px; }
 	#social a											{ height: 32px; width: 32px; border: none; }
 	#brands img										{ height: 48px; }
-  #nav-primary									{ width: 100%; }
+  #nav_primary									{ width: 100%; }
 	.col-1-2, .col-2-1						{ flex-direction: column; }
   #contact, #discover						{ flex-basis: 100% !important; -ms-flex: 100% !important; } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
   #social a:nth-child(1) i			{ color: #3b5998; } /* facebook */
@@ -1155,7 +1154,7 @@
 																	-webkit-user-select: none;
 																	user-select: none;
 																}
-  #nav-primary input          	{
+  #nav_primary input          	{
 	                                width: 40px;
 	                                height: 32px;
 	                                top: 6px;
@@ -1173,7 +1172,7 @@
 	                                background: #000000;
 	                                -webkit-font-smoothing: antialiased; /* to stop flickering of text in safari */
 	                              }
-  #nav-primary ul								{ float: none; } /*we are no longer floating the entire nav menu to the right as these will be centered horizontally on mobile devices */
+  #nav_primary ul								{ float: none; } /*we are no longer floating the entire nav menu to the right as these will be centered horizontally on mobile devices */
   #menu > li > ul								{
 																	visibility: visible;
 																	opacity: 1;
@@ -1184,10 +1183,10 @@
   #menu ul li										{
 																	background: transparent;
 																	height: 24px;
-																	width: auto;
+																		width: auto;
 																}
   #menu ul a										{ color: #fff; }
-  #nav-social										{
+  #nav_social										{
 																	width: 100%;
 																	background: rgba(1, 1, 1, 0);
 																	visibility: visible;
@@ -1199,12 +1198,12 @@
 																				     -o-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																				        transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																			}
-  #nav-social i                       { width: 32px; }
-  #nav-social a:nth-child(1) i        { color: #3b5998; } /* facebook */
-  #nav-social a:nth-child(2) i        { color: #dd4b39; } /* google plus */
-  #nav-social a:nth-child(3) i        { color: #55acee; padding-left: 12px !important;} /* twitter */
-  #nav-social a:nth-child(4) i        { color: #0976b4; } /* linkedin */
-  #nav-social a:nth-child(5) i        { color: #cd201f; } /* youtube */
+  #nav_social i                       { width: 32px; }
+  #nav_social a:nth-child(1) i        { color: #3b5998; } /* facebook */
+  #nav_social a:nth-child(2) i        { color: #dd4b39; } /* google plus */
+  #nav_social a:nth-child(3) i        { color: #55acee; padding-left: 12px !important;} /* twitter */
+  #nav_social a:nth-child(4) i        { color: #0976b4; } /* linkedin */
+  #nav_social a:nth-child(5) i        { color: #cd201f; } /* youtube */
 }
 
 
