@@ -992,12 +992,15 @@
 
   @media only screen and (max-width: 1024px) {
 		html, body									{ font-size: 13px; }
+		p														{ font-size: 15px; }
+		h2													{ font-size: 42px; }
+		h3													{ font-size: 185%; }
+		#brands p										{ font-size: 175%; }
 /*
 		h1													{ font-size: 42px; }
-		h2													{ font-size: 40px; }
+
 		h3													{ font-size: 24px; }
 		h4													{ font-size: 20px; }
-		p														{ font-size: 15px; }
 		figcaption									{	font-size: 16px; }
 		header p										{ font-size: 21px; }
 		blockquote::before,
