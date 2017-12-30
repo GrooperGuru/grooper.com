@@ -710,11 +710,10 @@
 
 
   /* The align-bottom class allows large primary images to align to the bottom of their section so that they appear to be emerging from behind the following */
-	.align-bottom > *									{
+	.align-bottom											{
 																			padding-bottom: 0 !important;
 																			border-bottom: 1px solid #b2dfdb;
 																		}
-	.align-bottom img									{ margin: 48px auto 0 auto; }
 	/* just figured out that this is how I can make the aligned images stretch to fill the screen and overflow past the left/right edges on smaller devices */
 	/* the negative bottom margin will keep the parent section from enlarging too much and the positive top margin will make up for the change in space */
 	/* will have to think about how I'll decide the values of these margins to keep this from looking bad, scale must be by percentage */
@@ -958,6 +957,8 @@
   	#footer_links input         { height: 28px; }
   	#social a                   { height: 96px; width: 96px; }
   	#copyright img              { height: 38px; }
+		blockquote::before					{ top: -8px; }
+		blockquote::after						{ bottom: -76px; }
   }
 
 
