@@ -187,7 +187,7 @@
     h1                              { font-weight: 100; }
     h2                              { font-weight: 200; }
     td, em, strong                  { font-weight: 400; }
-    thead                           { font-weight: 500; }
+    thead, th                       { font-weight: 500; }
     .btn-lrg, .btn-sml, #social     { font-weight: 400; }
     .field-wrapper input            { font-weight: 500; }
 
@@ -444,12 +444,16 @@
 		#footer_links > div             { padding: 0; }
 		figcaption											{ margin: 0 0 auto 0; }
 		#social													{ margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
+    img + figcaption,
+    table + figcaption,
+    figcaption + img,
+    figcaption + table              { margin-top: 36px; } /* adds margin between images/tables and the text they belong to */
 		.col-2-1 figure:first-child figcaption,
 		.col-1-2 figure:last-child figcaption,
 		.col-1 figcaption								{ width: 70%; }
 		.col-1-2 figure:first-child figcaption,
 		.col-2-1 figure:last-child figcaption,
-		.col-2 figcaption								{ width: 80%; }
+		.col-2 figcaption, .col-1 table { width: 80%; }
 		.col-3 figcaption								{ width: 90%; }
 
 
@@ -501,7 +505,7 @@
     section, blockquote							{ border-bottom: 1px solid #b2dfdb; } /* gives each section & blockquote a light teal bottom border */
     .col-1                          { border-bottom: 0; } /* then we remove the above mentioned border for col-1 as these are intended to be headers directly related to the content below them */
     .comparison > *:last-child			{ border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
-    .shadow img                     { border: 1px solid #b2dfdb; }
+    .border-img img                 { border: 1px solid #b2dfdb; }
 
 
 	/* 4.8 - Z-Index - 4.8 */
@@ -659,16 +663,9 @@
 	.typography p											{ margin: 16px 0 !important; }
 	.typography li										{ margin: 8px 0 !important; }
 
-  /* The img-top and img-btm classes are applied to any container. Once applied, all child images will be impacted to add margin either above or below the img. */
-  /* The "top" and "btm" suffix denotes whether the images are above or below the text to which they correspond */
-  .img-top img                      { margin-bottom: 36px; } /* adds margin below images when the image is directly above text */
-  .img-btm img                      { margin-top: 36px; } /* adds margin above images when the image is directly below text */
-
   /* The align classes are used to remove -bottom class allows large primary images to align to the bottom of their section so that they appear to be emerging from behind the following */
-	.align-bottom											{
-																			padding-bottom: 0 !important;
+	.align-bottom                     { padding-bottom: 0 !important; }
 
-																		}
 	/* just figured out that this is how I can make the aligned images stretch to fill the screen and overflow past the left/right edges on smaller devices */
 	/* the negative bottom margin will keep the parent section from enlarging too much and the positive top margin will make up for the change in space */
 	/* will have to think about how I'll decide the values of these margins to keep this from looking bad, scale must be by percentage */
@@ -678,14 +675,23 @@
 
   /* The bg-dark and bg-light classes control the child elements of the colored container, the specific color is added via the adition of a specific color class */
 	/* The teal and orange classes can then be added to apply background color to main sections and alter the color of the text therein appropriately */
-	.bg-dark *,	.bg-light *						{ background: transparent !important; }
-	.bg-dark *												{ color: rgba(238,238,238,.75); }
+	.bg-dark *,	.bg-light *           { background: transparent !important; }
+	.bg-dark *                        { color: rgba(238,238,238,.75); }
 	.bg-dark h2, .bg-dark h3,
-	.bg-dark span											{ color: #fff !important; }
-	.bg-light *												{ color: rgba(17,17,17,.75); }
+	.bg-dark span                     { color: #fff !important; }
+	.bg-light *                       { color: rgba(17,17,17,.75); }
 	.bg-light h2, .bg-light h3
-	.bg-light span										{ color: #000 !important; }
-
+	.bg-light span, .bg-light th      { color: #000 !important; }
+  .bg-dark thead tr                 { background: rgba(255,255,255,.6) !important; }
+  .bg-dark tbody tr:nth-child(odd)  { background: rgba(255,255,255,.06) !important; }
+  .bg-dark table                    { border: 1px solid rgba(238,238,238,.3); }
+  .bg-dark th                       { color: rgba(17,17,17,1) !important; }
+  .bg-dark thead, .bg-dark tr       { border-bottom: 1px solid rgba(238,238,238,.3); }
+  .bg-light thead tr                { background: rgba(0,0,0,.6) !important; }
+  .bg-light tbody tr:nth-child(odd) { background: rgba(0,0,0,.06) !important; }
+  .bg-light table                   { border: 1px solid rgba(17,17,17,.3); }
+  .bg-light th                      { color: rgba(238,238,238,1) !important; }
+  .bg-light thead, .bg-dark tr      { border-bottom: 1px solid rgba(17,17,17,.3); }
 
 	/* blockquotes should be added directly to the main section of the page */
 	/* to produce the color styling of the blockquote, use the bg-color class on the blockquote itself */
@@ -780,7 +786,7 @@
 																						    -ms-transform: scale(1.1);
 																						        transform: scale(1.1);
 																					}
-	tbody tr:hover													{
+	tbody tr													      {
 																						-webkit-transition: background 0.4s ease 0s;
 																						     -o-transition: background 0.4s ease 0s;
 																						        transition: background 0.4s ease 0s;
@@ -930,9 +936,11 @@
 		#menu > li > a							{ margin: 0 8px; }
     #social											{ margin: 64px auto 8px auto; }
   	#copyright img							{ margin: 8px auto; }
+    img + figcaption,
+    table + figcaption,
+    figcaption + img,
+    figcaption + table          { margin-top: 32px; } /* adds margin between images/tables and the text they belong to */
 		.btn-sml										{ margin-top: 8px; }
-    .img-btm img                { margin-top: 32px !important; }
-    .img-top img                { margin-bottom: 32px !important; }
 		.col-3 > figure,
     .col-3 > div                { flex-basis: 47.21%; -ms-flex: 47.21%; }
 		section, blockquote,
