@@ -433,8 +433,8 @@
 		.col-1 > figure, .col-1 > div		{ padding-top: 0; } /* there will only ever be one figure or div within a col-1 container, so the .col-1 itself already has the top padding needed */
 		section > p											{ padding-bottom: 0; }
 		#brands													{ padding-top: 144px; padding-bottom: 144px; }
-		.col-2, .col-3,
-		.col-1-2, .col-2-1							{ padding-left: 5%; padding-right: 5%; }
+		section                         { padding-left: 5%; padding-right: 5%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+    .col-1, #brands                 { padding-left: 0; padding-right: 0; }
 		section > h2, section > p				{ padding-left: 15%; padding-right: 15%; }
 		blockquote											{ padding-left: 18%; padding-right: 18%; }
 		#nav_primary										{ padding: 0 96px; }
@@ -444,10 +444,10 @@
 		#footer_links > div             { padding: 0; }
 		figcaption											{ margin: 0 0 auto 0; }
 		#social													{ margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
-    img + figcaption,
-    table + figcaption,
-    figcaption + img,
-    figcaption + table              { margin-top: 36px; } /* adds margin between images/tables and the text they belong to */
+    span + figcaption, figcaption + span,
+    img + figcaption, figcaption + img,
+    table + figcaption, figcaption + table
+                                    { margin-top: 36px; } /* adds margin between images/tables and the text they belong to */
 		.col-2-1 figure:first-child figcaption,
 		.col-1-2 figure:last-child figcaption,
 		.col-1 figcaption								{ width: 70%; }
@@ -663,6 +663,19 @@
 	.typography p											{ margin: 16px 0 !important; }
 	.typography li										{ margin: 8px 0 !important; }
 
+  .side_by_side                     { padding-left: 10%; padding-right: 10%; }
+  .side_by_side figure              { flex-direction: row; justify-content: space-between;}
+  .side_by_side img,
+  .side_by_side table               { flex-basis: 47.22%; }
+  .side_by_side figcaption          { flex-basis: 47.22%; }
+  .side_by_side img + figcaption,
+  .side_by_side table + figcaption,
+  .side_by_side figcaption + img,
+  .side_by_side figcaption + table  { margin: 0; padding-left: 5%; }
+  .side_by_side figure > *                 { margin: 0; /*margin-left: 36px;*/ }
+
+
+
   /* The align classes are used to remove -bottom class allows large primary images to align to the bottom of their section so that they appear to be emerging from behind the following */
 	.align-bottom                     { padding-bottom: 0 !important; }
 
@@ -749,6 +762,25 @@
 																					background: rgba(255,255,255,0.97) !important;
 																					color: rgba(0,0,0,0.8) !important;
 																				}
+
+
+  .icon-phase                           {
+                                          height: 120px;
+                                          width: 120px;
+                                          line-height: 120px; /* this must always be the same as the height of the span itself. The result is vertically centered text. */
+                                          margin: 0 auto;
+                                          padding: 16px;
+                                          border-radius: 4px;
+                                          font-size: 20px;
+                                          text-transform: uppercase;
+                                          text-align: center;
+                                        }
+  .icon-phase.acquire                   { border: 1px solid rgb(255,134,84); color: rgb(255,134,84); background: rgba(255,134,84,.2) !important; } /*#ff8654*/
+  .icon-phase.condition                 { border: 1px solid rgb(0,  176,240); color: rgb(0,176,240); background: rgba(0,176,240,.2) !important; } /*#00b0f0*/
+  .icon-phase.organize                  { border: 1px solid rgb(255,60,60 ); color: rgb(255,60,60); background: rgba(255,60,60,.2) !important; } /*#ff3c3c*/
+  .icon-phase.collect                   { border: 1px solid rgb(178,149,197); color: rgb(178,149,197); background: rgba(178,149,197,.2) !important; } /*#b295c5*/
+  .icon-phase.deliver                   { border: 1px solid rgb(146,208,80 ); color: rgb(146,208,80); background: rgba(146,208,80,.2) !important; } /*#92d050*/
+
 
 	.desaturate														{
 																					display:        flex;
