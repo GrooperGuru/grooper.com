@@ -483,7 +483,7 @@
 																			-webkit-box-shadow: 0 1px 24px rgba(0,0,0,0.6);
 																			        box-shadow: 0 1px 24px rgba(0,0,0,0.6);
 																		}
-		#menu ul							{
+		#menu ul                        {
 																			-webkit-box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
 																			        box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
 																		}
@@ -723,8 +723,6 @@
 	/* The btn-sml and btn-lrg classes are used on <a> elements to turn them into styled buttons in one of two sizes. */
 	/* It is assumed that these will always be on a line by themselves and should be horizontally centered within the parent container */
   .btn-sml, .btn-lrg										{
-																					/*display: inline-block;*/
-																					/*vertical-align: middle;*/
 																					text-transform: uppercase;
 																					background: rgba(255,255,255,.066);
 																					border: 1px solid rgba(255,255,255,0.6);
