@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge;" />
 	<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Unified Content Processing with Grooper</title>
+	<title>Document Classification with Grooper</title>
 	<link rel="stylesheet" href="styles/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -43,9 +43,9 @@
 
 
   <header>
-		<h1>Modern Computing Architecture</h1>
+		<h1>Image Processing</h1>
 		<p>
-			Maximize your investment in server and network infrastructure with Grooper's parallel processing, GPU acceleration, and multi-tier storage capabilities.
+			Grooper enhances images displayed to users throughout your workflow, removes image artifacts known to interfere with OCR, provides crisp versions for permanent archival, and analyzes page structure to assist with automated decision making downstream.
 		</p>
     <!--<img src="images/features/image-processing/grooper-image-processing.jpg">-->
 	</header>
@@ -82,133 +82,69 @@
 
   <main>
 
+    <section class="col-2">
+			<h2>Halftone Removal</h2>
+			<p>Dithering and other halftone patterns are a direct result of legacy document imaging platforms poorly converting color images to black and white. These artifacts must be eliminated to prevent massive errors in OCR results.</p>
 
-    <section class="col-3">
-      <h2>5-Phase Batch Processing Approach</h2>
-		  <figure>
-        <span class="icon-phase acquire">Acquire</span>
-				<figcaption>
-          <h3>Scalable Parallel Processing</h3>
-        	<p>Grooper's shared computing infrastructure makes parallel processing on a large scale easy.</p>
-				</figcaption>
-      </figure>
-
-		  <figure>
-        <span class="icon-phase condition">Condition</span>
-				<figcaption>
-          <h3>Scalable Parallel Processing</h3>
-        	<p>Grooper's shared computing infrastructure makes parallel processing on a large scale easy.</p>
-				</figcaption>
-      </figure>
-
-		  <figure>
-        <span class="icon-phase organize">Organize</span>
-				<figcaption>
-          <h3>Scalable Parallel Processing</h3>
-        	<p>Grooper's shared computing infrastructure makes parallel processing on a large scale easy.</p>
-				</figcaption>
-      </figure>
-
-		  <figure>
-        <span class="icon-phase collect">Collect</span>
-				<figcaption>
-          <h3>Scalable Parallel Processing</h3>
-        	<p>Grooper's shared computing infrastructure makes parallel processing on a large scale easy.</p>
-				</figcaption>
-      </figure>
-
-		  <figure>
-        <span class="icon-phase deliver">Deliver</span>
-				<figcaption>
-          <h3>Scalable Parallel Processing</h3>
-        	<p>Grooper's shared computing infrastructure makes parallel processing on a large scale easy.</p>
-				</figcaption>
-      </figure>
-    </section>
-
-    <section class="col-1">
 			<figure>
-        <figcaption>
-    		  <h2>The Power of Parallel Processing</h2>
-    	    <p>The performance benefits of parallel processing are significant, particularly for low latency, CPU-intensive activities. Consider the job below, executed on a 56-core thread pool.  CPU-intensive activities experience a <strong>massive speed increase – up to 50X!</strong></p>
-        </figcaption>
-        <table>
-					<thead>
-						<tr>
-							<th>Activity</th>
-							<th>Description</th>
-							<th>Serial</th>
-							<th>Parallel</th>
-							<th>Factor</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Import</td>
-							<td>Loaded 46K TIF & PDF documents from CMIS.</td>
-							<td>13 hours</td>
-							<td>3.2 hours</td>
-							<td>4x</td>
-						</tr>
-						<tr>
-							<td>Split</td>
-							<td>Split documents into 426K pages.</td>
-							<td>11.7 hours</td>
-							<td>27 minutes</td>
-							<td>26x</td>
-						</tr>
-						<tr>
-							<td>Enhance</td>
-							<td>Applied image cleanup to 426K pages.</td>
-							<td>4.2 days</td>
-							<td>2.0 hours</td>
-							<td>50x</td>
-						</tr>
-						<tr>
-							<td>OCR</td>
-							<td>Performed full text OCR on 426K pages.</td>
-							<td>1.9 days</td>
-							<td>1.3 hours</td>
-							<td>35x</td>
-						</tr>
-						<tr>
-							<td>Extract</td>
-							<td>Extracted additional fields from 46K documents.</td>
-							<td>3.7 hours</td>
-							<td>9.3 minutes</td>
-							<td>25x</td>
-						</tr>
-						<tr>
-							<td>Merge</td>
-							<td>Merged 426K pages back into multipage files.</td>
-							<td>8.5 hours</td>
-							<td>24 minutes</td>
-							<td>21x</td>
-						</tr>
-						<tr>
-							<td>Export</td>
-							<td>Exported 46K documents to CMIS.</td>
-							<td>18.0 hours</td>
-							<td>3.5 hours</td>
-							<td>5x</td>
-						</tr>
-					</tbody>
-				</table>
+        <img src="images/features/image-processing/grooper-halftone-removal-01.png" />
+				<figcaption>
+        	<h3>Safe Zones</h3>
+        	<p>Grooper understands the location of characters throughout each page and is smart enough to use its "Safe-zone" technology to avoid accidentally removing punctuation.</p>
+				</figcaption>
+      </figure>
+
+      <figure>
+        <img src="images/features/image-processing/grooper-halftone-removal-02.png" />
+				<figcaption>
+        	<h3>Pixel-Perfect</h3>
+        	<p>The Best of page helps users find your community’s best content by browsing a fun, infinite-scrolling page. Content shows up on this page if it receives positive reactions or if promoted by a moderator.</p>
+				</figcaption>
       </figure>
     </section>
+
+
+		<section id="brands" class="bg-dark gray tile">
+			<p>Our passion for solving the problems other platforms fail to address is why these amazing organizations trust Grooper.</p>
+				<img src="images/brands/logo-emily-carr.svg" />
+				<img src="images/brands/logo-netflix.svg" />
+				<img src="images/brands/logo-oakley.svg" />
+				<img src="images/brands/logo-salesforce.svg" />
+		</section>
+
+
+    <section class="col-1-2 border-img">
+			<h2>Classification</h2>
+			<p>Manually selecting doc types is a thing of the past.  Use ESP to find and make decisions based on the distinguishing features of each page. ESP uses three key feature collection mechanisms:</p>
+      <figure class="first">
+        <figcaption>
+          <h3>Lexical</h3>
+          <p>NLP examines the <strong>language</strong> of the complete document to understand its meaning and determine what it is.</p>
+        </figcaption>
+        <img src="images/features/classification/grooper-classification-lexical.jpg" />
+      </figure>
+      <figure class="last">
+        <figcaption>
+          <h3>Rules-Based</h3>
+          <p>Finds unique <strong>key words or phrases</strong> that positively identify a document, like a Title or Section Heading.</p>
+        </figcaption>
+        <img src="images/features/classification/grooper-classification-rules-based.jpg" />
+      </figure>
+    </section>
+
 
 		<blockquote class="bg-dark orange tile">
-			<p>We realized even in the earliest stages of Grooper's life the importance of parallel processing. Conditioning documents for complete data collection requires a tremendous amount of computational cycles for image processing, text collection, and data analysis. This was the correct architecture to maintain reasonable processing times without having to compromise our ability to get every piece of data we wanted.</p>
-        <span>Matt Harrison, Grooper Product Manager</div>
+			<p>Grooper is a perfect balance of structure and flexibility. It gives you only what you need, lets you easily create the rest specifically for the project, and then it gets out of your way.</p>
+			<span>WebDevCorner.com</div>
 		</blockquote>
 
-    <section class="col-1 img-btm align-bottom">
+    <section class="col-1 align-bottom">
       <figure>
         <figcaption>
-					<h2>GPU Acceleration</h2>
-					<p>Grooper uses hardware acceleration to speed up Image Processing, Computer Vision, and Fuzzy RegEx. This acceleration offloads compute-intensive operations to specialized hardware which performs operations in parallel.</p>
-        </figcaption>
-        <img src="images/features/parallel-processing/grooper-nvidia-gpu-acceleration.jpg">
+					<h2>Classification</h2>
+					<p>Manually selecting doc types is a thing of the past.  Use ESP to find and make decisions based on the distinguishing features of each page. ESP uses three key feature collection mechanisms:</p>
+				</figcaption>
+        <img src="images/features/image-processing/grooper-image-processing.jpg">
 			</figure>
 		</section>
 
@@ -217,7 +153,7 @@
 			<span>WebDevCorner.com</div>
 		</blockquote>
 
-    <section class="col-3 img-btm">
+    <section class="col-3 border-img">
 			<h2>Classification</h2>
 			<p>Manually selecting doc types is a thing of the past.  Use ESP to find and make decisions based on the distinguishing features of each page. ESP uses three key feature collection mechanisms:</p>
       <figure>

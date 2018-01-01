@@ -29,12 +29,23 @@
 																		}
 
 
-  /* 1.4 - Reset cursor to default - 1.4 */
-		table, i,
-		.btn-sml, .btn-lrg,
+  /* 1.4 - Cursor and Touch - 1.4 */
+    table, i,
+    .btn-sml, .btn-lrg,
     #nav_primary ul,
-		#nav_primary ul a,
-		#nav_social, #nav_social a			{ cursor: default; }
+    #nav_primary ul a,
+    #nav_social, #nav_social a      { cursor: default; }
+    #nav_secondary_left:hover,
+    #nav_secondary_right:hover,
+    #nav_primary input              { cursor: pointer; }
+    #mobile-menu                    {
+                                      -webkit-user-select: none;
+                                         -moz-user-select: none;
+                                          -ms-user-select: none;
+                                              user-select: none;
+                                    }
+    #nav_primary input              { -webkit-touch-callout: none; }
+
 
 
   /* 1.5 - Reset Lists and Tables - 1.5 */
@@ -66,7 +77,7 @@
 			.content__button input:hover	{ background: #555 !important; }
 			#menu > li > a:before,
 			#menu ul li:hover a						{ background: #fff; }
-			#menu ul li										{ background: rgba(255,255,255,.94); }
+			#menu ul li										{ background: rgba(238,238,238,.94); }
 			#nav_primary									{ background: rgba(0,0,0,.94); }
 			#map *												{ background: transparent; } /* transparent */
 
@@ -203,7 +214,7 @@
     h2 + p                          { color: #000; } /* paragraphs immediately after a h2 */
     header p                        { color: #fff; }
     #nav_secondary_contents > a [aria-selected="true"]	{ color: #111; }
-		#menu ul li a                   { color: #333; }
+  	#menu ul li a                   { color: #333; }
   	#nav_primary i, #copyright			{ color: #666; }
     #nav_secondary_contents > a			{ color: #888; }
 		.content__button input					{ color: #bbb !important; }
@@ -213,7 +224,7 @@
     #footer_links label, #social a,
     #social a:hover .fa             { color: #fff; }
     #menu ul li:hover a,
-		#next_feature a									{ color: #009688; }
+		#next_feature a									{ color: #009688; } /* teal */
 		#footer_links li,
 		#footer_links a									{ color: rgba(255,255,255,.46); }
     #nav_primary i:hover						{ color: rgba(255,255,255,.86); }
@@ -223,6 +234,8 @@
   /* 2.8 - Line Height and Spacing - 2.8 */
     h1, h2, h3, h4, h5, h6          { margin-bottom: 0.6em; }
     p                               { line-height: 1.5em; }
+    #menu > li > a                  { line-height: 36px; } /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
+
 
 
 	/* 2.9 - Tables and Lists - 2.9 */
@@ -268,18 +281,15 @@
 
 	/* 4.1 - Display - 4.1 */
 
-		#nav_primary input,
-		#nav_primary i, /*hide hamburger icon until requested by mobile media query */
-		#nav_secondary_container::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
-																		{
-																			display: none;
-																		}
-		h1, h2, h3, h4, h5, h6, p, img,
-		#menu a,
-		#menu > li:hover > ul,
-		blockquote span									{ display: block; }
-		#menu ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
-		#social a												{ display: inline-block; }
+    #nav_primary input,
+    #nav_primary i, /*hide hamburger icon until requested by mobile media query */
+    #nav_secondary_container::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
+                                    { display: none; }
+    h1, h2, h3, h4, h5, h6, p, img,
+    #menu a, #menu > li:hover > ul,
+    blockquote span                 { display: block; }
+    #menu ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
+    #social a                       { display: inline-block; }
 
 
   /* 4.2 - Flexible Box Model Control - 4.2 */
@@ -291,10 +301,11 @@
 
 			/* 4.2.1.1 - Flex Display - 4.2.1.1 */
 			/* Tells a container to display its contents using a flexible box model */
-				figure, .col-2, .col-3,
-				.col-2 > *, .col-3 > *,
-				.col-1-2, .col-2-1,
-				#brands, #calltoaction,
+				figure, section:not(.col-1),
+        section:not(.col-1) > *,
+        /*.col-2 > *,
+        .col-3 > *,*/
+				#calltoaction,
 				#calltoaction > div,
 				#footer_links,
 				.field-wrapper,
@@ -304,6 +315,7 @@
 																			display: -webkit-flex;
 																			display: flex;
 																		}
+
 				#nav_primary li,
 				#nav_secondary_contents > a	{
 																			display: -webkit-inline-box;
@@ -317,8 +329,9 @@
 			/* Direction of the flex container's main axis */
 				#calltoaction > div,
 				.col-1 figure,
-				.col-2 > *, .col-3 > *,
-				.col-1-2 > *, .col-2-1 > *	{
+        section:not(.col-1) > *
+				/*.col-2 > *, .col-3 > *,
+				.col-1-2 > *, .col-2-1 > **/	{
 																			-webkit-flex-direction: column;
 																			    -ms-flex-direction: column;
 																			        flex-direction: column;
@@ -327,9 +340,11 @@
 
 			/* 4.2.1.3 - Flex Wrap - 4.2.1.3 */
 			/* Controls whether the flex container is single-line or multi-line, and the direction of the cross axis */
-				.col-2, .col-3,
+				/*.col-2, .col-3,
 				.col-1-2, .col-2-1,
-				#footer_links, #brands,
+				#brands,*/
+        section:not(.col-1),
+        #footer_links,
 				#calltoaction > div					{
 																			-webkit-flex-wrap: wrap;
 																			    -ms-flex-wrap: wrap;
@@ -344,16 +359,12 @@
 																			          -ms-flex-pack: start;
 																			        justify-content: flex-start;
 																		}
-		    .col-2, .col-3,
-				.col-1-2, .col-2-1					{
+		    section:not(.col-1)
+        /*.col-2, .col-3,
+				.col-1-2, .col-2-1*/					{
 																			-webkit-justify-content: space-between;
 																			          -ms-flex-pack: space-between;
 																			        justify-content: space-between;
-/*
-																			-webkit-justify-content: space-evenly;
-																			          -ms-flex-pack: space-evenly;
-																			        justify-content: space-evenly;
-																							*/
 																		}
 				#brands, #calltoaction,
 				#footer_links								{
@@ -371,8 +382,9 @@
 			/* 4.2.1.5 - Align Items - 4.2.1.5 */
 			/* Align all items along the cross axis of a flexible container */
 				.col-1 figure,
-				.col-2 > *, .col-3 > *,
-				.col-1-2 > *, .col-2-1 > *,
+        section:not(.col-1) > *,
+				/*.col-2 > *, .col-3 > *,
+				.col-1-2 > *, .col-2-1 > *,*/
 				#nav_primary li,
 				#nav_secondary_contents > a	{
 																			-webkit-box-align: center;
@@ -402,8 +414,9 @@
 
 			/* 4.2.2.4 - Flex Basis - 4.2.2.4 */
 			/* The initial width or height (whichever is on the main axis) of the flex item, before free space is distributed according to the flex factors. */
-				.col-2 > *, .col-3 > *,
-				.col-1-2 > *, .col-2-1 > *          { flex-basis: 100%; -ms-flex: 100%; } /* this is a catch-all for direct h2, p, and other potential text elements inside a section that don't fall inside a specific column */
+				/*.col-2 > *, .col-3 > *,
+				.col-1-2 > *, .col-2-1 > **/
+        section:not(.col-1) > *             { flex-basis: 100%; -ms-flex: 100%; } /* this is a catch-all for direct h2, p, and other potential text elements inside a section that don't fall inside a specific column */
 				.col-1 > figure, .col-1 > div       { flex-basis: 100%; -ms-flex: 100%; }
 				.col-2 > figure, .col-2 > div       { flex-basis: 47.21%; -ms-flex: 47.21%; } /*42.5%*/
 				.col-3 > figure, .col-3 > div       { flex-basis: 29.629%; -ms-flex: 29.629%; } /*28.33*/
@@ -412,6 +425,7 @@
 				#footer_links > div                 { flex-basis: 33.33%; -ms-flex: 33.33%; }
 				#calltoaction > div                 { flex-basis: 50%; -ms-flex: 50%; }
 				#brands p                           { flex-basis: 100%; -ms-flex: 100%; }
+        #brands img                         { flex-basis: auto; }
 
 
 			/* 4.2.2.5 - Align Self - 4.2.2.5 */
@@ -425,7 +439,7 @@
 
   /* 4.3 - Margin & Padding - 4.3 */
     header													{ margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
-    header													{ padding: 144px 256px 240px 256px;} /* bottom padding should be equal to top padding + margin-top */
+    header													{ padding: 144px 15% 240px; } /* bottom padding should be equal to top padding + margin-top */
     footer													{ padding: 96px 18% 16px 18%; } /* 96px 336px 16px 336px; */
 		section, blockquote,
 		figure, section > div						{ padding-top: 72px; }
@@ -433,15 +447,15 @@
 		.col-1 > figure, .col-1 > div		{ padding-top: 0; } /* there will only ever be one figure or div within a col-1 container, so the .col-1 itself already has the top padding needed */
 		section > p											{ padding-bottom: 0; }
 		#brands													{ padding-top: 144px; padding-bottom: 144px; }
-		section                         { padding-left: 5%; padding-right: 5%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+		section, #nav_primary           { padding-left: 5%; padding-right: 5%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
     .col-1, #brands                 { padding-left: 0; padding-right: 0; }
 		section > h2, section > p				{ padding-left: 15%; padding-right: 15%; }
-		blockquote											{ padding-left: 18%; padding-right: 18%; }
-		#nav_primary										{ padding: 0 96px; }
+    blockquote											{ padding-left: 18%; padding-right: 18%; }
+		/*#nav_primary										{ padding: 0 96px; }*/
     #next_feature										{ padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
-		#next_feature a									{ padding: 0; }
+		#next_feature a,
+    #footer_links > div             { padding: 0; }
     #calltoaction div								{ padding: 7%; }
-		#footer_links > div             { padding: 0; }
 		figcaption											{ margin: 0 0 auto 0; }
 		#social													{ margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
     span + figcaption, figcaption + span,
@@ -455,6 +469,8 @@
 		.col-2-1 figure:last-child figcaption,
 		.col-2 figcaption, .col-1 table { width: 80%; }
 		.col-3 figcaption								{ width: 90%; }
+		#next_feature a,
+    .col-2 table, .col-3 table       { width: 100%; }
 
 
 	/* 4.4 - Position - 4.4 */
@@ -513,8 +529,9 @@
 		#nav_secondary									{ z-index: 1; }
 
 
-	/* 4.9 - Box Sizing - 4.9 */
-		#nav_secondary, #social a				{ box-sizing: border-box; }
+  /* 4.9 - Box Sizing - 4.9 */
+    #nav_primary, #nav_secondary,
+    #social a                       { box-sizing: border-box; }
 
 
 	/* 4.99 - Visibility - 4.99 */
@@ -529,23 +546,23 @@
 
 
   /* 5.1 - Primary Navigation - 5.1 */
-    #menu > li > a                  { line-height: 36px; } /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
-    #menu a                         { vertical-align: middle; }
+    /*#menu a          { vertical-align: middle; }*/
+    #nav_primary *                  { vertical-align: middle; }
     #menu ul li a                   { padding: 16px 0; } /* establishes the vertical spacing of submenu items */
     #nav_primary i                  { padding-right: 48px; }
-    #menu > li > a                  { margin: 0 16px; }
+    #menu > li > a                  { margin: 0 16px; } /* horizontal spacing between main menu items */
     #menu ul li a                   { margin: 0 auto; }
     .grooper_logo                   { margin-top: 18px; } /* arbitrary value that vertically centers logo within navbar to compensate for the inherent offset built into the grooper logo */
     #nav_primary i                  { margin-top: 8px; }
     #menu > li:last-child > a       { margin-right: 0 !important; } /*removes the unnecessary right margin from the last menu item, as the navbar itself already has sufficient padding. top amrgin should be same as margin above */
-    .grooper_logo                   { height: 64px; }
-    #nav_primary, #menu li          { height: 96px; }
+    .grooper_logo                   { height: 64px; } /* height of grooper logo */
+    #nav_primary, #menu li          { height: 96px; } /* height of entire navbar */
     #menu > li > a:before           { height: 1px; } /* sets height of the primary nav link underlines that will appear during hover */
     #menu ul li                     { height: 48px; } /* determines height of submenu items */
-    #nav_primary                    { width: calc(100% - (96px * 2)); } /* the combination of left/right padding must be subtracted from this to retain a centered position */
-    #menu ul li                     { width: 200px; } /* determines width of submenu items */
     .grooper_logo                   { width: 214px; } /*set to actual width of logo image */
-    #menu > li > a:before           { width: 100%; }/*ensures line consumes full width of item */
+    #nav_primary,
+    #menu > li > a:before           { width: 100%; }
+    #menu ul li                     { width: 200px; } /* determines width of submenu items */
     #nav_primary                    { top: 0; }
     #menu ul                        { top: calc(100% - 32px); } /* adjusts the location of the dropdown menu upward to cover the parent link's underlining */
     #menu > li > a:before           { bottom: 0; } /* ensures line will snap to bottom edge of item */
@@ -559,86 +576,79 @@
 
 
   /* 5.2 - Secondary Navigation - 5.2 */
-    #nav_secondary {
-      padding: 0;
-      height: 48px;
-    }
-    #nav_secondary_container {
-      overflow-x: auto; /* allow horizontal scroll if enough items exist */
-      overflow-y: hidden; /* prevent vertical scroll */
-      -webkit-overflow-scrolling: touch; /* inertia scrolling for webkit */
-      white-space: nowrap; /* We don't want internal inline elements to wrap */
-      width: calc(100% - 96px);
-      margin: 0 auto;
-    }
-    /*#nav_secondary_container {-ms-overflow-style: -ms-autohiding-scrollbar; }*/ /* Make an auto-hiding scroller for the 3 people using a IE */
-    #nav_secondary_container {-ms-overflow-style: none; } /* Make an auto-hiding scroller for the 3 people using IE */
-    #nav_secondary_container {overflow: -moz-scrollbars-none;}
-    #nav_secondary_contents > a {
-      font-size: 16px;
-      min-height: 48px;
-      height: 48px; /*must match min-height to allow vertical flex alignment to find true center across all browsers */
-      padding: 0 12px;
-    }
-    #nav_secondary_left, #nav_secondary_right {
-      width: 48px;
-      height: 48px;
-      top: 0;
-      bottom: 0;
-      opacity: 0; /* Set the buttons invisible by default */
-    }
-    #nav_secondary_left:focus, #nav_secondary_right:focus { outline: 0; } /*removes blue outline during focus */
-    #nav_secondary_left:hover, #nav_secondary_right:hover { cursor: pointer; }
-    #nav_secondary_left { left: 0; } /*push left button to left side of navbar */
-    #nav_secondary_right { right: 0; } /*push right button to right side of navbar */
-    [data-overflowing="both"] ~ #nav_secondary_left, [data-overflowing="left"] ~ #nav_secondary_left,
-    [data-overflowing="both"] ~ #nav_secondary_right, [data-overflowing="right"] ~ #nav_secondary_right {
-      opacity: 1;
-    }
-    .nav_advancer_icon {
-      width: 20px;
-      height: 32px;
-      margin: 0 auto;
-      fill: #bbb;
-    }
-    #nav_secondary_indicator {
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      width: 100px;
-    }
+    #nav_secondary_contents > a     { font-size: 16px; }
+    #nav_secondary                  { padding: 0; }
+    #nav_secondary_contents > a     { padding: 0 12px; }
+    #nav_secondary_container        { margin: 0 auto; }
+    .nav_advancer_icon              { margin: 0 auto; }
+    #nav_secondary,
+    #nav_secondary_contents > a,
+    #nav_secondary_left,
+    #nav_secondary_right            { height: 48px; }
+    .nav_advancer_icon              { height: 32px; }
+    #nav_secondary_indicator        { height: 2px; }
+    #nav_secondary_container        { width: calc(100% - 96px); }
+    #nav_secondary_left,
+    #nav_secondary_right            { width: 48px; }
+    .nav_advancer_icon              { width: 20px; }
+    #nav_secondary_indicator        { width: 100px; }
+    #nav_secondary_contents > a     { min-height: 48px; }
+    #nav_secondary_left,
+    #nav_secondary_right            { top: 0; }
+    #nav_secondary_left,
+    #nav_secondary_right,
+    #nav_secondary_indicator        { bottom: 0; }
+    #nav_secondary_right            { right: 0; } /*push right button to right side of navbar */
+    #nav_secondary_left,
+    #nav_secondary_indicator        { left: 0; }
+    #nav_secondary_left,
+    #nav_secondary_right            { opacity: 0; } /* Set the buttons invisible by default */
+    #nav_secondary_left:focus,
+    [data-overflowing="both"] ~ #nav_secondary_left,
+    [data-overflowing="left"] ~ #nav_secondary_left,
+    [data-overflowing="both"] ~ #nav_secondary_right,
+    [data-overflowing="right"] ~ #nav_secondary_right
+                                    { opacity: 1; }
+    .nav_advancer_icon              { fill: #bbb; }
+    #nav_secondary_right:focus      { outline: 0; } /*removes blue outline during focus */
+    #nav_secondary_container        { overflow-x: auto; } /* allow horizontal scroll if enough items exist */
+    #nav_secondary_container        { overflow-y: hidden; } /* prevent vertical scroll */
+    #nav_secondary_container        { -webkit-overflow-scrolling: touch; } /* inertia scrolling for webkit */
+    #nav_secondary_container        { white-space: nowrap; } /* We don't want internal inline elements to wrap */
+    #nav_secondary_container        { -ms-overflow-style: none; } /* Make an auto-hiding scroller for the 3 people using IE */
+    #nav_secondary_container        { overflow: -moz-scrollbars-none; }
 
 
-/* FOOTER */
-  #footer_links li,
-  .content__button input            { padding: 4px 0; }
-  #footer_links input								{ padding: 0 8px; }
-  footer form                       { margin-top: 23px; }
-  .field-wrapper, .content__button  { margin: 4px 0; }
-  .field-wrapper, .content__button,
-  #footer_links input								{ height: 32px; }
-  #footer_links input               { width: 100%; }
-  #footer_links input								{ border: none; }
+  /* 5.3 - Footer - 5.3 */
+    #footer_links li,
+    .content__button input          { padding: 4px 0; }
+    #footer_links input             { padding: 0 8px; }
+    footer form                     { margin-top: 23px; }
+    .field-wrapper,
+    .content__button                { margin: 4px 0; }
+    .field-wrapper,
+    .content__button,
+    #footer_links input             { height: 32px; }
+    #footer_links input             { width: 100%; }
+    #footer_links input             { border: none; }
 
 
-
-/* SOCIAL NAVIGATION */
-
-  #social                           { width: 100%; }
-  #social a                         {
+  /* 5.3 - Social - 5.3 */
+    #social                         { width: 100%; }
+    #social a                       {
                                       padding-top: 44px;
                                       margin: 6px;
                                       height: 128px;
                                       width: 128px;
                                       border: 1px solid rgba(255,255,255,.26);
                                     }
-  #social a:nth-child(1):hover      { background: #3b5998; } /* facebook */
-  #social a:nth-child(2):hover      { background: #dd4b39; } /* google plus */
-  #social a:nth-child(3):hover      { background: #55acee; } /* twitter */
-  #social a:nth-child(4):hover      { background: #0976b4; } /* linkedin */
-  #social a:nth-child(5):hover      { background: #cd201f; } /* youtube */
-  .fa                               { color: rgba(255,255,255,.26); }
-  #copyright img                    { margin: 16px auto; }
+    #social a:nth-child(1):hover    { background: #3b5998; } /* facebook */
+    #social a:nth-child(2):hover    { background: #dd4b39; } /* google plus */
+    #social a:nth-child(3):hover    { background: #55acee; } /* twitter */
+    #social a:nth-child(4):hover    { background: #0976b4; } /* linkedin */
+    #social a:nth-child(5):hover    { background: #cd201f; } /* youtube */
+    .fa                             { color: rgba(255,255,255,.26); }
+    #copyright img                  { margin: 16px auto; }
 
 
 
@@ -708,33 +718,33 @@
 
 	/* blockquotes should be added directly to the main section of the page */
 	/* to produce the color styling of the blockquote, use the bg-color class on the blockquote itself */
-		blockquote											{ border-left: 8px solid #4db6ac; }
-		blockquote p										{
-																			font-weight: 400;
-																			color: rgba(17,17,17.8)
-																		}
-		blockquote span									{
-																			margin-top: 36px;
-																			font-weight: 500;
-																			color: rgba(0,0,0.75)
-																		}
-		blockquote::before							{
-																			content: "\201C";
-																			left: 96px;
-																			top: -12px;
-																		}
-		blockquote::after								{
-																			content: "\201D";
-																			right: 96px;
-																			bottom: -84px;
-																		}
-		blockquote.bg-dark::before,
-		blockquote.bg-dark::after				{ color: rgba(0,0,0,.2)}
-		blockquote.bg-light::before,
-		blockquote.bg-light::after			{ color: rgba(255,255,255,.2)}
-		blockquote.gray									{ border-left: 8px solid #616161;}
-		blockquote.orange								{ border-left: 8px solid #e64a19;}
-		blockquote.teal									{ border-left: 8px solid #00897b;}
+	blockquote											{ border-left: 8px solid #4db6ac; }
+	blockquote p										{
+																		font-weight: 400;
+																		color: rgba(17,17,17.8)
+																	}
+	blockquote span									{
+																		margin-top: 36px;
+																		font-weight: 500;
+																		color: rgba(0,0,0.75)
+																	}
+	blockquote::before							{
+																		content: "\201C";
+																		left: 96px;
+																		top: -12px;
+																	}
+	blockquote::after								{
+																		content: "\201D";
+																		right: 96px;
+																		bottom: -84px;
+																	}
+	blockquote.bg-dark::before,
+	blockquote.bg-dark::after				{ color: rgba(0,0,0,.2)}
+	blockquote.bg-light::before,
+	blockquote.bg-light::after			{ color: rgba(255,255,255,.2)}
+	blockquote.gray									{ border-left: 8px solid #616161;}
+	blockquote.orange								{ border-left: 8px solid #e64a19;}
+	blockquote.teal									{ border-left: 8px solid #00897b;}
 
 
 
@@ -749,11 +759,11 @@
 																					color: #ffffff;
 																				}
   .btn-sml															{
-																					margin: 16px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
+																					margin: 16px auto 0; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
 																					padding: 6px 12px;
 																				}
 	.btn-lrg															{
-																					margin: 32px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
+																					margin: 32px auto 0; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
 																					padding: 16px 32px;
 																				}
 	.btn-sml:hover, .btn-lrg:hover				{
@@ -770,7 +780,7 @@
                                           line-height: 120px; /* this must always be the same as the height of the span itself. The result is vertically centered text. */
                                           margin: 0 auto;
                                           padding: 16px;
-                                          border-radius: 4px;
+                                          border-radius: 3px;
                                           font-size: 20px;
                                           text-transform: uppercase;
                                           text-align: center;
@@ -852,56 +862,11 @@
 																						        transition: none;
 																					}
 
-/*signup form*/
-.form {
-    color: white;
-    border: none;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px !important;
-}
-
-#form_signup{ padding: 0 512px;}
-/*input form*/
- .form_text {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-#top_map{
-  background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("../images/map.jpg") center; /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("../images/map.jpg") center; /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("../images/map.jpg") center; /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("../images/map.jpg") center; /* Standard syntax (must be last) */
-  overflow: hidden;
-  padding: 288px 128px 0px 128px !important;
-  height: calc(100vh - 288px);
-  min-height: 586px !important;
-}
-
-#top_map > div {
-  background: transparent;
-  text-align: center;
-}
-#top_map h4                { text-align: center; }
-#top_map ul                { list-style: none; }
-#top_map li                { padding: 4px 0; color: rgba(255,255,255,.46); }
-#top_map li                { font-size: 16px; padding: 16px 0 ; color: rgba(255,255,255,.46);}
-/*>>>>>>> ae398e37dcfee320abcc929ae7538cee59f0c6b1*/
-#top_map a                 { color: rgba(255,255,255,.46); }
-#top_map a:hover           { color: #fff;}
-
 
 /* MEDIA QUERIES */
 
   @media only screen and (max-width: 1680px) {
-    header											{ padding: 96px 144px 192px 144px }
+    header											{ padding: 96px 10% 192px; }
 	}
 
 
@@ -913,8 +878,6 @@
 		#footer_links input					{ font-size: 14px; }
     #copyright                  { font-size: 12px; }
     #social a                   { font-size: 24px; }
-    header                      { padding: 96px 128px 192px 128px; }
-    #nav_secondary              { padding: 0; }
     #form_signup                { padding: 0 336px;}
   	#social a                   { padding-top: 32px; }
   	#footer_links input         { height: 28px; }
@@ -927,14 +890,13 @@
 
   @media only screen and (max-width: 1280px) {
 		html, body									{ font-size: 14px; }
-    #nav_primary                { padding: 0 48px; }
-    header                      { padding: 88px 96px 152px 96px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
+    header                      { padding: 88px 10% 152px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
 		#next_feature               { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
     #form_signup                { padding: 0 192px;}
     #social                     { margin: 72px auto 16px auto; }
     #menu > li > a							{ margin: 0 12px; } /* lessen the horizontal space between main menu items */
     #nav_primary li             { height: 64px; } /* shrink to match the new height of the navbar */
-    #nav_primary                { width: calc(100% - 96px); height: 64px; } /* Shrink the height of the navbar for the first time */
+    #nav_primary                { height: 64px; } /* Shrink the height of the navbar for the first time */
     .grooper_logo               { background: url(../images/grooper_logo_140x42.png); height: 42px; width: 140px; margin-top: 14px; }
     #menu ul										{ top: calc(100% - 16px); }
 		blockquote::before					{ left: 56px; }
@@ -951,11 +913,10 @@
 		#nav_secondary_contents > a	{ font-size: 14px; }
 		#footer_links li						{ font-size: 16px; }
 		#social a										{ font-size: 24px; }
-		header											{ padding: 64px 64px 112px 64px; }
+		header											{ padding: 64px 7% 112px; }
     footer                      { padding: 64px 7% 8px 7%; }
     #next_feature               { padding: 32px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
 		.btn-lrg										{ padding: 8px 32px; }
-		#nav_primary								{ padding: 0 48px; }
 		#menu ul a									{ padding: 8px 0; }
 		#nav_secondary							{ padding: 0; }
     #form_signup                { padding: 0 96px;}
@@ -977,17 +938,17 @@
     .col-3 > div                { flex-basis: 47.21%; -ms-flex: 47.21%; }
 		section, blockquote,
 		section > figure:nth-child(3),
-		section > div:nth-child(3) { margin: 0 auto; }
+		section > div:nth-child(3)  { margin: 0 auto; }
 		#nav_secondary,
 		#nav_secondary a,
 		#nav_secondary_left,
-		#nav_secondary_right       { height: 36px; }
-		.nav_advancer_icon         { height: 28px; }
-		#social a                  { height: 96px; }
-		#nav_secondary a           { min-height: 36px; }
-		.col-3 figcaption          { width: 80%; }
-		#nav_primary               { width: calc(100% - 96px); }
-		#nav_secondary_container   { width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
+		#nav_secondary_right        { height: 36px; }
+		.nav_advancer_icon          { height: 28px; }
+		#social a                   { height: 96px; }
+		#nav_secondary a            { min-height: 36px; }
+    .col-1 table                { width: 90%; }
+		.col-3 figcaption           { width: 80%; }
+		#nav_secondary_container    { width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
 		#nav_secondary_left,
 		#nav_secondary_right        { width: 36px; }
 		#social a                   { width: 96px; }
@@ -1055,11 +1016,10 @@
   #menu, #nav_social						{ margin-left: 100%; }
   #nav_primary > a							{ margin-left: 48px; }
   #nav_primary input:checked ~ ul{ margin-left: 0; } /* this removes the transform element resulting in the perceived slid in menu*/
-  header												{ padding: 64px 48px 112px 48px; }
 	section												{ padding: 64px 48px; }
 	#nav_primary,
-	#menu ul a,
-	#nav_social i									{ padding: 0 !important; }
+	#nav_social i,
+  #menu ul a  									{ padding: 0 !important; }
   #menu													{ padding: 96px 0; }
   #top_map											{ padding: 48px 0 0 0 !important;}
   #top_map li										{ padding: 6px 0 ;}
@@ -1074,6 +1034,7 @@
   #menu ul li                   { height: 24px; }
   #nav_primary, #menu,
   #nav_social                   { width: 100%; }
+  .col-1 table                  { width: 90%; }
   #nav_primary input            { width: 40px; }
   #menu ul li                   { width: auto; }
   #nav_social i, #social a      { width: 32px; }
@@ -1091,12 +1052,12 @@
   #nav_social                   { background: rgba(1, 1, 1, 0); }
   #social a											{ border: none; }
   #social a, #social a:hover    {
-																	background: transparent !important;
-																	-webkit-box-shadow: none !important;
-																	        box-shadow: none !important;
-																	-webkit-transform: none !important;
-																	    -ms-transform: none !important;
-																	        transform: none !important;
+																	background: transparent;
+																	-webkit-box-shadow: none;
+																	        box-shadow: none;
+																	-webkit-transform: none;
+																	    -ms-transform: none;
+																	        transform: none;
 																}
   #menu > li > ul, #nav_social  { visibility: visible; }
   #nav_primary input            { opacity: 0; }
@@ -1105,10 +1066,6 @@
   #mobile-menu                  { z-index: 1; }
   #menu > li > ul               { z-index: 1000; }
   #nav_primary input            { z-index: 20000; }
-	#mobile-menu                  { -webkit-user-select: none; }
-	#mobile-menu                  { user-select: none; }
-  #nav_primary input            { cursor: pointer; }
-  #nav_primary input            { -webkit-touch-callout: none; }
   #menu                         { -webkit-font-smoothing: antialiased; } /* to stop flickering of text in safari */
 
 	.grooper_logo												{
