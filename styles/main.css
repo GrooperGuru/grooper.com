@@ -32,19 +32,19 @@
   /* 1.4 - Cursor and Touch - 1.4 */
     table, i,
     .btn-sml, .btn-lrg,
-    #nav_primary ul,
-    #nav_primary ul a,
+    nav ul,
+    nav ul a,
     #nav_social, #nav_social a      { cursor: default; }
     #nav_secondary_left:hover,
     #nav_secondary_right:hover,
-    #nav_primary input              { cursor: pointer; }
+    nav input                       { cursor: pointer; }
     #mobile-menu                    {
                                       -webkit-user-select: none;
                                          -moz-user-select: none;
                                           -ms-user-select: none;
                                               user-select: none;
                                     }
-    #nav_primary input              { -webkit-touch-callout: none; }
+    nav input                       { -webkit-touch-callout: none; }
 
 
 
@@ -61,25 +61,25 @@
   /* 1.6 - Set basic background colors - 1.6 */
 
 		/* 1.6.1 - Solid Backgrounds - 1.6.1 */
-			body													{ background: #000; } /* black */
+			body                          { background: #000; } /* black */
 			main, div, section,
       figure, figcaption            { background: #fbfdfe; } /* off-white */
-			footer												{ background: #091413; } /* off-black */
+			footer                        { background: #091413; } /* off-black */
 			footer div                    { background: transparent; } /* transparent */
-			.bg-light.gray								{ background: #e0e0e0; } /* light medium gray */
-			.bg-light.orange							{ background: #ff8a65; } /* medium orange */
-			.bg-light.teal								{ background: #4db6ac; } /* medium teal */
-			.bg-dark.gray									{ background: #424242; } /* dark gray */
-			.bg-dark.orange								{ background: #ce3e11; } /* medium orange */
-			.bg-dark.teal, header					{ background: #00796b; } /* dark teal */
-			.field-wrapper input					{ background: rgba(255,255,255,.86); }
-			.content__button input				{ background: #444 !important; }
-			.content__button input:hover	{ background: #555 !important; }
-			#menu > li > a:before,
-			#menu ul li:hover a						{ background: #fff; }
-			#menu ul li										{ background: rgba(238,238,238,.94); }
-			#nav_primary									{ background: rgba(0,0,0,.94); }
-			#map *												{ background: transparent; } /* transparent */
+			.bg-light.gray                { background: #f5f5f5; } /* light medium gray was #e0e0e0*/
+			.bg-light.orange              { background: #ff8a65; } /* medium orange */
+			.bg-light.teal                { background: #4db6ac; } /* medium teal */
+			.bg-dark.gray                 { background: #424242; } /* dark gray */
+			.bg-dark.orange               { background: #ce3e11; } /* medium orange */
+			.bg-dark.teal, header         { background: #00796b; } /* dark teal */
+			.field-wrapper input          { background: rgba(255,255,255,.86); }
+			.content__button input        { background: #444 !important; }
+			.content__button input:hover  { background: #555 !important; }
+			nav > ul > li > a:before,
+			nav ul ul li:hover a          { background: #fff; }
+			nav ul ul li                  { background: rgba(238,238,238,.94); }
+			#nav_primary                  { background: rgba(0,0,0,.94); }
+			#map *                        { background: transparent; } /* transparent */
 
 		/* 1.6.2 - Tiled Backgrounds - 1.6.2 */
 			.bg-dark.gray.tile						{
@@ -127,11 +127,10 @@
 
 
   /* 1.7 - Set iFrame default widths and heights to fill parent container - 1.7 */
-  #iframe                           {
+    iframe                          {
                                       width: 100%;
                                       height: 100%;
                                     }
-
 
 
 
@@ -155,6 +154,7 @@
   /* 2.3 - Text Decoration and Font Style - 2.3 */
     a                               { text-decoration: none; } /*remove underlines from hyperlinks */
     strong, em                      { font-style: normal; } /* removes italics from emphasized text within a paragraph */
+    header strong, header em        { font-style: italic; }
 
 
   /* 2.4 - Text Alignment - 2.4 */
@@ -163,33 +163,33 @@
     h1, h2, h3, h4, h5, h6          { text-align: center; }
     ul                              { text-align: left; }
     footer h4                       { text-align: left; }
-    #nav_primary ul                 { text-align: center; }
+    nav ul                          { text-align: center; }
 
 
   /* 2.5 - Font Size - 2.5 */
-		html, body											{ font-size: 16px; } /* base font-size by which all percentages are multiplied to produce final element font-size */
-    h1															{ font-size: 450%; }
-    h2															{ font-size: 362.5%; }
-		h3															{ font-size: 200%; }
-		h4															{ font-size: 150%; }
-		p																{ font-size: 112.5%; }
+		html, body                      { font-size: 16px; } /* base font-size by which all percentages are multiplied to produce final element font-size */
+    h1                              { font-size: 450%; }
+    h2                              { font-size: 362.5%; }
+		h3                              { font-size: 200%; }
+		h4                              { font-size: 150%; }
+		p                               { font-size: 112.5%; }
     label, input                    { font-size: 16px; }
-    blockquote span									{ font-size: 112.5%; }
+    blockquote span                 { font-size: 112.5%; }
 		blockquote::before,
-		blockquote::after								{ font-size: 1600%; }
-    header p												{ font-size: 187.5%; }
-    h2 + p                          { font-size: 150%; } /* paragraphs immediately after a h2 */
+		blockquote::after               { font-size: 1600%; }
+    header p                        { font-size: 187.5%; }
+    h2 ~ p                          { font-size: 150%; } /* paragraphs immediately after a h2 */
     blockquote p                    { font-size: 150%; }
     .btn-lrg                        { font-size: 125%; }
     .btn-sml                        { font-size: 100%; }
-    #calltoaction h3								{ font-size: 300%; }
-    #nav_primary i, #social a				{ font-size: 32px; }
-		#brands p												{ font-size: 200%; }
-    #next_feature             			{ font-size: 150%; }
-    #calltoaction p         				{ font-size: 125%; }
-    #menu > li > a,
+    #calltoaction h3                { font-size: 300%; }
+    #nav_primary i, #social a       { font-size: 32px; }
+		#brands p                       { font-size: 200%; }
+    #next_feature                   { font-size: 150%; }
+    #calltoaction p                 { font-size: 125%; }
+    nav > ul > li > a,
     #footer_links li                { font-size: 16px; }
-    #menu ul li a										{ font-size: 14px; }
+    nav ul ul li a                  { font-size: 14px; }
     #copyright                      { font-size: 12px; }
 
 
@@ -198,7 +198,8 @@
     h1                              { font-weight: 100; }
     h2                              { font-weight: 200; }
     td, em, strong                  { font-weight: 400; }
-    thead, th                       { font-weight: 500; }
+    thead, th,
+    header strong, header em        { font-weight: 500; }
     .btn-lrg, .btn-sml, #social     { font-weight: 400; }
     .field-wrapper input            { font-weight: 500; }
 
@@ -211,19 +212,19 @@
 		blockquote::after								{ color: #4db6ac; } /*#78C0A8;*/
 		a:link, a:visited								{ color: #039be5; } /* normal state links */
 		a:hover, a:active								{ color: #29b6f6; } /* links during hover and click */
-    h2 + p                          { color: #000; } /* paragraphs immediately after a h2 */
+    h2 ~ p                          { color: #000; } /* paragraphs immediately after a h2 */
     header p                        { color: #fff; }
     #nav_secondary_contents > a [aria-selected="true"]	{ color: #111; }
-  	#menu ul li a                   { color: #333; }
+  	nav ul ul li a                  { color: #333 !important; } /* set important to override the different default link states active, visited, etc. */
   	#nav_primary i, #copyright			{ color: #666; }
     #nav_secondary_contents > a			{ color: #888; }
 		.content__button input					{ color: #bbb !important; }
 		.content__button input:hover		{ color: #fff !important; }
-    #menu > li > a                  { color: #f5faf9; }
+    nav > ul > li > a               { color: #f5faf9 !important; } /* set important to override the different default link states active, visited, etc. */
     #footer_links a:hover,
     #footer_links label, #social a,
     #social a:hover .fa             { color: #fff; }
-    #menu ul li:hover a,
+    nav ul ul li:hover a,
 		#next_feature a									{ color: #009688; } /* teal */
 		#footer_links li,
 		#footer_links a									{ color: rgba(255,255,255,.46); }
@@ -234,7 +235,7 @@
   /* 2.8 - Line Height and Spacing - 2.8 */
     h1, h2, h3, h4, h5, h6          { margin-bottom: 0.6em; }
     p                               { line-height: 1.5em; }
-    #menu > li > a                  { line-height: 36px; } /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
+    nav > ul > li > a               { line-height: 36px; } /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
 
 
 
@@ -280,11 +281,10 @@
 
 
 	/* 4.1 - Display - 4.1 */
-
-    #nav_primary input,
-    #nav_primary i, /*hide hamburger icon until requested by mobile media query */
     #nav_secondary_container::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
                                     { display: none; }
+    nav input, nav i, #nav_social /*hide hamburger icon until requested by mobile media query */
+                                    { display: none !important;}
     h1, h2, h3, h4, h5, h6, p, img,
     #menu a, #menu > li:hover > ul,
     blockquote span                 { display: block; }
@@ -305,6 +305,7 @@
         section:not(.col-1) > *,
         /*.col-2 > *,
         .col-3 > *,*/
+        #nav_primary,
 				#calltoaction,
 				#calltoaction > div,
 				#footer_links,
@@ -359,9 +360,10 @@
 																			          -ms-flex-pack: start;
 																			        justify-content: flex-start;
 																		}
-		    section:not(.col-1)
+		    section:not(.col-1),
+        #nav_primary
         /*.col-2, .col-3,
-				.col-1-2, .col-2-1*/					{
+				.col-1-2, .col-2-1*/				{
 																			-webkit-justify-content: space-between;
 																			          -ms-flex-pack: space-between;
 																			        justify-content: space-between;
@@ -488,10 +490,12 @@
 
 
   /* 4.5 - Float - 4.5 */
+  /*
     .grooper_logo,
     .nav_secondary_contents         { float: left; }
     #nav_primary ul,
     #nav_primary i                  { float: right; }
+    */
 
 
   /* 4.6 - Shadows - 4.6 */
@@ -549,11 +553,11 @@
     /*#menu a          { vertical-align: middle; }*/
     #nav_primary *                  { vertical-align: middle; }
     #menu ul li a                   { padding: 16px 0; } /* establishes the vertical spacing of submenu items */
-    #nav_primary i                  { padding-right: 48px; }
+    /*#nav_primary i                  { padding-right: 48px; }*/
     #menu > li > a                  { margin: 0 16px; } /* horizontal spacing between main menu items */
     #menu ul li a                   { margin: 0 auto; }
     .grooper_logo                   { margin-top: 18px; } /* arbitrary value that vertically centers logo within navbar to compensate for the inherent offset built into the grooper logo */
-    #nav_primary i                  { margin-top: 8px; }
+    /*#nav_primary i                  { margin-top: 8px; }*/
     #menu > li:last-child > a       { margin-right: 0 !important; } /*removes the unnecessary right margin from the last menu item, as the navbar itself already has sufficient padding. top amrgin should be same as margin above */
     .grooper_logo                   { height: 64px; } /* height of grooper logo */
     #nav_primary, #menu li          { height: 96px; } /* height of entire navbar */
@@ -1001,50 +1005,54 @@
 	#nav_social										{ display: block !important; }
 	#nav_primary input:checked ~ i ~ i,
 	#nav_social a, #nav_social i,
-	#bars													{ display: inline-block !important; }
+	#bars													{ display: inline-flex !important; }
 	#nav_primary input:checked ~ i,
   #menu ul,
   #nav_primary ul li:hover ul		{ display: none !important; } /*the 3 bars goes away*/
+  #nav_primary                  { align-items: center; }
 	#menu > li > ul,
 	#mobile-menu									{ position: relative !important; }
 	#nav_primary input						{ position: absolute; }
 	#menu, #nav_social						{ position: fixed; }
 	header												{ margin-top: 48px; }
-	.grooper_logo									{ margin-top: 8px; }
+	/*.grooper_logo									{ margin-top: 8px; }*/
   #signup												{ margin: 0; }
-  #social												{ margin: 8px 0 16px 0; }
+  #social												{ margin: 8px 0 16px; }
+  .grooper_logo                 { margin-top: 0; }
   #menu, #nav_social						{ margin-left: 100%; }
-  #nav_primary > a							{ margin-left: 48px; }
-  #nav_primary input:checked ~ ul{ margin-left: 0; } /* this removes the transform element resulting in the perceived slid in menu*/
+  /*#nav_primary > a							{ margin-left: 48px; }*/
+  /*#nav_primary input:checked ~ ul{ margin-left: 0; }*/ /* this removes the transform element resulting in the perceived slid in menu*/
+  #nav_primary input:checked ~ ul{ margin-left: -5%; }
 	section												{ padding: 64px 48px; }
-	#nav_primary,
+  /*#nav_primary,*/
 	#nav_social i,
   #menu ul a  									{ padding: 0 !important; }
   #menu													{ padding: 96px 0; }
-  #top_map											{ padding: 48px 0 0 0 !important;}
+  #top_map											{ padding: 48px 0 0 !important;}
   #top_map li										{ padding: 6px 0 ;}
 	#social a											{ padding-top: 0; }
-	#bars													{ padding-right: 48px; }
+	/*#bars													{ padding-right: 48px; }*/
 	#nav_social										{ padding-bottom: 16px; }
   #contact, #discover						{ flex-basis: 100% !important; -ms-flex: 100% !important; } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
   #nav_primary ul               { float: none; } /*we are no longer floating the entire nav menu to the right as these will be centered horizontally on mobile devices */
   #nav_primary, #brands img			{ height: 48px; }
   #menu                         { height: calc(100vh - 48px); } /*100% of the browser screen*/
-  #nav_primary input, #social a { height: 32px; }
+  #nav_primary input            { height: 100%; }
+  #social a                     { height: 32px; }
   #menu ul li                   { height: 24px; }
   #nav_primary, #menu,
   #nav_social                   { width: 100%; }
   .col-1 table                  { width: 90%; }
-  #nav_primary input            { width: 40px; }
+  #nav_primary input            { width: 15%; }
   #menu ul li                   { width: auto; }
   #nav_social i, #social a      { width: 32px; }
   #mobile-menu                  { top: 50px; }
   #menu                         { top: 48px; }
-  #nav_primary input            { top: 6px; }
+  #nav_primary input            { top: 0; }
   #menu > li > ul               { top: 0; }
   #mobile-menu                  { left: 50px; }
   #menu > li > ul, #nav_social  { left: 0; }
-  #nav_primary input            { right: 38px; }
+  #nav_primary input            { right: 0; }
   #nav_social                   { bottom: 0; }
   #menu ul a                    { color: #fff; }
   #menu                         { background: #000; }

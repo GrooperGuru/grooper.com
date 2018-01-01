@@ -6,9 +6,10 @@
 	<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<title>Document Classification with Grooper</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="styles/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<!--link rel="stylesheet" href="styles/slidein.css"-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
@@ -43,10 +44,8 @@
 
 
   <header>
-		<h1>Image Processing</h1>
-		<p>
-			Grooper enhances images displayed to users throughout your workflow, removes image artifacts known to interfere with OCR, provides crisp versions for permanent archival, and analyzes page structure to assist with automated decision making downstream.
-		</p>
+		<h1>Automate Document Classification</h1>
+		<p>Manually selecting doc types is a thing of the past. Quickly regain control of sprawling, unstructured document collections by automatically organizing them into logical groups based on similarity rankings in models that <strong>you train and control.</strong></p>
     <!--<img src="images/features/image-processing/grooper-image-processing.jpg">-->
 	</header>
 
@@ -82,80 +81,9 @@
 
   <main>
 
-    <section class="col-2">
-			<h2>Halftone Removal</h2>
-			<p>Dithering and other halftone patterns are a direct result of legacy document imaging platforms poorly converting color images to black and white. These artifacts must be eliminated to prevent massive errors in OCR results.</p>
-
-			<figure>
-        <img src="images/features/image-processing/grooper-halftone-removal-01.png" />
-				<figcaption>
-        	<h3>Safe Zones</h3>
-        	<p>Grooper understands the location of characters throughout each page and is smart enough to use its "Safe-zone" technology to avoid accidentally removing punctuation.</p>
-				</figcaption>
-      </figure>
-
-      <figure>
-        <img src="images/features/image-processing/grooper-halftone-removal-02.png" />
-				<figcaption>
-        	<h3>Pixel-Perfect</h3>
-        	<p>The Best of page helps users find your community’s best content by browsing a fun, infinite-scrolling page. Content shows up on this page if it receives positive reactions or if promoted by a moderator.</p>
-				</figcaption>
-      </figure>
-    </section>
-
-
-		<section id="brands" class="bg-dark gray tile">
-			<p>Our passion for solving the problems other platforms fail to address is why these amazing organizations trust Grooper.</p>
-				<img src="images/brands/logo-emily-carr.svg" />
-				<img src="images/brands/logo-netflix.svg" />
-				<img src="images/brands/logo-oakley.svg" />
-				<img src="images/brands/logo-salesforce.svg" />
-		</section>
-
-
-    <section class="col-1-2 border-img">
-			<h2>Classification</h2>
-			<p>Manually selecting doc types is a thing of the past.  Use ESP to find and make decisions based on the distinguishing features of each page. ESP uses three key feature collection mechanisms:</p>
-      <figure class="first">
-        <figcaption>
-          <h3>Lexical</h3>
-          <p>NLP examines the <strong>language</strong> of the complete document to understand its meaning and determine what it is.</p>
-        </figcaption>
-        <img src="images/features/classification/grooper-classification-lexical.jpg" />
-      </figure>
-      <figure class="last">
-        <figcaption>
-          <h3>Rules-Based</h3>
-          <p>Finds unique <strong>key words or phrases</strong> that positively identify a document, like a Title or Section Heading.</p>
-        </figcaption>
-        <img src="images/features/classification/grooper-classification-rules-based.jpg" />
-      </figure>
-    </section>
-
-
-		<blockquote class="bg-dark orange tile">
-			<p>Grooper is a perfect balance of structure and flexibility. It gives you only what you need, lets you easily create the rest specifically for the project, and then it gets out of your way.</p>
-			<span>WebDevCorner.com</div>
-		</blockquote>
-
-    <section class="col-1 align-bottom">
-      <figure>
-        <figcaption>
-					<h2>Classification</h2>
-					<p>Manually selecting doc types is a thing of the past.  Use ESP to find and make decisions based on the distinguishing features of each page. ESP uses three key feature collection mechanisms:</p>
-				</figcaption>
-        <img src="images/features/image-processing/grooper-image-processing.jpg">
-			</figure>
-		</section>
-
-		<blockquote class="bg-dark gray tile">
-			<p>After we made the switch to Grooper, our time to review image quality and perform all necessary rescans went from about an hour per banker's box down to less than 5 minutes. When you have a paper processing facility the size of ours, this equates to well over $100K each year in savings.</p>
-			<span>WebDevCorner.com</div>
-		</blockquote>
-
     <section class="col-3 border-img">
-			<h2>Classification</h2>
-			<p>Manually selecting doc types is a thing of the past.  Use ESP to find and make decisions based on the distinguishing features of each page. ESP uses three key feature collection mechanisms:</p>
+			<h2>Feature Collection with ESP</h2>
+			<p>Grooper's ESP engine identifies the distinguishing features of each page to group collections of images together as classified documents. ESP uses three key feature collection mechanisms:</p>
       <figure>
         <figcaption>
           <h3>Lexical</h3>
@@ -178,6 +106,39 @@
         <img src="images/features/classification/grooper-classification-computer-vision.jpg" />
       </figure>
     </section>
+
+    <section class="col-1-2">
+      <figure>
+        <figcaption>
+					<h2>Classification</h2>
+					<p>Performs automated separation and classification of loose pages in a batch.</p>
+          <p>Handles complex document separation without the need for separator sheets.</p>
+          <p>Training-based approach provides simple, fast implementation.</p>
+				</figcaption>
+        <img src="images/features/image-processing/grooper-image-processing.jpg">
+			</figure>
+		</section>
+
+
+		<blockquote class="bg-dark orange tile">
+			<p>Grooper is a perfect balance of structure and flexibility. It gives you only what you need, lets you easily create the rest specifically for the project, and then it gets out of your way.</p>
+			<span>WebDevCorner.com</div>
+		</blockquote>
+
+    <section class="col-1 align-bottom">
+      <figure>
+        <figcaption>
+					<h2>Classification</h2>
+					<p>Manually selecting doc types is a thing of the past.  Use ESP to find and make decisions based on the distinguishing features of each page. ESP uses three key feature collection mechanisms:</p>
+				</figcaption>
+        <img src="images/features/image-processing/grooper-image-processing.jpg">
+			</figure>
+		</section>
+
+		<blockquote class="bg-dark gray tile">
+			<p>After we made the switch to Grooper, our time to review image quality and perform all necessary rescans went from about an hour per banker's box down to less than 5 minutes. When you have a paper processing facility the size of ours, this equates to well over $100K each year in savings.</p>
+			<span>WebDevCorner.com</div>
+		</blockquote>
 
 
     <section id="next_feature">
