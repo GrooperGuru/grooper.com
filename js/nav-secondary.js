@@ -12,26 +12,26 @@ var colours = {
 document.documentElement.classList.remove("no-js");
 document.documentElement.classList.add("js");
 
-var AdvancerLeft = document.getElementById("AdvancerLeft");
-var AdvancerRight = document.getElementById("AdvancerRight");
-var Indicator = document.getElementById("Indicator");
-var ProductNav = document.getElementById("ProductNav");
-var ProductNavContents = document.getElementById("ProductNavContents");
+var AdvancerLeft = document.getElementById("nav_secondary_left");
+var AdvancerRight = document.getElementById("nav_secondary_right");
+var Indicator = document.getElementById("nav_secondary_indicator");
+var NavContainer = document.getElementById("nav_secondary_container");
+var NavContents = document.getElementById("nav_secondary_contents");
 
-ProductNav.setAttribute("data-overflowing", determineOverflow(ProductNavContents, ProductNav));
+NavContainer.setAttribute("data-overflowing", determineOverflow(NavContents, NavContainer));
 
 // Set the indicator
-moveIndicator(ProductNav.querySelector("[aria-selected=\"true\"]"), colours[0]); //color changes with every click
+moveIndicator(NavContainer.querySelector("[aria-selected=\"true\"]"), colours[0]); //color changes with every click
 
 // Handle the scroll of the horizontal container
 var last_known_scroll_position = 0;
 var ticking = false;
 
 function doSomething(scroll_pos) {
-    ProductNav.setAttribute("data-overflowing", determineOverflow(ProductNavContents, ProductNav));
+    NavContainer.setAttribute("data-overflowing", determineOverflow(NavContents, NavContainer));
 }
 
-ProductNav.addEventListener("scroll", function() {
+NavContainer.addEventListener("scroll", function() {
     last_known_scroll_position = window.scrollY;
     if (!ticking) {
         window.requestAnimationFrame(function() {
@@ -49,24 +49,24 @@ AdvancerLeft.addEventListener("click", function() {
         return;
     }
     // If we have content overflowing both sides or on the left
-    if (determineOverflow(ProductNavContents, ProductNav) === "left" || determineOverflow(ProductNavContents, ProductNav) === "both") {
+    if (determineOverflow(NavContents, NavContainer) === "left" || determineOverflow(NavContents, NavContainer) === "both") {
         // Find how far this panel has been scrolled
-        var availableScrollLeft = ProductNav.scrollLeft;
+        var availableScrollLeft = NavContainer.scrollLeft;
         // If the space available is less than two lots of our desired distance, just move the whole amount
         // otherwise, move by the amount in the settings
         if (availableScrollLeft < SETTINGS.navBarTravelDistance * 2) {
-            ProductNavContents.style.transform = "translateX(" + availableScrollLeft + "px)";
+            NavContents.style.transform = "translateX(" + availableScrollLeft + "px)";
         } else {
-            ProductNavContents.style.transform = "translateX(" + SETTINGS.navBarTravelDistance + "px)";
+            NavContents.style.transform = "translateX(" + SETTINGS.navBarTravelDistance + "px)";
         }
         // We do want a transition (this is set in CSS) when moving so remove the class that would prevent that
-        ProductNavContents.classList.remove("no-transition");
+        NavContents.classList.remove("no-transition");
         // Update our settings
         SETTINGS.navBarTravelDirection = "left";
         SETTINGS.navBarTravelling = true;
     }
     // Now update the attribute in the DOM
-    ProductNav.setAttribute("data-overflowing", determineOverflow(ProductNavContents, ProductNav));
+    NavContainer.setAttribute("data-overflowing", determineOverflow(NavContents, NavContainer));
 });
 
 AdvancerRight.addEventListener("click", function() {
@@ -77,11 +77,11 @@ AdvancerRight.addEventListener("click", function() {
     }
 
     // If we have content overflowing both sides or on the right
-    if (determineOverflow(ProductNavContents, ProductNav) === "right" || determineOverflow(ProductNavContents, ProductNav) === "both") {
+    if (determineOverflow(NavContents, NavContainer) === "right" || determineOverflow(NavContents, NavContainer) === "both") {
 
         // Get the right edge of the container and content
-        var navBarRightEdge = ProductNavContents.getBoundingClientRect().right;
-        var navBarScrollerRightEdge = ProductNav.getBoundingClientRect().right;
+        var navBarRightEdge = NavContents.getBoundingClientRect().right;
+        var navBarScrollerRightEdge = NavContainer.getBoundingClientRect().right;
 
         // determine how much space we have available to scroll
         var availableScrollRight = Math.floor(navBarRightEdge - navBarScrollerRightEdge);
@@ -89,13 +89,13 @@ AdvancerRight.addEventListener("click", function() {
         // If the space available is less than two lots of our desired distance, just move the whole amount
         // otherwise, move by the amount in the settings
         if (availableScrollRight < SETTINGS.navBarTravelDistance * 2) {
-            ProductNavContents.style.transform = "translateX(-" + availableScrollRight + "px)";
+            NavContents.style.transform = "translateX(-" + availableScrollRight + "px)";
         } else {
-            ProductNavContents.style.transform = "translateX(-" + SETTINGS.navBarTravelDistance + "px)";
+            NavContents.style.transform = "translateX(-" + SETTINGS.navBarTravelDistance + "px)";
         }
 
         // We do want a transition (this is set in CSS) when moving so remove the class that would prevent that
-        ProductNavContents.classList.remove("no-transition");
+        NavContents.classList.remove("no-transition");
 
         // Update our settings
         SETTINGS.navBarTravelDirection = "right";
@@ -103,27 +103,27 @@ AdvancerRight.addEventListener("click", function() {
     }
 
     // Now update the attribute in the DOM
-    ProductNav.setAttribute("data-overflowing", determineOverflow(ProductNavContents, ProductNav));
+    NavContainer.setAttribute("data-overflowing", determineOverflow(NavContents, NavContainer));
 });
 
-ProductNavContents.addEventListener(
+NavContents.addEventListener(
     "transitionend",
     function() {
 
         // get the value of the transform, apply that to the current scroll position (so get the scroll pos first) and then remove the transform
-        var styleOfTransform = window.getComputedStyle(ProductNavContents, null);
+        var styleOfTransform = window.getComputedStyle(NavContents, null);
         var tr = styleOfTransform.getPropertyValue("-webkit-transform") || styleOfTransform.getPropertyValue("transform");
 
         // If there is no transition we want to default to 0 and not null
         var amount = Math.abs(parseInt(tr.split(",")[4]) || 0);
-        ProductNavContents.style.transform = "none";
-        ProductNavContents.classList.add("no-transition");
+        NavContents.style.transform = "none";
+        NavContents.classList.add("no-transition");
 
         // set the scroll position
         if (SETTINGS.navBarTravelDirection === "left") {
-            ProductNav.scrollLeft = ProductNav.scrollLeft - amount;
+            NavContainer.scrollLeft = NavContainer.scrollLeft - amount;
         } else {
-            ProductNav.scrollLeft = ProductNav.scrollLeft + amount;
+            NavContainer.scrollLeft = NavContainer.scrollLeft + amount;
         }
         SETTINGS.navBarTravelling = false;
     },
@@ -131,8 +131,8 @@ ProductNavContents.addEventListener(
 );
 
 // Handle setting the currently active link
-ProductNavContents.addEventListener("click", function(e) {
-    var links = [].slice.call(document.querySelectorAll("#ProductNavContents a"));
+NavContents.addEventListener("click", function(e) {
+    var links = [].slice.call(document.querySelectorAll("#nav_secondary_contents a"));
     links.forEach(function(item) {
         item.setAttribute("aria-selected", "false");
     })
@@ -145,13 +145,12 @@ ProductNavContents.addEventListener("click", function(e) {
         // var count = 0;
         function moveIndicator(item, color) {
             var textPosition = item.getBoundingClientRect();
-            var container = ProductNavContents.getBoundingClientRect().left;
+            var container = NavContents.getBoundingClientRect().left;
             var distance = textPosition.left - container;
-             var scroll = ProductNavContents.scrollLeft;
+             var scroll = NavContents.scrollLeft;
             Indicator.style.transform = "translateX(" + (distance + scroll) + "px) scaleX(" + textPosition.width * 0.01 + ")";
             // count = count += 100;
             // pnIndicator.style.transform = "translateX(" + count + "px)";
-
             if (color) {
                 Indicator.style.backgroundColor = color;
             }

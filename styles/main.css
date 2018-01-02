@@ -1,9 +1,10 @@
 /* 1 - GLOBAL RESETS */
 
 
-  /* 1.1 - Normalize box model -- DO NOT DELETE... or IE will break - 1.1 */
-    html														{ box-sizing: content-box; }
-    *, *:before, *:after						{ box-sizing: inherit; }
+  /* 1.1 - Normalize box model * overflow -- DO NOT DELETE... or IE will break - 1.1 */
+    html                            { box-sizing: content-box; }
+    *, *:before, *:after            { box-sizing: inherit; }
+    html, body                      { overflow-x: hidden }
 
 
   /* 1.2 - Remove margin, border, and padding from all - 1.2 */
@@ -24,49 +25,108 @@
 																		}
 
 
-  /* 1.4 - Reset cursor to default - 1.4 */
-    #nav-primary ul, #nav-primary ul a, .btn-sml, .btn-lrg {
-																			cursor: default;
+  /* 1.4 - Cursor and Touch - 1.4 */
+    table, i,
+    .btn-sml, .btn-lrg,
+    nav ul,
+    nav ul a,
+    #nav_social, #nav_social a      { cursor: default; }
+    #nav_secondary_left:hover,
+    #nav_secondary_right:hover,
+    nav input                       { cursor: pointer; }
+    #mobile-menu                    {
+                                      -webkit-user-select: none;
+                                         -moz-user-select: none;
+                                          -ms-user-select: none;
+                                              user-select: none;
+                                    }
+    nav input                       { -webkit-touch-callout: none; }
+
+
+
+  /* 1.5 - Reset Lists and Tables - 1.5 */
+		table														{ display: table; }
+		tr															{ display: table-row; }
+		td, th													{ display: table-cell; }
+		table														{
+																			border-collapse: collapse;
+																			border-spacing: 0;
 																		}
 
 
   /* 1.5 - Set basic background colors - 1.5 */
 
-		/* 1.5.1 - Solid Backgrounds - 1.5.1 */
-			body                            { background: #000; } /* black */
-			main, section, figure,
-			figcaption, div                 { background: #fefefe; } /* white */
-			#nav-primary ul ul,
-			#AdvancerLeft, #AdvancerRight,
-			#Indicator, footer div,
-			#map *													{ background: transparent; } /* transparent */
-			.bg-light.orange								{ background: #ff8a65; } /* medium orange */
-			.bg-light.teal									{ background: #4db6ac; } /* medium teal */
-			.bg-dark.gray										{ background: #4a4a4a; } /* medium gray */
-			.bg-dark.teal, header						{ background: #00796b; } /*darker teal, currently only used in header when bg gradients not supported */
+		/* 1.6.1 - Solid Backgrounds - 1.6.1 */
+			body                          { background: #000; } /* black */
+			main, div, section,
+      figure, figcaption            { background: #fbfdfe; } /* off-white */
+			footer                        { background: #091413; } /* off-black */
+			footer div                    { background: transparent; } /* transparent */
+			.bg-light.gray                { background: #f5f5f5; } /* light medium gray was #e0e0e0*/
+			.bg-light.orange              { background: #ff8a65; } /* medium orange */
+			.bg-light.teal                { background: #4db6ac; } /* medium teal */
+			.bg-dark.gray                 { background: #424242; } /* dark gray */
+			.bg-dark.orange               { background: #ce3e11; } /* medium orange */
+			.bg-dark.teal, header         { background: #00796b; } /* dark teal */
+			.field-wrapper input          { background: rgba(255,255,255,.86); }
+			.content__button input        { background: #444 !important; }
+			.content__button input:hover  { background: #555 !important; }
+			nav > ul > li > a:before,
+			nav ul ul li:hover a          { background: #fff; }
+			nav ul ul li                  { background: rgba(238,238,238,.94); }
+			#nav_primary                  { background: rgba(0,0,0,.94); }
+			#map *                        { background: transparent; } /* transparent */
+
+		/* 1.6.2 - Tiled Backgrounds - 1.6.2 */
+			.bg-dark.gray.tile						{
+																			background: -webkit-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* Standard syntax (must be last) */
+																		}
+			.bg-dark.orange.tile					{
+																			background: -webkit-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			.bg-dark.teal.tile						{
+																			background: -webkit-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			.bg-light.gray.tile						{
+																			background: -webkit-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			.bg-light.orange.tile					{
+																			background: -webkit-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			.bg-light.teal.tile						{
+																			background: -webkit-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			header												{
+																			background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
 
 
-
-		/* 1.5.2 - Tiled Backgrounds - 1.5.2 */
-			.bg-dark.gray.tile							{
-																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* For Safari 5.1 to 6.0 */
-																				background: -o-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* For Opera 11.1 to 12.0 */
-																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* For Firefox 3.6 to 15 */
-																				background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.5)), url("../images/header_tile_gray.jpg") top; /* Standard syntax (must be last) */
-																			}
-			.bg-light.orange.tile						{
-																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* For Safari 5.1 to 6.0 */
-																				background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* For Opera 11.1 to 12.0 */
-																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* For Firefox 3.6 to 15 */
-																				background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_orange.jpg") center; /* Standard syntax (must be last) */
-																			}
-			.bg-light.teal.tile, header			{
-																				background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Safari 5.1 to 6.0 */
-																				background: -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Opera 11.1 to 12.0 */
-																				background: -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* For Firefox 3.6 to 15 */
-																				background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.1)), url("../images/header_tile_teal.jpg") center; /* Standard syntax (must be last) */
-																			}
-
+  /* 1.7 - Set iFrame default widths and heights to fill parent container - 1.7 */
+    iframe                          {
+                                      width: 100%;
+                                      height: 100%;
+                                    }
 
 
 
@@ -74,9 +134,9 @@
 
 
   /* 2.1 - Font Selection - 2.1 */
-    body														{ font-family: 'Roboto', Arial, sans-serif; }
-		blockquote::before,
-		blockquote::after								{ font-family: Arial, sans-serif; }
+    html, body                      { font-family: 'Roboto', Arial, sans-serif; }
+    blockquote::before,
+    blockquote::after               { font-family: Arial, sans-serif; }
 
 
   /* 2.2 - Font Smoothing - 2.2 */
@@ -89,45 +149,54 @@
 
   /* 2.3 - Text Decoration and Font Style - 2.3 */
     a                               { text-decoration: none; } /*remove underlines from hyperlinks */
-    em                              { font-style: normal; } /* removes italics from emphasized text within a paragraph */
+    strong, em                      { font-style: normal; } /* removes italics from emphasized text within a paragraph */
+    header strong, header em        { font-style: italic; }
 
 
   /* 2.4 - Text Alignment - 2.4 */
-    #nav-primary, #next_feature,
-    #calltoaction, #social,
-    #copyright,
-    h1, h2, h3, h4, h5, h6,
-		p, img, blockquote							{ text-align: center; }
+    div, section, figure, figcaption,
+    blockquote, p, img,
+    h1, h2, h3, h4, h5, h6          { text-align: center; }
+    ul                              { text-align: left; }
+    footer h4                       { text-align: left; }
+    nav ul                          { text-align: center; }
 
 
   /* 2.5 - Font Size - 2.5 */
-    h1															{ font-size: 72px; }
-    h2															{ font-size: 58px; }
-		h4															{ font-size: 24px; }
-		p																{ font-size: 18px; }
+		html, body                      { font-size: 16px; } /* base font-size by which all percentages are multiplied to produce final element font-size */
+    h1                              { font-size: 450%; }
+    h2                              { font-size: 362.5%; }
+		h3                              { font-size: 200%; }
+		h4                              { font-size: 150%; }
+		p                               { font-size: 112.5%; }
+    label, input                    { font-size: 16px; }
+    blockquote span                 { font-size: 112.5%; }
 		blockquote::before,
-		blockquote::after								{ font-size: 256px; }
-    #calltoaction h3								{ font-size: 48px; }
-    #nav-primary i, #social a, h3,
-		#brands p												{ font-size: 32px; }
-    header p												{ font-size: 30px; }
-    .col-1 p, #next_feature,
-		blockquote p										{ font-size: 24px; }
-    #calltoaction p, .btn-lrg				{ font-size: 20px; }
-		blockquote span									{ font-size: 18px; }
-    #nav-primary > ul > li > a,
-    #footer_links li,
-    #footer_links label,
-    #footer_links input             { font-size: 16px; }
-    #nav-primary ul ul li a         { font-size: 14px; }
-    #copyright, .btn-sml            { font-size: 12px; }
+		blockquote::after               { font-size: 1600%; }
+    header p                        { font-size: 187.5%; }
+    h2 ~ p                          { font-size: 150%; } /* paragraphs immediately after a h2 */
+    blockquote p                    { font-size: 150%; }
+    .btn-lrg                        { font-size: 125%; }
+    .btn-sml                        { font-size: 100%; }
+    #calltoaction h3                { font-size: 300%; }
+    #nav_primary i, #social a       { font-size: 32px; }
+		#brands p                       { font-size: 200%; }
+    #next_feature                   { font-size: 150%; }
+    #calltoaction p                 { font-size: 125%; }
+    nav > ul > li > a,
+    #footer_links li                { font-size: 16px; }
+    nav ul ul li a                  { font-size: 14px; }
+    #copyright                      { font-size: 12px; }
 
 
   /* 2.6 - Font Weight - 2.6 */
     *                               { font-weight: 300; } /* Establishes a baseline font-weight for all items which overrides the browsers defaults */
     h1                              { font-weight: 100; }
     h2                              { font-weight: 200; }
-    em, .btn-lrg, .btn-sml, #social { font-weight: 400; }
+    td, em, strong                  { font-weight: 400; }
+    thead, th,
+    header strong, header em        { font-weight: 500; }
+    .btn-lrg, .btn-sml, #social     { font-weight: 400; }
     .field-wrapper input            { font-weight: 500; }
 
 
@@ -140,13 +209,57 @@
 		.col-1 p												{ color: #000; }
 		blockquote::before,
 		blockquote::after								{ color: #4db6ac; } /*#78C0A8;*/
-
+		a:link, a:visited								{ color: #039be5; } /* normal state links */
+		a:hover, a:active								{ color: #29b6f6; } /* links during hover and click */
+    h2 ~ p                          { color: #000; } /* paragraphs immediately after a h2 */
+    header p                        { color: #fff; }
+    #nav_secondary_contents > a [aria-selected="true"]	{ color: #111; }
+  	nav ul ul li a                  { color: #333 !important; } /* set important to override the different default link states active, visited, etc. */
+  	#nav_primary i, #copyright			{ color: #666; }
+    #nav_secondary_contents > a			{ color: #888; }
+		.content__button input					{ color: #bbb !important; }
+		.content__button input:hover		{ color: #fff !important; }
+    nav > ul > li > a               { color: #f5faf9 !important; } /* set important to override the different default link states active, visited, etc. */
+    #footer_links a:hover,
+    #footer_links label, #social a,
+    #social a:hover .fa             { color: #fff; }
+    nav ul ul li:hover a,
+		#next_feature a									{ color: #009688; } /* teal */
+		#footer_links li,
+		#footer_links a									{ color: rgba(255,255,255,.46); }
+    #nav_primary i:hover						{ color: rgba(255,255,255,.86); }
+		input::-webkit-input-placeholder{ color: rgba(0,0,0,.4) !important; }
 
 
   /* 2.8 - Line Height and Spacing - 2.8 */
     h1, h2, h3, h4, h5, h6          { margin-bottom: 0.6em; }
     p                               { line-height: 1.5em; }
+    nav > ul > li > a               { line-height: 36px; } /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
 
+
+
+	/* 2.9 - Tables and Lists - 2.9 */
+
+		/* 2.9.1 - Tables - 2.9.1 */
+		th															{ vertical-align: bottom; }
+		td															{ vertical-align: top; }
+		table														{ width: 100%; }
+		thead, tr												{ border-bottom: 1px solid #d0d0d0; }
+		td, th													{
+																			padding: 16px 5px 14px !important;
+																			vertical-align: middle;
+																			border-radius: 2px;
+																		}
+		tbody tr:hover									{ background: #ede7f6; }
+
+
+		/* 2.9.2 - Lists - 2.9.2 */
+		ul															{ list-style: disc outside; }
+		#footer_links ul								{ list-style: none; }
+		.typography ul									{
+																			list-style: disc outside;
+																			padding-left: 40px !important;
+																		}
 
 
 /* 3 - IMAGES - 3 */
@@ -154,12 +267,11 @@
 
   /* 3.1 - Base Image Handling - 3.1 */
     img                             {
-                                      max-width: 100%; /*no image should ever exceed the width of its container */
+                                      max-width: 100%; /* no image should ever exceed the width of its container */
                                       height: auto;
                                       margin: 0 auto;
                                     }
-    .img-top img                    { margin-bottom: 24px; } /* adds margin below images when the image is directly above text */
-    .img-btm img                    { margin-top: 24px; } /* adds margin above images when the image is directly below text */
+    figure img                      { width: 100%; } /* images that are the point of reference within a figure should always fill the width of their container */
 		#brands img											{ height: 72px; margin: 24px 24px 0 24px; opacity: .6; }
 
 
@@ -168,23 +280,16 @@
 
 
 	/* 4.1 - Display - 4.1 */
+    #nav_secondary_container::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
+                                    { display: none; }
+    nav input, nav i, #nav_social /*hide hamburger icon until requested by mobile media query */
+                                    { display: none !important;}
+    h1, h2, h3, h4, h5, h6, p, img,
+    #menu a, #menu > li:hover > ul,
+    blockquote span                 { display: block; }
+    #menu ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
+    #social a                       { display: inline-block; }
 
-		#nav-primary input,
-		#nav-primary i, /*hide hamburger icon until requested by mobile media query */
-		#ProductNav::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
-																		{
-																			display: none;
-																		}
-		h1, h2, h3, h4, h5, h6, p, img,
-		#nav-primary ul a,
-		#nav-primary > ul > li:hover > ul,
-		blockquote span									{
-																			display: block;
-																		}
-		#nav-primary ul ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
-		#social a												{
-																			display: inline-block;
-																		}
 
   /* 4.2 - Flexible Box Model Control - 4.2 */
 
@@ -195,9 +300,12 @@
 
 			/* 4.2.1.1 - Flex Display - 4.2.1.1 */
 			/* Tells a container to display its contents using a flexible box model */
-				.col-2, .col-3, .col-3 > *,
-				.col-1-2, .col-2-1,
-				#brands, #calltoaction,
+				figure, section:not(.col-1),
+        section:not(.col-1) > *,
+        /*.col-2 > *,
+        .col-3 > *,*/
+        #nav_primary,
+				#calltoaction,
 				#calltoaction > div,
 				#footer_links,
 				.field-wrapper,
@@ -207,8 +315,9 @@
 																			display: -webkit-flex;
 																			display: flex;
 																		}
-				#nav-primary li,
-				#ProductNavContents > a			{
+
+				#nav_primary li,
+				#nav_secondary_contents > a	{
 																			display: -webkit-inline-box;
 																			display: -ms-inline-flexbox;
 																			display: -webkit-inline-flex;
@@ -219,20 +328,27 @@
 			/* 4.2.1.2 - Flex Direction - 4.2.1.2 */
 			/* Direction of the flex container's main axis */
 				#calltoaction > div,
-				.col-3 > *									{
+				.col-1 figure,
+        section:not(.col-1) > *
+				/*.col-2 > *, .col-3 > *,
+				.col-1-2 > *, .col-2-1 > **/	{
 																			-webkit-flex-direction: column;
-																			-ms-flex-direction: column;
-																			flex-direction: column;
+																			    -ms-flex-direction: column;
+																			        flex-direction: column;
 																		}
 
 
 			/* 4.2.1.3 - Flex Wrap - 4.2.1.3 */
 			/* Controls whether the flex container is single-line or multi-line, and the direction of the cross axis */
-		    #footer_links, #brands,
+				/*.col-2, .col-3,
+				.col-1-2, .col-2-1,
+				#brands,*/
+        section:not(.col-1),
+        #footer_links,
 				#calltoaction > div					{
 																			-webkit-flex-wrap: wrap;
-																			-ms-flex-wrap: wrap;
-																			flex-wrap: wrap;
+																			    -ms-flex-wrap: wrap;
+																			        flex-wrap: wrap;
 																		}
 
 
@@ -240,29 +356,38 @@
 			/* Align all items along the main axis of a flexible container */
 				#calltoaction > div					{
 																			-webkit-justify-content: flex-start;
-																			-ms-flex-pack: start;
-																			justify-content: flex-start;
+																			          -ms-flex-pack: start;
+																			        justify-content: flex-start;
 																		}
-		    .col-2, .col-3,
+		    section:not(.col-1),
+        #nav_primary
+        /*.col-2, .col-3,
+				.col-1-2, .col-2-1*/				{
+																			-webkit-justify-content: space-between;
+																			          -ms-flex-pack: space-between;
+																			        justify-content: space-between;
+																		}
 				#brands, #calltoaction,
 				#footer_links								{
 																			-webkit-justify-content: center;
-																			-ms-flex-pack: center;
-																			justify-content: center;
+																			          -ms-flex-pack: center;
+																			        justify-content: center;
 																		}
-				.col-3 > *
-
 				.content__button						{
 																			-webkit-justify-content: flex-end;
-																			-ms-flex-pack: end;
-																			justify-content: flex-end;
+																			          -ms-flex-pack: end;
+																			        justify-content: flex-end;
 																		}
 
 
 			/* 4.2.1.5 - Align Items - 4.2.1.5 */
 			/* Align all items along the cross axis of a flexible container */
-				#nav-primary li,
-				#ProductNavContents > a			{
+				.col-1 figure,
+        section:not(.col-1) > *,
+				/*.col-2 > *, .col-3 > *,
+				.col-1-2 > *, .col-2-1 > *,*/
+				#nav_primary li,
+				#nav_secondary_contents > a	{
 																			-webkit-box-align: center;
 																			-webkit-align-items: center;
 																			-ms-flex-align: center;
@@ -290,16 +415,18 @@
 
 			/* 4.2.2.4 - Flex Basis - 4.2.2.4 */
 			/* The initial width or height (whichever is on the main axis) of the flex item, before free space is distributed according to the flex factors. */
-				.col-3 > *, #contact,
-				#discover, #signup					{ flex-basis: 33.33%; -ms-flex: 33.33%; }
-				.col-1-2 > *:first-child,
-				.col-2-1 > *:last-child			{ flex-basis: 40%; -ms-flex: 40%; }
-				#calltoaction > div					{ flex-basis: 50%; -ms-flex: 50%; }
-				.col-1-2 > *:last-child,
-				.col-2-1 > *:first-child		{ flex-basis: 60%; -ms-flex: 60%; }
-				.col-2 > *,
-				.col-3 figcaption,
-				#brands p										{ flex-basis: 100%; -ms-flex: 100%; }
+				/*.col-2 > *, .col-3 > *,
+				.col-1-2 > *, .col-2-1 > **/
+        section:not(.col-1) > *             { flex-basis: 100%; -ms-flex: 100%; } /* this is a catch-all for direct h2, p, and other potential text elements inside a section that don't fall inside a specific column */
+				.col-1 > figure, .col-1 > div       { flex-basis: 100%; -ms-flex: 100%; }
+				.col-2 > figure, .col-2 > div       { flex-basis: 47.21%; -ms-flex: 47.21%; } /*42.5%*/
+				.col-3 > figure, .col-3 > div       { flex-basis: 29.629%; -ms-flex: 29.629%; } /*28.33*/
+				.col-1-2 > .first, .col-2-1 > .last { flex-basis: 37.77%; -ms-flex: 37.77%; } /*34*/
+				.col-2-1 > .first, .col-1-2 > .last { flex-basis: 56.66%; -ms-flex: 56.66%; } /*51*/
+				#footer_links > div                 { flex-basis: 33.33%; -ms-flex: 33.33%; }
+				#calltoaction > div                 { flex-basis: 50%; -ms-flex: 50%; }
+				#brands p                           { flex-basis: 100%; -ms-flex: 100%; }
+        #brands img                         { flex-basis: auto; }
 
 
 			/* 4.2.2.5 - Align Self - 4.2.2.5 */
@@ -312,47 +439,62 @@
 
 
   /* 4.3 - Margin & Padding - 4.3 */
-    header                          { margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
-    header													{ padding: 144px 256px 240px 256px;} /* bottom padding should be equal to top padding + margin-top */
-    section                         { padding: 0 48px; } /* the sections themselves should not have any top or bottom padding as we want to give the child divs the ability to adapt to different styling requests, including full utilization of height of section */
-    section > *											{ padding: 48px 48px 96px 48px; } /* left/right padding should be the same as the parent section left/right padding to provide the appearance of even spacing on the inside gaps between divs */
-    .col-1 > div                    { padding: 96px 48px 48px 48px; } /*we make the bottom padding here smaller so that the content generally related to the h1 moves closer */
-		.col-1 p												{ padding: 0 15%; }
-    .col-2 p                        { padding: 0 96px; } /*should be wider in most cases than the .col-3 p as we don't want the text to stretch too far within the narrower 2 column structure */
-    .col-3 figcaption               { padding: 0 48px; }
-		blockquote											{ padding: 72px 192px; }
-    footer                          { padding: 96px 336px 16px 336px; }
-		#brands													{ padding: 128px 64px; }
-		#brands p												{ padding: 0 128px; }
-    #next_feature                   { padding: 48px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
-		#next_feature a									{ padding: 0; }
-    #calltoaction div               { padding: 144px; }
-		#contact, #discover, #signup    { padding: 0; }
-		#social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
+    header													{ margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
+    header													{ padding: 144px 15% 240px; } /* bottom padding should be equal to top padding + margin-top */
+    footer													{ padding: 96px 18% 16px 18%; } /* 96px 336px 16px 336px; */
+		section, blockquote,
+		figure, section > div						{ padding-top: 72px; }
+		section, blockquote             { padding-bottom: 72px;} /* responsible for the bottom padding of each section and blockquote within the main area of the site */
+		.col-1 > figure, .col-1 > div		{ padding-top: 0; } /* there will only ever be one figure or div within a col-1 container, so the .col-1 itself already has the top padding needed */
+		section > p											{ padding-bottom: 0; }
+		#brands													{ padding-top: 144px; padding-bottom: 144px; }
+		section, #nav_primary           { padding-left: 5%; padding-right: 5%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+    .col-1, #brands                 { padding-left: 0; padding-right: 0; }
+		section > h2, section > p				{ padding-left: 15%; padding-right: 15%; }
+    blockquote											{ padding-left: 18%; padding-right: 18%; }
+		/*#nav_primary										{ padding: 0 96px; }*/
+    #next_feature										{ padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
+		#next_feature a,
+    #footer_links > div             { padding: 0; }
+    #calltoaction div								{ padding: 7%; }
+		figcaption											{ margin: 0 0 auto 0; }
+		#social													{ margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
+    span + figcaption, figcaption + span,
+    img + figcaption, figcaption + img,
+    table + figcaption, figcaption + table
+                                    { margin-top: 36px; } /* adds margin between images/tables and the text they belong to */
+		.col-2-1 figure:first-child figcaption,
+		.col-1-2 figure:last-child figcaption,
+		.col-1 figcaption								{ width: 70%; }
+		.col-1-2 figure:first-child figcaption,
+		.col-2-1 figure:last-child figcaption,
+		.col-2 figcaption, .col-1 table { width: 80%; }
+		.col-3 figcaption								{ width: 90%; }
+		#next_feature a,
+    .col-2 table, .col-3 table       { width: 100%; }
 
 
 	/* 4.4 - Position - 4.4 */
-		#nav-primary, /*keeps navbar fixed to top of screen at all times */
-		.noScroll												{ position: fixed; }
-		#nav-primary li,
-		#nav-primary ul a,
-		#nav-secondary,
-		.pn-ProductNav_Contents, /*keeps underlines centered underneath each item */
-		blockquote											{ position: relative; }
-		#nav-primary > ul > li > a:before, /* locks underlining in position without being impacted by text size or line height */
-		#nav-primary ul ul, /* ensures that parent li does not stretch to the width of this ul */
-		#AdvancerLeft, #AdvancerRight,
-		#Indicator,
+		.noScroll, #nav_primary					{ position: fixed; }
+		blockquote,
+		.nav_secondary_contents,
+		#nav_primary *,
+		#nav_secondary									{ position: relative; }
 		blockquote::before,
-		blockquote::after								{ position: absolute; }
+		blockquote::after,
+		#menu > li > a:before,
+		#menu ul,
+		#nav_secondary_left, #nav_secondary_right,
+		#nav_secondary_indicator				{ position: absolute; }
+
 
   /* 4.5 - Float - 4.5 */
-		.grooper_logo,
-		.pn-ProductNav_Contents,
-		#footer_links label							{ float: left; }
-		#footer_links input,
-		#nav-primary ul,
-		#nav-primary i									{ float: right; }
+  /*
+    .grooper_logo,
+    .nav_secondary_contents         { float: left; }
+    #nav_primary ul,
+    #nav_primary i                  { float: right; }
+    */
 
 
   /* 4.6 - Shadows - 4.6 */
@@ -360,15 +502,15 @@
 																			-webkit-box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
 																			        box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
 																		}
-		#nav-primary										{
+		#nav_primary										{
 																			-webkit-box-shadow: 0 1px 24px rgba(0,0,0,0.6);
 																			        box-shadow: 0 1px 24px rgba(0,0,0,0.6);
 																		}
-		#nav-primary ul ul							{
+		#menu ul                        {
 																			-webkit-box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
 																			        box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
 																		}
-		#nav-secondary									{
+		#nav_secondary									{
 																			-webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.2), 0 -2px 6px rgba(0,0,0,0.3);
 																			        box-shadow: 0 2px 6px rgba(0,0,0,0.2), 0 -2px 6px rgba(0,0,0,0.3);
 																		}
@@ -376,19 +518,30 @@
 																			-webkit-box-shadow: 2px 2px 24px rgba(0,0,0,0.26) !important;
 																			        box-shadow: 2px 2px 24px rgba(0,0,0,0.26) !important;
 																		}
-    /*.shadow img                     { box-shadow: 0 2px 6px rgba(0,0,0,.15); }*/
 
 
   /* 4.7 - Borders - 4.7 */
     section, blockquote							{ border-bottom: 1px solid #b2dfdb; } /* gives each section & blockquote a light teal bottom border */
     .col-1                          { border-bottom: 0; } /* then we remove the above mentioned border for col-1 as these are intended to be headers directly related to the content below them */
     .comparison > *:last-child			{ border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
-    .shadow img                     { border: 1px solid #b2dfdb; }
+    .border-img img                 { border: 1px solid #b2dfdb; }
 
 
 	/* 4.8 - Z-Index - 4.8 */
-		#nav-primary										{ z-index: 10000; }
-		#nav-secondary									{ z-index: 1; }
+		#nav_primary										{ z-index: 10000; }
+		#nav_secondary									{ z-index: 1; }
+
+
+  /* 4.9 - Box Sizing - 4.9 */
+    #nav_primary, #nav_secondary,
+    #social a                       { box-sizing: border-box; }
+
+
+	/* 4.99 - Visibility - 4.99 */
+		#menu > li > a:before,
+		#menu ul												{ visibility: hidden; }
+		#menu > li > a:hover:before,
+		#menu > li:hover > ul						{ visibility: visible; }
 
 
 
@@ -396,229 +549,205 @@
 
 
   /* 5.1 - Primary Navigation - 5.1 */
-    #nav-primary {
-    	top: 0; /* start navbar at absolute top */
-    	left: 0; /*start navbar at absolute left */
-    	width: calc(100% - (96px * 2)); /* the combination of left/right padding must be subtracted from this to retain a centered position */
-    	background: rgba(0,0,0,.94); /*this should be set to the same color as the top color used in the gradient of the header so that it appears to be blending in */
-    	height: 96px;
-    	padding: 0 96px;
-    }
-    .grooper_logo {
-    	background: url(../images/grooper_logo_214x64.png); /*logo image used in navbar */
-    	height: 64px; /*set to actual height of logo image */
-    	width: 214px; /*set to actual width of logo image */
-    	margin-top: 18px; /* arbitrary value that vertically centers logo within navbar to compensate for the inherent offset built into the grooper logo */
-    }
-    #nav-primary i {
-      padding-right: 48px;
-      margin-top: 8px;
-      color: #666666;
-    }
-    #nav-primary i:hover {
-      color: rgba(255,255,255,.86);
-    }
-    #nav-primary li {
-      height: 96px; /* must match the height of #nav-primary */
-    }
-    #nav-primary ul a {
-      vertical-align: middle;
-    	color: #f5faf9;
-    }
-    #nav-primary > ul > li > a {
-    	line-height: 36px; /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
-    	margin: 0 16px; /*top margin should equal ( navbar height - this line height ) / 2  */
-    }
-    #nav-primary > ul > li:last-child > a {
-    	margin-right: 0 !important; /*removes the unnecessary right margin from the last menu item, as the navbar itself already has sufficient padding. top amrgin should be same as margin above */
-    }
-    #nav-primary > ul > li > a:before {
-    	content: "";
-    	bottom: 0; /* ensures line will snap to bottom edge of item */
-      left: 0; /* ensures line will start to left-most edge of item */
-    	height: 1px; /* sets height of the primary nav link underlines that will appear during hover */
-    	width: 100%; /*ensures line consumes full width of item */
-    	background: #fff; /* set color of underline */
-      visibility: hidden; /* sets initial state of nav link underline to hidden so it can animate to visible during hover */
-    }
-    #nav-primary > ul > li > a:hover:before {
-      visibility: visible; /* transforms primary nav underlines to visible */
-    }
-    #nav-primary ul ul {
-    	visibility: hidden; /* forces the dropdown menu to be hidden until displayed by hover state */
-    	opacity: 0; /* sets the initial opacity of the dropdown menu to 0 so that we have the ability to animate the opacity to 1 during a hover of the parent li */
-    	left: calc(-50% - 6px); /* horizontally centers dropdown menu to the parent, the 6px represents half of the left padding of the parent li */
-    	top: calc(100% - 32px); /* adjusts the location of the dropdown menu upward to cover the parent link's underlining */
-    }
-    #nav-primary > ul > li:hover > ul {
-    	visibility: visible;
-    	opacity: 1;
-    }
-    #nav-primary ul ul li {
-      height: 48px; /* determines height of submenu items */
-    	width: 200px; /* determines width of submenu items */
-    	background: rgba(255,255,255,.94); /* sets background of non-hovered submenu items to a semi transparent white */
-    }
-    #nav-primary ul ul li a {
-      color: #333; /* sets the base color of submenu links before hover */
-    	padding: 16px 0; /* establishes the vertical spacing of submenu items */
-      margin: 0 auto;
-    }
-    #nav-primary ul ul li:hover a {
-    	color: #009688; /*highlights the text of submenu links during hover */
-			background: rgba(255,255,255,1); /* sets background of hovered submenu items to a semi transparent white */
-    }
+    /*#menu a          { vertical-align: middle; }*/
+    #nav_primary *                  { vertical-align: middle; }
+    #menu ul li a                   { padding: 16px 0; } /* establishes the vertical spacing of submenu items */
+    /*#nav_primary i                  { padding-right: 48px; }*/
+    #menu > li > a                  { margin: 0 16px; } /* horizontal spacing between main menu items */
+    #menu ul li a                   { margin: 0 auto; }
+    .grooper_logo                   { margin-top: 18px; } /* arbitrary value that vertically centers logo within navbar to compensate for the inherent offset built into the grooper logo */
+    /*#nav_primary i                  { margin-top: 8px; }*/
+    #menu > li:last-child > a       { margin-right: 0 !important; } /*removes the unnecessary right margin from the last menu item, as the navbar itself already has sufficient padding. top amrgin should be same as margin above */
+    .grooper_logo                   { height: 64px; } /* height of grooper logo */
+    #nav_primary, #menu li          { height: 96px; } /* height of entire navbar */
+    #menu > li > a:before           { height: 1px; } /* sets height of the primary nav link underlines that will appear during hover */
+    #menu ul li                     { height: 48px; } /* determines height of submenu items */
+    .grooper_logo                   { width: 214px; } /*set to actual width of logo image */
+    #nav_primary,
+    #menu > li > a:before           { width: 100%; }
+    #menu ul li                     { width: 200px; } /* determines width of submenu items */
+    #nav_primary                    { top: 0; }
+    #menu ul                        { top: calc(100% - 32px); } /* adjusts the location of the dropdown menu upward to cover the parent link's underlining */
+    #menu > li > a:before           { bottom: 0; } /* ensures line will snap to bottom edge of item */
+    #nav_primary,
+    #menu > li > a:before           { left: 0; }
+    #menu ul                        { left: calc(-50% - 6px); } /* horizontally centers dropdown menu to the parent, the 6px represents half of the left padding of the parent li */
+    #menu ul                        { opacity: 0; } /* sets the initial opacity of the dropdown menu to 0 so that we have the ability to animate the opacity to 1 during a hover of the parent li */
+    #menu > li:hover > ul           { opacity: 1; }
+    .grooper_logo                   { background: url(../images/grooper_logo_214x64.png); } /*logo image used in navbar */
+    #menu > li > a:before           { content: ""; }
+
 
   /* 5.2 - Secondary Navigation - 5.2 */
-    #nav-secondary {
-      padding: 0;
-      box-sizing: border-box;
-      height: 48px;
-    }
-    #ProductNav {
-      overflow-x: auto; /* allow horizontal scroll if enough items exist */
-      overflow-y: hidden; /* prevent vertical scroll */
-      -webkit-overflow-scrolling: touch; /* inertia scrolling for webkit */
-      white-space: nowrap; /* We don't want internal inline elements to wrap */
-      width: calc(100% - 96px);
-      margin: 0 auto;
-    }
-    /*#ProductNav {-ms-overflow-style: -ms-autohiding-scrollbar; }*/ /* Make an auto-hiding scroller for the 3 people using a IE */
-    #ProductNav {-ms-overflow-style: none; } /* Make an auto-hiding scroller for the 3 people using IE */
-    #ProductNav {overflow: -moz-scrollbars-none;}
-    #ProductNavContents > a {
-      color: #888;
-      font-size: 16px;
-      min-height: 48px;
-      height: 48px; /*must match min-height to allow vertical flex alignment to find true center across all browsers */
-      padding: 0 12px;
-    }
-    #ProductNavContents > a [aria-selected="true"] {
-      color: #111;
-    }
-    #AdvancerLeft, #AdvancerRight {
-      width: 48px;
-      height: 48px;
-      top: 0;
-      bottom: 0;
-      opacity: 0; /* Set the buttons invisible by default */
-    }
-    #AdvancerLeft:focus, #AdvancerRight:focus { outline: 0; } /*removes blue outline during focus */
-    #AdvancerLeft:hover, #AdvancerRight:hover { cursor: pointer; }
-    #AdvancerLeft { left: 0; } /*push left button to left side of navbar */
-    #AdvancerRight { right: 0; } /*push right button to right side of navbar */
-    [data-overflowing="both"] ~ #AdvancerLeft, [data-overflowing="left"] ~ #AdvancerLeft,
-    [data-overflowing="both"] ~ #AdvancerRight, [data-overflowing="right"] ~ #AdvancerRight {
-      opacity: 1;
-    }
-    .AdvancerIcon {
-      width: 20px;
-      height: 32px;
-      margin: 0 auto;
-      fill: #bbb;
-    }
-    #Indicator {
-      bottom: 0;
-      left: 0;
-      height: 2px;
-      width: 100px;
-    }
+    #nav_secondary_contents > a     { font-size: 16px; }
+    #nav_secondary                  { padding: 0; }
+    #nav_secondary_contents > a     { padding: 0 12px; }
+    #nav_secondary_container        { margin: 0 auto; }
+    .nav_advancer_icon              { margin: 0 auto; }
+    #nav_secondary,
+    #nav_secondary_contents > a,
+    #nav_secondary_left,
+    #nav_secondary_right            { height: 48px; }
+    .nav_advancer_icon              { height: 32px; }
+    #nav_secondary_indicator        { height: 2px; }
+    #nav_secondary_container        { width: calc(100% - 96px); }
+    #nav_secondary_left,
+    #nav_secondary_right            { width: 48px; }
+    .nav_advancer_icon              { width: 20px; }
+    #nav_secondary_indicator        { width: 100px; }
+    #nav_secondary_contents > a     { min-height: 48px; }
+    #nav_secondary_left,
+    #nav_secondary_right            { top: 0; }
+    #nav_secondary_left,
+    #nav_secondary_right,
+    #nav_secondary_indicator        { bottom: 0; }
+    #nav_secondary_right            { right: 0; } /*push right button to right side of navbar */
+    #nav_secondary_left,
+    #nav_secondary_indicator        { left: 0; }
+    #nav_secondary_left,
+    #nav_secondary_right            { opacity: 0; } /* Set the buttons invisible by default */
+    #nav_secondary_left:focus,
+    [data-overflowing="both"] ~ #nav_secondary_left,
+    [data-overflowing="left"] ~ #nav_secondary_left,
+    [data-overflowing="both"] ~ #nav_secondary_right,
+    [data-overflowing="right"] ~ #nav_secondary_right
+                                    { opacity: 1; }
+    .nav_advancer_icon              { fill: #bbb; }
+    #nav_secondary_right:focus      { outline: 0; } /*removes blue outline during focus */
+    #nav_secondary_container        { overflow-x: auto; } /* allow horizontal scroll if enough items exist */
+    #nav_secondary_container        { overflow-y: hidden; } /* prevent vertical scroll */
+    #nav_secondary_container        { -webkit-overflow-scrolling: touch; } /* inertia scrolling for webkit */
+    #nav_secondary_container        { white-space: nowrap; } /* We don't want internal inline elements to wrap */
+    #nav_secondary_container        { -ms-overflow-style: none; } /* Make an auto-hiding scroller for the 3 people using IE */
+    #nav_secondary_container        { overflow: -moz-scrollbars-none; }
 
 
+  /* 5.3 - Footer - 5.3 */
+    #footer_links li,
+    .content__button input          { padding: 4px 0; }
+    #footer_links input             { padding: 0 8px; }
+    footer form                     { margin-top: 23px; }
+    .field-wrapper,
+    .content__button                { margin: 4px 0; }
+    .field-wrapper,
+    .content__button,
+    #footer_links input             { height: 32px; }
+    #footer_links input             { width: 100%; }
+    #footer_links input             { border: none; }
 
 
-/* NEXT FEATURE */
-
-  #next_feature a                 { color: #009688; }
-
-
-
-/* FOOTER */
-
-  footer                          { background: #091413; }
-  #footer_links h4                { text-align: left; }
-  #footer_links ul                { list-style: none; }
-  #footer_links li                { padding: 4px 0; color: rgba(255,255,255,.46); }
-  #footer_links a                 { color: rgba(255,255,255,.46); }
-  footer form                     { margin-top: 23px; }
-  .field-wrapper, .content__button {
-  	margin: 4px 0;
-  	width: 100%;
-  }
-  #footer_links label {
-  	height: 32px;
-  	width: 40%;
-  	padding-top: 8px;
-  }
-  #footer_links input {
-  	height: 32px;
-  	width: 100%;
-  	border: none;
-  	padding: 0 8px;
-  }
-  .field-wrapper input {
-    background: rgba(255,255,255,.86);
-  }
-  .field-wrapper input::-webkit-input-placeholder {
-  	color: rgba(0,0,0,.4) !important;
-  }
-  #footer_links .content__button input {
-  	color: #bbb !important;
-  	background: #444 !important;
-  	padding: 4px 0;
-  }
-  #footer_links .content__button input:hover {
-  	color: #fff !important;
-  	background: #555 !important;
-  }
-
-
-/* SOCIAL NAVIGATION */
-
-  #social {
-  	width: 100%;
-  }
-  #social a {
-  	height: 128px;
-  	width: 128px;
-  	box-sizing: border-box;
-  	padding-top: 44px;
-  	margin: 6px;
-  	border: 1px solid rgba(255,255,255,.26);
-  }
-  #social a:hover .fa               { color: #fff}
-  #social a:nth-child(1):hover      { background: #3b5998; } /* facebook */
-  #social a:nth-child(2):hover      { background: #dd4b39; } /* google plus */
-  #social a:nth-child(3):hover      { background: #55acee; } /* twitter */
-  #social a:nth-child(4):hover      { background: #0976b4; } /* linkedin */
-  #social a:nth-child(5):hover      { background: #cd201f; } /* youtube */
-  .fa                               { color: rgba(255,255,255,.26); }
-  #copyright                        { color: #666666; }
-  #copyright img                    { margin: 16px auto; }
+  /* 5.3 - Social - 5.3 */
+    #social                         { width: 100%; }
+    #social a                       {
+                                      padding-top: 44px;
+                                      margin: 6px;
+                                      height: 128px;
+                                      width: 128px;
+                                      border: 1px solid rgba(255,255,255,.26);
+                                    }
+    #social a:nth-child(1):hover    { background: #3b5998; } /* facebook */
+    #social a:nth-child(2):hover    { background: #dd4b39; } /* google plus */
+    #social a:nth-child(3):hover    { background: #55acee; } /* twitter */
+    #social a:nth-child(4):hover    { background: #0976b4; } /* linkedin */
+    #social a:nth-child(5):hover    { background: #cd201f; } /* youtube */
+    .fa                             { color: rgba(255,255,255,.26); }
+    #copyright img                  { margin: 16px auto; }
 
 
 
 
 /* CONVENIENCE CLASSES */
 
-  /* The snap-bottom class allows large primary images to snap to the bottom of their section so that they appear to be emerging from behind the following */
-	.snap-bottom > *									{
-																			padding-bottom: 0 !important;
-																			border-bottom: 1px solid #b2dfdb;
+	/* The typography class should be applied to text-heavy sections, like FAQs, and other long, informatoinal articles needing a more consistent and condensed text layout to increase legibility and reduce reader fatigue */
+	.typography, .typography *				{ text-align:left !important; }
+	.typography, .typography *				{ font: 300 16px/24px "Roboto",sans-serif !important; }
+	.typography h2										{ font: 300 34px/40px "Roboto",sans-serif !important; }
+	.typography h3										{ font: 400 22px/36px "Roboto",sans-serif !important; }
+	.typography h4										{ font: 400 18px/32px "Roboto",sans-serif !important; }
+	.typography, .typography *				{	color: rgba(17,17,17,.8) !important; }
+	.typography h3, .typography h4		{ color: rgba(0,0,0,1) !important; }
+	.typography ul, .typography li		{ color: rgba(17,17,17,1) !important; }
+	.typography div *									{
+																			margin: 0 !important;
+																			padding: 0 !important;
 																		}
-	.snap-bottom img									{ margin: 96px auto 0 auto; }
+	.typography h2										{ margin: 0 0 20px !important; }
+	.typography h3, .typography h4		{ margin: 32px 0 16px !important; }
+	.typography p											{ margin: 16px 0 !important; }
+	.typography li										{ margin: 8px 0 !important; }
+
+  .side_by_side                     { padding-left: 10%; padding-right: 10%; }
+  .side_by_side figure              { flex-direction: row; justify-content: space-between;}
+  .side_by_side img,
+  .side_by_side table               { flex-basis: 47.22%; }
+  .side_by_side figcaption          { flex-basis: 47.22%; }
+  .side_by_side img + figcaption,
+  .side_by_side table + figcaption,
+  .side_by_side figcaption + img,
+  .side_by_side figcaption + table  { margin: 0; padding-left: 5%; }
+  .side_by_side figure > *                 { margin: 0; /*margin-left: 36px;*/ }
 
 
-  /* The bg-teal and bg-orange classes apply background color to main sections and alter the color of the text therein appropriately */
-	.bg-dark *,	.bg-light *								{ background: transparent !important; }
-	.bg-dark *														{ color: rgba(238,238,238,.7); }
+
+  /* The align classes are used to remove -bottom class allows large primary images to align to the bottom of their section so that they appear to be emerging from behind the following */
+	.align-bottom                     { padding-bottom: 0 !important; }
+
+	/* just figured out that this is how I can make the aligned images stretch to fill the screen and overflow past the left/right edges on smaller devices */
+	/* the negative bottom margin will keep the parent section from enlarging too much and the positive top margin will make up for the change in space */
+	/* will have to think about how I'll decide the values of these margins to keep this from looking bad, scale must be by percentage */
+	/* the margins being specified in percents will be percents of a container, not the img itself, so the numbers won't match as-is */
+	/*.align-bottom img {transform: scale(1.2); margin: 100px 0 -100px 0; }*/
+
+
+  /* The bg-dark and bg-light classes control the child elements of the colored container, the specific color is added via the adition of a specific color class */
+	/* The teal and orange classes can then be added to apply background color to main sections and alter the color of the text therein appropriately */
+	.bg-dark *,	.bg-light *           { background: transparent !important; }
+	.bg-dark *                        { color: rgba(238,238,238,.75); }
 	.bg-dark h2, .bg-dark h3,
-	.bg-dark span													{ color: #fff !important; }
-	.bg-light *														{ color: rgba(17,17,17,.7); }
+	.bg-dark span                     { color: #fff !important; }
+	.bg-light *                       { color: rgba(17,17,17,.75); }
 	.bg-light h2, .bg-light h3
-	.bg-light span												{ color: #000 !important; }
+	.bg-light span, .bg-light th      { color: #000 !important; }
+  .bg-dark thead tr                 { background: rgba(255,255,255,.6) !important; }
+  .bg-dark tbody tr:nth-child(odd)  { background: rgba(255,255,255,.06) !important; }
+  .bg-dark table                    { border: 1px solid rgba(238,238,238,.3); }
+  .bg-dark th                       { color: rgba(17,17,17,1) !important; }
+  .bg-dark thead, .bg-dark tr       { border-bottom: 1px solid rgba(238,238,238,.3); }
+  .bg-light thead tr                { background: rgba(0,0,0,.6) !important; }
+  .bg-light tbody tr:nth-child(odd) { background: rgba(0,0,0,.06) !important; }
+  .bg-light table                   { border: 1px solid rgba(17,17,17,.3); }
+  .bg-light th                      { color: rgba(238,238,238,1) !important; }
+  .bg-light thead, .bg-dark tr      { border-bottom: 1px solid rgba(17,17,17,.3); }
 
-
+	/* blockquotes should be added directly to the main section of the page */
+	/* to produce the color styling of the blockquote, use the bg-color class on the blockquote itself */
+	blockquote											{ border-left: 8px solid #4db6ac; }
+	blockquote p										{
+																		font-weight: 400;
+																		color: rgba(17,17,17.8)
+																	}
+	blockquote span									{
+																		margin-top: 36px;
+																		font-weight: 500;
+																		color: rgba(0,0,0.75)
+																	}
+	blockquote::before							{
+																		content: "\201C";
+																		left: 96px;
+																		top: -12px;
+																	}
+	blockquote::after								{
+																		content: "\201D";
+																		right: 96px;
+																		bottom: -84px;
+																	}
+	blockquote.bg-dark::before,
+	blockquote.bg-dark::after				{ color: rgba(0,0,0,.2)}
+	blockquote.bg-light::before,
+	blockquote.bg-light::after			{ color: rgba(255,255,255,.2)}
+	blockquote.gray									{ border-left: 8px solid #616161;}
+	blockquote.orange								{ border-left: 8px solid #e64a19;}
+	blockquote.teal									{ border-left: 8px solid #00897b;}
 
 	blockquote														{ border-left: 8px solid #4db6ac; }
 	blockquote span												{ margin-top: 36px; }
@@ -638,8 +767,6 @@
 	/* The btn-sml and btn-lrg classes are used on <a> elements to turn them into styled buttons in one of two sizes. */
 	/* It is assumed that these will always be on a line by themselves and should be horizontally centered within the parent container */
   .btn-sml, .btn-lrg										{
-																					display: inline-block;
-																					vertical-align: middle;
 																					text-transform: uppercase;
 																					border-radius: 3px;
 																					border: 1px solid rgba(255,255,255,0.6);
@@ -647,10 +774,12 @@
 																					background: rgba(255,255,255,.066);
 																				}
   .btn-sml															{
+																					margin: 16px auto 0; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
 																					padding: 6px 12px;
 																					margin: 16px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
 																				}
 	.btn-lrg															{
+																					margin: 32px auto 0; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
 																					padding: 16px 32px;
 																					margin: 32px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
 																				}
@@ -662,13 +791,41 @@
 																				}
 
 
+  .icon-phase                           {
+                                          height: 120px;
+                                          width: 120px;
+                                          line-height: 120px; /* this must always be the same as the height of the span itself. The result is vertically centered text. */
+                                          margin: 0 auto;
+                                          padding: 16px;
+                                          border-radius: 3px;
+                                          font-size: 20px;
+                                          text-transform: uppercase;
+                                          text-align: center;
+                                        }
+  .icon-phase.acquire                   { border: 1px solid rgb(255,134,84); color: rgb(255,134,84); background: rgba(255,134,84,.2) !important; } /*#ff8654*/
+  .icon-phase.condition                 { border: 1px solid rgb(0,  176,240); color: rgb(0,176,240); background: rgba(0,176,240,.2) !important; } /*#00b0f0*/
+  .icon-phase.organize                  { border: 1px solid rgb(255,60,60 ); color: rgb(255,60,60); background: rgba(255,60,60,.2) !important; } /*#ff3c3c*/
+  .icon-phase.collect                   { border: 1px solid rgb(178,149,197); color: rgb(178,149,197); background: rgba(178,149,197,.2) !important; } /*#b295c5*/
+  .icon-phase.deliver                   { border: 1px solid rgb(146,208,80 ); color: rgb(146,208,80); background: rgba(146,208,80,.2) !important; } /*#92d050*/
+
+
+	.desaturate														{
+																					display:        flex;
+																					flex-wrap:      wrap;
+																					height:         48px;
+																					-webkit-filter: grayscale(1);
+																					-webkit-filter: grayscale(100%);
+																					        filter: gray;
+																					        filter: grayscale(100%);
+																				}
+
 /* TRANSFORMS AND TRANSITIONS */
 
   .noScroll																{
 																						overflow: hidden;
 																						width: 100%;
 																					}
-	#Indicator															{
+	#nav_secondary_indicator								{
 																						-webkit-transform-origin: 0 0;
 																						    -ms-transform-origin: 0 0;
 																						        transform-origin: 0 0;
@@ -688,289 +845,154 @@
 																						    -ms-transform: scale(1.1);
 																						        transform: scale(1.1);
 																					}
+	tbody tr													      {
+																						-webkit-transition: background 0.4s ease 0s;
+																						     -o-transition: background 0.4s ease 0s;
+																						        transition: background 0.4s ease 0s;
+																					}
+	#menu > li > a:before,
+	#menu ul,
+	#menu ul li,
+	#menu ul li a,
+	#nav_secondary_left, #nav_secondary_right,
+  .btn-lrg, .btn-sml, #social a, .fa			{
+																						-webkit-transition: all 0.2s linear 0s !important;
+																						     -o-transition: all 0.2s linear 0s !important;
+																						        transition: all 0.2s linear 0s !important;
+																					}
+	.nav_secondary_contents									{
+																						-webkit-transition: -webkit-transform .2s ease-in-out;
+																						        transition: -webkit-transform .2s ease-in-out;
+																						     -o-transition: transform .2s ease-in-out;
+																						        transition: transform .2s ease-in-out;
+																						        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+																					}
+	#menu > li > ul,
+	#nav_social															{
+																						-webkit-transition: all 0.3s linear !important;
+																						     -o-transition: all 0.3s linear !important;
+																						        transition: all 0.3s linear !important;
+																					}
+	.no-transition													{
+																						-webkit-transition: none;
+																						     -o-transition: none;
+																						        transition: none;
+																					}
 
-	#nav-primary > ul > li > a:before,
-	#nav-primary ul ul,
-	#nav-primary ul ul li,
-	#nav-primary ul ul li a,
-	#AdvancerLeft, #AdvancerRight,
-
-  .btn-lrg, .btn-sml, #social a, .fa		{
-																					-webkit-transition: all 0.2s linear 0s !important;
-																					     -o-transition: all 0.2s linear 0s !important;
-																					        transition: all 0.2s linear 0s !important;
-																				}
-
-	.pn-ProductNav_Contents								{
-																					-webkit-transition: -webkit-transform .2s ease-in-out;
-																					        transition: -webkit-transform .2s ease-in-out;
-																					     -o-transition: transform .2s ease-in-out;
-																					        transition: transform .2s ease-in-out;
-																					        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
-																				}
-	#nav-primary > ul > li > ul,
-	#nav-social														{
-																					-webkit-transition: all 0.3s linear !important;
-																					     -o-transition: all 0.3s linear !important;
-																					        transition: all 0.3s linear !important;
-																				}
-																				/* thinking that we probably don't need transitions here since clicking on the link will immediately load another page. but i will leave it here for now in case we change this to a single page structure down the road. */
-/*
-	#Indicator														{
-																					-webkit-transition: background-color .2s ease-in-out, -webkit-transform .2s ease-in-out;
-																					        transition: background-color .2s ease-in-out, -webkit-transform .2s ease-in-out;
-																					     -o-transition: transform .2s ease-in-out, background-color .2s ease-in-out;
-																					        transition: transform .2s ease-in-out, background-color .2s ease-in-out;
-																					        transition: transform .2s ease-in-out, background-color .2s ease-in-out, -webkit-transform .2s ease-in-out;
-																				}
-*/
-	.no-transition												{
-																					-webkit-transition: none;
-																					     -o-transition: none;
-																					        transition: none;
-																				}
-
-
-.desaturate{
-  display:        flex;
-  flex-wrap:      wrap;
-  height:         48px;
-  -webkit-filter: grascale(1);
-  -webkit-filter: grayscale(100%);
-  filter:         gray;
-  filter:         grayscale(100%);
-}
-
-/*signup form*/
-.form {
-    color: white;
-    border: none;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px !important;
-}
-
-#form_signup{ padding: 0 512px;}
-/*input form*/
- .form_text {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
-}
-
-#top_map{
-  background: -webkit-linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("../images/map.jpg") center; /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("../images/map.jpg") center; /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("../images/map.jpg") center; /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom, rgba(0,0,0,0.25), rgba(0,0,0,0.25)), url("../images/map.jpg") center; /* Standard syntax (must be last) */
-  overflow: hidden;
-  padding: 288px 128px 0px 128px !important;
-  height: calc(100vh - 288px);
-  min-height: 586px !important;
-}
-
-#top_map > div {
-  background: transparent;
-  text-align: center;
-}
-#top_map h4                { text-align: center; }
-#top_map ul                { list-style: none; }
-#top_map li                { font-size: 16px; padding: 16px 0 ; color: rgba(255,255,255,.46); text-align: center;}
-#top_map a                 { color: rgba(255,255,255,.46); }
-#top_map a:hover           { color: #fff;}
-
-#iframe{
-  width: 100%;
-  height: 100%;
-}
 
 /* MEDIA QUERIES */
 
   @media only screen and (max-width: 1680px) {
-    h1                          { font-size: 68px; }
-    header p, #brands p					{ font-size: 28px; }
-    header                      { padding: 96px 144px 192px 144px }
-    section                     { padding: 0 36px; }
-    section > figure,
-    section > div               { padding: 36px 36px 72px 36px; }
-    .col-1 > div                { padding: 72px 36px 36px 36px; }
-    .col-2 p                    { padding: 0 72px; }
-    .col-3 figcaption           { padding: 0 36px; }
-    #calltoaction div           { padding: 96px; }
-    footer                      { padding: 72px 336px 16px 336px; }
-  }
+    header											{ padding: 96px 10% 192px; }
+	}
 
 
   @media only screen and (max-width: 1440px) {
-    h1                          { font-size: 62px; }
-    h2                          { font-size: 48px; }
-    h3                          { font-size: 26px; }
-    h4                          { font-size: 18px; }
-    p                           { font-size: 17px; }
-    header p, #brands p					{ font-size: 26px; }
-		blockquote p								{ font-size: 22px; }
-    .col-1 p                    { font-size: 20px; }
-    #calltoaction h3		        { font-size: 40px; }
-    #calltoaction p			        { font-size: 18px; }
-    .btn-lrg						        {	font-size: 18px; }
+		html, body									{ font-size: 15px; }
+    .field-wrapper input        { font-size: 12px; }
+		.content__button input			{ font-size: 14px; }
     #footer_links li            { font-size: 16px; }
 		#footer_links input					{ font-size: 14px; }
     .field-wrapper input        { font-size: 12px; }
     #copyright                  { font-size: 12px; }
     #social a                   { font-size: 24px; }
-    #footer_links .content__button input {
-                                  font-size: 14px;
-                                }
-    header                      { padding: 96px 128px 192px 128px; }
-    #nav-secondary              { padding: 0; }
-    footer                      { padding: 64px 144px 16px 144px; }
+    #form_signup                { padding: 0 336px;}
   	#social a                   { padding-top: 32px; }
-    #AdvancerLeft               { left: 0; }
-    #AdvancerRight              { right: 0; }
   	#footer_links input         { height: 28px; }
   	#social a                   { height: 96px; width: 96px; }
   	#copyright img              { height: 38px; }
-    #form_signup                { padding: 0 336px;}
+		blockquote::before					{ top: -8px; }
+		blockquote::after						{ bottom: -76px; }
   }
 
 
   @media only screen and (max-width: 1280px) {
-    h1                          { font-size: 52px; }
-    h2                          { font-size: 42px; }
-    h3                          { font-size: 24px; }
-    p                           { font-size: 16px; }
-		blockquote p								{ font-size: 20px; }
-    header p, #brands p					{ font-size: 24px; }
-    .col-1 p                    { font-size: 19px; }
-    #next_feature a             { font-size: 20px; }
-    #nav-primary                { padding: 0 48px; }
-    header                      { padding: 88px 96px 152px 96px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
-    section                     { padding: 0 24px; }
-		blockquote									{ padding: 72px 144px; }
-    section > *									{ padding: 32px 24px 64px 24px; }
-    .col-1 > div                { padding: 64px 24px 32px 24px; }
-    .col-2 p                    { padding: 0 48px; }
-    .col-3 figcaption           { padding: 0 16px; }
+		html, body									{ font-size: 14px; }
+    header                      { padding: 88px 10% 152px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
 		#next_feature               { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
-    #calltoaction div           { padding: 72px; }
+    #form_signup                { padding: 0 192px;}
     #social                     { margin: 72px auto 16px auto; }
-    #nav-primary                { width: calc(100% - 96px); height: 64px; } /* Shrink the height of the navbar for the first time */
+    #menu > li > a							{ margin: 0 12px; } /* lessen the horizontal space between main menu items */
+    #nav_primary li             { height: 64px; } /* shrink to match the new height of the navbar */
+    #nav_primary                { height: 64px; } /* Shrink the height of the navbar for the first time */
     .grooper_logo               { background: url(../images/grooper_logo_140x42.png); height: 42px; width: 140px; margin-top: 14px; }
     #nav-primary li             { height: 64px; } /* shrink to match the new height of the navbar */
     #nav-primary ul ul          { top: calc(100% - 16px); }
     #nav-primary > ul > li > a  { margin: 0 12px; } /* lessen the horizontal space between main menu items */
 		blockquote::before					{ left: 56px; }
 		blockquote::after						{ right: 54px; }
-    #form_signup                { padding: 0 192px;}
   }
 
 
   @media only screen and (max-width: 1024px) {
-		h1													{ font-size: 42px; }
-		h2													{ font-size: 40px; }
-		h3													{ font-size: 24px; }
-		h4													{ font-size: 20px; }
+		html, body									{ font-size: 13px; }
 		p														{ font-size: 15px; }
-		figcaption									{	font-size: 16px; }
-		header p										{ font-size: 21px; }
-		blockquote::before,
-		blockquote::after						{ font-size: 192px; }
-		.col-1 p										{ font-size: 18px; }
-		.btn-lrg										{ font-size: 16px; }
-		#ProductNavContents > a			{ font-size: 14px; }
-		#calltoaction h3						{ font-size: 32px; }
-		#calltoaction p							{	font-size: 16px; }
+		h2													{ font-size: 42px; }
+		h3													{ font-size: 185%; }
+		#brands p										{ font-size: 175%; }
+		#nav_secondary_contents > a	{ font-size: 14px; }
 		#footer_links li						{ font-size: 16px; }
 		#social a										{ font-size: 24px; }
-		header											{ padding: 64px 64px 112px 64px; }
-		figcaption									{ padding: 0 32px; }
-		blockquote									{ padding: 72px 96px; }
-		.col-1 p										{ padding: 0 10%; }
-		.col-2											{ padding: 0 32px; }
-		.col-2 p										{ padding: 0; }
-		.col-3											{ padding: 0 24px; }
-		.col-3 > *									{ padding: 32px 24px; }
-		.col-3 > *:last-child				{ padding: 0 24px 64px 24px; } /* adds the additional bottom padding only to the third (wrapped) figure, as needed to produce a clean finish to the section */
-		#brands p										{ padding: 0 96px; }
-		.col-3											{
-																	-webkit-flex-wrap: wrap;
-																	-ms-flex-wrap: wrap;
-																	flex-wrap: wrap;
-																}
-		.col-3 > *									{ /* must equal 50% minus the total amount of padding on the current row's divs and it's container */
-																	flex-basis: calc(50% - 48px);
-																	-ms-flex: calc(50% - 48px);
-																}
-		#nav-primary								{
-																	width: calc(100% - 96px);
-																	padding: 0 48px;
-																}
-		#nav-primary > ul > li > a	{ margin: 0 8px; }
-		#nav-primary ul ul a				{ padding: 8px 0; }
-		#nav-secondary							{
-		                              height: 36px;
-		                              padding: 0;
-		                            }
-		#ProductNav									{ width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
-		#ProductNavContents > a			{
-																	min-height: 36px;
-																	height: 36px;
-																}
-		#AdvancerLeft,
-		#AdvancerRight							{
-																	height: 36px;
-																	width: 36px;
-																}
-		.AdvancerIcon								{ height: 28px; }
-		#AdvancerLeft								{ left: 0; }
-		#AdvancerRight							{ right: 0; }
-		#Indicator									{ height: 2px; }
-		#calltoaction div						{ padding: 64px; }
+		header											{ padding: 64px 7% 112px; }
+    footer                      { padding: 64px 7% 8px 7%; }
+    #next_feature               { padding: 32px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
 		.btn-lrg										{ padding: 8px 32px; }
-		.btn-sml										{ margin-top: 8px; }
-		blockquote::before					{ left: 32px; }
-		blockquote::after						{ right: 30px; }
-		footer											{ padding: 48px 32px 8px 32px; }
-		#social											{ margin: 64px auto 8px auto; }
-		#social a										{
-																	height: 96px;
-																	width: 96px;
-																	padding-top: 32px;
-																}
-		#copyright img							{ margin: 8px auto; }
+		#menu ul a									{ padding: 8px 0; }
+		#nav_secondary							{ padding: 0; }
     #form_signup                { padding: 0 96px;}
+    section, blockquote,
+    figure, section > div       { padding-top: 64px; }
+		#brands                     { padding-top: 96px; }
+		#social a                   { padding-top: 32px; }
+		section, blockquote         { padding-bottom: 64px;}
+		#brands                     { padding-bottom: 96px; }
+		#menu > li > a							{ margin: 0 8px; }
+    #social											{ margin: 64px auto 8px auto; }
+  	#copyright img							{ margin: 8px auto; }
+    img + figcaption,
+    table + figcaption,
+    figcaption + img,
+    figcaption + table          { margin-top: 32px; } /* adds margin between images/tables and the text they belong to */
+		.btn-sml										{ margin-top: 8px; }
+		.col-3 > figure,
+    .col-3 > div                { flex-basis: 47.21%; -ms-flex: 47.21%; }
+		section, blockquote,
+		section > figure:nth-child(3),
+		section > div:nth-child(3)  { margin: 0 auto; }
+		#nav_secondary,
+		#nav_secondary a,
+		#nav_secondary_left,
+		#nav_secondary_right        { height: 36px; }
+		.nav_advancer_icon          { height: 28px; }
+		#social a                   { height: 96px; }
+		#nav_secondary a            { min-height: 36px; }
+    .col-1 table                { width: 90%; }
+		.col-3 figcaption           { width: 80%; }
+		#nav_secondary_container    { width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
+		#nav_secondary_left,
+		#nav_secondary_right        { width: 36px; }
+		#social a                   { width: 96px; }
+		#nav_secondary_left         { left: 0; }
+		#nav_secondary_right        { right: 0; }
+		blockquote::before          { left: 32px; top: 6px; }
+		blockquote::after           { right: 30px; bottom: -30px; }
   }
 
 
   @media (max-width: 768px){
-    h1													{ font-size: 36px; }
-    h2													{ font-size: 34px; }
-    h3													{ font-size: 26px; }
-  	p														{ font-size: 16px; }
-    header p										{ font-size: 18px; }
-		blockquote p								{ font-size: 18px; }
-    .col-1 p										{ font-size: 18px; }
-    #calltoaction h3						{ font-size: 36px; }
-    #calltoaction p							{ font-size: 18px; }
-    footer, #footer_links h4		{ text-align: center; }
-    section											{ padding: 0 64px !important; } /*this is now important because at 768 we change to a column based flex layout and thus introduced top/bottom padding to .col-1, .col-2, and .col-3 directly */
-    section > *									{ padding: 32px 96px; }
-  	.col-1 > div								{ padding: 64px 0 48px 0; }
-    .col-3 > *:last-child				{ padding: 32px 32px 64px 32px; }
-		#brands											{ padding: 64px 0 !important; }
-		#brands p										{ padding: 0 64px; }
-		#brands div									{ padding: 24px 24px 0 24px; }
-		#next_feature								{ padding: 32px 0 !important; }
-    #calltoaction div						{ padding: 64px 128px; }
+		html, body									{ font-size: 12px; }
+    footer,
+		footer h4, footer ul				{ text-align: center; }
+		section, blockquote,
+		figure, section > div				{ padding-top: 64px; }
+		section, blockquote					{ padding-bottom: 64px;}
+		section											{ padding: 64px; }
     #footer_links > div					{ padding: 32px 0; }
   	#signup											{ margin: 32px 32px 0 32px; }
   	#contact, #discover					{ flex-basis: 50% !important; -ms-flex: 50% !important; }
   	#signup											{ flex-basis: 100% !important; -ms-flex: 100% !important; }
+		section > *									{ flex-basis: 100% !important; -ms-flex: 100% !important; }
+		#brands img									{ flex-basis: auto !important; -ms-flex: auto !important; }
   	.col-2, .col-3,
 		#calltoaction								{ display: block !important; } /*this prevents divs from overlaying on ie11 and android mobile default browser */
     .grooper_logo								{
@@ -988,144 +1010,110 @@
 
 
 @media (max-width: 600px){
+	html, body										{ font-size: 11px; }
   #footer_links h4							{ font-size: 28px; }
   #footer_links li							{ font-size: 18px; }
   #nav-primary > ul > li > a		{ font-size: 18px; }
   #footer_links h4,
   #footer_links ul							{ text-align: center; }
   #mobile-menu,
-	#nav-primary ul,
-	#nav-primary li,
-	#nav-primary input,
-	#nav-social										{ display: block !important; }
-	#nav-primary input:checked ~ i ~ i,
-	#nav-social a, #nav-social i,
-	#bars													{ display: inline-block !important; }
-	#nav-primary input:checked ~ i,
-  #nav-primary ul ul,
-  #nav-primary ul li:hover ul		{ display: none !important; } /*the 3 bars goes away*/
-	#nav-primary > ul > li > ul,
+	#nav_primary ul,
+	#nav_primary li,
+	#nav_primary input,
+	#nav_social										{ display: block !important; }
+	#nav_primary input:checked ~ i ~ i,
+	#nav_social a, #nav_social i,
+	#bars													{ display: inline-flex !important; }
+	#nav_primary input:checked ~ i,
+  #menu ul,
+  #nav_primary ul li:hover ul		{ display: none !important; } /*the 3 bars goes away*/
+  #nav_primary                  { align-items: center; }
+	#menu > li > ul,
 	#mobile-menu									{ position: relative !important; }
-	#nav-primary input						{ position: absolute; }
-	#menu, #nav-social						{ position: fixed; }
+	#nav_primary input						{ position: absolute; }
+	#menu, #nav_social						{ position: fixed; }
 	header												{ margin-top: 48px; }
-	.grooper_logo									{ margin-top: 8px; }
+	/*.grooper_logo									{ margin-top: 8px; }*/
   #signup												{ margin: 0; }
-  #social												{ margin: 8px 0 16px 0; }
-  #menu, #nav-social						{ margin-left: 100%; }
-  #nav-primary > a							{ margin-left: 48px; }
-  #nav-primary input:checked ~ ul{ margin-left: 0; } /* this removes the transform element resulting in the perceived slid in menu*/
-  header												{ padding: 64px 48px 112px 48px; }
-	#nav-primary,
-	#nav-primary ul ul a,
-	#nav-social i,
-	section												{ padding: 0 !important; }
-	#brands												{ padding: 48px 0 !important; }
-	#brands p											{ padding: 0 64px; }
+  #social												{ margin: 8px 0 16px; }
+  .grooper_logo                 { margin-top: 0; }
+  #menu, #nav_social						{ margin-left: 100%; }
+  /*#nav_primary > a							{ margin-left: 48px; }*/
+  /*#nav_primary input:checked ~ ul{ margin-left: 0; }*/ /* this removes the transform element resulting in the perceived slid in menu*/
+  #nav_primary input:checked ~ ul{ margin-left: -5%; }
+	section												{ padding: 64px 48px; }
+  /*#nav_primary,*/
+	#nav_social i,
+  #menu ul a  									{ padding: 0 !important; }
   #menu													{ padding: 96px 0; }
-	.col-1 p											{ padding: 0 24px; }
-  .col-1 > div									{ padding: 64px 0 48px 0; }
-	.col-2 > *, .col-3 > *				{ padding: 24px; }
-  .col-2 > *:last-child,
-	.col-3 > *:last-child					{ padding: 24px 24px 48px 24px; }
-
-
-
-  section > *										{ padding: 32px 48px; }
-  #calltoaction div							{ padding: 64px 48px; }
+  #top_map											{ padding: 48px 0 0 !important;}
+  #top_map li										{ padding: 6px 0 ;}
 	#social a											{ padding-top: 0; }
-	#bars													{ padding-right: 48px; }
-	#nav-social										{ padding-bottom: 16px; }
-  #nav-primary									{ height: 48px; }
-	#social a											{ height: 32px; width: 32px; border: none; }
-  #nav-primary									{ width: 100%; }
-	#brands img										{ height: 48px; }
+	/*#bars													{ padding-right: 48px; }*/
+	#nav_social										{ padding-bottom: 16px; }
   #contact, #discover						{ flex-basis: 100% !important; -ms-flex: 100% !important; } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
-  #social a:nth-child(1) i			{ color: #3b5998; } /* facebook */
-  #social a:nth-child(2) i			{ color: #dd4b39; } /* google plus */
-  #social a:nth-child(3) i			{ color: #55acee; } /* twitter */
-  #social a:nth-child(4) i			{ color: #0976b4; } /* linkedin */
-  #social a:nth-child(5) i			{ color: #cd201f; } /* youtube */
-  #social a, #social a:hover		{
-																	background: transparent !important;
-																	-webkit-box-shadow: none !important;
-																	        box-shadow: none !important;
-																	-webkit-transform: none !important;
-																	    -ms-transform: none !important;
-																	        transform: none !important;
+  #nav_primary ul               { float: none; } /*we are no longer floating the entire nav menu to the right as these will be centered horizontally on mobile devices */
+  #nav_primary, #brands img			{ height: 48px; }
+  #menu                         { height: calc(100vh - 48px); } /*100% of the browser screen*/
+  #nav_primary input            { height: 100%; }
+  #social a                     { height: 32px; }
+  #menu ul li                   { height: 24px; }
+  #nav_primary, #menu,
+  #nav_social                   { width: 100%; }
+  .col-1 table                  { width: 90%; }
+  #nav_primary input            { width: 15%; }
+  #menu ul li                   { width: auto; }
+  #nav_social i, #social a      { width: 32px; }
+  #mobile-menu                  { top: 50px; }
+  #menu                         { top: 48px; }
+  #nav_primary input            { top: 0; }
+  #menu > li > ul               { top: 0; }
+  #mobile-menu                  { left: 50px; }
+  #menu > li > ul, #nav_social  { left: 0; }
+  #nav_primary input            { right: 0; }
+  #nav_social                   { bottom: 0; }
+  #menu ul a                    { color: #fff; }
+  #menu                         { background: #000; }
+  #menu ul li                   { background: transparent; }
+  #nav_social                   { background: rgba(1, 1, 1, 0); }
+  #social a											{ border: none; }
+  #social a, #social a:hover    {
+																	background: transparent;
+																	-webkit-box-shadow: none;
+																	        box-shadow: none;
+																	-webkit-transform: none;
+																	    -ms-transform: none;
+																	        transform: none;
 																}
-  #mobile-menu                {
-	                                top: 50px;
-	                                left: 50px;
-	                                z-index: 1;
-	                                -webkit-user-select: none;
-	                                user-select: none;
-	                              }
-  #nav-primary input          {
-                                width: 40px;
-                                height: 32px;
-                                top: 6px;
-                                right: 38px;
-                                cursor: pointer;
-                                opacity: 0;
-                                z-index: 20000;
-                                -webkit-touch-callout: none;
-                              }
-  #menu                       {
-                                top: 48px;
-                                width: 100%;
-                                height: calc(100vh - 48px); /*100% of the browser screen*/
-                                opacity: 0.93;
-                                background: #000000;
-                                list-style-type: none;
-                                -webkit-font-smoothing: antialiased; /* to stop flickering of text in safari */
-                              }
-  #nav-primary ul                     { float: none; } /*we are no longer floating the entire nav menu to the right as these will be centered horizontally on mobile devices */
-  #nav-primary > ul > li > ul         {
-                                        visibility: visible;
-                                        opacity: 1;
-                                        top: 0;
-                                        left: 0;
-                                        z-index: 1000;
-                                      }
-  #nav-primary ul ul li               {
-                                        background: transparent;
-                                        height: 24px;
-                                        width: auto;
-                                      }
-  #nav-primary ul ul a             {
-                                        color: #fff;
-                                      }
+  #menu > li > ul, #nav_social  { visibility: visible; }
+  #nav_primary input            { opacity: 0; }
+  #menu                         { opacity: 0.93; }
+  #menu > li > ul               { opacity: 1; }
+  #mobile-menu                  { z-index: 1; }
+  #menu > li > ul               { z-index: 1000; }
+  #nav_primary input            { z-index: 20000; }
+  #menu                         { -webkit-font-smoothing: antialiased; } /* to stop flickering of text in safari */
 
-  /*#nav-primary > ul > li:nth-child(2) {padding-top: 64px;}*/ /*move the pricing tab down */
-  #nav-social                         {
-                                        width: 100%;
-                                        background: rgba(1, 1, 1, 0);
-                                        visibility: visible;
-                                        bottom: 0;
-                                        left: 0;
-                                      }
-  /*#nav-social,*/
 	.grooper_logo												{
 																				-webkit-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																				     -o-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																				        transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																			}
-  #nav-social i                       { width: 32px; }
-  #nav-social a:nth-child(1) i        { color: #3b5998; } /* facebook */
-  #nav-social a:nth-child(2) i        { color: #dd4b39; } /* google plus */
-  #nav-social a:nth-child(3) i        { color: #55acee; padding-left: 12px !important;} /* twitter */
-  #nav-social a:nth-child(4) i        { color: #0976b4; } /* linkedin */
-  #nav-social a:nth-child(5) i        { color: #cd201f; } /* youtube */
-
-  #top_map                            { padding: 48px 0 0 0 !important;}
-  #top_map li                         { padding: 6px 0 ;}
-
+  #nav_social a:nth-child(1) i,
+  #social a:nth-child(1) i      { color: #3b5998; } /* facebook */
+  #nav_social a:nth-child(2) i,
+  #social a:nth-child(2) i			{ color: #dd4b39; } /* google plus */
+  #nav_social a:nth-child(3) i,
+  #social a:nth-child(3) i			{ color: #55acee; } /* twitter */
+  #nav_social a:nth-child(4) i,
+  #social a:nth-child(4) i			{ color: #0976b4; } /* linkedin */
+  #nav_social a:nth-child(5) i,
+  #social a:nth-child(5) i			{ color: #cd201f; } /* youtube */
+  #nav_social a:nth-child(3) i  { padding-left: 12px !important;} /* twitter */
 }
 
 
 @media (max-width: 432px){
-	#next_feature a											{ font-size: 18px; }
-  section > *													{ padding: 32px 0; }
-	#calltoaction div										{ padding: 32px; }
+	#next_feature a               { font-size: 18px; }
+	section                       { padding: 32px 24px; } /* hard coding padding here for small devices and phones, as responsive sizing will no longer yield predictable results */
 }
