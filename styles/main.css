@@ -232,6 +232,7 @@
   /* 2.8 - Line Height and Spacing - 2.8 */
     h1, h2, h3, h4, h5, h6          { margin-bottom: 0.6em; }
     p                               { line-height: 1.5em; }
+    main li                         { line-height: 1.3em; } /* important to use main li so we do not impact the lists for navigation and footer */
     nav > ul > li > a               { line-height: 36px; } /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
 
 
@@ -668,7 +669,7 @@
 	.typography p											{ margin: 16px 0 !important; }
 	.typography li										{ margin: 8px 0 !important; }
 
-  .side_by_side                     { padding-left: 10%; padding-right: 10%; }
+  section.side_by_side              { padding-left: 10%; padding-right: 10%; }
   .side_by_side figure              {
                                           -webkit-box-orient: horizontal;
                                        -webkit-box-direction: normal;
@@ -682,16 +683,18 @@
                                     }
   .side_by_side img,
   .side_by_side table,
-  .side_by_side figcaption          { -webkit-flex-basis: 47.22%; -ms-flex-preferred-size: 47.22%; flex-basis: 47.22%; }
-  .side_by_side img + figcaption,
+  .side_by_side figcaption          { -webkit-flex-basis: 43.75%; -ms-flex-preferred-size: 43.75%; flex-basis: 43.75%; }
+  /*.side_by_side img + figcaption,
   .side_by_side span + figcaption,
   .side_by_side table + figcaption,
   .side_by_side figcaption + img,
   .side_by_side figcaption + span,
-  .side_by_side figcaption + table  { margin: 0; padding-left: 5%; }
+  .side_by_side figcaption + table*/
+  /*
+  .side_by_side * + figcaption,
+  figcaption + .side_by_side *  { margin: 0; padding-left: 10%; }*/
   .side_by_side img,
-  .side_by_side span,
-  .side_by_side table               { max-width: 50%; }
+  .side_by_side table               { max-width: 43.75%; } /* should match the flex basis defined above */
   .side_by_side > p + figure,
   .side_by_side > h2 + figure       { margin-top: 36px; }
   .side_by_side figure > *          { margin: 0; /*margin-left: 36px;*/ }
@@ -931,7 +934,6 @@
     header                      { padding: 88px 10% 152px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
 		#next_feature               { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
 		section > h2, section > p   { padding-left: 5%; padding-right: 5%; }
-    section.side_by_side        { padding-left: 5%; padding-right: 5%; }
     .social                     { margin: 72px auto 16px auto; }
     nav > li                    { height: 64px; } /* shrink to match the new height of the navbar */
     #nav_primary                { height: 64px; } /* Shrink the height of the navbar for the first time */
@@ -939,6 +941,21 @@
     nav ul ul										{ top: 64px; }
 		blockquote::before					{ left: 56px; }
 		blockquote::after						{ right: 54px; }
+
+    /* 1280px updates for convenience classes */
+      section.side_by_side        { padding-left: 5%; padding-right: 5%; } /*only make change if the side_by_side class is applied to a section itself */
+      .side_by_side img,
+      .side_by_side table         {
+                                    max-width: 51.94%;
+                                         -webkit-flex-basis: 51.94%;
+                                    -ms-flex-preferred-size: 51.94%;
+                                                 flex-basis: 51.94%;
+                                  }
+      .side_by_side figcaption    { max-width: 42.5%;
+                                         -webkit-flex-basis: 42.5%;
+                                    -ms-flex-preferred-size: 42.5%;
+                                                 flex-basis: 42.5%;
+                                  }
   }
 
 
@@ -951,7 +968,6 @@
 		header                      { padding: 64px 7% 112px; }
     footer                      { padding: 64px 7% 8px 7%; }
     #next_feature               { padding: 32px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
-		.btn-lrg                    { padding: 8px 32px; }
 		#nav_secondary              { padding: 0; }
     section, blockquote,
     figure, section > div       { padding-top: 64px; }
@@ -985,6 +1001,21 @@
 		#nav_secondary_right        { right: 0; }
 		blockquote::before          { left: 32px; top: 6px; }
 		blockquote::after           { right: 30px; bottom: -30px; }
+
+    /* 1024px updates for convenience classes */
+      .btn-lrg                    { padding: 8px 32px; }
+      .side_by_side img,
+      .side_by_side table         {
+                                    max-width: 56.66%;
+                                         -webkit-flex-basis: 56.66%;
+                                    -ms-flex-preferred-size: 56.66%;
+                                                 flex-basis: 56.66%;
+                                  }
+      .side_by_side figcaption    { max-width: 37.77%;
+                                         -webkit-flex-basis: 37.77%;
+                                    -ms-flex-preferred-size: 37.77%;
+                                                 flex-basis: 37.77%;
+                                  }
   }
 
 
@@ -1013,15 +1044,44 @@
 		section > *									{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
 		#brands img									{ -webkit-flex-basis: auto !important; -ms-flex-preferred-size: auto !important; flex-basis: auto !important }
   	.col-2, .col-3              { display: block !important; } /*this prevents divs from overlaying on ie11 and android mobile default browser */
-		.side_by_side img,
-    .side_by_side span,
-    .side_by_side table         { max-width: 60%; }
     nav > a								      {
 																	background: url(../images/g_color_32.png);
 																	height: 32px;
 																	width: 33px;
 																}
-		.comparison > *:last-child	{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
+
+    /* 768px updates for convenience classes */
+  		.comparison > *:last-child	{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
+  		.side_by_side img,
+      .side_by_side table         { max-width: 70%; }
+      .side_by_side figcaption    {
+                                    max-width: 85%;
+                                    width: 85%;
+                                  }
+      .side_by_side figure        {
+                                      -webkit-box-orient: vertical !important;
+                                    webkit-box-direction: normal !important;
+                                      -ms-flex-direction: column !important;
+                                          flex-direction: column !important;
+                                  }
+      .side_by_side figcaption    {
+                                    display: -webkit-box !important;
+                                    display: -webkit-flex !important;
+                                    display: -ms-flexbox !important;
+                                    display: flex !important;
+                                    -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap
+                                  }
+      .side_by_side figure h3,
+      .side_by_side figure p      { text-align: center !important; }
+      .side_by_side li            { margin-left: 1em; padding-right: 1em; width: calc(50% - 2em); float:left;}
+      .side_by_side figure h3,
+      .side_by_side figure p,
+      .side_by_side figure ul     { flex-basis: 100%; }
+      .side_by_side figcaption    { padding-left: 0 !important; }
+      .side_by_side figcaption    { -webkit-box-ordinal-group: 3; -webkit-order: 2; -ms-flex-order: 2; order: 2; } /* moves the subject of the figure to above the figcaption text */
+      .side_by_side * + figcaption,
+      figcaption + .side_by_side *
+                                  { margin-top: 36px !important; } /* adds margin between images/tables and the text they belong to */
   }
 
 
@@ -1059,10 +1119,10 @@
 	nav input                     { position: absolute !important; }
 	nav > ul, nav .social         { position: fixed !important; }
   nav > ul                      {
-                                     -webkit-box-orient: vertical;
-                                  -webkit-box-direction: normal;
-                                     -ms-flex-direction: column;
-                                         flex-direction: column;
+                                     -webkit-box-orient: vertical !important;
+                                  -webkit-box-direction: normal !important;
+                                     -ms-flex-direction: column !important;
+                                         flex-direction: column !important;
                                 }
   nav > ul, .social             { -webkit-box-pack: space-evenly; -webkit-justify-content: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
   nav > ul                      { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
@@ -1095,7 +1155,6 @@
   nav > ul                      { background: #000; }
   nav .social                   { background: transparent; }
   .social a                     { border: none; }
-	.comparison > *:last-child    { border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
   #social a, #social a:hover    {
 																	background: transparent;
 																	-webkit-box-shadow: none;
@@ -1110,9 +1169,9 @@
   nav input                     { z-index: 20000; }
   nav                           { -webkit-font-smoothing: antialiased; } /* to stop flickering of text in safari */
 	nav > a                       {
-																				-webkit-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
-																				     -o-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
-																				        transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+																	-webkit-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+																	     -o-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+																	        transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																}
   #social a:hover,
   #nav_social a:hover                 { background: transparent !important; }
@@ -1127,10 +1186,23 @@
   #nav_social a:nth-child(5):hover i,
   #social a:nth-child(5):hover i			{ color: #cd201f; } /* youtube */
 
+
+    /* 600px updates for convenience classes */
+  		.side_by_side img,
+      .side_by_side table         { max-width: 80%; }
+      .side_by_side figcaption    {
+                                    max-width: 95%;
+                                    width: 95%;
+                                  }
+      .comparison > *:last-child    { border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
 }
 
 
-@media (max-width: 432px){
-	#next_feature a               { font-size: 18px; }
-	section                       { padding: 32px 24px; } /* hard coding padding here for small devices and phones, as responsive sizing will no longer yield predictable results */
-}
+  @media (max-width: 432px){
+    #next_feature a               { font-size: 18px; }
+    section                       { padding: 32px 24px; } /* hard coding padding here for small devices and phones, as responsive sizing will no longer yield predictable results */
+
+
+    /* 432px updates for convenience classes */
+      .side_by_side li { width: calc(100% - 2em); }
+  }

@@ -1,15 +1,1208 @@
-#nav-primary input,
-#nav-primary i, /*hide hamburger icon until requested by mobile media query */
-#ProductNav::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
-{
-display: none;
+/* 1 - GLOBAL RESETS */
+
+
+  /* 1.1 - Normalize box model * overflow -- DO NOT DELETE... or IE will break - 1.1 */
+    html                            { box-sizing: content-box; }
+    *, *:before, *:after            { box-sizing: inherit; }
+    html, body                      { overflow-x: hidden }
+
+
+  /* 1.2 - Remove margin, border, and padding from all - 1.2 */
+    html, body, div, section, figure, figcaption, blockquote, span, iframe, h1, h2, h3, h4, h5, h6, div, p, a, img, ol, ul, li, table, tbody, tfoot, thead, tr, th, td, button {
+																			margin: 0;
+																			padding: 0;
+																			border: 0;
+																		}
+
+
+  /* 1.3 - Eliminate default input button styles imposed by browsers like safari - 1.3 */
+    input, button										{
+																			-webkit-appearance: none;
+																			-moz-appearance: none;
+																			appearance: none;
+																			border-radius: 0px;
+																			height: 36px;
+																		}
+
+
+  /* 1.4 - Cursor and Touch - 1.4 */
+    table, i, nav ul, nav ul a,
+    .btn-sml, .btn-lrg,
+    .social, .social a              { cursor: default; }
+    #nav_secondary button:hover,
+    nav input                       { cursor: pointer; }
+    #mobile-menu                    {
+                                      -webkit-user-select: none;
+                                         -moz-user-select: none;
+                                          -ms-user-select: none;
+                                              user-select: none;
+                                    }
+    nav input                       { -webkit-touch-callout: none; }
+    button:focus                    { outline: 0; }
+
+
+  /* 1.5 - Reset Lists and Tables - 1.5 */
+		table														{ display: table; }
+		tr															{ display: table-row; }
+		td, th													{ display: table-cell; }
+		table														{
+																			border-collapse: collapse;
+																			border-spacing: 0;
+																		}
+
+
+  /* 1.5 - Set basic background colors - 1.5 */
+
+		/* 1.6.1 - Solid Backgrounds - 1.6.1 */
+			body                          { background: #000; } /* black */
+			main, div, section,
+      figure, figcaption            { background: #fbfdfe; } /* off-white */
+			footer                        { background: #091413; } /* off-black */
+			footer div                    { background: transparent; } /* transparent */
+			.bg-light.gray                { background: #f5f5f5; } /* light medium gray was #e0e0e0*/
+			.bg-light.orange              { background: #ff8a65; } /* medium orange */
+			.bg-light.teal                { background: #4db6ac; } /* medium teal */
+			.bg-dark.gray                 { background: #424242; } /* dark gray */
+			.bg-dark.orange               { background: #ce3e11; } /* medium orange */
+			.bg-dark.teal, header         { background: #00796b; } /* dark teal */
+			.field-wrapper input          { background: rgba(255,255,255,.86); }
+			.content__button input        { background: #444 !important; }
+			.content__button input:hover  { background: #555 !important; }
+			nav > ul > li > a:before,
+			nav ul ul li:hover a          { background: #fff; }
+			nav ul ul li                  { background: rgba(238,238,238,.94); }
+			#nav_primary                  { background: rgba(0,0,0,.94); }
+      #nav_secondary button         { background: transparent; }
+			#map *                        { background: transparent; } /* transparent */
+
+		/* 1.6.2 - Tiled Backgrounds - 1.6.2 */
+			.bg-dark.gray.tile						{
+																			background: -webkit-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* Standard syntax (must be last) */
+																		}
+			.bg-dark.orange.tile					{
+																			background: -webkit-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			.bg-dark.teal.tile						{
+																			background: -webkit-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			.bg-light.gray.tile						{
+																			background: -webkit-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			.bg-light.orange.tile					{
+																			background: -webkit-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			.bg-light.teal.tile						{
+																			background: -webkit-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+			header												{
+																			background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
+																			background:      -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
+																			background:    -moz-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
+																			background:         linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
+																		}
+
+
+  /* 1.7 - Set iFrame default widths and heights to fill parent container - 1.7 */
+    iframe                          {
+                                      width: 100%;
+                                      height: 100%;
+                                    }
+
+
+
+/* 2 - TEXT STYLING - 2 */
+
+
+  /* 2.1 - Font Selection - 2.1 */
+    html, body                      { font-family: 'Roboto', Arial, sans-serif; }
+    blockquote::before,
+    blockquote::after               { font-family: Arial, sans-serif; }
+
+
+  /* 2.2 - Font Smoothing - 2.2 */
+    p																{
+																			text-rendering: optimizeLegibility !important;
+																			-webkit-font-smoothing: antialiased !important;
+																			-moz-osx-font-smoothing: grayscale !important;
+																		}
+
+
+  /* 2.3 - Text Decoration and Font Style - 2.3 */
+    a                               { text-decoration: none; } /*remove underlines from hyperlinks */
+    strong, em                      { font-style: normal; } /* removes italics from emphasized text within a paragraph */
+    header strong, header em        { font-style: italic; }
+
+
+  /* 2.4 - Text Alignment - 2.4 */
+    div, section, figure, figcaption,
+    blockquote, p, img,
+    h1, h2, h3, h4, h5, h6          { text-align: center; }
+    ul                              { text-align: left; }
+    footer h4                       { text-align: left; }
+    nav ul                          { text-align: center; }
+
+
+  /* 2.5 - Font Size - 2.5 */
+		html, body                      { font-size: 16px; } /* base font-size by which all percentages are multiplied to produce final element font-size */
+    h1                              { font-size: 425%; }
+    h2                              { font-size: 350%; }
+		h3                              { font-size: 200%; }
+		h4                              { font-size: 150%; }
+		p, figcaption li                { font-size: 112.5%; }
+    label, input                    { font-size: 16px; }
+    blockquote span                 { font-size: 112.5%; }
+		blockquote::before,
+		blockquote::after               { font-size: 1600%; }
+    header p                        { font-size: 175%; }
+    h2 ~ p                          { font-size: 150%; } /* paragraphs immediately after a h2 */
+    blockquote p                    { font-size: 150%; }
+    .btn-lrg                        { font-size: 125%; }
+    .btn-sml                        { font-size: 100%; }
+    #calltoaction h3                { font-size: 300%; }
+    #nav_primary i, .social a       { font-size: 32px; }
+		#brands p                       { font-size: 200%; }
+    #next_feature                   { font-size: 150%; }
+    #calltoaction p                 { font-size: 125%; }
+    nav > ul > li > a,
+    #footer_links li                { font-size: 16px; }
+    nav ul ul li a                  { font-size: 14px; }
+    #copyright                      { font-size: 12px; }
+
+
+  /* 2.6 - Font Weight - 2.6 */
+    *                               { font-weight: 300; } /* Establishes a baseline font-weight for all items which overrides the browsers defaults */
+    h1                              { font-weight: 100; }
+    h2                              { font-weight: 200; }
+    td, em, strong                  { font-weight: 400; }
+    thead, th,
+    header strong, header em        { font-weight: 500; }
+    .btn-lrg, .btn-sml              { font-weight: 100; }
+    .field-wrapper input            { font-weight: 500; }
+
+
+  /* 2.7 - Color - 2.7 */
+    p                               { color: rgba(17,17,17,.7); }
+    h1, h4, header p,
+    #footer_links a:hover,
+    #footer_links label             { color: #fff; }
+    h2, em                          { color: #f4511e; }
+		.col-1 p												{ color: #000; }
+		blockquote::before,
+		blockquote::after								{ color: #4db6ac; } /*#78C0A8;*/
+		a:link, a:visited								{ color: #039be5; } /* normal state links */
+		a:hover, a:active								{ color: #29b6f6; } /* links during hover and click */
+    h2 ~ p                          { color: #000; } /* paragraphs immediately after a h2 */
+    header p                        { color: #fff; }
+  	nav ul ul li a                  { color: #333 !important; } /* set important to override the different default link states active, visited, etc. */
+  	#nav_primary i, #copyright      { color: #666; }
+    #nav_secondary a                { color: #888; }
+    #nav_secondary a[aria-selected="true"] { color: #111 !important; }
+		.content__button input          { color: #bbb !important; }
+		.content__button input:hover    { color: #fff !important; }
+    nav > ul > li > a               { color: #f5faf9 !important; } /* set important to override the different default link states active, visited, etc. */
+    #footer_links a:hover,
+    #footer_links label,
+    .social a:hover .fa             { color: #fff; }
+    nav ul ul li:hover a,
+		#next_feature a									{ color: #009688; } /* teal */
+		#footer_links li,
+		#footer_links a                 { color: rgba(255,255,255,.46); }
+    #nav_primary i:hover            { color: rgba(255,255,255,.86); }
+		input::-webkit-input-placeholder{ color: rgba(0,0,0,.4) !important; }
+
+
+  /* 2.8 - Line Height and Spacing - 2.8 */
+    h1, h2, h3, h4, h5, h6          { margin-bottom: 0.6em; }
+    p                               { line-height: 1.5em; }
+    main li                         { line-height: 1.3em; } /* important to use main li so we do not impact the lists for navigation and footer */
+    nav > ul > li > a               { line-height: 36px; } /* this impacts both the vertical alignment of the text and the distance between the link and the underline during hover */
+
+
+
+	/* 2.9 - Tables and Lists - 2.9 */
+
+		/* 2.9.1 - Tables - 2.9.1 */
+		th															{ vertical-align: bottom; }
+		td															{ vertical-align: top; }
+		table														{ width: 100%; }
+		thead, tr												{ border-bottom: 1px solid #d0d0d0; }
+		td, th													{
+																			padding: 16px 5px 14px !important;
+																			vertical-align: middle;
+																			border-radius: 2px;
+																		}
+		tbody tr:hover									{ background: #ede7f6; }
+
+
+		/* 2.9.2 - Lists - 2.9.2 */
+		ul															{ list-style: disc outside; }
+		#footer_links ul								{ list-style: none; }
+		.typography ul									{
+																			list-style: disc outside;
+																			padding-left: 40px !important;
+																		}
+
+
+/* 3 - IMAGES - 3 */
+
+
+  /* 3.1 - Base Image Handling - 3.1 */
+    img                             {
+                                      max-width: 100%; /* no image should ever exceed the width of its container */
+                                      height: auto;
+                                      margin: 0 auto;
+                                    }
+    figure img                      { width: 100%; } /* images that are the point of reference within a figure should always fill the width of their container */
+		#brands img											{ height: 72px; margin: 24px 24px 0 24px; opacity: .6; }
+
+
+
+/* 4 - LAYOUT - 4 */
+
+
+	/* 4.1 - Display - 4.1 */
+    #nav_secondary_container::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
+                                    { display: none; }
+    nav input, nav i,
+    nav .fa, nav .social            { display: none;}
+    h1, h2, h3, h4, h5, h6, p, img,
+    nav ul a, nav > ul > li:hover > ul,
+    blockquote span                 { display: block; }
+    nav ul ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
+    footer .social a                { display: inline-block; }
+
+
+  /* 4.2 - Flexible Box Model Control - 4.2 */
+
+
+		/* 4.2.1 - Flex Containers - 4.2.1 */
+		/* Properties impacting the container which will be used to hold flexing items */
+
+
+			/* 4.2.1.1 - Flex Display - 4.2.1.1 */
+			/* Tells a container to display its contents using a flexible box model */
+				figure, section:not(.col-1),
+        section:not(.col-1) > figure,
+        section:not(.col-1) > div,
+        /*.col-2 > *,
+        .col-3 > *,*/
+        #nav_primary,
+				#calltoaction,
+				#calltoaction > div,
+				#footer_links,
+				.field-wrapper,
+				.content__button            {
+																			display: -webkit-box;
+																			display: -webkit-flex;
+																			display: -ms-flexbox;
+																			display: flex;
+                                    }
+
+				nav > ul > li,
+				#nav_secondary a            {
+																			display: -webkit-inline-box;
+																			display: -webkit-inline-flex;
+																			display: -ms-inline-flexbox;
+																			display: inline-flex;
+																		}
+
+
+			/* 4.2.1.2 - Flex Direction - 4.2.1.2 */
+			/* Direction of the flex container's main axis */
+				#calltoaction > div,
+				.col-1 figure,
+        section:not(.col-1) > *     {
+                                      -webkit-box-orient: vertical;
+                                      -webkit-box-direction: normal;
+                                      -webkit-flex-direction: column;
+                                      -ms-flex-direction: column;
+                                      flex-direction: column;
+                                    }
+
+
+
+
+			/* 4.2.1.3 - Flex Wrap - 4.2.1.3 */
+			/* Controls whether the flex container is single-line or multi-line, and the direction of the cross axis */
+				/*.col-2, .col-3,
+				.col-1-2, .col-2-1,
+				#brands,*/
+        section:not(.col-1),
+        #footer_links,
+				#calltoaction > div					{
+																			-webkit-flex-wrap: wrap;
+																			    -ms-flex-wrap: wrap;
+																			        flex-wrap: wrap;
+																		}
+
+
+			/* 4.2.1.4 - Justify Content - 4.2.1.4 */
+			/* Align all items along the main axis of a flexible container */
+				#calltoaction > div					{
+                                             -webkit-box-pack: start;
+																			-webkit-justify-content: flex-start;
+																			          -ms-flex-pack: start;
+																			        justify-content: flex-start;
+																		}
+		    section:not(.col-1),
+        #nav_primary                {
+                                             -webkit-box-pack: justify;
+																			-webkit-justify-content: space-between;
+																			          -ms-flex-pack: justify;
+																			        justify-content: space-between;
+																		}
+				#brands, #calltoaction,
+				#footer_links								{
+                                             -webkit-box-pack: center;
+																			-webkit-justify-content: center;
+																			          -ms-flex-pack: center;
+																			        justify-content: center;
+																		}
+				.content__button						{
+                                             -webkit-box-pack: end;
+																			-webkit-justify-content: flex-end;
+																			          -ms-flex-pack: end;
+																			        justify-content: flex-end;
+																		}
+
+
+			/* 4.2.1.5 - Align Items - 4.2.1.5 */
+			/* Align all items along the cross axis of a flexible container */
+				.col-1 figure,
+        section:not(.col-1) > *,
+        #nav_primary,
+				#nav_primary li,
+				#nav_secondary a            {
+																			-webkit-box-align: center;
+																			-webkit-align-items: center;
+																			-ms-flex-align: center;
+																			align-items: center;
+																		}
+
+
+		/* 4.2.2 - Flex Items - 4.2.2 */
+		/* Properties impacting the individual items within a flexible container */
+
+
+			/* 4.2.2.1 - Order - 4.2.2.1 */
+			/* Controls the order in which flex items appear within their flex container. */
+
+
+			/* 4.2.2.2 - Grow - 4.2.2.2 */
+			/* Number which determines how much the flex item will grow relative to the rest of the flex items in the flexible container when positive free space is distributed. */
+
+
+			/* 4.2.2.3 - Shrink - 4.2.2.3 */
+			/* Number which determines how much the flex item will shrink relative to the rest of the flex items in the flexible container when negative free space is distributed. */
+				#calltoaction > div > *			{
+                                      -webkit-flex-shrink: 0;
+                                        -ms-flex-negative: 0;
+                                              flex-shrink: 0;
+                                    } /* prevents ios devices from being able to shrink the container if everything doesn't fit within the container */
+				#calltoaction p							{ margin: 0 0 auto 0; } /* adds extra space between the paragraph and button on the smaller of the two calltoaction divs, thus keeping the bottom buttons aligned. */
+
+
+			/* 4.2.2.4 - Flex Basis - 4.2.2.4 */
+			/* The initial width or height (whichever is on the main axis) of the flex item, before free space is distributed according to the flex factors. */
+        section:not(.col-1) > *             { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%; } /* this is a catch-all for direct h2, p, and other potential text elements inside a section that don't fall inside a specific column */
+				.col-1 > figure, .col-1 > div       { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%; }
+				.col-2 > figure, .col-2 > div       { -webkit-flex-basis: 47.21%;  -ms-flex-preferred-size: 47.21%;  flex-basis: 47.21%; } /*42.5%*/
+				.col-3 > figure, .col-3 > div       { -webkit-flex-basis: 29.629%; -ms-flex-preferred-size: 29.629%; flex-basis: 29.629%; } /*28.33*/
+				.col-1-2 > .first, .col-2-1 > .last { -webkit-flex-basis: 37.77%;  -ms-flex-preferred-size: 37.77%;  flex-basis: 37.77%; } /*34*/
+				.col-2-1 > .first, .col-1-2 > .last { -webkit-flex-basis: 56.66%;  -ms-flex-preferred-size: 56.66%;  flex-basis: 56.66%; } /*51*/
+				#footer_links > div                 { -webkit-flex-basis: 33.33%;  -ms-flex-preferred-size: 33.33%;  flex-basis: 33.33%; }
+				#calltoaction > div                 { -webkit-flex-basis: 50%;     -ms-flex-preferred-size: 50%;     flex-basis: 50%; }
+				#brands p                           { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%; }
+        #brands img                         { -webkit-flex-basis: auto;    -ms-flex-preferred-size: auto;    flex-basis: auto; }
+
+
+			/* 4.2.2.5 - Align Self - 4.2.2.5 */
+			/* Allows the alignment to be overridden for individual flex items */
+				#calltoaction a							{
+																			-webkit-align-self: flex-end;
+																			-ms-flex-item-align: end;
+																			align-self: flex-end;
+																		}
+
+
+  /* 4.3 - Margin & Padding - 4.3 */
+    header													{ margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
+    header                          { padding: 144px 15% 240px; } /* bottom padding should be equal to top padding + margin-top */
+    footer                          { padding: 96px 18% 16px 18%; } /* 96px 336px 16px 336px; */
+		section, blockquote,
+		figure, section > div           { padding-top: 72px; }
+		section, blockquote             { padding-bottom: 72px;} /* responsible for the bottom padding of each section and blockquote within the main area of the site */
+		.col-1 > figure, .col-1 > div   { padding-top: 0; } /* there will only ever be one figure or div within a col-1 container, so the .col-1 itself already has the top padding needed */
+		section > p                     { padding-bottom: 0; }
+    figcaption li                   { padding-bottom: 1em; }
+		#brands                         { padding-top: 144px; padding-bottom: 144px; }
+		section, #nav_primary           { padding-left: 5%; padding-right: 5%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+    .col-1, #brands                 { padding-left: 0; padding-right: 0; }
+		section > h2, section > p       { padding-left: 12%; padding-right: 12%; }
+    blockquote                      { padding-left: 18%; padding-right: 18%; }
+    #next_feature                   { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
+		#next_feature a,
+    #footer_links > div             { padding: 0; }
+    #calltoaction div               { padding: 7%; }
+		figcaption                      { margin: 0 0 auto 0; }
+		.social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
+    span + figcaption, figcaption + span,
+    img + figcaption, figcaption + img,
+    table + figcaption, figcaption + table
+                                    { margin-top: 36px; } /* adds margin between images/tables and the text they belong to */
+		.col-2-1 figure:first-child figcaption,
+		.col-1-2 figure:last-child figcaption,
+		.col-1 figcaption								{ width: 70%; }
+		.col-1-2 figure:first-child figcaption,
+		.col-2-1 figure:last-child figcaption,
+		.col-2 figcaption, .col-1 table { width: 80%; }
+		.col-3 figcaption								{ width: 90%; }
+		#next_feature a,
+    .col-2 table, .col-3 table      { width: 100%; }
+
+
+	/* 4.4 - Position - 4.4 */
+		.noScroll, #nav_primary					{ position: fixed; }
+		blockquote,
+		.nav_secondary_contents,
+		/*#nav_primary *,*/
+    nav ul, nav li, nav li a, nav li a::before, #nav_primary > a,
+		#nav_secondary									{ position: relative; }
+		blockquote::before,
+		blockquote::after,
+		nav > ul > li > a:before,
+		nav ul ul,
+		#nav_secondary button,
+		#nav_secondary_indicator				{ position: absolute; }
+
+
+  /* 4.5 - Float - 4.5 */
+    .nav_secondary_contents         { float: left; }
+
+
+  /* 4.6 - Shadows - 4.6 */
+    main                            {
+																			-webkit-box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
+																			        box-shadow: 0 -2px 6px rgba(0,0,0,0.3);
+																		}
+		#nav_primary										{
+																			-webkit-box-shadow: 0 1px 24px rgba(0,0,0,0.6);
+																			        box-shadow: 0 1px 24px rgba(0,0,0,0.6);
+																		}
+		nav ul ul                       {
+																			-webkit-box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
+																			        box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
+																		}
+		#nav_secondary									{
+																			-webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.2), 0 -2px 6px rgba(0,0,0,0.3);
+																			        box-shadow: 0 2px 6px rgba(0,0,0,0.2), 0 -2px 6px rgba(0,0,0,0.3);
+																		}
+		.social a:hover									{
+																			-webkit-box-shadow: 2px 2px 24px rgba(0,0,0,0.26) !important;
+																			        box-shadow: 2px 2px 24px rgba(0,0,0,0.26) !important;
+																		}
+    figure img                      {
+                                      -webkit-box-shadow: 5px 1px 27px rgba(0,0,0,0.2), 2px 2px 3px rgba(0,0,0,0.4);
+                                              box-shadow: 5px 1px 27px rgba(0,0,0,0.2), 2px 2px 3px rgba(0,0,0,0.4);
+                                    }
+
+  /* 4.7 - Borders - 4.7 */
+    section, blockquote							{ border-bottom: 1px solid #b2dfdb; } /* gives each section & blockquote a light teal bottom border */
+    .col-1                          { border-bottom: 0; } /* then we remove the above mentioned border for col-1 as these are intended to be headers directly related to the content below them */
+    .comparison > *:last-child			{ border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
+    .border-img img                 { border: 1px solid #b2dfdb; }
+
+
+	/* 4.8 - Z-Index - 4.8 */
+		#nav_primary                    { z-index: 10000; }
+		nav i, #nav_secondary,
+    figure img, figure span,
+    figure table, .social           { z-index: 1; }
+
+
+  /* 4.9 - Box Sizing - 4.9 */
+    nav, .social a                  { box-sizing: border-box; }
+
+
+	/* 4.99 - Visibility - 4.99 */
+		nav > ul > li > a:before,
+		nav ul ul                       { visibility: hidden; }
+		nav > ul > li > a:hover:before,
+		nav li:hover > ul               { visibility: visible; }
+    nav input                       { opacity: 0; }
+
+
+/* 5 - NAVIGATION - 5 */
+
+
+  /* 5.1 - Primary Navigation - 5.1 */
+    nav ul ul a                     { line-height: 48px;}
+    nav > ul > li > a               { margin: 0 16px; } /* horizontal spacing between main menu items */
+    nav > ul > li:last-child > a    { margin-right: 0 !important; } /*removes the unnecessary right margin from the last menu item, as the navbar itself already has sufficient padding. top amrgin should be same as margin above */
+    nav > a                         { height: 70px; } /* height of grooper logo */
+    #nav_primary, nav > ul > li     { height: 96px; } /* height of entire navbar */
+    nav > ul > li > a:before        { height: 1px; } /* sets height of the primary nav link underlines that will appear during hover */
+    nav > a                         { width: 214px; } /*set to actual width of logo image */
+    nav ul ul                       { width: 200%; }
+    #nav_primary,
+    nav > ul > li > a:before        { width: 100%; }
+    nav ul ul li                    { width: 100%; } /* determines width of submenu items */
+    #nav_primary                    { top: 0; }
+    nav ul ul                       { top: calc(100% - 32px); } /* adjusts the location of the dropdown menu upward to cover the parent link's underlining */
+    nav > ul > li > a:before        { bottom: 0; } /* ensures line will snap to bottom edge of item */
+    nav ul ul                       { left: -50%; }
+    #nav_primary,
+    nav > ul > li > a:before        { left: 0; }
+    nav ul ul                       { opacity: 0; } /* sets the initial opacity of the dropdown menu to 0 so that we have the ability to animate the opacity to 1 during a hover of the parent li */
+    nav > ul > li:hover > ul        { opacity: 1; }
+    nav > a                         { background: url(../images/grooper_logo_214x70.png); } /*logo image used in navbar */
+    nav > ul > li > a:before        { content: ""; }
+
+
+  /* 5.2 - Secondary Navigation - 5.2 */
+    #nav_secondary a                { font-size: 16px; }
+    #nav_secondary                  { padding: 0; }
+    #nav_secondary a                { padding: 0 12px; }
+    #nav_secondary_container        { margin: 0 auto; }
+    .nav_advancer_icon              { margin: 0 auto; }
+    #nav_secondary,
+    #nav_secondary a,
+    #nav_secondary button           { height: 48px; }
+    .nav_advancer_icon              { height: 32px; }
+    #nav_secondary_indicator        { height: 2px; }
+    #nav_secondary_container        { width: calc(100% - 96px); }
+    #nav_secondary button           { width: 48px; }
+    .nav_advancer_icon              { width: 20px; }
+    #nav_secondary_indicator        { width: 100px; }
+    #nav_secondary a                { min-height: 48px; }
+    #nav_secondary button           { top: 0; }
+    #nav_secondary button,
+    #nav_secondary_indicator        { bottom: 0; }
+    #nav_secondary_right            { right: 0; } /*push right button to right side of navbar */
+    #nav_secondary_left,
+    #nav_secondary_indicator        { left: 0; }
+    #nav_secondary button           { opacity: 0; } /* Set the buttons invisible by default */
+    #nav_secondary_left:focus,
+    [data-overflowing="both"] ~ #nav_secondary_left,
+    [data-overflowing="left"] ~ #nav_secondary_left,
+    [data-overflowing="both"] ~ #nav_secondary_right,
+    [data-overflowing="right"] ~ #nav_secondary_right
+                                    { opacity: 1; }
+    .nav_advancer_icon              { fill: #bbb; }
+    #nav_secondary_container        { overflow-x: auto; } /* allow horizontal scroll if enough items exist */
+    #nav_secondary_container        { overflow-y: hidden; } /* prevent vertical scroll */
+    #nav_secondary_container        { -webkit-overflow-scrolling: touch; } /* inertia scrolling for webkit */
+    #nav_secondary_container        { white-space: nowrap; } /* We don't want internal inline elements to wrap */
+    #nav_secondary_container        { -ms-overflow-style: none; } /* Make an auto-hiding scroller for the 3 people using IE */
+    #nav_secondary_container        { overflow: -moz-scrollbars-none; }
+
+
+  /* 5.3 - Footer - 5.3 */
+    footer li,
+    .content__button input          { padding: 4px 0; }
+    #footer_links input             { padding: 0 8px; }
+    footer form                     { margin-top: 23px; }
+    .field-wrapper,
+    .content__button                { margin: 4px 0; }
+    .field-wrapper,
+    .content__button,
+    #footer_links input             { height: 32px; }
+    #footer_links input             { width: 100%; }
+    #footer_links input             { border: none; }
+
+
+  /* 5.3 - Social - 5.3 */
+    .social                         { width: 100%; }
+    .social a                       {
+                                      padding-top: 44px;
+                                      margin: 6px;
+                                      height: 128px;
+                                      width: 128px;
+                                      border: 1px solid rgba(255,255,255,.26);
+                                    }
+    .social a:nth-child(1):hover    { background: #3b5998; } /* facebook */
+    .social a:nth-child(2):hover    { background: #dd4b39; } /* google plus */
+    .social a:nth-child(3):hover    { background: #55acee; } /* twitter */
+    .social a:nth-child(4):hover    { background: #0976b4; } /* linkedin */
+    .social a:nth-child(5):hover    { background: #cd201f; } /* youtube */
+    .fa                             { color: rgba(255,255,255,.26); }
+    #copyright img                  { margin: 16px auto; }
+
+
+
+
+/* CONVENIENCE CLASSES */
+
+	/* The typography class should be applied to text-heavy sections, like FAQs, and other long, informatoinal articles needing a more consistent and condensed text layout to increase legibility and reduce reader fatigue */
+	.typography, .typography *				{ text-align:left !important; }
+	.typography, .typography *				{ font: 300 16px/24px "Roboto",sans-serif !important; }
+	.typography h2										{ font: 300 34px/40px "Roboto",sans-serif !important; }
+	.typography h3										{ font: 400 22px/36px "Roboto",sans-serif !important; }
+	.typography h4										{ font: 400 18px/32px "Roboto",sans-serif !important; }
+	.typography, .typography *				{	color: rgba(17,17,17,.8) !important; }
+	.typography h3, .typography h4		{ color: rgba(0,0,0,1) !important; }
+	.typography ul, .typography li		{ color: rgba(17,17,17,1) !important; }
+	.typography div *									{
+																			margin: 0 !important;
+																			padding: 0 !important;
+																		}
+	.typography h2										{ margin: 0 0 20px !important; }
+	.typography h3, .typography h4		{ margin: 32px 0 16px !important; }
+	.typography p											{ margin: 16px 0 !important; }
+	.typography li										{ margin: 8px 0 !important; }
+
+  section.side_by_side              { padding-left: 10%; padding-right: 10%; }
+  .side_by_side figure              {
+                                          -webkit-box-orient: horizontal;
+                                       -webkit-box-direction: normal;
+                                      -webkit-flex-direction: row;
+                                          -ms-flex-direction: row;
+                                              flex-direction: row;
+                                             -webkit-box-pack: justify;
+                                      -webkit-justify-content: space-between;
+                                                -ms-flex-pack: justify;
+                                              justify-content: space-between;
+                                    }
+  .side_by_side img,
+  .side_by_side table,
+  .side_by_side figcaption          { -webkit-flex-basis: 43.75%; -ms-flex-preferred-size: 43.75%; flex-basis: 43.75%; }
+  /*.side_by_side img + figcaption,
+  .side_by_side span + figcaption,
+  .side_by_side table + figcaption,
+  .side_by_side figcaption + img,
+  .side_by_side figcaption + span,
+  .side_by_side figcaption + table*/
+  /*
+  .side_by_side * + figcaption,
+  figcaption + .side_by_side *  { margin: 0; padding-left: 10%; }*/
+  .side_by_side img,
+  .side_by_side table               { max-width: 43.75%; } /* should match the flex basis defined above */
+  .side_by_side > p + figure,
+  .side_by_side > h2 + figure       { margin-top: 36px; }
+  .side_by_side figure > *          { margin: 0; /*margin-left: 36px;*/ }
+
+
+  /* The text alignment classes force alignment of the element receiving the class and all of its children */
+  .text_left, .text_left *          { text-align: left !important; }
+  .text_center, .text_center *      { text-align: center !important; }
+  .text_right, .text_right *        { text-align: right !important; }
+
+
+  /* The align classes are used to remove -bottom class allows large primary images to align to the bottom of their section so that they appear to be emerging from behind the following */
+	.align_top                        { padding-top: 0 !important; }
+	.align_bottom                     { padding-bottom: 0 !important; }
+  .align_left                       { padding-left: 0 !important; }
+  .align_right                      { padding-right: 0 !important; }
+
+	/* just figured out that this is how I can make the aligned images stretch to fill the screen and overflow past the left/right edges on smaller devices */
+	/* the negative bottom margin will keep the parent section from enlarging too much and the positive top margin will make up for the change in space */
+	/* will have to think about how I'll decide the values of these margins to keep this from looking bad, scale must be by percentage */
+	/* the margins being specified in percents will be percents of a container, not the img itself, so the numbers won't match as-is */
+	/*.align-bottom img {transform: scale(1.2); margin: 100px 0 -100px 0; }*/
+
+
+  /* The bg-dark and bg-light classes control the child elements of the colored container, the specific color is added via the adition of a specific color class */
+	/* The teal and orange classes can then be added to apply background color to main sections and alter the color of the text therein appropriately */
+	.bg-dark *,	.bg-light *           { background: transparent !important; }
+	.bg-dark *                        { color: rgba(238,238,238,.75); }
+	.bg-dark h2, .bg-dark h3,
+	.bg-dark span                     { color: #fff !important; }
+	.bg-light *                       { color: rgba(17,17,17,.75); }
+	.bg-light h2, .bg-light h3
+	.bg-light span, .bg-light th      { color: #000 !important; }
+  .bg-dark thead tr                 { background: rgba(255,255,255,.6) !important; }
+  .bg-dark tbody tr:nth-child(odd)  { background: rgba(255,255,255,.06) !important; }
+  .bg-dark table                    { border: 1px solid rgba(238,238,238,.3); }
+  .bg-dark th                       { color: rgba(17,17,17,1) !important; }
+  .bg-dark thead, .bg-dark tr       { border-bottom: 1px solid rgba(238,238,238,.3); }
+  .bg-light thead tr                { background: rgba(0,0,0,.6) !important; }
+  .bg-light tbody tr:nth-child(odd) { background: rgba(0,0,0,.06) !important; }
+  .bg-light table                   { border: 1px solid rgba(17,17,17,.3); }
+  .bg-light th                      { color: rgba(238,238,238,1) !important; }
+  .bg-light thead, .bg-dark tr      { border-bottom: 1px solid rgba(17,17,17,.3); }
+
+	/* blockquotes should be added directly to the main section of the page */
+	/* to produce the color styling of the blockquote, use the bg-color class on the blockquote itself */
+	blockquote											{ border-left: 8px solid #4db6ac; }
+	blockquote p										{
+																		font-weight: 400;
+																		color: rgba(17,17,17.8)
+																	}
+	blockquote span									{
+																		margin-top: 36px;
+																		font-weight: 500;
+																		color: rgba(0,0,0.75)
+																	}
+	blockquote::before							{
+																		content: "\201C";
+																		left: 96px;
+																		top: -12px;
+																	}
+	blockquote::after								{
+																		content: "\201D";
+																		right: 96px;
+																		bottom: -84px;
+																	}
+	blockquote.bg-dark::before,
+	blockquote.bg-dark::after				{ color: rgba(0,0,0,.2)}
+	blockquote.bg-light::before,
+	blockquote.bg-light::after			{ color: rgba(255,255,255,.2)}
+	blockquote.gray									{ border-left: 8px solid #616161;}
+	blockquote.orange								{ border-left: 8px solid #e64a19;}
+	blockquote.teal									{ border-left: 8px solid #00897b;}
+
+	blockquote														{ border-left: 8px solid #4db6ac; }
+	blockquote span												{ margin-top: 36px; }
+	blockquote::before										{
+																					content: "\201C";
+																					left: 96px;
+																					top: -12px;
+																				}
+	blockquote::after											{
+																					content: "\201D";
+																					right: 96px;
+																					bottom: -84px;
+																				}
+
+
+
+	/* The btn-sml and btn-lrg classes are used on <a> elements to turn them into styled buttons in one of two sizes. */
+	/* It is assumed that these will always be on a line by themselves and should be horizontally centered within the parent container */
+  .btn-sml, .btn-lrg										{
+																					text-transform: uppercase;
+																					border-radius: 3px;
+																					border: 1px solid rgba(255,255,255,0.6);
+																					color: #ffffff;
+																					background: rgba(255,255,255,.066);
+																				}
+  .btn-sml															{
+																					margin: 16px auto 0; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
+																					padding: 6px 12px;
+																					margin: 16px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
+																				}
+	.btn-lrg															{
+																					margin: 32px auto 0; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
+																					padding: 16px 32px;
+																					margin: 32px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
+																				}
+	.btn-sml:hover, .btn-lrg:hover				{
+																					-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
+																					        box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
+																					background: rgba(255,255,255,0.97) !important;
+																					color: rgba(0,0,0,0.8) !important;
+																				}
+
+
+  .icon-phase                           {
+                                          height: 120px;
+                                          width: 120px;
+                                          line-height: 120px; /* this must always be the same as the height of the span itself. The result is vertically centered text. */
+                                          margin: 0 auto;
+                                          padding: 16px;
+                                          border-radius: 3px;
+                                          font-size: 20px;
+                                          text-transform: uppercase;
+                                          text-align: center;
+                                        }
+  .icon-phase.acquire                   { border: 1px solid rgb(255,134,84); color: rgb(255,134,84); background: rgba(255,134,84,.2) !important; } /*#ff8654*/
+  .icon-phase.condition                 { border: 1px solid rgb(0,  176,240); color: rgb(0,176,240); background: rgba(0,176,240,.2) !important; } /*#00b0f0*/
+  .icon-phase.organize                  { border: 1px solid rgb(255,60,60 ); color: rgb(255,60,60); background: rgba(255,60,60,.2) !important; } /*#ff3c3c*/
+  .icon-phase.collect                   { border: 1px solid rgb(178,149,197); color: rgb(178,149,197); background: rgba(178,149,197,.2) !important; } /*#b295c5*/
+  .icon-phase.deliver                   { border: 1px solid rgb(146,208,80 ); color: rgb(146,208,80); background: rgba(146,208,80,.2) !important; } /*#92d050*/
+
+
+	.desaturate														{
+																					-webkit-filter: grayscale(1);
+																					-webkit-filter: grayscale(100%);
+																					        filter: gray;
+																					        filter: grayscale(100%);
+																				}
+
+/* TRANSFORMS AND TRANSITIONS */
+
+  .noScroll															{
+																					overflow: hidden;
+																					width: 100%;
+																				}
+	#nav_secondary_indicator							{
+																					-webkit-transform-origin: 0 0;
+																					    -ms-transform-origin: 0 0;
+																					        transform-origin: 0 0;
+																				}
+	nav > ul > li > a:before              { /* sets the initial scale of the nav link hover to 0 so it can later animate to full scale */
+																					-webkit-transform: scaleX(0);
+																					    -ms-transform: scaleX(0);
+																					        transform: scaleX(0);
+																				}
+	nav > ul > li > a:hover:before        { /* transforms primary nav underlines from the inside to the outside */
+																					-webkit-transform: scaleX(1);
+																					    -ms-transform: scaleX(1);
+																					        transform: scaleX(1);
+																				}
+	footer .social a:hover                {
+																					-webkit-transform: scale(1.1);
+																					    -ms-transform: scale(1.1);
+																					        transform: scale(1.1);
+																				}
+	tbody tr												      {
+																					-webkit-transition: background 0.4s ease 0s;
+																					     -o-transition: background 0.4s ease 0s;
+																					        transition: background 0.4s ease 0s;
+																				}
+	nav > ul > li > a:before,
+	nav ul ul,
+	nav ul ul li,
+	nav ul ul a,
+	#nav_secondary button,
+  .btn-lrg, .btn-sml, .social a, .fa		{
+																					-webkit-transition: all 0.2s linear 0s !important;
+																					     -o-transition: all 0.2s linear 0s !important;
+																					        transition: all 0.2s linear 0s !important;
+																				}
+	.nav_secondary_contents								{
+																					-webkit-transition: -webkit-transform .2s ease-in-out;
+																					        transition: -webkit-transform .2s ease-in-out;
+																					     -o-transition: transform .2s ease-in-out;
+																					        transition: transform .2s ease-in-out;
+																					        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+																				}
+	nav .social														{
+																					-webkit-transition: all 0.3s linear !important;
+																					     -o-transition: all 0.3s linear !important;
+																					        transition: all 0.3s linear !important;
+																				}
+	.no-transition												{
+																					-webkit-transition: none;
+																					     -o-transition: none;
+																					        transition: none;
+																				}
+
+
+
+/* MEDIA QUERIES */
+
+  @media only screen and (max-width: 1680px) {
+    header											{ padding: 96px 10% 192px; }
+		section > h2, section > p   { padding-left: 8%; padding-right: 8%; }
+	}
+
+
+  @media only screen and (max-width: 1440px) {
+		html, body									{ font-size: 15px; }
+    h2                          { font-size: 325%; }
+		#calltoaction h3            { font-size: 275%; }
+		#calltoaction p             { font-size: 120%; }
+    .field-wrapper input        { font-size: 12px; }
+		.content__button input			{ font-size: 14px; }
+    footer li                   { font-size: 16px; }
+		#footer_links input					{ font-size: 14px; }
+    .field-wrapper input        { font-size: 12px; }
+    #copyright                  { font-size: 12px; }
+    .social a                   { font-size: 24px; }
+  	.social a                   { padding-top: 32px; }
+  	#footer_links input         { height: 28px; }
+  	.social a                   { height: 96px; width: 96px; }
+  	#copyright img              { height: 38px; }
+		blockquote::before					{ top: -8px; }
+		blockquote::after						{ bottom: -76px; }
+  }
+
+
+  @media only screen and (max-width: 1280px) {
+		html, body									{ font-size: 14px; }
+    h1                          { font-size: 375%; }
+		h3                          { font-size: 175%; }
+    nav ul ul a                 { line-height: 42px; }
+    header                      { padding: 88px 10% 152px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
+		#next_feature               { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
+		section > h2, section > p   { padding-left: 5%; padding-right: 5%; }
+    .social                     { margin: 72px auto 16px auto; }
+    nav > li                    { height: 64px; } /* shrink to match the new height of the navbar */
+    #nav_primary                { height: 64px; } /* Shrink the height of the navbar for the first time */
+    nav > a                     { background: url(../images/grooper_logo_140x46.png); height: 46px; width: 140px; }
+    nav ul ul										{ top: 64px; }
+		blockquote::before					{ left: 56px; }
+		blockquote::after						{ right: 54px; }
+
+    /* 1280px updates for convenience classes */
+      section.side_by_side        { padding-left: 5%; padding-right: 5%; } /*only make change if the side_by_side class is applied to a section itself */
+      .side_by_side img,
+      .side_by_side table         {
+                                    max-width: 51.94%;
+                                         -webkit-flex-basis: 51.94%;
+                                    -ms-flex-preferred-size: 51.94%;
+                                                 flex-basis: 51.94%;
+                                  }
+      .side_by_side figcaption    { max-width: 42.5%;
+                                         -webkit-flex-basis: 42.5%;
+                                    -ms-flex-preferred-size: 42.5%;
+                                                 flex-basis: 42.5%;
+                                  }
+  }
+
+
+  @media only screen and (max-width: 1024px) {
+		html, body                  { font-size: 13px; }
+		p                           { font-size: 15px; }
+    header p                    { font-size: 156% }
+		#brands p                   { font-size: 175%; }
+		#nav_secondary a            { font-size: 14px; }
+		header                      { padding: 64px 7% 112px; }
+    footer                      { padding: 64px 7% 8px 7%; }
+    #next_feature               { padding: 32px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
+		#nav_secondary              { padding: 0; }
+    section, blockquote,
+    figure, section > div       { padding-top: 64px; }
+		#brands                     { padding-top: 96px; }
+		.social a                   { padding-top: 32px; }
+		section, blockquote         { padding-bottom: 64px;}
+		#brands                     { padding-bottom: 96px; }
+		nav > ul > li > a           { margin: 0 8px; }
+		section, blockquote,
+		.col-3 figure:last-child,
+    .col-3 div:last-child       { margin: 0 auto; }
+    .social                     { margin: 64px auto 8px auto; }
+  	#copyright img              { margin: 8px auto; }
+    img + figcaption,
+    table + figcaption,
+    figcaption + img,
+    figcaption + table          { margin-top: 32px; } /* adds margin between images/tables and the text they belong to */
+		.btn-sml                    { margin-top: 8px; }
+		.col-3 > figure,
+    .col-3 > div                { -webkit-flex-basis: 47.22%; -ms-flex-preferred-size: 47.22%; flex-basis: 47.22%; }
+		#nav_secondary,
+		#nav_secondary a,
+		#nav_secondary button       { height: 36px; }
+		.nav_advancer_icon          { height: 28px; }
+		#nav_secondary a            { min-height: 36px; }
+    .col-1 table                { width: 90%; }
+		.col-3 figcaption           { width: 80%; }
+		#nav_secondary_container    { width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
+		#nav_secondary button       { width: 36px; }
+		#nav_secondary_left         { left: 0; }
+		#nav_secondary_right        { right: 0; }
+		blockquote::before          { left: 32px; top: 6px; }
+		blockquote::after           { right: 30px; bottom: -30px; }
+
+    /* 1024px updates for convenience classes */
+      .btn-lrg                    { padding: 8px 32px; }
+      .side_by_side img,
+      .side_by_side table         {
+                                    max-width: 56.66%;
+                                         -webkit-flex-basis: 56.66%;
+                                    -ms-flex-preferred-size: 56.66%;
+                                                 flex-basis: 56.66%;
+                                  }
+      .side_by_side figcaption    { max-width: 37.77%;
+                                         -webkit-flex-basis: 37.77%;
+                                    -ms-flex-preferred-size: 37.77%;
+                                                 flex-basis: 37.77%;
+                                  }
+  }
+
+
+  @media (max-width: 768px) {
+		html, body									{ font-size: 12px; }
+    h1                          { font-size: 325%; }
+    h2                          { font-size: 300%; }
+    h4                          { font-size: 175%; }
+    header p                    { font-size: 145%; }
+    h2 ~ p                      { font-size: 135%; }
+    #calltoaction h3            { font-size: 240%; }
+    #calltoaction p             { font-size: 110%; }
+    footer,
+		footer h4, footer ul				{ text-align: center; }
+		section											{ padding: 64px; }
+    #footer_links > div					{ padding: 32px 0; }
+		section, blockquote,
+		figure, section > div				{ padding-top: 64px; }
+		section, blockquote					{ padding-bottom: 64px;}
+    section > h2, section > p   { padding-left: 0; padding-right: 0; }
+		section											{ padding: 64px; }
+    #footer_links > div					{ padding: 32px 0; }
+  	#signup											{ margin: 32px 32px 0 32px; }
+  	#contact, #discover					{ -webkit-flex-basis: 50% !important;  -ms-flex-preferred-size: 50% !important;  flex-basis: 50% !important }
+  	#signup											{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
+		section > *									{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
+		#brands img									{ -webkit-flex-basis: auto !important; -ms-flex-preferred-size: auto !important; flex-basis: auto !important }
+  	.col-2, .col-3              { display: block !important; } /*this prevents divs from overlaying on ie11 and android mobile default browser */
+    nav > a								      {
+																	background: url(../images/g_color_32.png);
+																	height: 32px;
+																	width: 33px;
+																}
+
+    /* 768px updates for convenience classes */
+  		.comparison > *:last-child	{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
+  		.side_by_side img,
+      .side_by_side table         { max-width: 70%; }
+      .side_by_side figcaption    {
+                                    max-width: 85%;
+                                    width: 85%;
+                                  }
+      .side_by_side figure        {
+                                      -webkit-box-orient: vertical !important;
+                                    webkit-box-direction: normal !important;
+                                      -ms-flex-direction: column !important;
+                                          flex-direction: column !important;
+                                  }
+      .side_by_side figcaption    {
+                                    display: -webkit-box !important;
+                                    display: -webkit-flex !important;
+                                    display: -ms-flexbox !important;
+                                    display: flex !important;
+                                    -webkit-flex-wrap: wrap; -ms-flex-wrap: wrap; flex-wrap: wrap
+                                  }
+      .side_by_side figure h3,
+      .side_by_side figure p      { text-align: center !important; }
+      .side_by_side li            { margin-left: 1em; padding-right: 1em; width: calc(50% - 2em); float:left;}
+      .side_by_side figure h3,
+      .side_by_side figure p,
+      .side_by_side figure ul     { flex-basis: 100%; }
+      .side_by_side figcaption    { padding-left: 0 !important; }
+      .side_by_side figcaption    { -webkit-box-ordinal-group: 3; -webkit-order: 2; -ms-flex-order: 2; order: 2; } /* moves the subject of the figure to above the figcaption text */
+      .side_by_side * + figcaption,
+      figcaption + .side_by_side *
+                                  { margin-top: 36px !important; } /* adds margin between images/tables and the text they belong to */
+  }
+
+
+
+
+
+@media (max-width: 600px){
+	html, body                    { font-size: 11px; }
+  footer h4                     { font-size: 28px; }
+  footer li                     { font-size: 18px; }
+  nav > ul > li > a             { font-size: 18px; } /*  increase from 16px to 18px now that this is in a full screen mobile style menu */
+  #calltoaction h3              { font-size: 275%; }
+  #calltoaction p               { font-size: 140%; }
+  nav > ul > li > a             { line-height: 48px; }
+  footer h4, footer ul          { text-align: center; }
+	nav li, nav input,
+  #calltoaction/*,
+  .social a, .social i*/        { display: block !important; }
+  nav ul, .social               {
+                                  display: -webkit-box !important;
+                                  display: -webkit-flex !important;
+                                  display: -ms-flexbox !important;
+                                  display: flex !important;
+                                }
+	#nav_primary input:checked ~ i ~ i,
+	#bars                         {
+                                  display: -webkit-inline-box !important;
+                                  display: -webkit-inline-flex !important;
+                                  display: -ms-inline-flexbox !important;
+                                  display: inline-flex !important;
+                                }
+	#nav_primary input:checked ~ i,
+  nav ul ul                     { display: none !important; }
+  .social .fa                   { display: inline-block !important; }
+	nav input                     { position: absolute !important; }
+	nav > ul, nav .social         { position: fixed !important; }
+  nav > ul                      {
+                                     -webkit-box-orient: vertical !important;
+                                  -webkit-box-direction: normal !important;
+                                     -ms-flex-direction: column !important;
+                                         flex-direction: column !important;
+                                }
+  nav > ul, .social             { -webkit-box-pack: space-evenly; -webkit-justify-content: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
+  nav > ul                      { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+  #contact, #discover						{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
+  #signup												{ margin: 0; }
+  .social												{ margin: 8px 0 16px; }
+  nav .social                   { margin: 0; }
+	header												{ margin-top: 48px; }
+  nav ul, nav .social						{ margin-left: 100%; }
+  #nav_primary input:checked ~ ul,
+  #nav_primary input:checked ~ .social { margin-left: -5%; }
+	section												{ padding: 64px 48px; }
+  nav ul                        { padding: 48px 0 64px; }
+  #calltoaction > div           { padding: 48px; }
+	nav i, .social a              { padding: 0 !important; }
+	#social a											{ padding-top: 0; }
+  nav input                     { height: 100%; }
+  nav ul                        { height: 100%; }
+  #nav_primary, nav > ul > li   { height: auto; }
+  #nav_primary, #brands img			{ height: 48px; }
+  nav li                        { max-height: 14%; } /* ensures all line items fit on the screen, even on devices with less height */
+  nav input                     { width: 15%; }
+  .col-1 table                  { width: 90%; }
+  #nav_primary, nav ul          { width: 100%; }
+  .social a                     { height: auto; }
+  .social a                     { width: auto; }
+  nav input, nav > ul           { top: 0; }
+  nav input                     { right: 0; }
+  #nav_social                   { bottom: 16px; }
+  nav > ul                      { background: #000; }
+  nav .social                   { background: transparent; }
+  .social a                     { border: none; }
+  #social a, #social a:hover    {
+																	background: transparent;
+																	-webkit-box-shadow: none;
+																	        box-shadow: none;
+																	-webkit-transform: none;
+																	    -ms-transform: none;
+																	        transform: none;
+																}
+  /*#nav_social                   { visibility: visible; }*/
+
+  nav > ul                      { opacity: 0.93; }
+  nav input                     { z-index: 20000; }
+  nav                           { -webkit-font-smoothing: antialiased; } /* to stop flickering of text in safari */
+	nav > a                       {
+																	-webkit-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+																	     -o-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+																	        transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+																}
+  #social a:hover,
+  #nav_social a:hover                 { background: transparent !important; }
+  #nav_social a:nth-child(1):hover i,
+  #social a:nth-child(1):hover i      { color: #3b5998; } /* facebook */
+  #nav_social a:nth-child(2):hover i,
+  #social a:nth-child(2):hover i			{ color: #dd4b39; } /* google plus */
+  #nav_social a:nth-child(3):hover i,
+  #social a:nth-child(3):hover i			{ color: #55acee; } /* twitter */
+  #nav_social a:nth-child(4):hover i,
+  #social a:nth-child(4):hover i			{ color: #0976b4; } /* linkedin */
+  #nav_social a:nth-child(5):hover i,
+  #social a:nth-child(5):hover i			{ color: #cd201f; } /* youtube */
+
+
+    /* 600px updates for convenience classes */
+  		.side_by_side img,
+      .side_by_side table         { max-width: 80%; }
+      .side_by_side figcaption    {
+                                    max-width: 95%;
+                                    width: 95%;
+                                  }
+      .comparison > *:last-child    { border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
 }
-#nav-primary ul a,
-#nav-primary > ul > li:hover > ul {
-	display: block;
-}
-#nav-primary ul ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
-#social a
-{
-	display: inline-block;
-}
+
+
+  @media (max-width: 432px){
+    #next_feature a               { font-size: 18px; }
+    section                       { padding: 32px 24px; } /* hard coding padding here for small devices and phones, as responsive sizing will no longer yield predictable results */
+
+
+    /* 432px updates for convenience classes */
+      .side_by_side li { width: calc(100% - 2em); }
+  }
