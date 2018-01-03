@@ -8,14 +8,10 @@
 
 
   /* 1.2 - Remove margin, border, and padding from all - 1.2 */
-    html, body, div,
-		header, footer, menu, nav, section, figure, figcaption, article, aside, blockquote,
-		span, iframe, h1, h2, h3, h4, h5, h6, div, p, a, img, ol, ul, li,
-		table, tbody, tfoot, thead, tr, th, td, form, input, fieldset, button {
+    html, body, div, section, figure, figcaption, blockquote, span, iframe, h1, h2, h3, h4, h5, h6, div, p, a, img, ol, ul, li, table, tbody, tfoot, thead, tr, th, td, button {
 																			margin: 0;
 																			padding: 0;
 																			border: 0;
-																			background: transparent;
 																		}
 
 
@@ -56,7 +52,7 @@
 																		}
 
 
-  /* 1.6 - Set basic background colors - 1.6 */
+  /* 1.5 - Set basic background colors - 1.5 */
 
 		/* 1.6.1 - Solid Backgrounds - 1.6.1 */
 			body                          { background: #000; } /* black */
@@ -204,8 +200,11 @@
 
   /* 2.7 - Color - 2.7 */
     p                               { color: rgba(17,17,17,.7); }
+    h1, h4, header p,
+    #footer_links a:hover,
+    #footer_links label, #social a	{ color: #fff; }
     h2, em                          { color: #f4511e; }
-		h1, h4													{ color: #fff; }
+		.col-1 p												{ color: #000; }
 		blockquote::before,
 		blockquote::after								{ color: #4db6ac; } /*#78C0A8;*/
 		a:link, a:visited								{ color: #039be5; } /* normal state links */
@@ -770,6 +769,18 @@
 	blockquote.orange								{ border-left: 8px solid #e64a19;}
 	blockquote.teal									{ border-left: 8px solid #00897b;}
 
+	blockquote														{ border-left: 8px solid #4db6ac; }
+	blockquote span												{ margin-top: 36px; }
+	blockquote::before										{
+																					content: "\201C";
+																					left: 96px;
+																					top: -12px;
+																				}
+	blockquote::after											{
+																					content: "\201D";
+																					right: 96px;
+																					bottom: -84px;
+																				}
 
 
 
@@ -777,18 +788,20 @@
 	/* It is assumed that these will always be on a line by themselves and should be horizontally centered within the parent container */
   .btn-sml, .btn-lrg										{
 																					text-transform: uppercase;
-																					background: rgba(255,255,255,.066);
-																					border: 1px solid rgba(255,255,255,0.6);
 																					border-radius: 3px;
+																					border: 1px solid rgba(255,255,255,0.6);
 																					color: #ffffff;
+																					background: rgba(255,255,255,.066);
 																				}
   .btn-sml															{
 																					margin: 16px auto 0; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
 																					padding: 6px 12px;
+																					margin: 16px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
 																				}
 	.btn-lrg															{
 																					margin: 32px auto 0; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
 																					padding: 16px 32px;
+																					margin: 32px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
 																				}
 	.btn-sml:hover, .btn-lrg:hover				{
 																					-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
@@ -825,6 +838,7 @@
 
 /* TRANSFORMS AND TRANSITIONS */
 
+<<<<<<< HEAD
   .noScroll															{
 																					overflow: hidden;
 																					width: 100%;
@@ -882,6 +896,65 @@
 																					     -o-transition: none;
 																					        transition: none;
 																				}
+=======
+  .noScroll																{
+																						overflow: hidden;
+																						width: 100%;
+																					}
+	#nav_secondary_indicator								{
+																						-webkit-transform-origin: 0 0;
+																						    -ms-transform-origin: 0 0;
+																						        transform-origin: 0 0;
+																					}
+	#nav-primary > ul > li > a:before				{ /* sets the initial scale of the nav link hover to 0 so it can later animate to full scale */
+																						-webkit-transform: scaleX(0);
+																						    -ms-transform: scaleX(0);
+																						        transform: scaleX(0);
+																					}
+	#nav-primary > ul > li > a:hover:before { /* transforms primary nav underlines from the inside to the outside */
+																						-webkit-transform: scaleX(1);
+																						    -ms-transform: scaleX(1);
+																						        transform: scaleX(1);
+																					}
+	#social a:hover													{
+																						-webkit-transform: scale(1.1);
+																						    -ms-transform: scale(1.1);
+																						        transform: scale(1.1);
+																					}
+	tbody tr													      {
+																						-webkit-transition: background 0.4s ease 0s;
+																						     -o-transition: background 0.4s ease 0s;
+																						        transition: background 0.4s ease 0s;
+																					}
+	#menu > li > a:before,
+	#menu ul,
+	#menu ul li,
+	#menu ul li a,
+	#nav_secondary_left, #nav_secondary_right,
+  .btn-lrg, .btn-sml, #social a, .fa			{
+																						-webkit-transition: all 0.2s linear 0s !important;
+																						     -o-transition: all 0.2s linear 0s !important;
+																						        transition: all 0.2s linear 0s !important;
+																					}
+	.nav_secondary_contents									{
+																						-webkit-transition: -webkit-transform .2s ease-in-out;
+																						        transition: -webkit-transform .2s ease-in-out;
+																						     -o-transition: transform .2s ease-in-out;
+																						        transition: transform .2s ease-in-out;
+																						        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+																					}
+	#menu > li > ul,
+	#nav_social															{
+																						-webkit-transition: all 0.3s linear !important;
+																						     -o-transition: all 0.3s linear !important;
+																						        transition: all 0.3s linear !important;
+																					}
+	.no-transition													{
+																						-webkit-transition: none;
+																						     -o-transition: none;
+																						        transition: none;
+																					}
+>>>>>>> 454c9c3856817d157d2e4d9faa87ff263904ad65
 
 
 /* MEDIA QUERIES */
@@ -901,6 +974,7 @@
 		.content__button input			{ font-size: 14px; }
     #footer_links li            { font-size: 16px; }
 		#footer_links input					{ font-size: 14px; }
+    .field-wrapper input        { font-size: 12px; }
     #copyright                  { font-size: 12px; }
     #social a                   { font-size: 24px; }
   	#social a                   { padding-top: 32px; }
@@ -924,8 +998,15 @@
     #social                     { margin: 72px auto 16px auto; }
     nav > li                    { height: 64px; } /* shrink to match the new height of the navbar */
     #nav_primary                { height: 64px; } /* Shrink the height of the navbar for the first time */
+<<<<<<< HEAD
     nav > a                     { background: url(../images/grooper_logo_140x46.png); height: 46px; width: 140px; }
     nav ul ul										{ top: 64px; }
+=======
+    .grooper_logo               { background: url(../images/grooper_logo_140x42.png); height: 42px; width: 140px; margin-top: 14px; }
+    #nav-primary li             { height: 64px; } /* shrink to match the new height of the navbar */
+    #nav-primary ul ul          { top: calc(100% - 16px); }
+    #nav-primary > ul > li > a  { margin: 0 12px; } /* lessen the horizontal space between main menu items */
+>>>>>>> 454c9c3856817d157d2e4d9faa87ff263904ad65
 		blockquote::before					{ left: 56px; }
 		blockquote::after						{ right: 54px; }
   }
@@ -995,7 +1076,12 @@
 		section, blockquote,
 		figure, section > div				{ padding-top: 64px; }
 		section, blockquote					{ padding-bottom: 64px;}
+<<<<<<< HEAD
     section > h2, section > p   { padding-left: 0; padding-right: 0; }
+=======
+		section											{ padding: 64px; }
+    #footer_links > div					{ padding: 32px 0; }
+>>>>>>> 454c9c3856817d157d2e4d9faa87ff263904ad65
   	#signup											{ margin: 32px 32px 0 32px; }
   	#contact, #discover					{ -webkit-flex-basis: 50% !important;  -ms-flex-preferred-size: 50% !important;  flex-basis: 50% !important }
   	#signup											{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
@@ -1010,6 +1096,7 @@
 																	height: 32px;
 																	width: 33px;
 																}
+<<<<<<< HEAD
 		.comparison > *:last-child	{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
   }
 
@@ -1036,6 +1123,28 @@
   nav > ul                      { -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
   #nav_social                   { -webkit-box-pack: space-evenly; -webkit-justify-content: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
   nav > ul, #nav_social         { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+=======
+		.comparison > *:last-child{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
+    #top_map                    {
+                                  padding: 144px 128px 0 128px !important; /*top should match with the deduction from height*/
+                                  height: calc(100vh - 144px);
+                                }
+  }
+
+
+@media (max-width: 600px){
+	html, body										{ font-size: 11px; }
+  #footer_links h4							{ font-size: 28px; }
+  #footer_links li							{ font-size: 18px; }
+  #nav-primary > ul > li > a		{ font-size: 18px; }
+  #footer_links h4,
+  #footer_links ul							{ text-align: center; }
+  #mobile-menu,
+	#nav_primary ul,
+	#nav_primary li,
+	#nav_primary input,
+	#nav_social										{ display: block !important; }
+>>>>>>> 454c9c3856817d157d2e4d9faa87ff263904ad65
 	#nav_primary input:checked ~ i ~ i,
 	#bars                         { display: -webkit-inline-box !important; display: -webkit-inline-flex !important; display: -ms-inline-flexbox !important; display: inline-flex !important; }
 	#nav_primary input:checked ~ i,
