@@ -30,13 +30,11 @@
 
 
   /* 1.4 - Cursor and Touch - 1.4 */
-    table, i,
+    table, i, nav ul, nav ul a,
     .btn-sml, .btn-lrg,
-    nav ul,
-    nav ul a,
+    #social, #social a,
     #nav_social, #nav_social a      { cursor: default; }
-    #nav_secondary_left:hover,
-    #nav_secondary_right:hover,
+    #nav_secondary button:hover,
     nav input                       { cursor: pointer; }
     #mobile-menu                    {
                                       -webkit-user-select: none;
@@ -168,16 +166,16 @@
 
   /* 2.5 - Font Size - 2.5 */
 		html, body                      { font-size: 16px; } /* base font-size by which all percentages are multiplied to produce final element font-size */
-    h1                              { font-size: 450%; }
-    h2                              { font-size: 362.5%; }
+    h1                              { font-size: 425%; }
+    h2                              { font-size: 350%; }
 		h3                              { font-size: 200%; }
 		h4                              { font-size: 150%; }
-		p                               { font-size: 112.5%; }
+		p, figcaption li                { font-size: 112.5%; }
     label, input                    { font-size: 16px; }
     blockquote span                 { font-size: 112.5%; }
 		blockquote::before,
 		blockquote::after               { font-size: 1600%; }
-    header p                        { font-size: 187.5%; }
+    header p                        { font-size: 175%; }
     h2 ~ p                          { font-size: 150%; } /* paragraphs immediately after a h2 */
     blockquote p                    { font-size: 150%; }
     .btn-lrg                        { font-size: 125%; }
@@ -286,9 +284,9 @@
     nav input, nav i, #nav_social /*hide hamburger icon until requested by mobile media query */
                                     { display: none !important;}
     h1, h2, h3, h4, h5, h6, p, img,
-    #menu a, #menu > li:hover > ul,
+    nav ul a, nav > ul > li:hover > ul,
     blockquote span                 { display: block; }
-    #menu ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
+    nav ul ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
     #social a                       { display: inline-block; }
 
 
@@ -302,7 +300,8 @@
 			/* 4.2.1.1 - Flex Display - 4.2.1.1 */
 			/* Tells a container to display its contents using a flexible box model */
 				figure, section:not(.col-1),
-        section:not(.col-1) > *,
+        section:not(.col-1) > figure,
+        section:not(.col-1) > div,
         /*.col-2 > *,
         .col-3 > *,*/
         #nav_primary,
@@ -312,16 +311,16 @@
 				.field-wrapper,
 				.content__button						{
 																			display: -webkit-box;
-																			display: -ms-flexbox;
 																			display: -webkit-flex;
+																			display: -ms-flexbox;
 																			display: flex;
 																		}
 
-				#nav_primary li,
+				nav > ul > li,
 				#nav_secondary_contents > a	{
 																			display: -webkit-inline-box;
-																			display: -ms-inline-flexbox;
 																			display: -webkit-inline-flex;
+																			display: -ms-inline-flexbox;
 																			display: inline-flex;
 																		}
 
@@ -330,13 +329,15 @@
 			/* Direction of the flex container's main axis */
 				#calltoaction > div,
 				.col-1 figure,
-        section:not(.col-1) > *
-				/*.col-2 > *, .col-3 > *,
-				.col-1-2 > *, .col-2-1 > **/	{
-																			-webkit-flex-direction: column;
-																			    -ms-flex-direction: column;
-																			        flex-direction: column;
-																		}
+        section:not(.col-1) > *     {
+                                      -webkit-box-orient: vertical;
+                                      -webkit-box-direction: normal;
+                                      -webkit-flex-direction: column;
+                                      -ms-flex-direction: column;
+                                      flex-direction: column;
+                                    }
+
+
 
 
 			/* 4.2.1.3 - Flex Wrap - 4.2.1.3 */
@@ -356,25 +357,27 @@
 			/* 4.2.1.4 - Justify Content - 4.2.1.4 */
 			/* Align all items along the main axis of a flexible container */
 				#calltoaction > div					{
+                                             -webkit-box-pack: start;
 																			-webkit-justify-content: flex-start;
 																			          -ms-flex-pack: start;
 																			        justify-content: flex-start;
 																		}
 		    section:not(.col-1),
-        #nav_primary
-        /*.col-2, .col-3,
-				.col-1-2, .col-2-1*/				{
+        #nav_primary                {
+                                             -webkit-box-pack: justify;
 																			-webkit-justify-content: space-between;
-																			          -ms-flex-pack: space-between;
+																			          -ms-flex-pack: justify;
 																			        justify-content: space-between;
 																		}
 				#brands, #calltoaction,
 				#footer_links								{
+                                             -webkit-box-pack: center;
 																			-webkit-justify-content: center;
 																			          -ms-flex-pack: center;
 																			        justify-content: center;
 																		}
 				.content__button						{
+                                             -webkit-box-pack: end;
 																			-webkit-justify-content: flex-end;
 																			          -ms-flex-pack: end;
 																			        justify-content: flex-end;
@@ -387,6 +390,7 @@
         section:not(.col-1) > *,
 				/*.col-2 > *, .col-3 > *,
 				.col-1-2 > *, .col-2-1 > *,*/
+        #nav_primary,
 				#nav_primary li,
 				#nav_secondary_contents > a	{
 																			-webkit-box-align: center;
@@ -410,24 +414,26 @@
 
 			/* 4.2.2.3 - Shrink - 4.2.2.3 */
 			/* Number which determines how much the flex item will shrink relative to the rest of the flex items in the flexible container when negative free space is distributed. */
-				#calltoaction > div > *			{ flex-shrink: 0; } /* prevents ios devices from being able to shrink the container if everything doesn't fit within the container */
+				#calltoaction > div > *			{
+                                      -webkit-flex-shrink: 0;
+                                        -ms-flex-negative: 0;
+                                              flex-shrink: 0;
+                                    } /* prevents ios devices from being able to shrink the container if everything doesn't fit within the container */
 				#calltoaction p							{ margin: 0 0 auto 0; } /* adds extra space between the paragraph and button on the smaller of the two calltoaction divs, thus keeping the bottom buttons aligned. */
 
 
 			/* 4.2.2.4 - Flex Basis - 4.2.2.4 */
 			/* The initial width or height (whichever is on the main axis) of the flex item, before free space is distributed according to the flex factors. */
-				/*.col-2 > *, .col-3 > *,
-				.col-1-2 > *, .col-2-1 > **/
-        section:not(.col-1) > *             { flex-basis: 100%; -ms-flex: 100%; } /* this is a catch-all for direct h2, p, and other potential text elements inside a section that don't fall inside a specific column */
-				.col-1 > figure, .col-1 > div       { flex-basis: 100%; -ms-flex: 100%; }
-				.col-2 > figure, .col-2 > div       { flex-basis: 47.21%; -ms-flex: 47.21%; } /*42.5%*/
-				.col-3 > figure, .col-3 > div       { flex-basis: 29.629%; -ms-flex: 29.629%; } /*28.33*/
-				.col-1-2 > .first, .col-2-1 > .last { flex-basis: 37.77%; -ms-flex: 37.77%; } /*34*/
-				.col-2-1 > .first, .col-1-2 > .last { flex-basis: 56.66%; -ms-flex: 56.66%; } /*51*/
-				#footer_links > div                 { flex-basis: 33.33%; -ms-flex: 33.33%; }
-				#calltoaction > div                 { flex-basis: 50%; -ms-flex: 50%; }
-				#brands p                           { flex-basis: 100%; -ms-flex: 100%; }
-        #brands img                         { flex-basis: auto; }
+        section:not(.col-1) > *             { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%; } /* this is a catch-all for direct h2, p, and other potential text elements inside a section that don't fall inside a specific column */
+				.col-1 > figure, .col-1 > div       { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%; }
+				.col-2 > figure, .col-2 > div       { -webkit-flex-basis: 47.21%;  -ms-flex-preferred-size: 47.21%;  flex-basis: 47.21%; } /*42.5%*/
+				.col-3 > figure, .col-3 > div       { -webkit-flex-basis: 29.629%; -ms-flex-preferred-size: 29.629%; flex-basis: 29.629%; } /*28.33*/
+				.col-1-2 > .first, .col-2-1 > .last { -webkit-flex-basis: 37.77%;  -ms-flex-preferred-size: 37.77%;  flex-basis: 37.77%; } /*34*/
+				.col-2-1 > .first, .col-1-2 > .last { -webkit-flex-basis: 56.66%;  -ms-flex-preferred-size: 56.66%;  flex-basis: 56.66%; } /*51*/
+				#footer_links > div                 { -webkit-flex-basis: 33.33%;  -ms-flex-preferred-size: 33.33%;  flex-basis: 33.33%; }
+				#calltoaction > div                 { -webkit-flex-basis: 50%;     -ms-flex-preferred-size: 50%;     flex-basis: 50%; }
+				#brands p                           { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%; }
+        #brands img                         { -webkit-flex-basis: auto;    -ms-flex-preferred-size: auto;    flex-basis: auto; }
 
 
 			/* 4.2.2.5 - Align Self - 4.2.2.5 */
@@ -448,12 +454,12 @@
 		section, blockquote             { padding-bottom: 72px;} /* responsible for the bottom padding of each section and blockquote within the main area of the site */
 		.col-1 > figure, .col-1 > div		{ padding-top: 0; } /* there will only ever be one figure or div within a col-1 container, so the .col-1 itself already has the top padding needed */
 		section > p											{ padding-bottom: 0; }
+    figcaption li                   { padding-bottom: 1em; }
 		#brands													{ padding-top: 144px; padding-bottom: 144px; }
 		section, #nav_primary           { padding-left: 5%; padding-right: 5%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
     .col-1, #brands                 { padding-left: 0; padding-right: 0; }
-		section > h2, section > p				{ padding-left: 15%; padding-right: 15%; }
+		section > h2, section > p				{ padding-left: 12%; padding-right: 12%; }
     blockquote											{ padding-left: 18%; padding-right: 18%; }
-		/*#nav_primary										{ padding: 0 96px; }*/
     #next_feature										{ padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
 		#next_feature a,
     #footer_links > div             { padding: 0; }
@@ -472,7 +478,7 @@
 		.col-2 figcaption, .col-1 table { width: 80%; }
 		.col-3 figcaption								{ width: 90%; }
 		#next_feature a,
-    .col-2 table, .col-3 table       { width: 100%; }
+    .col-2 table, .col-3 table      { width: 100%; }
 
 
 	/* 4.4 - Position - 4.4 */
@@ -483,19 +489,14 @@
 		#nav_secondary									{ position: relative; }
 		blockquote::before,
 		blockquote::after,
-		#menu > li > a:before,
+		nav > ul > li > a:before,
 		#menu ul,
 		#nav_secondary_left, #nav_secondary_right,
 		#nav_secondary_indicator				{ position: absolute; }
 
 
   /* 4.5 - Float - 4.5 */
-  /*
-    .grooper_logo,
     .nav_secondary_contents         { float: left; }
-    #nav_primary ul,
-    #nav_primary i                  { float: right; }
-    */
 
 
   /* 4.6 - Shadows - 4.6 */
@@ -519,7 +520,10 @@
 																			-webkit-box-shadow: 2px 2px 24px rgba(0,0,0,0.26) !important;
 																			        box-shadow: 2px 2px 24px rgba(0,0,0,0.26) !important;
 																		}
-
+    figure img                      {
+                                      -webkit-box-shadow: 5px 1px 27px rgba(0,0,0,0.2), 2px 2px 3px rgba(0,0,0,0.4);
+                                              box-shadow: 5px 1px 27px rgba(0,0,0,0.2), 2px 2px 3px rgba(0,0,0,0.4);
+                                    }
 
   /* 4.7 - Borders - 4.7 */
     section, blockquote							{ border-bottom: 1px solid #b2dfdb; } /* gives each section & blockquote a light teal bottom border */
@@ -529,8 +533,10 @@
 
 
 	/* 4.8 - Z-Index - 4.8 */
-		#nav_primary										{ z-index: 10000; }
-		#nav_secondary									{ z-index: 1; }
+		#nav_primary                    { z-index: 10000; }
+		nav i, #nav_secondary,
+    figure img, figure span,
+    figure table, #nav_social       { z-index: 1; }
 
 
   /* 4.9 - Box Sizing - 4.9 */
@@ -539,10 +545,10 @@
 
 
 	/* 4.99 - Visibility - 4.99 */
-		#menu > li > a:before,
-		#menu ul												{ visibility: hidden; }
-		#menu > li > a:hover:before,
-		#menu > li:hover > ul						{ visibility: visible; }
+		nav > ul > li > a:before,
+		nav ul ul                       { visibility: hidden; }
+		nav > ul > li > a:hover:before,
+		nav li:hover > ul               { visibility: visible; }
 
 
 
@@ -550,63 +556,52 @@
 
 
   /* 5.1 - Primary Navigation - 5.1 */
-    /*#menu a          { vertical-align: middle; }*/
-    #nav_primary *                  { vertical-align: middle; }
-    #menu ul li a                   { padding: 16px 0; } /* establishes the vertical spacing of submenu items */
-    /*#nav_primary i                  { padding-right: 48px; }*/
-    #menu > li > a                  { margin: 0 16px; } /* horizontal spacing between main menu items */
-    #menu ul li a                   { margin: 0 auto; }
-    .grooper_logo                   { margin-top: 18px; } /* arbitrary value that vertically centers logo within navbar to compensate for the inherent offset built into the grooper logo */
-    /*#nav_primary i                  { margin-top: 8px; }*/
-    #menu > li:last-child > a       { margin-right: 0 !important; } /*removes the unnecessary right margin from the last menu item, as the navbar itself already has sufficient padding. top amrgin should be same as margin above */
-    .grooper_logo                   { height: 64px; } /* height of grooper logo */
-    #nav_primary, #menu li          { height: 96px; } /* height of entire navbar */
-    #menu > li > a:before           { height: 1px; } /* sets height of the primary nav link underlines that will appear during hover */
-    #menu ul li                     { height: 48px; } /* determines height of submenu items */
-    .grooper_logo                   { width: 214px; } /*set to actual width of logo image */
+    nav ul ul a                     { line-height: 48px;}
+    nav > ul > li > a               { margin: 0 16px; } /* horizontal spacing between main menu items */
+    nav > ul > li:last-child > a    { margin-right: 0 !important; } /*removes the unnecessary right margin from the last menu item, as the navbar itself already has sufficient padding. top amrgin should be same as margin above */
+    nav > a                         { height: 70px; } /* height of grooper logo */
+    #nav_primary, nav > ul > li     { height: 96px; } /* height of entire navbar */
+    nav > ul > li > a:before        { height: 1px; } /* sets height of the primary nav link underlines that will appear during hover */
+    nav > a                         { width: 214px; } /*set to actual width of logo image */
+    nav ul ul                       { width: 200%; }
     #nav_primary,
-    #menu > li > a:before           { width: 100%; }
-    #menu ul li                     { width: 200px; } /* determines width of submenu items */
+    nav > ul > li > a:before        { width: 100%; }
+    nav ul ul li                    { width: 100%; } /* determines width of submenu items */
     #nav_primary                    { top: 0; }
-    #menu ul                        { top: calc(100% - 32px); } /* adjusts the location of the dropdown menu upward to cover the parent link's underlining */
-    #menu > li > a:before           { bottom: 0; } /* ensures line will snap to bottom edge of item */
+    nav ul ul                       { top: calc(100% - 32px); } /* adjusts the location of the dropdown menu upward to cover the parent link's underlining */
+    nav > ul > li > a:before        { bottom: 0; } /* ensures line will snap to bottom edge of item */
+    nav ul ul                       { left: -50%; }
     #nav_primary,
-    #menu > li > a:before           { left: 0; }
-    #menu ul                        { left: calc(-50% - 6px); } /* horizontally centers dropdown menu to the parent, the 6px represents half of the left padding of the parent li */
-    #menu ul                        { opacity: 0; } /* sets the initial opacity of the dropdown menu to 0 so that we have the ability to animate the opacity to 1 during a hover of the parent li */
-    #menu > li:hover > ul           { opacity: 1; }
-    .grooper_logo                   { background: url(../images/grooper_logo_214x64.png); } /*logo image used in navbar */
-    #menu > li > a:before           { content: ""; }
+    nav > ul > li > a:before        { left: 0; }
+    nav ul ul                       { opacity: 0; } /* sets the initial opacity of the dropdown menu to 0 so that we have the ability to animate the opacity to 1 during a hover of the parent li */
+    nav > ul > li:hover > ul        { opacity: 1; }
+    nav > a                         { background: url(../images/grooper_logo_214x70.png); } /*logo image used in navbar */
+    nav > ul > li > a:before        { content: ""; }
 
 
   /* 5.2 - Secondary Navigation - 5.2 */
-    #nav_secondary_contents > a     { font-size: 16px; }
+    #nav_secondary a                { font-size: 16px; }
     #nav_secondary                  { padding: 0; }
-    #nav_secondary_contents > a     { padding: 0 12px; }
+    #nav_secondary a                { padding: 0 12px; }
     #nav_secondary_container        { margin: 0 auto; }
     .nav_advancer_icon              { margin: 0 auto; }
     #nav_secondary,
-    #nav_secondary_contents > a,
-    #nav_secondary_left,
-    #nav_secondary_right            { height: 48px; }
+    #nav_secondary a,
+    #nav_secondary button           { height: 48px; }
     .nav_advancer_icon              { height: 32px; }
     #nav_secondary_indicator        { height: 2px; }
     #nav_secondary_container        { width: calc(100% - 96px); }
-    #nav_secondary_left,
-    #nav_secondary_right            { width: 48px; }
+    #nav_secondary button           { width: 48px; }
     .nav_advancer_icon              { width: 20px; }
     #nav_secondary_indicator        { width: 100px; }
-    #nav_secondary_contents > a     { min-height: 48px; }
-    #nav_secondary_left,
-    #nav_secondary_right            { top: 0; }
-    #nav_secondary_left,
-    #nav_secondary_right,
+    #nav_secondary a     { min-height: 48px; }
+    #nav_secondary button           { top: 0; }
+    #nav_secondary button,
     #nav_secondary_indicator        { bottom: 0; }
     #nav_secondary_right            { right: 0; } /*push right button to right side of navbar */
     #nav_secondary_left,
     #nav_secondary_indicator        { left: 0; }
-    #nav_secondary_left,
-    #nav_secondary_right            { opacity: 0; } /* Set the buttons invisible by default */
+    #nav_secondary button           { opacity: 0; } /* Set the buttons invisible by default */
     #nav_secondary_left:focus,
     [data-overflowing="both"] ~ #nav_secondary_left,
     [data-overflowing="left"] ~ #nav_secondary_left,
@@ -678,20 +673,45 @@
 	.typography li										{ margin: 8px 0 !important; }
 
   .side_by_side                     { padding-left: 10%; padding-right: 10%; }
-  .side_by_side figure              { flex-direction: row; justify-content: space-between;}
+  .side_by_side figure              {
+                                          -webkit-box-orient: horizontal;
+                                       -webkit-box-direction: normal;
+                                      -webkit-flex-direction: row;
+                                          -ms-flex-direction: row;
+                                              flex-direction: row;
+                                             -webkit-box-pack: justify;
+                                      -webkit-justify-content: space-between;
+                                                -ms-flex-pack: justify;
+                                              justify-content: space-between;
+                                    }
   .side_by_side img,
-  .side_by_side table               { flex-basis: 47.22%; }
-  .side_by_side figcaption          { flex-basis: 47.22%; }
+  .side_by_side table,
+  .side_by_side figcaption          { -webkit-flex-basis: 47.22%; -ms-flex-preferred-size: 47.22%; flex-basis: 47.22%; }
   .side_by_side img + figcaption,
+  .side_by_side span + figcaption,
   .side_by_side table + figcaption,
   .side_by_side figcaption + img,
+  .side_by_side figcaption + span,
   .side_by_side figcaption + table  { margin: 0; padding-left: 5%; }
-  .side_by_side figure > *                 { margin: 0; /*margin-left: 36px;*/ }
+  .side_by_side img,
+  .side_by_side span,
+  .side_by_side table               { max-width: 50%; }
+  .side_by_side > p + figure,
+  .side_by_side > h2 + figure       { margin-top: 36px; }
+  .side_by_side figure > *          { margin: 0; /*margin-left: 36px;*/ }
 
+
+  /* The text alignment classes force alignment of the element receiving the class and all of its children */
+  .text_left, .text_left *          { text-align: left !important; }
+  .text_center, .text_center *      { text-align: center !important; }
+  .text_right, .text_right *        { text-align: right !important; }
 
 
   /* The align classes are used to remove -bottom class allows large primary images to align to the bottom of their section so that they appear to be emerging from behind the following */
-	.align-bottom                     { padding-bottom: 0 !important; }
+	.align_top                        { padding-top: 0 !important; }
+	.align_bottom                     { padding-bottom: 0 !important; }
+  .align_left                       { padding-left: 0 !important; }
+  .align_right                      { padding-right: 0 !important; }
 
 	/* just figured out that this is how I can make the aligned images stretch to fill the screen and overflow past the left/right edges on smaller devices */
 	/* the negative bottom margin will keep the parent section from enlarging too much and the positive top margin will make up for the change in space */
@@ -778,7 +798,7 @@
 																				}
 
 
-  .icon-phase                           {
+  x                        {
                                           height: 120px;
                                           width: 120px;
                                           line-height: 120px; /* this must always be the same as the height of the span itself. The result is vertically centered text. */
@@ -797,9 +817,6 @@
 
 
 	.desaturate														{
-																					display:        flex;
-																					flex-wrap:      wrap;
-																					height:         48px;
 																					-webkit-filter: grayscale(1);
 																					-webkit-filter: grayscale(100%);
 																					        filter: gray;
@@ -808,81 +825,84 @@
 
 /* TRANSFORMS AND TRANSITIONS */
 
-  .noScroll																{
-																						overflow: hidden;
-																						width: 100%;
-																					}
-	#nav_secondary_indicator								{
-																						-webkit-transform-origin: 0 0;
-																						    -ms-transform-origin: 0 0;
-																						        transform-origin: 0 0;
-																					}
-	#menu > li > a:before										{ /* sets the initial scale of the nav link hover to 0 so it can later animate to full scale */
-																						-webkit-transform: scaleX(0);
-																						    -ms-transform: scaleX(0);
-																						        transform: scaleX(0);
-																					}
-	#menu > li > a:hover:before							{ /* transforms primary nav underlines from the inside to the outside */
-																						-webkit-transform: scaleX(1);
-																						    -ms-transform: scaleX(1);
-																						        transform: scaleX(1);
-																					}
-	#social a:hover													{
-																						-webkit-transform: scale(1.1);
-																						    -ms-transform: scale(1.1);
-																						        transform: scale(1.1);
-																					}
-	tbody tr													      {
-																						-webkit-transition: background 0.4s ease 0s;
-																						     -o-transition: background 0.4s ease 0s;
-																						        transition: background 0.4s ease 0s;
-																					}
-	#menu > li > a:before,
-	#menu ul,
-	#menu ul li,
-	#menu ul li a,
-	#nav_secondary_left, #nav_secondary_right,
-  .btn-lrg, .btn-sml, #social a, .fa			{
-																						-webkit-transition: all 0.2s linear 0s !important;
-																						     -o-transition: all 0.2s linear 0s !important;
-																						        transition: all 0.2s linear 0s !important;
-																					}
-	.nav_secondary_contents									{
-																						-webkit-transition: -webkit-transform .2s ease-in-out;
-																						        transition: -webkit-transform .2s ease-in-out;
-																						     -o-transition: transform .2s ease-in-out;
-																						        transition: transform .2s ease-in-out;
-																						        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
-																					}
-	#menu > li > ul,
-	#nav_social															{
-																						-webkit-transition: all 0.3s linear !important;
-																						     -o-transition: all 0.3s linear !important;
-																						        transition: all 0.3s linear !important;
-																					}
-	.no-transition													{
-																						-webkit-transition: none;
-																						     -o-transition: none;
-																						        transition: none;
-																					}
+  .noScroll															{
+																					overflow: hidden;
+																					width: 100%;
+																				}
+	#nav_secondary_indicator							{
+																					-webkit-transform-origin: 0 0;
+																					    -ms-transform-origin: 0 0;
+																					        transform-origin: 0 0;
+																				}
+	nav > ul > li > a:before              { /* sets the initial scale of the nav link hover to 0 so it can later animate to full scale */
+																					-webkit-transform: scaleX(0);
+																					    -ms-transform: scaleX(0);
+																					        transform: scaleX(0);
+																				}
+	nav > ul > li > a:hover:before        { /* transforms primary nav underlines from the inside to the outside */
+																					-webkit-transform: scaleX(1);
+																					    -ms-transform: scaleX(1);
+																					        transform: scaleX(1);
+																				}
+	#social a:hover												{
+																					-webkit-transform: scale(1.1);
+																					    -ms-transform: scale(1.1);
+																					        transform: scale(1.1);
+																				}
+	tbody tr												      {
+																					-webkit-transition: background 0.4s ease 0s;
+																					     -o-transition: background 0.4s ease 0s;
+																					        transition: background 0.4s ease 0s;
+																				}
+	nav > ul > li > a:before,
+	nav ul ul,
+	nav ul ul li,
+	nav ul ul a,
+	#nav_secondary button,
+  .btn-lrg, .btn-sml, #social a, .fa		{
+																					-webkit-transition: all 0.2s linear 0s !important;
+																					     -o-transition: all 0.2s linear 0s !important;
+																					        transition: all 0.2s linear 0s !important;
+																				}
+	.nav_secondary_contents								{
+																					-webkit-transition: -webkit-transform .2s ease-in-out;
+																					        transition: -webkit-transform .2s ease-in-out;
+																					     -o-transition: transform .2s ease-in-out;
+																					        transition: transform .2s ease-in-out;
+																					        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+																				}
+	nav > ul > li > ul,
+	#nav_social														{
+																					-webkit-transition: all 0.3s linear !important;
+																					     -o-transition: all 0.3s linear !important;
+																					        transition: all 0.3s linear !important;
+																				}
+	.no-transition												{
+																					-webkit-transition: none;
+																					     -o-transition: none;
+																					        transition: none;
+																				}
 
 
 /* MEDIA QUERIES */
 
   @media only screen and (max-width: 1680px) {
     header											{ padding: 96px 10% 192px; }
+		section > h2, section > p   { padding-left: 8%; padding-right: 8%; }
 	}
 
 
   @media only screen and (max-width: 1440px) {
 		html, body									{ font-size: 15px; }
+    h2                          { font-size: 325%; }
+		#calltoaction h3            { font-size: 275%; }
+		#calltoaction p             { font-size: 120%; }
     .field-wrapper input        { font-size: 12px; }
 		.content__button input			{ font-size: 14px; }
     #footer_links li            { font-size: 16px; }
 		#footer_links input					{ font-size: 14px; }
     #copyright                  { font-size: 12px; }
     #social a                   { font-size: 24px; }
-    #form_signup                { padding: 0 336px;}
   	#social a                   { padding-top: 32px; }
   	#footer_links input         { height: 28px; }
   	#social a                   { height: 96px; width: 96px; }
@@ -894,67 +914,63 @@
 
   @media only screen and (max-width: 1280px) {
 		html, body									{ font-size: 14px; }
+    h1                          { font-size: 375%; }
+		h3                          { font-size: 175%; }
+    nav ul ul a                 { line-height: 42px; }
     header                      { padding: 88px 10% 152px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
 		#next_feature               { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
-    #form_signup                { padding: 0 192px;}
+		section > h2, section > p   { padding-left: 5%; padding-right: 5%; }
+    section.side_by_side        { padding-left: 5%; padding-right: 5%; }
     #social                     { margin: 72px auto 16px auto; }
-    #menu > li > a							{ margin: 0 12px; } /* lessen the horizontal space between main menu items */
-    #nav_primary li             { height: 64px; } /* shrink to match the new height of the navbar */
+    nav > li                    { height: 64px; } /* shrink to match the new height of the navbar */
     #nav_primary                { height: 64px; } /* Shrink the height of the navbar for the first time */
-    .grooper_logo               { background: url(../images/grooper_logo_140x42.png); height: 42px; width: 140px; margin-top: 14px; }
-    #menu ul										{ top: calc(100% - 16px); }
+    nav > a                     { background: url(../images/grooper_logo_140x46.png); height: 46px; width: 140px; }
+    nav ul ul										{ top: 64px; }
 		blockquote::before					{ left: 56px; }
 		blockquote::after						{ right: 54px; }
   }
 
 
   @media only screen and (max-width: 1024px) {
-		html, body									{ font-size: 13px; }
-		p														{ font-size: 15px; }
-		h2													{ font-size: 42px; }
-		h3													{ font-size: 185%; }
-		#brands p										{ font-size: 175%; }
-		#nav_secondary_contents > a	{ font-size: 14px; }
-		#footer_links li						{ font-size: 16px; }
-		#social a										{ font-size: 24px; }
-		header											{ padding: 64px 7% 112px; }
+		html, body                  { font-size: 13px; }
+		p                           { font-size: 15px; }
+    header p                    { font-size: 156% }
+		#brands p                   { font-size: 175%; }
+		#nav_secondary a            { font-size: 14px; }
+		header                      { padding: 64px 7% 112px; }
     footer                      { padding: 64px 7% 8px 7%; }
     #next_feature               { padding: 32px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
-		.btn-lrg										{ padding: 8px 32px; }
-		#menu ul a									{ padding: 8px 0; }
-		#nav_secondary							{ padding: 0; }
-    #form_signup                { padding: 0 96px;}
+		.btn-lrg                    { padding: 8px 32px; }
+		#nav_secondary              { padding: 0; }
     section, blockquote,
     figure, section > div       { padding-top: 64px; }
 		#brands                     { padding-top: 96px; }
 		#social a                   { padding-top: 32px; }
 		section, blockquote         { padding-bottom: 64px;}
 		#brands                     { padding-bottom: 96px; }
-		#menu > li > a							{ margin: 0 8px; }
-    #social											{ margin: 64px auto 8px auto; }
-  	#copyright img							{ margin: 8px auto; }
+		nav > ul > li > a           { margin: 0 8px; }
+		section, blockquote,
+		.col-3 figure:last-child,
+    .col-3 div:last-child       { margin: 0 auto; }
+    #social                     { margin: 64px auto 8px auto; }
+  	#copyright img              { margin: 8px auto; }
     img + figcaption,
     table + figcaption,
     figcaption + img,
     figcaption + table          { margin-top: 32px; } /* adds margin between images/tables and the text they belong to */
-		.btn-sml										{ margin-top: 8px; }
+		.btn-sml                    { margin-top: 8px; }
 		.col-3 > figure,
-    .col-3 > div                { flex-basis: 47.21%; -ms-flex: 47.21%; }
-		section, blockquote,
-		section > figure:nth-child(3),
-		section > div:nth-child(3)  { margin: 0 auto; }
+    .col-3 > div                { -webkit-flex-basis: 47.22%; -ms-flex-preferred-size: 47.22%; flex-basis: 47.22%; }
 		#nav_secondary,
 		#nav_secondary a,
-		#nav_secondary_left,
-		#nav_secondary_right        { height: 36px; }
+		#nav_secondary button       { height: 36px; }
 		.nav_advancer_icon          { height: 28px; }
 		#social a                   { height: 96px; }
 		#nav_secondary a            { min-height: 36px; }
     .col-1 table                { width: 90%; }
 		.col-3 figcaption           { width: 80%; }
 		#nav_secondary_container    { width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
-		#nav_secondary_left,
-		#nav_secondary_right        { width: 36px; }
+		#nav_secondary button       { width: 36px; }
 		#social a                   { width: 96px; }
 		#nav_secondary_left         { left: 0; }
 		#nav_secondary_right        { right: 0; }
@@ -963,100 +979,99 @@
   }
 
 
-  @media (max-width: 768px){
+  @media (max-width: 768px) {
 		html, body									{ font-size: 12px; }
+    h1                          { font-size: 325%; }
+    h2                          { font-size: 300%; }
+    h4                          { font-size: 175%; }
+    header p                    { font-size: 145%; }
+    h2 ~ p                      { font-size: 135%; }
+    #calltoaction h3            { font-size: 240%; }
+    #calltoaction p             { font-size: 110%; }
     footer,
 		footer h4, footer ul				{ text-align: center; }
+		section											{ padding: 64px; }
+    #footer_links > div					{ padding: 32px 0; }
 		section, blockquote,
 		figure, section > div				{ padding-top: 64px; }
 		section, blockquote					{ padding-bottom: 64px;}
-		section											{ padding: 64px; }
-    #footer_links > div					{ padding: 32px 0; }
-		#top_map										{ padding: 144px 128px 0 128px !important; } /*top should match with the deduction from height*/
+    section > h2, section > p   { padding-left: 0; padding-right: 0; }
   	#signup											{ margin: 32px 32px 0 32px; }
-  	#contact, #discover					{ flex-basis: 50% !important; -ms-flex: 50% !important; }
-  	#signup											{ flex-basis: 100% !important; -ms-flex: 100% !important; }
-		section > *									{ flex-basis: 100% !important; -ms-flex: 100% !important; }
-		#brands img									{ flex-basis: auto !important; -ms-flex: auto !important; }
-  	.col-2, .col-3,
-		#calltoaction								{ display: block !important; } /*this prevents divs from overlaying on ie11 and android mobile default browser */
-    .grooper_logo								{
+  	#contact, #discover					{ -webkit-flex-basis: 50% !important;  -ms-flex-preferred-size: 50% !important;  flex-basis: 50% !important }
+  	#signup											{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
+		section > *									{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
+		#brands img									{ -webkit-flex-basis: auto !important; -ms-flex-preferred-size: auto !important; flex-basis: auto !important }
+  	.col-2, .col-3              { display: block !important; } /*this prevents divs from overlaying on ie11 and android mobile default browser */
+		.side_by_side img,
+    .side_by_side span,
+    .side_by_side table         { max-width: 60%; }
+    nav > a								      {
 																	background: url(../images/g_color_32.png);
 																	height: 32px;
 																	width: 33px;
-																	margin-top: 16px;
 																}
 		.comparison > *:last-child	{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
-    #top_map                    { height: calc(100vh - 144px); }
   }
 
 
-@media (max-width: 600px){
-	html, body										{ font-size: 11px; }
-  #footer_links h4							{ font-size: 28px; }
-  #footer_links li							{ font-size: 18px; }
-  #menu > li > a								{ font-size: 18px; }
-  #footer_links h4,
-  #footer_links ul							{ text-align: center; }
-  #mobile-menu,
-	#nav_primary ul,
-	#nav_primary li,
-	#nav_primary input,
-	#nav_social										{ display: block !important; }
+@media (max-width: 600px) {
+	html, body                    { font-size: 11px; }
+  footer li                     { font-size: 18px; }
+  nav > ul > li > a             { font-size: 18px; } /*  increase from 16px to 18px now that this is in a full screen mobile style menu */
+  #calltoaction h3              { font-size: 275%; }
+  #calltoaction p               { font-size: 140%; }
+  footer h4,
+  footer ul                     { text-align: center; }
+  nav > ul > li > a             { line-height: 48px; }
+	nav li, nav input,
+  #calltoaction,
+  #nav_social a, #nav_social i  { display: block !important; }
+  nav > ul, #nav_social         { display: -webkit-box !important; display: -webkit-flex !important; display: -ms-flexbox !important; display: flex !important;}
+  nav > ul                      {
+                                     -webkit-box-orient: vertical;
+                                  -webkit-box-direction: normal;
+                                     -ms-flex-direction: column;
+                                         flex-direction: column;
+                                }
+  nav > ul                      { -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
+  #nav_social                   { -webkit-box-pack: space-evenly; -webkit-justify-content: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
+  nav > ul, #nav_social         { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
 	#nav_primary input:checked ~ i ~ i,
-	#nav_social a, #nav_social i,
-	#bars													{ display: inline-flex !important; }
+	#bars                         { display: -webkit-inline-box !important; display: -webkit-inline-flex !important; display: -ms-inline-flexbox !important; display: inline-flex !important; }
 	#nav_primary input:checked ~ i,
-  #menu ul,
-  #nav_primary ul li:hover ul		{ display: none !important; } /*the 3 bars goes away*/
-  #nav_primary                  { align-items: center; }
-	#menu > li > ul,
-	#mobile-menu									{ position: relative !important; }
+  nav ul ul                     { display: none !important; }
 	#nav_primary input						{ position: absolute; }
 	#menu, #nav_social						{ position: fixed; }
-	header												{ margin-top: 48px; }
-	/*.grooper_logo									{ margin-top: 8px; }*/
   #signup												{ margin: 0; }
   #social												{ margin: 8px 0 16px; }
-  .grooper_logo                 { margin-top: 0; }
+	header												{ margin-top: 48px; }
   #menu, #nav_social						{ margin-left: 100%; }
-  /*#nav_primary > a							{ margin-left: 48px; }*/
-  /*#nav_primary input:checked ~ ul{ margin-left: 0; }*/ /* this removes the transform element resulting in the perceived slid in menu*/
   #nav_primary input:checked ~ ul{ margin-left: -5%; }
 	section												{ padding: 64px 48px; }
-  /*#nav_primary,*/
-	#nav_social i,
-  #menu ul a  									{ padding: 0 !important; }
-  #menu													{ padding: 96px 0; }
-  #top_map											{ padding: 48px 0 0 !important;}
-  #top_map li										{ padding: 6px 0 ;}
+  #calltoaction > div           { padding: 48px; }
+	nav i                         { padding: 0 !important; }
 	#social a											{ padding-top: 0; }
-	/*#bars													{ padding-right: 48px; }*/
-	#nav_social										{ padding-bottom: 16px; }
-  #contact, #discover						{ flex-basis: 100% !important; -ms-flex: 100% !important; } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
-  #nav_primary ul               { float: none; } /*we are no longer floating the entire nav menu to the right as these will be centered horizontally on mobile devices */
+  #contact, #discover						{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
+  nav input                     { height: 100%; }
+  nav ul                        { height: 100%; }
+  #nav_primary, nav > ul > li   { height: auto; }
   #nav_primary, #brands img			{ height: 48px; }
-  #menu                         { height: calc(100vh - 48px); } /*100% of the browser screen*/
-  #nav_primary input            { height: 100%; }
   #social a                     { height: 32px; }
-  #menu ul li                   { height: 24px; }
+  nav > ul > li                 { max-height: 14%; } /* ensures all line items fit on the screen, even on devices with less height */
+  nav input                     { width: 15%; }
+  .col-1 table                  { width: 90%; }
   #nav_primary, #menu,
   #nav_social                   { width: 100%; }
-  .col-1 table                  { width: 90%; }
-  #nav_primary input            { width: 15%; }
-  #menu ul li                   { width: auto; }
   #nav_social i, #social a      { width: 32px; }
-  #mobile-menu                  { top: 50px; }
-  #menu                         { top: 48px; }
-  #nav_primary input            { top: 0; }
-  #menu > li > ul               { top: 0; }
-  #mobile-menu                  { left: 50px; }
-  #menu > li > ul, #nav_social  { left: 0; }
-  #nav_primary input            { right: 0; }
-  #nav_social                   { bottom: 0; }
-  #menu ul a                    { color: #fff; }
-  #menu                         { background: #000; }
-  #menu ul li                   { background: transparent; }
+  nav input, nav > ul > li > ul,
+  #menu                         { top: 0; }
+  nav > ul > li > ul,
+  #nav_social                   { left: 0; }
+  nav input                     { right: 0; }
+  #nav_social                   { bottom: 16px; }
+  nav ul ul a                   { color: #fff; }
+  nav > ul                      { background: #000; }
+  nav ul ul li                  { background: transparent; }
   #nav_social                   { background: rgba(1, 1, 1, 0); }
   #social a											{ border: none; }
   #social a, #social a:hover    {
@@ -1067,31 +1082,33 @@
 																	    -ms-transform: none;
 																	        transform: none;
 																}
-  #menu > li > ul, #nav_social  { visibility: visible; }
-  #nav_primary input            { opacity: 0; }
-  #menu                         { opacity: 0.93; }
-  #menu > li > ul               { opacity: 1; }
-  #mobile-menu                  { z-index: 1; }
-  #menu > li > ul               { z-index: 1000; }
-  #nav_primary input            { z-index: 20000; }
+  nav ul ul, #nav_social        { visibility: visible; }
+  nav input                     { opacity: 0; }
+  nav > ul                      { opacity: 0.93; }
+  nav ul ul                     { opacity: 1; }
+  /*#mobile-menu                  { z-index: 1; }*/
+  nav ul ul                     { z-index: 1000; }
+  nav input                     { z-index: 20000; }
   #menu                         { -webkit-font-smoothing: antialiased; } /* to stop flickering of text in safari */
-
-	.grooper_logo												{
+	nav > a                       {
 																				-webkit-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																				     -o-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																				        transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																			}
-  #nav_social a:nth-child(1) i,
-  #social a:nth-child(1) i      { color: #3b5998; } /* facebook */
-  #nav_social a:nth-child(2) i,
-  #social a:nth-child(2) i			{ color: #dd4b39; } /* google plus */
-  #nav_social a:nth-child(3) i,
-  #social a:nth-child(3) i			{ color: #55acee; } /* twitter */
-  #nav_social a:nth-child(4) i,
-  #social a:nth-child(4) i			{ color: #0976b4; } /* linkedin */
-  #nav_social a:nth-child(5) i,
-  #social a:nth-child(5) i			{ color: #cd201f; } /* youtube */
-  #nav_social a:nth-child(3) i  { padding-left: 12px !important;} /* twitter */
+
+  #social a:hover,
+  #nav_social a:hover                 { background: transparent !important; }
+  #nav_social a:nth-child(1):hover i,
+  #social a:nth-child(1):hover i      { color: #3b5998; } /* facebook */
+  #nav_social a:nth-child(2):hover i,
+  #social a:nth-child(2):hover i			{ color: #dd4b39; } /* google plus */
+  #nav_social a:nth-child(3):hover i,
+  #social a:nth-child(3):hover i			{ color: #55acee; } /* twitter */
+  #nav_social a:nth-child(4):hover i,
+  #social a:nth-child(4):hover i			{ color: #0976b4; } /* linkedin */
+  #nav_social a:nth-child(5):hover i,
+  #social a:nth-child(5):hover i			{ color: #cd201f; } /* youtube */
+
 }
 
 
