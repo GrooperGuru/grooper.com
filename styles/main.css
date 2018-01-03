@@ -28,8 +28,7 @@
   /* 1.4 - Cursor and Touch - 1.4 */
     table, i, nav ul, nav ul a,
     .btn-sml, .btn-lrg,
-    #social, #social a,
-    #nav_social, #nav_social a      { cursor: default; }
+    .social, .social a              { cursor: default; }
     #nav_secondary button:hover,
     nav input                       { cursor: pointer; }
     #mobile-menu                    {
@@ -39,7 +38,7 @@
                                               user-select: none;
                                     }
     nav input                       { -webkit-touch-callout: none; }
-
+    button:focus                    { outline: 0; }
 
 
   /* 1.5 - Reset Lists and Tables - 1.5 */
@@ -178,7 +177,7 @@
     .btn-lrg                        { font-size: 125%; }
     .btn-sml                        { font-size: 100%; }
     #calltoaction h3                { font-size: 300%; }
-    #nav_primary i, #social a       { font-size: 32px; }
+    #nav_primary i, .social a       { font-size: 32px; }
 		#brands p                       { font-size: 200%; }
     #next_feature                   { font-size: 150%; }
     #calltoaction p                 { font-size: 125%; }
@@ -195,7 +194,7 @@
     td, em, strong                  { font-weight: 400; }
     thead, th,
     header strong, header em        { font-weight: 500; }
-    .btn-lrg, .btn-sml, #social     { font-weight: 400; }
+    .btn-lrg, .btn-sml              { font-weight: 100; }
     .field-wrapper input            { font-weight: 500; }
 
 
@@ -203,7 +202,7 @@
     p                               { color: rgba(17,17,17,.7); }
     h1, h4, header p,
     #footer_links a:hover,
-    #footer_links label, #social a	{ color: #fff; }
+    #footer_links label             { color: #fff; }
     h2, em                          { color: #f4511e; }
 		.col-1 p												{ color: #000; }
 		blockquote::before,
@@ -212,21 +211,21 @@
 		a:hover, a:active								{ color: #29b6f6; } /* links during hover and click */
     h2 ~ p                          { color: #000; } /* paragraphs immediately after a h2 */
     header p                        { color: #fff; }
-    #nav_secondary_contents > a [aria-selected="true"]	{ color: #111; }
   	nav ul ul li a                  { color: #333 !important; } /* set important to override the different default link states active, visited, etc. */
-  	#nav_primary i, #copyright			{ color: #666; }
-    #nav_secondary_contents > a			{ color: #888; }
-		.content__button input					{ color: #bbb !important; }
-		.content__button input:hover		{ color: #fff !important; }
+  	#nav_primary i, #copyright      { color: #666; }
+    #nav_secondary a                { color: #888; }
+    #nav_secondary a[aria-selected="true"] { color: #111 !important; }
+		.content__button input          { color: #bbb !important; }
+		.content__button input:hover    { color: #fff !important; }
     nav > ul > li > a               { color: #f5faf9 !important; } /* set important to override the different default link states active, visited, etc. */
     #footer_links a:hover,
-    #footer_links label, #social a,
-    #social a:hover .fa             { color: #fff; }
+    #footer_links label,
+    .social a:hover .fa             { color: #fff; }
     nav ul ul li:hover a,
 		#next_feature a									{ color: #009688; } /* teal */
 		#footer_links li,
-		#footer_links a									{ color: rgba(255,255,255,.46); }
-    #nav_primary i:hover						{ color: rgba(255,255,255,.86); }
+		#footer_links a                 { color: rgba(255,255,255,.46); }
+    #nav_primary i:hover            { color: rgba(255,255,255,.86); }
 		input::-webkit-input-placeholder{ color: rgba(0,0,0,.4) !important; }
 
 
@@ -281,13 +280,13 @@
 	/* 4.1 - Display - 4.1 */
     #nav_secondary_container::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
                                     { display: none; }
-    nav input, nav i, #nav_social /*hide hamburger icon until requested by mobile media query */
-                                    { display: none !important;}
+    nav input, nav i,
+    nav .fa, nav .social            { display: none;}
     h1, h2, h3, h4, h5, h6, p, img,
     nav ul a, nav > ul > li:hover > ul,
     blockquote span                 { display: block; }
     nav ul ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
-    #social a                       { display: inline-block; }
+    footer .social a                { display: inline-block; }
 
 
   /* 4.2 - Flexible Box Model Control - 4.2 */
@@ -309,15 +308,15 @@
 				#calltoaction > div,
 				#footer_links,
 				.field-wrapper,
-				.content__button						{
+				.content__button            {
 																			display: -webkit-box;
 																			display: -webkit-flex;
 																			display: -ms-flexbox;
 																			display: flex;
-																		}
+                                    }
 
 				nav > ul > li,
-				#nav_secondary_contents > a	{
+				#nav_secondary a            {
 																			display: -webkit-inline-box;
 																			display: -webkit-inline-flex;
 																			display: -ms-inline-flexbox;
@@ -388,11 +387,9 @@
 			/* Align all items along the cross axis of a flexible container */
 				.col-1 figure,
         section:not(.col-1) > *,
-				/*.col-2 > *, .col-3 > *,
-				.col-1-2 > *, .col-2-1 > *,*/
         #nav_primary,
 				#nav_primary li,
-				#nav_secondary_contents > a	{
+				#nav_secondary a            {
 																			-webkit-box-align: center;
 																			-webkit-align-items: center;
 																			-ms-flex-align: center;
@@ -447,25 +444,25 @@
 
   /* 4.3 - Margin & Padding - 4.3 */
     header													{ margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
-    header													{ padding: 144px 15% 240px; } /* bottom padding should be equal to top padding + margin-top */
-    footer													{ padding: 96px 18% 16px 18%; } /* 96px 336px 16px 336px; */
+    header                          { padding: 144px 15% 240px; } /* bottom padding should be equal to top padding + margin-top */
+    footer                          { padding: 96px 18% 16px 18%; } /* 96px 336px 16px 336px; */
 		section, blockquote,
-		figure, section > div						{ padding-top: 72px; }
+		figure, section > div           { padding-top: 72px; }
 		section, blockquote             { padding-bottom: 72px;} /* responsible for the bottom padding of each section and blockquote within the main area of the site */
-		.col-1 > figure, .col-1 > div		{ padding-top: 0; } /* there will only ever be one figure or div within a col-1 container, so the .col-1 itself already has the top padding needed */
-		section > p											{ padding-bottom: 0; }
+		.col-1 > figure, .col-1 > div   { padding-top: 0; } /* there will only ever be one figure or div within a col-1 container, so the .col-1 itself already has the top padding needed */
+		section > p                     { padding-bottom: 0; }
     figcaption li                   { padding-bottom: 1em; }
-		#brands													{ padding-top: 144px; padding-bottom: 144px; }
+		#brands                         { padding-top: 144px; padding-bottom: 144px; }
 		section, #nav_primary           { padding-left: 5%; padding-right: 5%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
     .col-1, #brands                 { padding-left: 0; padding-right: 0; }
-		section > h2, section > p				{ padding-left: 12%; padding-right: 12%; }
-    blockquote											{ padding-left: 18%; padding-right: 18%; }
-    #next_feature										{ padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
+		section > h2, section > p       { padding-left: 12%; padding-right: 12%; }
+    blockquote                      { padding-left: 18%; padding-right: 18%; }
+    #next_feature                   { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
 		#next_feature a,
     #footer_links > div             { padding: 0; }
-    #calltoaction div								{ padding: 7%; }
-		figcaption											{ margin: 0 0 auto 0; }
-		#social													{ margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
+    #calltoaction div               { padding: 7%; }
+		figcaption                      { margin: 0 0 auto 0; }
+		.social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
     span + figcaption, figcaption + span,
     img + figcaption, figcaption + img,
     table + figcaption, figcaption + table
@@ -485,13 +482,14 @@
 		.noScroll, #nav_primary					{ position: fixed; }
 		blockquote,
 		.nav_secondary_contents,
-		#nav_primary *,
+		/*#nav_primary *,*/
+    nav ul, nav li, nav li a, nav li a::before, #nav_primary > a,
 		#nav_secondary									{ position: relative; }
 		blockquote::before,
 		blockquote::after,
 		nav > ul > li > a:before,
-		#menu ul,
-		#nav_secondary_left, #nav_secondary_right,
+		nav ul ul,
+		#nav_secondary button,
 		#nav_secondary_indicator				{ position: absolute; }
 
 
@@ -508,7 +506,7 @@
 																			-webkit-box-shadow: 0 1px 24px rgba(0,0,0,0.6);
 																			        box-shadow: 0 1px 24px rgba(0,0,0,0.6);
 																		}
-		#menu ul                        {
+		nav ul ul                       {
 																			-webkit-box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
 																			        box-shadow: 1px 1px 24px rgba(0,0,0,0.1);
 																		}
@@ -516,7 +514,7 @@
 																			-webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.2), 0 -2px 6px rgba(0,0,0,0.3);
 																			        box-shadow: 0 2px 6px rgba(0,0,0,0.2), 0 -2px 6px rgba(0,0,0,0.3);
 																		}
-		#social a:hover									{
+		.social a:hover									{
 																			-webkit-box-shadow: 2px 2px 24px rgba(0,0,0,0.26) !important;
 																			        box-shadow: 2px 2px 24px rgba(0,0,0,0.26) !important;
 																		}
@@ -536,12 +534,11 @@
 		#nav_primary                    { z-index: 10000; }
 		nav i, #nav_secondary,
     figure img, figure span,
-    figure table, #nav_social       { z-index: 1; }
+    figure table, .social           { z-index: 1; }
 
 
   /* 4.9 - Box Sizing - 4.9 */
-    #nav_primary, #nav_secondary,
-    #social a                       { box-sizing: border-box; }
+    nav, .social a                  { box-sizing: border-box; }
 
 
 	/* 4.99 - Visibility - 4.99 */
@@ -549,7 +546,7 @@
 		nav ul ul                       { visibility: hidden; }
 		nav > ul > li > a:hover:before,
 		nav li:hover > ul               { visibility: visible; }
-
+    nav input                       { opacity: 0; }
 
 
 /* 5 - NAVIGATION - 5 */
@@ -609,7 +606,6 @@
     [data-overflowing="right"] ~ #nav_secondary_right
                                     { opacity: 1; }
     .nav_advancer_icon              { fill: #bbb; }
-    #nav_secondary_right:focus      { outline: 0; } /*removes blue outline during focus */
     #nav_secondary_container        { overflow-x: auto; } /* allow horizontal scroll if enough items exist */
     #nav_secondary_container        { overflow-y: hidden; } /* prevent vertical scroll */
     #nav_secondary_container        { -webkit-overflow-scrolling: touch; } /* inertia scrolling for webkit */
@@ -619,7 +615,7 @@
 
 
   /* 5.3 - Footer - 5.3 */
-    #footer_links li,
+    footer li,
     .content__button input          { padding: 4px 0; }
     #footer_links input             { padding: 0 8px; }
     footer form                     { margin-top: 23px; }
@@ -633,19 +629,19 @@
 
 
   /* 5.3 - Social - 5.3 */
-    #social                         { width: 100%; }
-    #social a                       {
+    .social                         { width: 100%; }
+    .social a                       {
                                       padding-top: 44px;
                                       margin: 6px;
                                       height: 128px;
                                       width: 128px;
                                       border: 1px solid rgba(255,255,255,.26);
                                     }
-    #social a:nth-child(1):hover    { background: #3b5998; } /* facebook */
-    #social a:nth-child(2):hover    { background: #dd4b39; } /* google plus */
-    #social a:nth-child(3):hover    { background: #55acee; } /* twitter */
-    #social a:nth-child(4):hover    { background: #0976b4; } /* linkedin */
-    #social a:nth-child(5):hover    { background: #cd201f; } /* youtube */
+    .social a:nth-child(1):hover    { background: #3b5998; } /* facebook */
+    .social a:nth-child(2):hover    { background: #dd4b39; } /* google plus */
+    .social a:nth-child(3):hover    { background: #55acee; } /* twitter */
+    .social a:nth-child(4):hover    { background: #0976b4; } /* linkedin */
+    .social a:nth-child(5):hover    { background: #cd201f; } /* youtube */
     .fa                             { color: rgba(255,255,255,.26); }
     #copyright img                  { margin: 16px auto; }
 
@@ -858,7 +854,7 @@
 																					    -ms-transform: scaleX(1);
 																					        transform: scaleX(1);
 																				}
-	#social a:hover												{
+	footer .social a:hover                {
 																					-webkit-transform: scale(1.1);
 																					    -ms-transform: scale(1.1);
 																					        transform: scale(1.1);
@@ -873,7 +869,7 @@
 	nav ul ul li,
 	nav ul ul a,
 	#nav_secondary button,
-  .btn-lrg, .btn-sml, #social a, .fa		{
+  .btn-lrg, .btn-sml, .social a, .fa		{
 																					-webkit-transition: all 0.2s linear 0s !important;
 																					     -o-transition: all 0.2s linear 0s !important;
 																					        transition: all 0.2s linear 0s !important;
@@ -885,8 +881,7 @@
 																					        transition: transform .2s ease-in-out;
 																					        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
 																				}
-	nav > ul > li > ul,
-	#nav_social														{
+	nav .social														{
 																					-webkit-transition: all 0.3s linear !important;
 																					     -o-transition: all 0.3s linear !important;
 																					        transition: all 0.3s linear !important;
@@ -896,7 +891,7 @@
 																					     -o-transition: none;
 																					        transition: none;
 																				}
-  
+
 
 
 /* MEDIA QUERIES */
@@ -914,14 +909,14 @@
 		#calltoaction p             { font-size: 120%; }
     .field-wrapper input        { font-size: 12px; }
 		.content__button input			{ font-size: 14px; }
-    #footer_links li            { font-size: 16px; }
+    footer li                   { font-size: 16px; }
 		#footer_links input					{ font-size: 14px; }
     .field-wrapper input        { font-size: 12px; }
     #copyright                  { font-size: 12px; }
-    #social a                   { font-size: 24px; }
-  	#social a                   { padding-top: 32px; }
+    .social a                   { font-size: 24px; }
+  	.social a                   { padding-top: 32px; }
   	#footer_links input         { height: 28px; }
-  	#social a                   { height: 96px; width: 96px; }
+  	.social a                   { height: 96px; width: 96px; }
   	#copyright img              { height: 38px; }
 		blockquote::before					{ top: -8px; }
 		blockquote::after						{ bottom: -76px; }
@@ -937,7 +932,7 @@
 		#next_feature               { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
 		section > h2, section > p   { padding-left: 5%; padding-right: 5%; }
     section.side_by_side        { padding-left: 5%; padding-right: 5%; }
-    #social                     { margin: 72px auto 16px auto; }
+    .social                     { margin: 72px auto 16px auto; }
     nav > li                    { height: 64px; } /* shrink to match the new height of the navbar */
     #nav_primary                { height: 64px; } /* Shrink the height of the navbar for the first time */
     nav > a                     { background: url(../images/grooper_logo_140x46.png); height: 46px; width: 140px; }
@@ -961,14 +956,14 @@
     section, blockquote,
     figure, section > div       { padding-top: 64px; }
 		#brands                     { padding-top: 96px; }
-		#social a                   { padding-top: 32px; }
+		.social a                   { padding-top: 32px; }
 		section, blockquote         { padding-bottom: 64px;}
 		#brands                     { padding-bottom: 96px; }
 		nav > ul > li > a           { margin: 0 8px; }
 		section, blockquote,
 		.col-3 figure:last-child,
     .col-3 div:last-child       { margin: 0 auto; }
-    #social                     { margin: 64px auto 8px auto; }
+    .social                     { margin: 64px auto 8px auto; }
   	#copyright img              { margin: 8px auto; }
     img + figcaption,
     table + figcaption,
@@ -981,13 +976,11 @@
 		#nav_secondary a,
 		#nav_secondary button       { height: 36px; }
 		.nav_advancer_icon          { height: 28px; }
-		#social a                   { height: 96px; }
 		#nav_secondary a            { min-height: 36px; }
     .col-1 table                { width: 90%; }
 		.col-3 figcaption           { width: 80%; }
 		#nav_secondary_container    { width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
 		#nav_secondary button       { width: 36px; }
-		#social a                   { width: 96px; }
 		#nav_secondary_left         { left: 0; }
 		#nav_secondary_right        { right: 0; }
 		blockquote::before          { left: 32px; top: 6px; }
@@ -1032,82 +1025,77 @@
   }
 
 
-@media (max-width: 600px) {
+
+
+
+@media (max-width: 600px){
 	html, body                    { font-size: 11px; }
+  footer h4                     { font-size: 28px; }
   footer li                     { font-size: 18px; }
   nav > ul > li > a             { font-size: 18px; } /*  increase from 16px to 18px now that this is in a full screen mobile style menu */
   #calltoaction h3              { font-size: 275%; }
   #calltoaction p               { font-size: 140%; }
-  footer h4,
-  footer ul                     { text-align: center; }
   nav > ul > li > a             { line-height: 48px; }
+  footer h4, footer ul          { text-align: center; }
 	nav li, nav input,
-  #calltoaction,
-  #nav_social a, #nav_social i  { display: block !important; }
-  nav > ul, #nav_social         { display: -webkit-box !important; display: -webkit-flex !important; display: -ms-flexbox !important; display: flex !important;}
+  #calltoaction/*,
+  .social a, .social i*/        { display: block !important; }
+  nav ul, .social               {
+                                  display: -webkit-box !important;
+                                  display: -webkit-flex !important;
+                                  display: -ms-flexbox !important;
+                                  display: flex !important;
+                                }
+	#nav_primary input:checked ~ i ~ i,
+	#bars                         {
+                                  display: -webkit-inline-box !important;
+                                  display: -webkit-inline-flex !important;
+                                  display: -ms-inline-flexbox !important;
+                                  display: inline-flex !important;
+                                }
+	#nav_primary input:checked ~ i,
+  nav ul ul                     { display: none !important; }
+  .social .fa                   { display: inline-block !important; }
+	nav input                     { position: absolute !important; }
+	nav > ul, nav .social         { position: fixed !important; }
   nav > ul                      {
                                      -webkit-box-orient: vertical;
                                   -webkit-box-direction: normal;
                                      -ms-flex-direction: column;
                                          flex-direction: column;
                                 }
-  nav > ul                      { -webkit-box-pack: center; -webkit-justify-content: center; -ms-flex-pack: center; justify-content: center; }
-  #nav_social                   { -webkit-box-pack: space-evenly; -webkit-justify-content: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
-  nav > ul, #nav_social         { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
-		.comparison > *:last-child{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
-    #top_map                    {
-                                  padding: 144px 128px 0 128px !important; /*top should match with the deduction from height*/
-                                  height: calc(100vh - 144px);
-                                }
-  }
-
-
-@media (max-width: 600px){
-	html, body										{ font-size: 11px; }
-  #footer_links h4							{ font-size: 28px; }
-  #footer_links li							{ font-size: 18px; }
-  #nav-primary > ul > li > a		{ font-size: 18px; }
-  #footer_links h4,
-  #footer_links ul							{ text-align: center; }
-
-	#nav_primary input:checked ~ i ~ i,
-	#bars                         { display: -webkit-inline-box !important; display: -webkit-inline-flex !important; display: -ms-inline-flexbox !important; display: inline-flex !important; }
-	#nav_primary input:checked ~ i,
-  nav ul ul                     { display: none !important; }
-	#nav_primary input						{ position: absolute; }
-	#menu, #nav_social						{ position: fixed; }
-  #signup												{ margin: 0; }
-  #social												{ margin: 8px 0 16px; }
-	header												{ margin-top: 48px; }
-  #menu, #nav_social						{ margin-left: 100%; }
-  #nav_primary input:checked ~ ul{ margin-left: -5%; }
-	section												{ padding: 64px 48px; }
-  #calltoaction > div           { padding: 48px; }
-	nav i                         { padding: 0 !important; }
-	#social a											{ padding-top: 0; }
+  nav > ul, .social             { -webkit-box-pack: space-evenly; -webkit-justify-content: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
+  nav > ul                      { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
   #contact, #discover						{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
+  #signup												{ margin: 0; }
+  .social												{ margin: 8px 0 16px; }
+  nav .social                   { margin: 0; }
+	header												{ margin-top: 48px; }
+  nav ul, nav .social						{ margin-left: 100%; }
+  #nav_primary input:checked ~ ul,
+  #nav_primary input:checked ~ .social { margin-left: -5%; }
+	section												{ padding: 64px 48px; }
+  nav ul                        { padding: 48px 0 64px; }
+  #calltoaction > div           { padding: 48px; }
+	nav i, .social a              { padding: 0 !important; }
+	#social a											{ padding-top: 0; }
   nav input                     { height: 100%; }
   nav ul                        { height: 100%; }
   #nav_primary, nav > ul > li   { height: auto; }
   #nav_primary, #brands img			{ height: 48px; }
-  #social a                     { height: 32px; }
-  nav > ul > li                 { max-height: 14%; } /* ensures all line items fit on the screen, even on devices with less height */
+  nav li                        { max-height: 14%; } /* ensures all line items fit on the screen, even on devices with less height */
   nav input                     { width: 15%; }
   .col-1 table                  { width: 90%; }
-  #nav_primary, #menu,
-  #nav_social                   { width: 100%; }
-  #nav_social i, #social a      { width: 32px; }
-  nav input, nav > ul > li > ul,
-  #menu                         { top: 0; }
-  nav > ul > li > ul,
-  #nav_social                   { left: 0; }
+  #nav_primary, nav ul          { width: 100%; }
+  .social a                     { height: auto; }
+  .social a                     { width: auto; }
+  nav input, nav > ul           { top: 0; }
   nav input                     { right: 0; }
   #nav_social                   { bottom: 16px; }
-  nav ul ul a                   { color: #fff; }
   nav > ul                      { background: #000; }
-  nav ul ul li                  { background: transparent; }
-  #nav_social                   { background: rgba(1, 1, 1, 0); }
-  #social a											{ border: none; }
+  nav .social                   { background: transparent; }
+  .social a                     { border: none; }
+	.comparison > *:last-child    { border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
   #social a, #social a:hover    {
 																	background: transparent;
 																	-webkit-box-shadow: none;
@@ -1116,19 +1104,16 @@
 																	    -ms-transform: none;
 																	        transform: none;
 																}
-  nav ul ul, #nav_social        { visibility: visible; }
-  nav input                     { opacity: 0; }
+  /*#nav_social                   { visibility: visible; }*/
+
   nav > ul                      { opacity: 0.93; }
-  nav ul ul                     { opacity: 1; }
-  nav ul ul                     { z-index: 1000; }
   nav input                     { z-index: 20000; }
-  #menu                         { -webkit-font-smoothing: antialiased; } /* to stop flickering of text in safari */
+  nav                           { -webkit-font-smoothing: antialiased; } /* to stop flickering of text in safari */
 	nav > a                       {
 																				-webkit-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																				     -o-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
 																				        transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
-																			}
-
+																}
   #social a:hover,
   #nav_social a:hover                 { background: transparent !important; }
   #nav_social a:nth-child(1):hover i,

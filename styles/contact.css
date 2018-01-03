@@ -67,4 +67,8 @@
 @media (max-width: 600px) {
   #top_map											{ padding: 48px 0 0 !important;}
   #top_map li										{ padding: 6px 0 ;}
+  #top_map                      {
+                                  padding: 144px 128px 0 128px !important; /*top should match with the deduction from height*/
+                                  height: calc(100vh - 144px);
+                                }
 }
