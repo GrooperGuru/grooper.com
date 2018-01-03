@@ -38,7 +38,7 @@
 #top_map h4                { text-align: center; }
 #top_map ul                { list-style: none; }
 #top_map li                { padding: 4px 0; color: rgba(255,255,255,.46); }
-#top_map li                { font-size: 16px; padding: 16px 0 ; color: rgba(255,255,255,.46);}
+#top_map li                { padding: 16px 0 ; color: rgba(255,255,255,.46);}
 /*>>>>>>> ae398e37dcfee320abcc929ae7538cee59f0c6b1*/
 #top_map a                 { color: rgba(255,255,255,.46); }
 #top_map a:hover           { color: #fff;}
