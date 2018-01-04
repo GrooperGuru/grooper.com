@@ -12,6 +12,7 @@ var colours = {
 document.documentElement.classList.remove("no-js");
 document.documentElement.classList.add("js");
 
+
 var AdvancerLeft = document.getElementById("nav_secondary_left");
 var AdvancerRight = document.getElementById("nav_secondary_right");
 var Indicator = document.getElementById("nav_secondary_indicator");

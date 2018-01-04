@@ -167,6 +167,7 @@
 		h3                              { font-size: 200%; }
 		h4                              { font-size: 150%; }
 		p, figcaption li                { font-size: 112.5%; }
+    figure > i                      { font-size: 600% !important; }
     label, input                    { font-size: 16px; }
     blockquote span                 { font-size: 112.5%; }
 		blockquote::before,
@@ -182,7 +183,7 @@
     #next_feature                   { font-size: 150%; }
     #calltoaction p                 { font-size: 125%; }
     nav > ul > li > a,
-    #footer_links li                { font-size: 16px; }
+    footer li                       { font-size: 16px; }
     nav ul ul li a                  { font-size: 14px; }
     #copyright                      { font-size: 12px; }
 
@@ -193,24 +194,25 @@
     h2                              { font-weight: 200; }
     td, em, strong                  { font-weight: 400; }
     thead, th,
-    header strong, header em        { font-weight: 500; }
+    header strong, header em, i     { font-weight: 500; }
     .btn-lrg, .btn-sml              { font-weight: 100; }
     .field-wrapper input            { font-weight: 500; }
 
 
   /* 2.7 - Color - 2.7 */
     p                               { color: rgba(17,17,17,.7); }
-    h1, h4, header p,
+    h1, footer h4, header p,
     #footer_links a:hover,
     #footer_links label             { color: #fff; }
-    h2, em                          { color: #f4511e; }
-		.col-1 p												{ color: #000; }
+    h2, em, i                       { color: #f4511e; }
+		h3, h4, .col-1 p                { color: #000; }
 		blockquote::before,
-		blockquote::after								{ color: #4db6ac; } /*#78C0A8;*/
-		a:link, a:visited								{ color: #039be5; } /* normal state links */
-		a:hover, a:active								{ color: #29b6f6; } /* links during hover and click */
+		blockquote::after               { color: #4db6ac; } /*#78C0A8;*/
+		a:link, a:visited               { color: #039be5; } /* normal state links */
+		a:hover, a:active               { color: #29b6f6; } /* links during hover and click */
     h2 ~ p                          { color: #000; } /* paragraphs immediately after a h2 */
     header p                        { color: #fff; }
+    figure > i                      { color: #311b92 !important; }
   	nav ul ul li a                  { color: #333 !important; } /* set important to override the different default link states active, visited, etc. */
   	#nav_primary i, #copyright      { color: #666; }
     #nav_secondary a                { color: #888; }
@@ -222,8 +224,8 @@
     #footer_links label,
     .social a:hover .fa             { color: #fff; }
     nav ul ul li:hover a,
-		#next_feature a									{ color: #009688; } /* teal */
-		#footer_links li,
+		#next_feature a                 { color: #009688; } /* teal */
+		footer li,
 		#footer_links a                 { color: rgba(255,255,255,.46); }
     #nav_primary i:hover            { color: rgba(255,255,255,.86); }
 		input::-webkit-input-placeholder{ color: rgba(0,0,0,.4) !important; }
@@ -254,7 +256,7 @@
 
 		/* 2.9.2 - Lists - 2.9.2 */
 		ul															{ list-style: disc outside; }
-		#footer_links ul								{ list-style: none; }
+		footer ul                       { list-style: none; }
 		.typography ul									{
 																			list-style: disc outside;
 																			padding-left: 40px !important;
@@ -468,6 +470,7 @@
     img + figcaption, figcaption + img,
     table + figcaption, figcaption + table
                                     { margin-top: 36px; } /* adds margin between images/tables and the text they belong to */
+    figure > i + figcaption         { margin-top: 1em; } /*add margin between icons and captions within a figure */
 		.col-2-1 figure:first-child figcaption,
 		.col-1-2 figure:last-child figcaption,
 		.col-1 figcaption								{ width: 70%; }
@@ -519,10 +522,6 @@
 																			-webkit-box-shadow: 2px 2px 24px rgba(0,0,0,0.26) !important;
 																			        box-shadow: 2px 2px 24px rgba(0,0,0,0.26) !important;
 																		}
-    figure img                      {
-                                      -webkit-box-shadow: 5px 1px 27px rgba(0,0,0,0.2), 2px 2px 3px rgba(0,0,0,0.4);
-                                              box-shadow: 5px 1px 27px rgba(0,0,0,0.2), 2px 2px 3px rgba(0,0,0,0.4);
-                                    }
 
   /* 4.7 - Borders - 4.7 */
     section, blockquote							{ border-bottom: 1px solid #b2dfdb; } /* gives each section & blockquote a light teal bottom border */
@@ -669,6 +668,15 @@
 	.typography p											{ margin: 16px 0 !important; }
 	.typography li										{ margin: 8px 0 !important; }
 
+
+  /* The .shadow classes are designed to be applied to containers and style child objects with a shadow */
+  .shadow_img img                   {
+                                      -webkit-box-shadow: 5px 1px 27px rgba(0,0,0,0.2), 2px 2px 3px rgba(0,0,0,0.4);
+                                              box-shadow: 5px 1px 27px rgba(0,0,0,0.2), 2px 2px 3px rgba(0,0,0,0.4);
+                                    }
+
+
+  /* The side_by_side class is a special layout, primarily designed for 1-col presentation that will align the figcaption and its figure to the left and right sides, then wrap as the site shrinks in width */
   section.side_by_side              { padding-left: 10%; padding-right: 10%; }
   .side_by_side figure              {
                                           -webkit-box-orient: horizontal;
@@ -684,20 +692,23 @@
   .side_by_side img,
   .side_by_side table,
   .side_by_side figcaption          { -webkit-flex-basis: 43.75%; -ms-flex-preferred-size: 43.75%; flex-basis: 43.75%; }
-  /*.side_by_side img + figcaption,
-  .side_by_side span + figcaption,
-  .side_by_side table + figcaption,
-  .side_by_side figcaption + img,
-  .side_by_side figcaption + span,
-  .side_by_side figcaption + table*/
-  /*
-  .side_by_side * + figcaption,
-  figcaption + .side_by_side *  { margin: 0; padding-left: 10%; }*/
   .side_by_side img,
   .side_by_side table               { max-width: 43.75%; } /* should match the flex basis defined above */
   .side_by_side > p + figure,
   .side_by_side > h2 + figure       { margin-top: 36px; }
   .side_by_side figure > *          { margin: 0; /*margin-left: 36px;*/ }
+
+
+  /* figure_large/small classes are designed to give figure more or less size in relation to their figcaption*/
+  .col-1.figure_small img,
+  .col-1.figure_small table         { width: 60%; }
+
+
+  .side_by_side.figure_large img,
+  .side_by_side.figure_large table      { -webkit-flex-basis: 61.25%; -ms-flex-preferred-size: 61.25%; flex-basis: 61.25%; }
+  .side_by_side.figure_large figcaption { -webkit-flex-basis: 26.25%; -ms-flex-preferred-size: 26.25%; flex-basis: 26.25%; }
+  .side_by_side.figure_large img,
+  .side_by_side.figure_large table  { max-width: 61.25%; } /* should match the flex basis defined above */
 
 
   /* The text alignment classes force alignment of the element receiving the class and all of its children */
@@ -711,6 +722,9 @@
 	.align_bottom                     { padding-bottom: 0 !important; }
   .align_left                       { padding-left: 0 !important; }
   .align_right                      { padding-right: 0 !important; }
+
+  /* test */
+  .merge_below                      { border-bottom: none; }
 
 	/* just figured out that this is how I can make the aligned images stretch to fill the screen and overflow past the left/right edges on smaller devices */
 	/* the negative bottom margin will keep the parent section from enlarging too much and the positive top margin will make up for the change in space */
@@ -956,6 +970,11 @@
                                     -ms-flex-preferred-size: 42.5%;
                                                  flex-basis: 42.5%;
                                   }
+      .side_by_side.figure_large img,
+      .side_by_side.figure_large table      { -webkit-flex-basis: 66.11%; -ms-flex-preferred-size: 66.11%; flex-basis: 66.11%; }
+      .side_by_side.figure_large figcaption { -webkit-flex-basis: 28.33%; -ms-flex-preferred-size: 28.33%; flex-basis: 28.33%; }
+      .side_by_side.figure_large img,
+      .side_by_side.figure_large table  { max-width: 66.11%; } /* should match the flex basis defined above */
   }
 
 
@@ -1058,24 +1077,15 @@
                                     max-width: 85%;
                                     width: 85%;
                                   }
+      .side_by_side.figure_large img,
+      .side_by_side.figure_large table
+                                  { max-width: 85%; }
       .side_by_side figure        {
                                        -webkit-box-orient: vertical !important;
                                     -webkit-box-direction: normal !important;
                                        -ms-flex-direction: column !important;
                                            flex-direction: column !important;
                                   }
-/*
-      .side_by_side figcaption    {
-                                    display: -webkit-box !important;
-                                    display: -webkit-flex !important;
-                                    display: -ms-flexbox !important;
-                                    display: flex !important;
-                                    -webkit-flex-wrap: wrap;
-                                        -ms-flex-wrap: wrap;
-                                            flex-wrap: wrap
-                                  }
-      .side_by_side figcaption,
-      .side_by_side figure img    { flex:1; -webkit-box-flex:1; -webkit-flex:1; }*/
       .side_by_side figure h3,
       .side_by_side figure p      { text-align: center !important; }
       .side_by_side li            { margin-left: 1em; padding-right: 1em; width: calc(50% - 2em); float:left;}
@@ -1093,114 +1103,102 @@
 
 
 
-@media (max-width: 600px){
-	html, body                    { font-size: 11px; }
-  footer h4                     { font-size: 28px; }
-  footer li                     { font-size: 18px; }
-  nav > ul > li > a             { font-size: 18px; } /*  increase from 16px to 18px now that this is in a full screen mobile style menu */
-  #calltoaction h3              { font-size: 275%; }
-  #calltoaction p               { font-size: 140%; }
-  nav > ul > li > a             { line-height: 48px; }
-  footer h4, footer ul          { text-align: center; }
-	nav li, nav input,
-  #calltoaction/*,
-  .social a, .social i*/        { display: block !important; }
-  nav ul, .social               {
-                                  display: -webkit-box !important;
-                                  display: -webkit-flex !important;
-                                  display: -ms-flexbox !important;
-                                  display: flex !important;
-                                }
-	#nav_primary input:checked ~ i ~ i,
-	#bars                         {
-                                  display: -webkit-inline-box !important;
-                                  display: -webkit-inline-flex !important;
-                                  display: -ms-inline-flexbox !important;
-                                  display: inline-flex !important;
-                                }
-	#nav_primary input:checked ~ i,
-  nav ul ul                     { display: none !important; }
-  .social .fa                   { display: inline-block !important; }
-	nav input                     { position: absolute !important; }
-	nav > ul, nav .social         { position: fixed !important; }
-  nav > ul                      {
-                                     -webkit-box-orient: vertical !important;
-                                  -webkit-box-direction: normal !important;
-                                     -ms-flex-direction: column !important;
-                                         flex-direction: column !important;
-                                }
-  nav > ul, .social             { -webkit-box-pack: space-evenly; -webkit-justify-content: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
-  nav > ul                      { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
-  #contact, #discover						{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
-  #signup												{ margin: 0; }
-  .social												{ margin: 8px 0 16px; }
-  nav .social                   { margin: 0; }
-	header												{ margin-top: 48px; }
-  nav ul, nav .social						{ margin-left: 100%; }
-  #nav_primary input:checked ~ ul,
-  #nav_primary input:checked ~ .social { margin-left: -5%; }
-	section												{ padding: 64px 48px; }
-  nav ul                        { padding: 48px 0 64px; }
-  #calltoaction > div           { padding: 48px; }
-	nav i, .social a              { padding: 0 !important; }
-	#social a											{ padding-top: 0; }
-  nav input                     { height: 100%; }
-  nav ul                        { height: 100%; }
-  #nav_primary, nav > ul > li   { height: auto; }
-  #nav_primary, #brands img			{ height: 48px; }
-  nav li                        { max-height: 14%; } /* ensures all line items fit on the screen, even on devices with less height */
-  nav input                     { width: 15%; }
-  .col-1 table                  { width: 90%; }
-  #nav_primary, nav ul          { width: 100%; }
-  .social a                     { height: auto; }
-  .social a                     { width: auto; }
-  nav input, nav > ul           { top: 0; }
-  nav input                     { right: 0; }
-  #nav_social                   { bottom: 16px; }
-  nav > ul                      { background: #000; }
-  nav .social                   { background: transparent; }
-  .social a                     { border: none; }
-  #social a, #social a:hover    {
-																	background: transparent;
-																	-webkit-box-shadow: none;
-																	        box-shadow: none;
-																	-webkit-transform: none;
-																	    -ms-transform: none;
-																	        transform: none;
-																}
-  /*#nav_social                   { visibility: visible; }*/
-
-  nav > ul                      { opacity: 0.93; }
-  nav input                     { z-index: 20000; }
-  nav                           { -webkit-font-smoothing: antialiased; } /* to stop flickering of text in safari */
-	nav > a                       {
-																	-webkit-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
-																	     -o-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
-																	        transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
-																}
-  #social a:hover,
-  #nav_social a:hover                 { background: transparent !important; }
-  #nav_social a:nth-child(1):hover i,
-  #social a:nth-child(1):hover i      { color: #3b5998; } /* facebook */
-  #nav_social a:nth-child(2):hover i,
-  #social a:nth-child(2):hover i			{ color: #dd4b39; } /* google plus */
-  #nav_social a:nth-child(3):hover i,
-  #social a:nth-child(3):hover i			{ color: #55acee; } /* twitter */
-  #nav_social a:nth-child(4):hover i,
-  #social a:nth-child(4):hover i			{ color: #0976b4; } /* linkedin */
-  #nav_social a:nth-child(5):hover i,
-  #social a:nth-child(5):hover i			{ color: #cd201f; } /* youtube */
-
-
-    /* 600px updates for convenience classes */
-  		.side_by_side img,
-      .side_by_side table         { max-width: 80%; }
-      .side_by_side figcaption    {
-                                    max-width: 95%;
-                                    width: 95%;
+  @media (max-width: 600px){
+  	html, body                    { font-size: 11px; }
+    footer h4                     { font-size: 28px; }
+    footer li                     { font-size: 18px; }
+    nav > ul > li > a             { font-size: 18px; } /*  increase from 16px to 18px now that this is in a full screen mobile style menu */
+    #calltoaction h3              { font-size: 275%; }
+    #calltoaction p               { font-size: 140%; }
+    nav > ul > li > a             { line-height: 48px; }
+    footer h4, footer ul          { text-align: center; }
+  	nav li, nav input,
+    #calltoaction                 { display: block !important; }
+    nav ul, .social               {
+                                    display: -webkit-box !important;
+                                    display: -webkit-flex !important;
+                                    display: -ms-flexbox !important;
+                                    display: flex !important;
                                   }
-      .comparison > *:last-child    { border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
-}
+  	#nav_primary input:checked ~ i ~ i,
+  	nav .fa-bars                  {
+                                    display: -webkit-inline-box !important;
+                                    display: -webkit-inline-flex !important;
+                                    display: -ms-inline-flexbox !important;
+                                    display: inline-flex !important;
+                                  }
+  	#nav_primary input:checked ~ i,
+    nav ul ul                     { display: none !important; }
+    .social .fa                   { display: inline-block !important; }
+  	nav input                     { position: absolute !important; }
+  	nav > ul, nav .social         { position: fixed !important; }
+    nav > ul                      {
+                                       -webkit-box-orient: vertical !important;
+                                    -webkit-box-direction: normal !important;
+                                       -ms-flex-direction: column !important;
+                                           flex-direction: column !important;
+                                  }
+    nav > ul, .social             { -webkit-box-pack: space-evenly; -webkit-justify-content: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
+    nav > ul                      { -webkit-box-align: center; -webkit-align-items: center; -ms-flex-align: center; align-items: center; }
+    #contact, #discover           { -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important } /*forces the newsletter signup form below the two lists, which will now be side-by-side */
+    #signup                       { margin: 0; }
+    .social                       { margin: 8px 0 16px; }
+    nav .social                   { margin: 0; }
+  	header                        { margin-top: 48px; }
+    nav ul, nav .social           { margin-left: 100%; }
+    #nav_primary input:checked ~ ul,
+    #nav_primary input:checked ~ .social { margin-left: -5%; }
+  	section                       { padding: 64px 48px; }
+    nav ul                        { padding: 48px 0 64px; }
+    #calltoaction > div           { padding: 48px; }
+  	nav i, .social a              { padding: 0 !important; }
+  	footer .social a              { padding-top: 0; }
+    nav input                     { height: 100%; }
+    nav ul                        { height: 100%; }
+    #nav_primary, nav > ul > li   { height: auto; }
+    #nav_primary, #brands img     { height: 48px; }
+    nav li                        { max-height: 14%; } /* ensures all line items fit on the screen, even on devices with less height */
+    nav input                     { width: 15%; }
+    .col-1 table                  { width: 90%; }
+    #nav_primary, nav ul          { width: 100%; }
+    .social a                     { height: auto; }
+    .social a                     { width: auto; }
+    nav input, nav > ul           { top: 0; }
+    nav input                     { right: 0; }
+    #nav_social                   { bottom: 16px; }
+    nav > ul                      { background: #000; }
+    nav .social                   { background: transparent; }
+    .social a                     { border: none; }
+    footer .social a,
+    footer .social a:hover        {
+  																	background: transparent;
+  																	-webkit-box-shadow: none;
+  																	        box-shadow: none;
+  																	-webkit-transform: none;
+  																	    -ms-transform: none;
+  																	        transform: none;
+  																}
+    nav > ul                      { opacity: 0.93; }
+    nav input                     { z-index: 20000; }
+    nav                           { -webkit-font-smoothing: antialiased; } /* to stop flickering of text in safari */
+  	nav > a                       {
+  																	-webkit-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+  																	     -o-transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+  																	        transition: all 1s cubic-bezier(0.77,0.2,0.05,1.0) !important;
+  																}
+    .social a:hover               { background: transparent !important; }
+    .social a:hover i             { color: rgba(255,255,255,.86); }
+
+
+      /* 600px updates for convenience classes */
+        .side_by_side img,
+        .side_by_side table         { max-width: 80%; }
+        .side_by_side figcaption    {
+                                      max-width: 95%;
+                                      width: 95%;
+                                    }
+        .comparison > *:last-child  { border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
+  }
 
 
   @media (max-width: 432px){
