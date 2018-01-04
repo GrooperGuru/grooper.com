@@ -1,7 +1,7 @@
 
 	var checkbox = document.getElementById("checkbox_click");
   var logo    = $("#nav_primary > a");
-  var social  = $("#nav-social")
+  var social  = $("nav .social")
   var body    = $("body")
   var menu    = $("#nav_primary > ul")
 
@@ -16,7 +16,7 @@ function noScroll(){
 		body.addClass("noScroll");
 		menuTransition();
 		logo.animate({opacity: 0},100);
-		social.css("marginLeft", "0");
+		social.css("marginLeft", "-5%");
   } else {
 		body.removeClass("noScroll");
 		social.css("marginLeft", "100%");

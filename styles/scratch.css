@@ -304,8 +304,6 @@
 				figure, section:not(.col-1),
         section:not(.col-1) > figure,
         section:not(.col-1) > div,
-        /*.col-2 > *,
-        .col-3 > *,*/
         #nav_primary,
 				#calltoaction,
 				#calltoaction > div,
@@ -344,9 +342,6 @@
 
 			/* 4.2.1.3 - Flex Wrap - 4.2.1.3 */
 			/* Controls whether the flex container is single-line or multi-line, and the direction of the cross axis */
-				/*.col-2, .col-3,
-				.col-1-2, .col-2-1,
-				#brands,*/
         section:not(.col-1),
         #footer_links,
 				#calltoaction > div					{
@@ -457,7 +452,7 @@
     figcaption li                   { padding-bottom: 1em; }
 		#brands                         { padding-top: 144px; padding-bottom: 144px; }
 		section, #nav_primary           { padding-left: 5%; padding-right: 5%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
-    .col-1, #brands                 { padding-left: 0; padding-right: 0; }
+    /*.col-1, */#brands             { padding-left: 0; padding-right: 0; }
 		section > h2, section > p       { padding-left: 12%; padding-right: 12%; }
     blockquote                      { padding-left: 18%; padding-right: 18%; }
     #next_feature                   { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
@@ -677,7 +672,7 @@
 
 
   /* The side_by_side class is a special layout, primarily designed for 1-col presentation that will align the figcaption and its figure to the left and right sides, then wrap as the site shrinks in width */
-  section.side_by_side              { padding-left: 10%; padding-right: 10%; }
+  /*section.side_by_side              { padding-left: 10%; padding-right: 10%; }*/
   .side_by_side figure              {
                                           -webkit-box-orient: horizontal;
                                        -webkit-box-direction: normal;
@@ -702,8 +697,6 @@
   /* figure_large/small classes are designed to give figure more or less size in relation to their figcaption*/
   .col-1.figure_small img,
   .col-1.figure_small table         { width: 60%; }
-
-
   .side_by_side.figure_large img,
   .side_by_side.figure_large table      { -webkit-flex-basis: 61.25%; -ms-flex-preferred-size: 61.25%; flex-basis: 61.25%; }
   .side_by_side.figure_large figcaption { -webkit-flex-basis: 26.25%; -ms-flex-preferred-size: 26.25%; flex-basis: 26.25%; }
@@ -957,6 +950,8 @@
 		blockquote::after						{ right: 54px; }
 
     /* 1280px updates for convenience classes */
+      .col-1.figure_small img,
+      .col-1.figure_small table   { width: 70%; }
       section.side_by_side        { padding-left: 5%; padding-right: 5%; } /*only make change if the side_by_side class is applied to a section itself */
       .side_by_side img,
       .side_by_side table         {
@@ -1023,6 +1018,8 @@
 
     /* 1024px updates for convenience classes */
       .btn-lrg                    { padding: 8px 32px; }
+      .col-1.figure_small img,
+      .col-1.figure_small table   { width: 80%; }
       .side_by_side img,
       .side_by_side table         {
                                     max-width: 56.66%;
@@ -1051,12 +1048,10 @@
 		footer h4, footer ul				{ text-align: center; }
 		section											{ padding: 64px; }
     #footer_links > div					{ padding: 32px 0; }
-		section, blockquote,
-		figure, section > div				{ padding-top: 64px; }
-		section, blockquote					{ padding-bottom: 64px;}
+		blockquote, figure,
+    section > div               { padding-top: 64px; }
+		blockquote                  { padding-bottom: 64px;}
     section > h2, section > p   { padding-left: 0; padding-right: 0; }
-		section											{ padding: 64px; }
-    #footer_links > div					{ padding: 32px 0; }
   	#signup											{ margin: 32px 32px 0 32px; }
   	#contact, #discover					{ -webkit-flex-basis: 50% !important;  -ms-flex-preferred-size: 50% !important;  flex-basis: 50% !important }
   	#signup											{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
@@ -1071,6 +1066,7 @@
 
     /* 768px updates for convenience classes */
   		.comparison > *:last-child	{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
+      section.side_by_side        { padding-left: 64px; padding-right: 64px; }
   		.side_by_side img,
       .side_by_side table         { max-width: 70%; }
       .side_by_side figcaption    {
@@ -1098,9 +1094,6 @@
       figcaption + .side_by_side *
                                   { margin-top: 36px !important; } /* adds margin between images/tables and the text they belong to */
   }
-
-
-
 
 
   @media (max-width: 600px){
@@ -1146,8 +1139,8 @@
     nav .social                   { margin: 0; }
   	header                        { margin-top: 48px; }
     nav ul, nav .social           { margin-left: 100%; }
-    #nav_primary input:checked ~ ul,
-    #nav_primary input:checked ~ .social { margin-left: -5%; }
+    nav input:checked ~ ul/*,
+    nav input:checked ~ .social */{ margin-left: -5%; }
   	section                       { padding: 64px 48px; }
     nav ul                        { padding: 48px 0 64px; }
     #calltoaction > div           { padding: 48px; }
@@ -1165,7 +1158,7 @@
     .social a                     { width: auto; }
     nav input, nav > ul           { top: 0; }
     nav input                     { right: 0; }
-    #nav_social                   { bottom: 16px; }
+    nav .social                   { bottom: 16px; }
     nav > ul                      { background: #000; }
     nav .social                   { background: transparent; }
     .social a                     { border: none; }
@@ -1190,14 +1183,17 @@
     .social a:hover i             { color: rgba(255,255,255,.86); }
 
 
-      /* 600px updates for convenience classes */
-        .side_by_side img,
-        .side_by_side table         { max-width: 80%; }
-        .side_by_side figcaption    {
-                                      max-width: 95%;
-                                      width: 95%;
-                                    }
-        .comparison > *:last-child  { border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
+    /* 600px updates for convenience classes */
+      .col-1.figure_small img,
+      .col-1.figure_small table   { width: 90%; }
+      section.side_by_side        { padding-left: 48px; padding-right: 48px; }
+      .side_by_side img,
+      .side_by_side table         { max-width: 80%; }
+      .side_by_side figcaption    {
+                                    max-width: 95%;
+                                    width: 95%;
+                                  }
+      .comparison > *:last-child  { border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
   }
 
 
