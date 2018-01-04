@@ -31,12 +31,6 @@
     .social, .social a              { cursor: default; }
     #nav_secondary button:hover,
     nav input                       { cursor: pointer; }
-    #mobile-menu                    {
-                                      -webkit-user-select: none;
-                                         -moz-user-select: none;
-                                          -ms-user-select: none;
-                                              user-select: none;
-                                    }
     nav input                       { -webkit-touch-callout: none; }
     button:focus                    { outline: 0; }
 
@@ -423,6 +417,7 @@
 				.col-1 > figure, .col-1 > div       { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%; }
 				.col-2 > figure, .col-2 > div       { -webkit-flex-basis: 47.21%;  -ms-flex-preferred-size: 47.21%;  flex-basis: 47.21%; } /*42.5%*/
 				.col-3 > figure, .col-3 > div       { -webkit-flex-basis: 29.629%; -ms-flex-preferred-size: 29.629%; flex-basis: 29.629%; } /*28.33*/
+        .col-4 > figure, .col-4 > div       { -webkit-flex-basis: 20.83%;  -ms-flex-preferred-size: 20.83%;  flex-basis: 20.83%; }
 				.col-1-2 > .first, .col-2-1 > .last { -webkit-flex-basis: 37.77%;  -ms-flex-preferred-size: 37.77%;  flex-basis: 37.77%; } /*34*/
 				.col-2-1 > .first, .col-1-2 > .last { -webkit-flex-basis: 56.66%;  -ms-flex-preferred-size: 56.66%;  flex-basis: 56.66%; } /*51*/
 				#footer_links > div                 { -webkit-flex-basis: 33.33%;  -ms-flex-preferred-size: 33.33%;  flex-basis: 33.33%; }
@@ -474,15 +469,17 @@
 		.col-2 figcaption, .col-1 table { width: 80%; }
 		.col-3 figcaption								{ width: 90%; }
 		#next_feature a,
-    .col-2 table, .col-3 table      { width: 100%; }
+    .col-2 table, .col-3 table,
+    .col-4 table, .col-4 figcaption { width: 100%; }
 
 
 	/* 4.4 - Position - 4.4 */
 		.noScroll, #nav_primary					{ position: fixed; }
 		blockquote,
+    nav ul, nav li,
+    nav li a, nav li a::before,
 		.nav_secondary_contents,
-		/*#nav_primary *,*/
-    nav ul, nav li, nav li a, nav li a::before, #nav_primary > a,
+    #nav_primary > a,
 		#nav_secondary									{ position: relative; }
 		blockquote::before,
 		blockquote::after,
@@ -522,7 +519,6 @@
     section, blockquote							{ border-bottom: 1px solid #b2dfdb; } /* gives each section & blockquote a light teal bottom border */
     .col-1                          { border-bottom: 0; } /* then we remove the above mentioned border for col-1 as these are intended to be headers directly related to the content below them */
     .comparison > *:last-child			{ border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
-    .border-img img                 { border: 1px solid #b2dfdb; }
 
 
 	/* 4.8 - Z-Index - 4.8 */
@@ -669,6 +665,11 @@
                                       -webkit-box-shadow: 5px 1px 27px rgba(0,0,0,0.2), 2px 2px 3px rgba(0,0,0,0.4);
                                               box-shadow: 5px 1px 27px rgba(0,0,0,0.2), 2px 2px 3px rgba(0,0,0,0.4);
                                     }
+
+
+  /* The .border classes are designed to be apploed to containers and style the child objects with a complete border */
+  .border_img img                   { border: 1px solid #b2dfdb; }
+  .border_none                      { border: none; } /*should be applied directly to item which should have no border */
 
 
   /* The side_by_side class is a special layout, primarily designed for 1-col presentation that will align the figcaption and its figure to the left and right sides, then wrap as the site shrinks in width */
@@ -928,6 +929,7 @@
   	#footer_links input         { height: 28px; }
   	.social a                   { height: 96px; width: 96px; }
   	#copyright img              { height: 38px; }
+    .col-1 figcaption           { width: 80%; }
 		blockquote::before					{ top: -8px; }
 		blockquote::after						{ bottom: -76px; }
   }
@@ -944,6 +946,7 @@
     .social                     { margin: 72px auto 16px auto; }
     nav > li                    { height: 64px; } /* shrink to match the new height of the navbar */
     #nav_primary                { height: 64px; } /* Shrink the height of the navbar for the first time */
+    .col-1 figcaption           { width: 90%; }
     nav > a                     { background: url(../images/grooper_logo_140x46.png); height: 46px; width: 140px; }
     nav ul ul										{ top: 64px; }
 		blockquote::before					{ left: 56px; }
@@ -989,6 +992,7 @@
 		.social a                   { padding-top: 32px; }
 		section, blockquote         { padding-bottom: 64px;}
 		#brands                     { padding-bottom: 96px; }
+
 		nav > ul > li > a           { margin: 0 8px; }
 		section, blockquote,
 		.col-3 figure:last-child,
@@ -1000,8 +1004,9 @@
     figcaption + img,
     figcaption + table          { margin-top: 32px; } /* adds margin between images/tables and the text they belong to */
 		.btn-sml                    { margin-top: 8px; }
-		.col-3 > figure,
-    .col-3 > div                { -webkit-flex-basis: 47.22%; -ms-flex-preferred-size: 47.22%; flex-basis: 47.22%; }
+		.col-3 > figure, .col-3 > div,
+    .col-4 > figure, .col-4 > div
+                                { -webkit-flex-basis: 47.22%; -ms-flex-preferred-size: 47.22%; flex-basis: 47.22%; }
 		#nav_secondary,
 		#nav_secondary a,
 		#nav_secondary button       { height: 36px; }
@@ -1055,7 +1060,8 @@
   	#signup											{ margin: 32px 32px 0 32px; }
   	#contact, #discover					{ -webkit-flex-basis: 50% !important;  -ms-flex-preferred-size: 50% !important;  flex-basis: 50% !important }
   	#signup											{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
-		section > *									{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
+		section:not(.col-4) > *     { -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
+    .col-4 > *                  { -webkit-flex-basis: 43.75% !important; -ms-flex-preferred-size: 43.75% !important; flex-basis: 43.75% !important }
 		#brands img									{ -webkit-flex-basis: auto !important; -ms-flex-preferred-size: auto !important; flex-basis: auto !important }
   	.col-2, .col-3              { display: block !important; } /*this prevents divs from overlaying on ie11 and android mobile default browser */
     nav > a								      {
@@ -1066,6 +1072,8 @@
 
     /* 768px updates for convenience classes */
   		.comparison > *:last-child	{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
+      .col-1.figure_small img,
+      .col-1.figure_small table   { width: 100%; }
       section.side_by_side        { padding-left: 64px; padding-right: 64px; }
   		.side_by_side img,
       .side_by_side table         { max-width: 70%; }
@@ -1106,7 +1114,7 @@
     nav > ul > li > a             { line-height: 48px; }
     footer h4, footer ul          { text-align: center; }
   	nav li, nav input,
-    #calltoaction                 { display: block !important; }
+    .col-4, #calltoaction         { display: block !important; }
     nav ul, .social               {
                                     display: -webkit-box !important;
                                     display: -webkit-flex !important;
@@ -1184,8 +1192,6 @@
 
 
     /* 600px updates for convenience classes */
-      .col-1.figure_small img,
-      .col-1.figure_small table   { width: 90%; }
       section.side_by_side        { padding-left: 48px; padding-right: 48px; }
       .side_by_side img,
       .side_by_side table         { max-width: 80%; }
