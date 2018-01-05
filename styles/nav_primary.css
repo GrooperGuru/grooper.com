@@ -8,7 +8,7 @@
 
 
   /* 1.2 - Remove margin, border, and padding from all - 1.2 */
-    html, body, div, section, figure, figcaption, blockquote, span, iframe, h1, h2, h3, h4, h5, h6, div, p, a, img, ol, ul, li, table, tbody, tfoot, thead, tr, th, td, button {
+    html, body, div, a, ul, li      {
 																			margin: 0;
 																			padding: 0;
 																			border: 0;
@@ -16,7 +16,7 @@
 
 
   /* 1.3 - Eliminate default input button styles imposed by browsers like safari - 1.3 */
-    input, button										{
+    input       										{
 																			-webkit-appearance: none;
 																			-moz-appearance: none;
 																			appearance: none;
@@ -26,39 +26,22 @@
 
 
   /* 1.4 - Cursor and Touch - 1.4 */
-    table, i, nav ul, nav ul a,
-    .btn-sml, .btn-lrg,
+    i, nav ul, nav ul a,
     .social, .social a              { cursor: default; }
-    #nav_secondary button:hover,
     nav input                       { cursor: pointer; }
     nav input                       { -webkit-touch-callout: none; }
-    button:focus                    { outline: 0; }
 
 
   /* 1.5 - Reset Lists and Tables - 1.5 */
-		table														{ display: table; }
-		tr															{ display: table-row; }
-		td, th													{ display: table-cell; }
-		table														{
-																			border-collapse: collapse;
-																			border-spacing: 0;
-																		}
 
 
   /* 1.5 - Set basic background colors - 1.5 */
 
 		/* 1.6.1 - Solid Backgrounds - 1.6.1 */
 			body                          { background: #000; } /* black */
-			main, div, section,
-      figure, figcaption            { background: #fbfdfe; } /* off-white */
+			main, div, section            { background: #fbfdfe; } /* off-white */
 			footer                        { background: #091413; } /* off-black */
 			footer div                    { background: transparent; } /* transparent */
-			.bg-light.gray                { background: #f5f5f5; } /* light medium gray was #e0e0e0*/
-			.bg-light.orange              { background: #ff8a65; } /* medium orange */
-			.bg-light.teal                { background: #4db6ac; } /* medium teal */
-			.bg-dark.gray                 { background: #424242; } /* dark gray */
-			.bg-dark.orange               { background: #ce3e11; } /* medium orange */
-			.bg-dark.teal, header         { background: #00796b; } /* dark teal */
 			.field-wrapper input          { background: rgba(255,255,255,.86); }
 			.content__button input        { background: #444 !important; }
 			.content__button input:hover  { background: #555 !important; }
@@ -66,46 +49,9 @@
 			nav ul ul li:hover a          { background: #fff; }
 			nav ul ul li                  { background: rgba(238,238,238,.94); }
 			#nav_primary                  { background: rgba(0,0,0,.94); }
-      #nav_secondary button         { background: transparent; }
-			#map *                        { background: transparent; } /* transparent */
+
 
 		/* 1.6.2 - Tiled Backgrounds - 1.6.2 */
-			.bg-dark.gray.tile						{
-																			background: -webkit-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Safari 5.1 to 6.0 */
-																			background:      -o-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Opera 11.1 to 12.0 */
-																			background:    -moz-linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* For Firefox 3.6 to 15 */
-																			background:         linear-gradient(to bottom, rgba(49,50,57,0.95), rgba(144,144,144,0.85)), url("../images/bg-tile.jpg") top; /* Standard syntax (must be last) */
-																		}
-			.bg-dark.orange.tile					{
-																			background: -webkit-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
-																			background:      -o-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
-																			background:    -moz-linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
-																			background:         linear-gradient(to bottom, rgba(64,38,54,.95), rgba(255,110,66,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
-																		}
-			.bg-dark.teal.tile						{
-																			background: -webkit-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
-																			background:      -o-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
-																			background:    -moz-linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
-																			background:         linear-gradient(to bottom, rgba(20,63,72,.95), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
-																		}
-			.bg-light.gray.tile						{
-																			background: -webkit-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
-																			background:      -o-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
-																			background:    -moz-linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
-																			background:         linear-gradient(to bottom, rgba(240,243,246,0.95), rgba(185,185,185,.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
-																		}
-			.bg-light.orange.tile					{
-																			background: -webkit-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
-																			background:      -o-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
-																			background:    -moz-linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
-																			background:         linear-gradient(to bottom, rgba(255,165,184,0.95), rgba(255,143,86,.85)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
-																		}
-			.bg-light.teal.tile						{
-																			background: -webkit-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
-																			background:      -o-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
-																			background:    -moz-linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* For Firefox 3.6 to 15 */
-																			background:         linear-gradient(to bottom, rgba(129,255,220,.9), rgba(16,214,185,0.9)), url("../images/bg-tile.jpg") center; /* Standard syntax (must be last) */
-																		}
 			header												{
 																			background: -webkit-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Safari 5.1 to 6.0 */
 																			background:      -o-linear-gradient(to bottom, rgba(0,0,0,1), rgba(46,179,167,0.85)), url("../images/bg-tile.jpg") center; /* For Opera 11.1 to 12.0 */
@@ -115,10 +61,7 @@
 
 
   /* 1.7 - Set iFrame default widths and heights to fill parent container - 1.7 */
-    iframe                          {
-                                      width: 100%;
-                                      height: 100%;
-                                    }
+
 
 
 
@@ -127,28 +70,17 @@
 
   /* 2.1 - Font Selection - 2.1 */
     html, body                      { font-family: 'Roboto', Arial, sans-serif; }
-    blockquote::before,
-    blockquote::after               { font-family: Arial, sans-serif; }
 
 
   /* 2.2 - Font Smoothing - 2.2 */
-    p																{
-																			text-rendering: optimizeLegibility !important;
-																			-webkit-font-smoothing: antialiased !important;
-																			-moz-osx-font-smoothing: grayscale !important;
-																		}
 
 
   /* 2.3 - Text Decoration and Font Style - 2.3 */
     a                               { text-decoration: none; } /*remove underlines from hyperlinks */
-    strong, em                      { font-style: normal; } /* removes italics from emphasized text within a paragraph */
-    header strong, header em        { font-style: italic; }
 
 
   /* 2.4 - Text Alignment - 2.4 */
-    div, section, figure, figcaption,
-    blockquote, p, img,
-    h1, h2, h3, h4, h5, h6          { text-align: center; }
+    div                             { text-align: center; }
     ul                              { text-align: left; }
     footer h4                       { text-align: left; }
     nav ul                          { text-align: center; }
@@ -156,21 +88,9 @@
 
   /* 2.5 - Font Size - 2.5 */
 		html, body                      { font-size: 16px; } /* base font-size by which all percentages are multiplied to produce final element font-size */
-    h1                              { font-size: 425%; }
-    h2                              { font-size: 350%; }
-		h3                              { font-size: 200%; }
 		h4                              { font-size: 150%; }
-		p, figcaption li                { font-size: 112.5%; }
-    figure .fa                      { font-size: 600% !important; }
     label, input                    { font-size: 16px; }
-    blockquote span                 { font-size: 112.5%; }
-		blockquote::before,
-		blockquote::after               { font-size: 1600%; }
     header p                        { font-size: 175%; }
-    h2 ~ p                          { font-size: 150%; } /* paragraphs immediately after a h2 */
-    blockquote p                    { font-size: 150%; }
-    .btn-lrg                        { font-size: 125%; }
-    .btn-sml                        { font-size: 100%; }
     #calltoaction h3                { font-size: 300%; }
     #nav_primary i, .social a       { font-size: 32px; }
 		#brands p                       { font-size: 200%; }
@@ -519,6 +439,7 @@
 
   /* 4.7 - Borders - 4.7 */
     section, blockquote							{ border-bottom: 1px solid #b2dfdb; } /* gives each section & blockquote a light teal bottom border */
+    .col-1                          { border-bottom: 0; } /* then we remove the above mentioned border for col-1 as these are intended to be headers directly related to the content below them */
     .comparison > *:last-child			{ border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
 
 

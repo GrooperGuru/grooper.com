@@ -161,7 +161,7 @@
 		h3                              { font-size: 200%; }
 		h4                              { font-size: 150%; }
 		p, figcaption li                { font-size: 112.5%; }
-    figure > i                      { font-size: 600% !important; }
+    figure .fa                      { font-size: 600% !important; }
     label, input                    { font-size: 16px; }
     blockquote span                 { font-size: 112.5%; }
 		blockquote::before,
@@ -206,7 +206,7 @@
 		a:hover, a:active               { color: #29b6f6; } /* links during hover and click */
     h2 ~ p                          { color: #000; } /* paragraphs immediately after a h2 */
     header p                        { color: #fff; }
-    figure > i                      { color: #311b92 !important; }
+    figure i                        { color: #311b92 !important; }
   	nav ul ul li a                  { color: #333 !important; } /* set important to override the different default link states active, visited, etc. */
   	#nav_primary i, #copyright      { color: #666; }
     #nav_secondary a                { color: #888; }
@@ -442,7 +442,8 @@
 		section, blockquote,
 		figure, section > div           { padding-top: 72px; }
 		section, blockquote             { padding-bottom: 72px;} /* responsible for the bottom padding of each section and blockquote within the main area of the site */
-		.col-1 > figure, .col-1 > div   { padding-top: 0; } /* there will only ever be one figure or div within a col-1 container, so the .col-1 itself already has the top padding needed */
+		.col-1 > *:first-child          { padding-top: 0; } /* there will only ever be one figure or div within a col-1 container, so the .col-1 itself already has the top padding needed */
+		/*.col-1 > p + figure, .col-1 > p + div   { padding-top: 72px; }*/ /* there will only ever be one figure or div within a col-1 container, so the .col-1 itself already has the top padding needed */
 		section > p                     { padding-bottom: 0; }
     figcaption li                   { padding-bottom: 1em; }
 		#brands                         { padding-top: 144px; padding-bottom: 144px; }
@@ -451,7 +452,6 @@
 		section > h2, section > p       { padding-left: 12%; padding-right: 12%; }
     blockquote                      { padding-left: 18%; padding-right: 18%; }
     #next_feature                   { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
-		#next_feature a,
     #footer_links > div             { padding: 0; }
     #calltoaction div               { padding: 7%; }
 		figcaption                      { margin: 0 0 auto 0; }
@@ -460,7 +460,9 @@
     img + figcaption, figcaption + img,
     table + figcaption, figcaption + table
                                     { margin-top: 36px; } /* adds margin between images/tables and the text they belong to */
-    figure > i + figcaption         { margin-top: 1em; } /*add margin between icons and captions within a figure */
+    figure .fa + figcaption,
+    figure .fa + h3,
+    figure .fa + p                  { margin-top: 1em; } /*add margin between icons and captions within a figure */
 		.col-2-1 figure:first-child figcaption,
 		.col-1-2 figure:last-child figcaption,
 		.col-1 figcaption								{ width: 70%; }
@@ -486,7 +488,7 @@
 		nav > ul > li > a:before,
 		nav ul ul,
 		#nav_secondary button,
-		#nav_secondary_indicator				{ position: absolute; }
+		#nav_secondary span				{ position: absolute; }
 
 
   /* 4.5 - Float - 4.5 */
@@ -517,7 +519,6 @@
 
   /* 4.7 - Borders - 4.7 */
     section, blockquote							{ border-bottom: 1px solid #b2dfdb; } /* gives each section & blockquote a light teal bottom border */
-    .col-1                          { border-bottom: 0; } /* then we remove the above mentioned border for col-1 as these are intended to be headers directly related to the content below them */
     .comparison > *:last-child			{ border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
 
 
@@ -577,18 +578,18 @@
     #nav_secondary a,
     #nav_secondary button           { height: 48px; }
     .nav_advancer_icon              { height: 32px; }
-    #nav_secondary_indicator        { height: 2px; }
+    #nav_secondary span             { height: 2px; }
     #nav_secondary_container        { width: calc(100% - 96px); }
     #nav_secondary button           { width: 48px; }
     .nav_advancer_icon              { width: 20px; }
-    #nav_secondary_indicator        { width: 100px; }
+    #nav_secondary span             { width: 100px; }
     #nav_secondary a                { min-height: 48px; }
     #nav_secondary button           { top: 0; }
     #nav_secondary button,
-    #nav_secondary_indicator        { bottom: 0; }
+    #nav_secondary span             { bottom: 0; }
     #nav_secondary_right            { right: 0; } /*push right button to right side of navbar */
     #nav_secondary_left,
-    #nav_secondary_indicator        { left: 0; }
+    #nav_secondary span             { left: 0; }
     #nav_secondary button           { opacity: 0; } /* Set the buttons invisible by default */
     #nav_secondary_left:focus,
     [data-overflowing="both"] ~ #nav_secondary_left,
@@ -699,10 +700,10 @@
   .col-1.figure_small img,
   .col-1.figure_small table         { width: 60%; }
   .side_by_side.figure_large img,
-  .side_by_side.figure_large table      { -webkit-flex-basis: 61.25%; -ms-flex-preferred-size: 61.25%; flex-basis: 61.25%; }
-  .side_by_side.figure_large figcaption { -webkit-flex-basis: 26.25%; -ms-flex-preferred-size: 26.25%; flex-basis: 26.25%; }
+  .side_by_side.figure_large table      { -webkit-flex-basis: 61.38%; -ms-flex-preferred-size: 61.38%; flex-basis: 61.38%; }
+  .side_by_side.figure_large figcaption { -webkit-flex-basis: 33.05%; -ms-flex-preferred-size: 33.05%; flex-basis: 33.05%; }
   .side_by_side.figure_large img,
-  .side_by_side.figure_large table  { max-width: 61.25%; } /* should match the flex basis defined above */
+  .side_by_side.figure_large table  { max-width: 61.38%; } /* should match the flex basis defined above */
 
 
   /* The text alignment classes force alignment of the element receiving the class and all of its children */
@@ -801,21 +802,15 @@
 																					color: #ffffff;
 																					background: rgba(255,255,255,.066);
 																				}
-  .btn-sml															{
-																					margin: 16px auto 0; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
-																					padding: 6px 12px;
-																					margin: 16px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
-																				}
-	.btn-lrg															{
-																					margin: 32px auto 0; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
-																					padding: 16px 32px;
-																					margin: 32px auto 0 auto; /* left/right margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
-																				}
+  .btn-sml                              { padding: 6px 12px; }
+  .btn-lrg                              { padding: 16px 32px; }
+  p + .btn-sml                          { margin: 16px auto 0; } /* left/right auto margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
+	p + .btn-lrg                          { margin: 32px auto 0; } /* left/right auto margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
 	.btn-sml:hover, .btn-lrg:hover				{
 																					-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
 																					        box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
-																					background: rgba(255,255,255,0.97) !important;
-																					color: rgba(0,0,0,0.8) !important;
+																					        background: rgba(255,255,255,0.97) !important;
+																					             color: rgba(0,0,0,0.8) !important;
 																				}
 
 
@@ -846,14 +841,14 @@
 
 /* TRANSFORMS AND TRANSITIONS */
 
-  .noScroll															{
-																					overflow: hidden;
-																					width: 100%;
-																				}
-	#nav_secondary_indicator							{
-																					-webkit-transform-origin: 0 0;
-																					    -ms-transform-origin: 0 0;
-																					        transform-origin: 0 0;
+  .noScroll                             {
+                                          overflow: hidden;
+                                          width: 100%;
+                                        }
+	#nav_secondary span                   {
+                                          -webkit-transform-origin: 0 0;
+                                              -ms-transform-origin: 0 0;
+                                                  transform-origin: 0 0;
 																				}
 	nav > ul > li > a:before              { /* sets the initial scale of the nav link hover to 0 so it can later animate to full scale */
 																					-webkit-transform: scaleX(0);
@@ -1098,9 +1093,7 @@
       .side_by_side figure ul     { flex-basis: 100%; }
       .side_by_side figcaption    { padding-left: 0 !important; }
       .side_by_side figcaption    { -webkit-box-ordinal-group: 3; -webkit-order: 2; -ms-flex-order: 2; order: 2; } /* moves the subject of the figure to above the figcaption text */
-      .side_by_side * + figcaption,
-      figcaption + .side_by_side *
-                                  { margin-top: 36px !important; } /* adds margin between images/tables and the text they belong to */
+      .side_by_side figcaption    { margin-top: 36px !important; } /* adds margin between images/tables and the text they belong to */
   }
 
 

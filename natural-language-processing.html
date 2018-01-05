@@ -106,7 +106,7 @@
       <figure>
         <figcaption>
           <h2>Paragraph Detection & Analysis</h2>
-          <p>Grooper's paragraph ranking engine assesses a document's structure and isolates each individual paragraph. The language within and surrounding the paragraph is analyzed and a stacked output list is generated.</p>
+          <p>Grooper's paragraph ranking engine assesses a document's structure, intelligently <i>Groops</i> words into paragraphs, then compares them against training samples to find the "best match". Then the user is presented a recommendation list.</p>
         </figcaption>
         <img src="images/features/natural-language-processing/grooper-natural-language-processing-lexical-paragraph-analysis-phases.png" />
       </figure>
@@ -138,21 +138,56 @@
 
 
 		<blockquote class="bg-dark orange tile">
-			<p>Grooper is a perfect balance of structure and flexibility. It gives you only what you need, lets you easily create the rest specifically for the project, and then it gets out of your way.</p>
-			<span>WebDevCorner.com</div>
+			<p>Lease and contract analysis is a major strength for Grooper. We have successfully built a working model that finds all of the key provisions throughout the body of the main document. Then it automatically searches for modifications to each within addendums/exhibits and brings them inline with the main provision. This speeds up our analysis and ensures we are correctly interpreting the data.</p>
+			<!--<span>WebDevCorner.com</div>-->
 		</blockquote>
 
 
-    <section class="col-1 figure_small align_bottom">
+    <section class="col-1 align_bottom shadow_img">
+      <h2>Spacial Recognition</h2>
+      <p>Pattern-matching on its own is great for efficiently finding common values like dates, amounts, and phone numbers. But when multiple choices are found on a document, how will the system know which one is the "best match"? The answer is spacial awareness. Each choice is ranked by analyzing the words and features nearby.</p>
       <figure>
+        <img src="images/features/natural-language-processing/grooper-natural-language-processing-spacial-analysis-radial.png" />
         <figcaption>
-          <h2>Spacial Recognition</h2>
-          <p>Pattern-matchinng on its own is great for efficiently finding value like dates, amounts, and phone numbers. But when multiple choices are found on a document, how will the system know which one is the "best match"? The answer is spacial awareness. Each choice is ranked by analyzing the words and features nearby.</p>
+          <p>In the example above, we are easily able to differentiate information pertaining to the borrower vs. co-borrower through simple radial spacial analysis.</p>
         </figcaption>
-        <img src="images/features/natural-language-processing/grooper-natural-language-processing-lexical-paragraph-analysis-phases.png" />
       </figure>
     </section>
 
+    <section class="col-1 side_by_side figure_large shadow_img">
+      <figure>
+        <figcaption>
+          <h3>Field/Value Pairs</h3>
+          <p>In structured documents, most information is recorded in value/label pairs - meaning every value has a corresponding label indicating its meaning. And field labels are generally written above and/or to the left of the value they define. Grooper can rank possible values by looking spacially in one or more general directions to determine meaning.</p>
+        </figcaption>
+        <img src="images/features/natural-language-processing/grooper-natural-language-processing-spacial-analysis-zonal.jpg" />
+      </figure>
+      <figure>
+        <figcaption>
+					<h3>Radial Analysis and Geotagging</h3>
+					<p>Consideration of not only the words nearby, but also the direction each word is located in relation to the candidate can lead to more accurate identification of field values from documents.
+            This feature also allows for filtering features based on direction as a simple way to remove features not likely to define a value.</p>
+        </figcaption>
+        <img src="images/features/natural-language-processing/grooper-natural-language-processing-spacial-analysis-radial.jpg" />
+      </figure>
+      <figure>
+        <figcaption>
+					<h3>Feature Truncation</h3>
+					<p>As the distance between a value and surrounding words grows, those words are likely to relate less to the value. Therefore, it can be beneficial to trim the feature list to the n words closest to the value. Grooper gives you full control to decide how many nearby features should be considered and how far away from each candidate Grooper is allowed to look.</p>
+        </figcaption>
+        <img src="images/features/natural-language-processing/grooper-natural-language-processing-feature-truncation.jpg" />
+      </figure>
+      <figure>
+        <figcaption>
+					<h3>Confidence Filtering</h3>
+					<p>Perform initial training, then configure Grooper to remove the lowest scoring candidates before rolling your model into production. This keeps data analysts and data entry team members focused on working with better data.</p>
+        </figcaption>
+        <img src="images/features/natural-language-processing/grooper-natural-language-processing-spacial-analysis-radial.jpg" />
+      </figure>
+    </section>
+
+
+<!--
     <section class="col-4 align_top">
       <figure>
         <i class="fa fa-expand" aria-hidden="true"></i>
@@ -200,7 +235,7 @@
 				</figcaption>
 			</figure>
 		</section>
-
+-->
     <section id="next_feature">
       <a href="#">Next Feature:<br>INSERT A FEATURE HERE</a>
     </section>
