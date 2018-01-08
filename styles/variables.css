@@ -39,9 +39,9 @@
 
 
 		/* BASED ON GOOGLE DEEP PURPLE */
-		--dpu-050 : #EDE7F6; --dpu-100 : #D1C4E9; --dpu-200 : #B39DDB; --dpu-300 : #9575CD; --dpu-400 : #7E57C2;
-		--dpu-500 : #673AB7; --dpu-600 : #5E35B1; --dpu-700 : #512DA8; --dpu-800 : #4527A0; --dpu-900 : #311B92;
-		--dpu-100a: #B388FF; --dpu-200a: #7C4DFF; --dpu-400a: #651FFF; --dpu-700a: #6200EA;
+		--dpu-050 : #ede7f6; --dpu-100 : #d1c4e9; --dpu-200 : #b39ddb; --dpu-300 : #9575cd; --dpu-400 : #7e57c2;
+		--dpu-500 : #673ab7; --dpu-600 : #5e35b1; --dpu-700 : #512da8; --dpu-800 : #4527a0; --dpu-900 : #311b92;
+		--dpu-100a: #b388ff; --dpu-200a: #7c4dff; --dpu-400a: #651fff; --dpu-700a: #6200ea;
 
 
     /* BASED ON GOOGLE DEEP ORANGE */

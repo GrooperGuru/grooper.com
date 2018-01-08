@@ -239,7 +239,7 @@
 		th															{ vertical-align: bottom; }
 		td															{ vertical-align: top; }
 		table														{ width: 100%; }
-		thead, tr												{ border-bottom: 1px solid #d0d0d0; }
+		thead, tr												{ border-bottom: 1px solid #eeeeee; }
 		td, th													{
 																			padding: 16px 5px 14px !important;
 																			vertical-align: middle;
@@ -299,12 +299,12 @@
         section:not(.col-1),
         section:not(.col-1) > figure,
         section:not(.col-1) > div,
+        .field-wrapper,
+        .content__button,
         #nav_primary,
 				#calltoaction,
 				#calltoaction > div,
-				#footer_links,
-				.field-wrapper,
-				.content__button            {
+				#footer_links               {
 																			display: -webkit-box;
 																			display: -webkit-flex;
 																			display: -ms-flexbox;
@@ -322,9 +322,9 @@
 
 			/* 4.2.1.2 - Flex Direction - 4.2.1.2 */
 			/* Direction of the flex container's main axis */
-				#calltoaction > div,
-				.col-1 figure,
-        section:not(.col-1) > *     {
+        section:not(.col-1) > *,
+        .col-1 figure,
+        #calltoaction > div         {
                                       -webkit-box-orient: vertical;
                                       -webkit-box-direction: normal;
                                       -webkit-flex-direction: column;
@@ -376,8 +376,8 @@
 
 			/* 4.2.1.5 - Align Items - 4.2.1.5 */
 			/* Align all items along the cross axis of a flexible container */
-				.col-1 figure,
         section:not(.col-1) > *,
+				.col-1 figure,
         #nav_primary,
 				#nav_primary li,
 				#nav_secondary a            {
@@ -636,18 +636,31 @@
 /* CONVENIENCE CLASSES */
 
 	/* The typography class should be applied to text-heavy sections, like FAQs, and other long, informatoinal articles needing a more consistent and condensed text layout to increase legibility and reduce reader fatigue */
-	.typography, .typography *				{ text-align:left !important; }
-	.typography, .typography *				{ font: 300 16px/24px "Roboto",sans-serif !important; }
-	.typography h2										{ font: 300 34px/40px "Roboto",sans-serif !important; }
-	.typography h3										{ font: 400 22px/36px "Roboto",sans-serif !important; }
-	.typography h4										{ font: 400 18px/32px "Roboto",sans-serif !important; }
-	.typography, .typography *				{	color: #212121 !important; }/*{	color: rgba(17,17,17,.8) !important; } */
-  .typography figcaption *          {	color: #616161 !important; }/*{	color: rgba(17,17,17,.8) !important; } */
-	/*.typography h3, .typography h4		{ color: rgba(0,0,0,1) !important; }
-	.typography ul, .typography li		{ color: rgba(17,17,17,1) !important; }*/
+	.typography, .typography *:not(i) { text-align:left !important; }
+	.typography, .typography *:not(i) {
+                                      font-weight: 300;
+                                      font-size: 16px;
+                                      line-height: 24px;
+                                    }
+	.typography h2										{
+                                      font-size: 34px;
+                                      line-height: 40px;
+                                    }
+	.typography h3										{
+                                      font-weight: 400;
+                                      font-size: 22px;
+                                      line-height: 36px;
+                                    }
+	.typography h4										{
+                                      font-weight: 400;
+                                      font-size: 18px;
+                                      line-height: 32px;
+                                    }
+  table .fa                         { font-size: 250% !important;}
+	.typography, .typography *				{	color: #212121 !important; }
+  .typography figcaption *          {	color: #616161 !important; }
   .typography div                   { display: block !important; }
-
-  .typography h2                    {
+  .typography h2, .typography p     {
                                       padding-left: 0;
                                       padding-right: 0;
                                     }
@@ -661,64 +674,117 @@
 	.typography li										{ margin: 8px 0 !important; }
 
 
-section.typography { padding-left: 10%; padding-right: 10%; }
-.typography {display:block;}
-aside {flex-basis: 30%;
-    border: 1px solid #aaa;
-    margin-right: 5%;
-    margin-top: 72px;
-    padding: 72px;}
-  #prev_next                        { display: flex; }
-  #prev_next div                    {
-                                      padding: 12px 10%;
-                                      flex-basis: 50%;
-                                      height: 96px;
-                                    }
-  #prev_next div:first-child        {
-                                      text-align: left;
+
+  section.typography                {
                                       padding-left: 10%;
-                                      background: #26a69a;
-                                    }
-  #prev_next div:last-child         {
-                                      text-align: right;
                                       padding-right: 10%;
-                                      background: #ff7043;
                                     }
-  #prev_next .fa                    {
-                                      font-size: 24px;
-                                      position: relative;
-                                      bottom: -40px;
+  .typography                       { display:block; }
+  aside                             {
+                                      flex-basis: 30%;
+                                      border: 1px solid #aaa;
+                                      margin-right: 5%;
+                                      margin-top: 72px;
+                                      padding: 72px;
                                     }
-  #prev_next a                      {
-                                      cursor: default;
-                                      display: block;
+  .typography figure                { align-items: flex-start; }
+
+
+  #prev_next a                      { cursor: default; }
+  #prev_next                        { display: flex; }
+  #prev_next a                      { display: block; }
+  #prev_next div:first-child a,
+  #prev_next div:first-child .fa,
+  #prev_next div:first-child span   { float: left; }
+  #prev_next div:last-child a,
+  #prev_next div:last-child .fa,
+  #prev_next div:last-child span    { float: right; }
+  #prev_next a span                 { clear: both; }
+  #prev_next a span.direction       { font-size: 16px; }
+  #prev_next a span:last-child      { font-size: 20px; }
+  #prev_next .fa                    { font-size: 24px; }
+  #prev_next a span.direction       { font-weight: 400; }
+  #prev_next a span:last-child      { font-weight: 500; }
+  #prev_next div:first-child        { text-align: left; }
+  #prev_next div:last-child         { text-align: right; }
+	#prev_next a:link,
+  #prev_next a:visited              { color: rgba(17,17,17,.65); }
+  #prev_next a:hover,
+  #prev_next a:active               { color: rgba(255,255,255,.85); }
+  #prev_next div:first-child a      { padding-left: 10%; }
+  #prev_next div:last-child a       { padding-right: 10%; }
+  #prev_next div, #prev_next a      { height: 96px; }
+  #prev_next a                      { width: 90%; }
+  #prev_next div                    { flex-basis: 50%; }
+  #prev_next .fa, #prev_next a span { position: relative; }
+  #prev_next a span                 { top: 0px; }
+  #prev_next .fa                    { bottom: -38px; }
+  #prev_next div:first-child span   { left: 32px; }
+  #prev_next div:last-child span    { right: 32px; }
+  #prev_next div:first-child        { background: #26a69a; }
+  #prev_next div:last-child         { background: #ff7043; }
+
+
+
+  table.roadmap tr                  { font-weight: 500 !important; }
+  table.roadmap tr td:last-child    { text-align: right !important; }
+  table.roadmap div                 { margin-right: 16px; }
+  table.roadmap td:nth-child(2)     { width: 40%; }
+  table.roadmap div,
+  table.roadmap span                {
+                                      display:block;
+                                      border-radius: 1em;
+                                    }
+  table.roadmap div > span          {
+                                      height: 12px;
                                       width: 100%;
-                                      height: 96px;
                                     }
-  #prev_next a:hover                { color: rgba(255,255,255,.85); }
-  #prev_next div:first-child .fa    { float: left; }
-  #prev_next div:last-child .fa     { float: right; }
-  #prev_next a span                 {
-                                      clear: both;
-                                      position:
-                                      relative; top: 0px;
+  table.roadmap .progress div > span{ width: 40%; }
+  table.roadmap .testing div > span { width: 70%; }
+  table.roadmap span span           {
+                                      position: relative;
+                                      top: -2px;
+                                      height: 16px;
+                                      width: 16px;
                                     }
-  #prev_next a span:last-child      {
-                                      font-size: 20px;
-                                      font-weight: 500;
+  .roadmap tr:hover div             { background: #bdbdbd; }
+  .roadmap tbody tr.pending:hover   { background: #f5f5f5; }
+  .roadmap tbody tr.progress:hover  { background: #fbe9e7; }
+  .roadmap tbody tr.testing:hover   { background: #ede7f6; }
+  .roadmap tbody tr.complete:hover  { background: #e0f2f1; }
+  .roadmap div,
+  .roadmap .pending div > span      { background: #e0e0e0; }
+  .roadmap .testing div > span      { background: #9575cd; }
+  .roadmap .progress div > span     { background: #ff8a65; }
+  .roadmap .complete div > span     { background: #4db6ac; }
+  .roadmap .pending i               { color: #e0e0e0 !important; }
+  .roadmap .testing i               { color: #9575cd !important; }
+  .roadmap .progress i              { color: #ff8a65 !important; }
+  .roadmap .complete i              { color: #4db6ac !important; }
+
+  /*.roadmap .pending span span       { background: #bdbdbd; }*/
+  /*.roadmap .testing span span       { background: #512da8; left: calc(100% - 16px);}*/
+  /*.roadmap .progress span span      { background: #e64a19; left: calc(100% - 16px);}*/
+  /*.roadmap .complete span span      { background: #00796b; left: calc(100% - 16px);}*/
+  .roadmap span span                { display:none; } /* we may end up killing the extra spans, as these are more for dragable bars */
+
+  .pie                              {
+                                      width: 200px;
+                                      height: 200px;
+                                      border-radius: 50%;
+                                      background: #4db6ac;
+                                      background-image: linear-gradient(to right, transparent 50%, #757575 0);
                                     }
-  #prev_next div:first-child span   {
-                                      float: left;
-                                      left: 32px; }
-  #prev_next div:last-child span    {
-                                      float: right;
-                                      right: 32px;
+  .pie span                      {
+                                      content: '';
+                                      display: block;
+                                      margin-left: 50% !important;
+                                      height: 100%;
+                                      border-radius: 0 100% 100% 0 / 50%;
+                                      background-color: inherit;
+                                      transform-origin: left;
+                                      /*transform: rotate(294deg);*/
                                     }
-
-
-
-
-
 
   /* The .shadow classes are designed to be applied to containers and style child objects with a shadow */
   .shadow_img img                   {
@@ -934,6 +1000,7 @@ aside {flex-basis: 30%;
 	nav ul ul li,
 	nav ul ul a,
 	#nav_secondary button,
+  .roadmap div,
   #prev_next a,
   .btn-lrg, .btn-sml, .social a, .fa		{
 																					-webkit-transition: all 0.2s linear 0s !important;
