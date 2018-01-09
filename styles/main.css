@@ -174,7 +174,6 @@
     #calltoaction h3                { font-size: 300%; }
     #nav_primary i, .social a       { font-size: 32px; }
 		#brands p                       { font-size: 200%; }
-    #next_feature                   { font-size: 150%; }
     #calltoaction p                 { font-size: 125%; }
     nav > ul > li > a,
     footer li                       { font-size: 16px; }
@@ -217,8 +216,7 @@
     #footer_links a:hover,
     #footer_links label,
     .social a:hover .fa             { color: #fff; }
-    nav ul ul li:hover a,
-		#next_feature a                 { color: #009688; } /* teal */
+    nav ul ul li:hover a            { color: #009688; } /* teal */
 		footer li,
 		#footer_links a                 { color: rgba(255,255,255,.46); }
     #nav_primary i:hover            { color: rgba(255,255,255,.86); }
@@ -450,7 +448,6 @@
     #brands                         { padding-left: 0; padding-right: 0; }
 		section > h2, section > p       { padding-left: 12%; padding-right: 12%; }
     blockquote                      { padding-left: 18%; padding-right: 18%; }
-    #next_feature                   { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
     #calltoaction div               { padding: 7%; }
 		figcaption                      { margin: 0 0 auto 0; }
 		.social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
@@ -463,7 +460,6 @@
 		.col-2-1 figure:last-child figcaption,
 		.col-2 figcaption, .col-1 table { width: 80%; }
 		.col-3 figcaption								{ width: 90%; }
-		#next_feature a,
     .col-2 table, .col-3 table,
     .col-4 table, .col-4 figcaption { width: 100%; }
 
@@ -603,7 +599,7 @@
     footer li,
     .content__button input          { padding: 4px 0; }
     #footer_links input             { padding: 0 8px; }
-    footer form                     { margin-top: 23px; }
+    footer form                     { margin-top: 24px; }
     .field-wrapper,
     .content__button                { margin: 4px 0; }
     .field-wrapper,
@@ -611,6 +607,10 @@
     #footer_links input             { height: 32px; }
     #footer_links input             { width: 100%; }
     #footer_links input             { border: none; }
+    #footer_links                   {
+                                      max-width: 960px;
+                                      margin: 0 auto;
+                                    }
 
 
   /* 5.3 - Social - 5.3 */
@@ -711,6 +711,7 @@
   #prev_next a:visited              { color: rgba(17,17,17,.65); }
   #prev_next a:hover,
   #prev_next a:active               { color: rgba(255,255,255,.85); }
+  #prev_next a:hover .fa            { color: rgba(255,255,255,.40); }
   #prev_next div:first-child a      { padding-left: 10%; }
   #prev_next div:last-child a       { padding-right: 10%; }
   #prev_next div, #prev_next a      { height: 96px; }
@@ -718,7 +719,7 @@
   #prev_next div                    { flex-basis: 50%; }
   #prev_next .fa, #prev_next a span { position: relative; }
   #prev_next a span                 { top: 0px; }
-  #prev_next .fa                    { bottom: -38px; }
+  #prev_next .fa                    { bottom: -42px; }
   #prev_next div:first-child span   { left: 32px; }
   #prev_next div:last-child span    { right: 32px; }
   #prev_next div:first-child        { background: #26a69a; }
@@ -819,6 +820,7 @@
   .side_by_side > p + figure,
   .side_by_side > h2 + figure       { margin-top: 36px; }
   .side_by_side figure > *          { margin: 0; /*margin-left: 36px;*/ }
+  .side_by_side figure ~ figure     { padding-top: 96px !important; }
 
 
   /* figure_large/small classes are designed to give figure more or less size in relation to their figcaption*/
@@ -1028,6 +1030,53 @@
 
 
 /* MEDIA QUERIES */
+  @media only screen and (min-width: 1921px) {
+    header                          { padding: 144px 18% 240px; } /* bottom padding should be equal to top padding + margin-top */
+    section, blockquote             { padding-top: 128px; padding-bottom: 128px; }
+    .side_by_side figure ~ figure   { padding-top: 128px !important; }
+    section, #nav_primary           { padding-left: 10%; padding-right: 10%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+    #brands                         { padding-left: 5%; padding-right: 5%; }
+    section > h2, section > p       { padding-left: 12%; padding-right: 12%; }
+    blockquote                      { padding-left: 20%; padding-right: 20%; }
+    #calltoaction div               { padding: 7% 12%; }
+    #prev_next a span.direction     { font-size: 18px; }
+    #prev_next a span:last-child    { font-size: 22px; }
+    #prev_next div:first-child a    { padding-left: 15%; }
+    #prev_next div:last-child a     { padding-right: 15%; }
+    #prev_next div, #prev_next a    { height: 128px; }
+    #prev_next a span               { top: 16px; }
+    #prev_next .fa                  { bottom: -58px; }
+    .side_by_side.figure_large figcaption {
+                                           -webkit-flex-basis: 30.625%;
+                                      -ms-flex-preferred-size: 30.625%;
+                                                   flex-basis: 30.625%;
+                                    }
+    .side_by_side.figure_large img,
+    .side_by_side.figure_large table{
+                                               max-width: 56.875%;
+                                      -webkit-flex-basis: 56.875%;
+                                 -ms-flex-preferred-size: 56.875%;
+                                              flex-basis: 56.875%;
+                                    }
+  }
+
+  @media only screen and (min-width: 2160px) {
+    header                          { padding: 144px 18% 240px; } /* bottom padding should be equal to top padding + margin-top */
+    section, #nav_primary           { padding-left: 13%; padding-right: 13%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+    #brands                         { padding-left: 10%; padding-right: 10%; }
+    section > h2, section > p       { padding-left: 15%; padding-right: 15%; }
+    blockquote                      { padding-left: 23%; padding-right: 23%; }
+    #calltoaction div               { padding: 10% 15%; }
+  }
+
+  @media only screen and (min-width: 2561px) {
+    header                          { padding: 144px 18% 240px; } /* bottom padding should be equal to top padding + margin-top */
+    section, #nav_primary           { padding-left: 15%; padding-right: 15%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+    #brands                         { padding-left: 10%; padding-right: 10%; }
+    section > h2, section > p       { padding-left: 15%; padding-right: 15%; }
+    blockquote                      { padding-left: 25%; padding-right: 25%; }
+    #calltoaction div               { padding: 10% 15%; }
+  }
 
   @media only screen and (max-width: 1680px) {
     header											{ padding: 96px 10% 192px; }
@@ -1062,7 +1111,6 @@
 		h3                          { font-size: 175%; }
     nav ul ul a                 { line-height: 42px; }
     header                      { padding: 88px 10% 152px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
-		#next_feature               { padding: 36px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
 		section > h2, section > p   { padding-left: 5%; padding-right: 5%; }
     .social                     { margin: 72px auto 16px auto; }
     nav > li                    { height: 64px; } /* shrink to match the new height of the navbar */
@@ -1074,10 +1122,11 @@
 		blockquote::after						{ right: 54px; }
 
     /* 1280px updates for convenience classes */
-      .col-1.figure_small img,
-      .col-1.figure_small table   { width: 70%; }
+      figure .fa + *              { margin-top: 0; } /* becuase the fa icons disappear at this screen res, we no longer need to add margin to the element right after these */
       section.side_by_side        { padding-left: 5%; padding-right: 5%; } /*only make change if the side_by_side class is applied to a section itself */
       .side_by_side figure .fa    { display: none; }
+      .col-1.figure_small img,
+      .col-1.figure_small table   { width: 70%; }
       .side_by_side img,
       .side_by_side table         {
                                     max-width: 51.94%;
@@ -1106,7 +1155,6 @@
 		#nav_secondary a            { font-size: 14px; }
 		header                      { padding: 64px 7% 112px; }
     footer                      { padding: 64px 7% 8px 7%; }
-    #next_feature               { padding: 32px 0; } /*this really only matters for top and bottom padding... we will never use enough width for the sides to matter */
 		#nav_secondary              { padding: 0; }
     section, blockquote         { padding-top: 64px; }
     figure                      { padding-top: 64px !important; }
@@ -1192,12 +1240,13 @@
 
     /* 768px updates for convenience classes */
       #prev_next div:first-child  { flex-basis: 32px; }
-      #prev_next div:last-child   { flex-basis: 100%; padding-right: 16px; }
-      #prev_next div:first-child  { padding: 12px 0 12px 4px; }
+      #prev_next div:last-child   { flex-basis: 100%; }
+      #prev_next div:first-child  { padding-left: 4px; }
+      #prev_next div:last-child   { padding-right: 8px; }
+      #prev_next div:last-child a { padding-right: 0; }
       #prev_next div:last-child span { right: 24px; }
       #prev_next div:first-child span { display: none; }
-      #prev_next .direction { font-size: 16px; }
-      #prev_next div:last-child { padding-right: 16px; }
+      #prev_next .direction       { font-size: 16px; }
 
 
   		.comparison > *:last-child	{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
@@ -1319,6 +1368,12 @@
 
 
     /* 600px updates for convenience classes */
+      #prev_next a span           { top: -10px; }
+      #prev_next .fa              { bottom: -32px; }
+      #prev_next div, #prev_next a{ height: 72px; }
+
+      .side_by_side figcaption    { margin-top: 24px !important; }
+      .side_by_side figure ~ figure { padding-top: 72px !important; }
       section.side_by_side        { padding-left: 48px; padding-right: 48px; }
       .side_by_side img,
       .side_by_side table         { max-width: 80%; }
@@ -1331,10 +1386,9 @@
 
 
   @media (max-width: 432px){
-    #next_feature a               { font-size: 18px; }
-    section                       { padding: 32px 24px; } /* hard coding padding here for small devices and phones, as responsive sizing will no longer yield predictable results */
+    section                       { padding: 32px 24px !important; } /* hard coding padding here for small devices and phones, as responsive sizing will no longer yield predictable results */
 
 
     /* 432px updates for convenience classes */
-      .side_by_side li { width: calc(100% - 2em); }
+      .side_by_side li            { width: calc(100% - 2em); }
   }
