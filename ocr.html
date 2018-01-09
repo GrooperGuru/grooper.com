@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge;" />
+	<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Optical Character Recognition (OCR) with Grooper</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="styles/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <nav id="nav_primary">
+    <a href="#"></a>
+    <input id="checkbox_click" type="checkbox" onclick="noScroll()"/>
+    <i class="fa fa-bars"></i>
+    <i class="fa fa-times"></i>
+    <ul>
+      <li><a href="features.html">Features</a></li>
+        <!--<ul>
+          <li><a href="#">placeholder</a></li>
+        </ul>-->
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="showcase.html">Showcase</a></li>
+      <li><a href="training.html">Training</a></li>
+      <li><a href="support.html">Support</a></li>
+      <li><a href="https://grooper.vanillacommunities.com">GrooperXchange</a></li>
+    </ul>
+    <div class="social">
+      <a href="https://www.facebook.com/BusinessImagingSystems"><i class="fa fa-facebook"></i></a>
+      <a href="https://plus.google.com/u/0/b/115220706750340433625/+Bisok/posts"><i class="fa fa-google-plus"></i></a>
+      <a href="https://twitter.com/BIS_Tweets"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.linkedin.com/company/business-imaging-systems?trk=prof-exp-company-name"><i class="fa fa-linkedin"></i></a>
+      <a href="https://www.youtube.com/channel/UCiJPKqS_enHrFsX49cngqag"><i class="fa fa-youtube"></i></a>
+    </div>
+  </nav>
+
+
+  <header>
+		<h1>OCR and Electronic Text Collection</h1>
+		<p>Identify paragraphs, sentences, or other language elements which convey a specific meaning. Based on supervised machine learning – simply train examples. Powerful n-gram analysis ensures reliable interpretation – regardless of wording differences.</p>
+	</header>
+
+  <div id="nav_secondary">
+		<nav id="nav_secondary_container">
+			<div id="nav_secondary_contents" class="nav_secondary_contents">
+				<a href="scan-once.html" aria-selected="true">ScanOnce</a>
+				<a href="image-optimization-for-ocr.html">Image Optimization for OCR</a>
+				<a href="document-classification.html">Document Classification</a>
+				<a href="esp-document-sorting.html">ESP Document Sorting</a>
+				<a href="computer-vision.html">Computer Vision</a>
+				<a href="non-zonal-data-extraction.html">Non-Zonal Extraction</a>
+				<a href="ocr-synthesis.html">OCR Synthesis</a>
+				<a href="parallel-processing.html">Parallel Processing</a>
+				<a href="hierarchical-data-modeling.html">Hierarchical Data Modeling</a>
+				<a href="hierarchical-classification-ontologies.html">Hierarchical Classification Ontologies</a>
+				<a href="import-export-providers.html">Import/Export Providers</a>
+				<a href="bi-directional-transaction.html">Bi-Directional Transaction</a>
+				<a href="document-normalization.html">Document Normalization</a>
+				<a href="fuzzy-regex.html">Fuzzy RegEx</a>
+				<a href="natural-language-processing-nlp.html">Natural Language Processing (NLP)</a>
+				<a href="grooper-api.html">Fully-Documented API</a>
+				<span id="nav_secondary_indicator"></span>
+			</div>
+		</nav>
+		<button id="nav_secondary_left" type="button">
+				<svg class="nav_advancer_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M445.44 38.183L-2.53 512l447.97 473.817 85.857-81.173-409.6-433.23v81.172l409.6-433.23L445.44 38.18z"/></svg>
+		</button>
+		<button id="nav_secondary_right" type="button">
+				<svg class="nav_advancer_icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551 1024"><path d="M105.56 985.817L553.53 512 105.56 38.183l-85.857 81.173 409.6 433.23v-81.172l-409.6 433.23 85.856 81.174z"/></svg>
+		</button>
+	</div>
+
+  <main>
+
+    <section class="col-1 side_by_side figure_large">
+			<h2>It all starts with image quality</h2>
+			<p>Before any OCR action takes place, you want to make sure you're handing the OCR activity an image that is conducive to OCR analysis. The key is to remove everything from the page that isn't text. Grooper lets you process images through a growing arsenal of tools and out-of-the-box profiles specifically designed for this task. And the best part is that they won't alter the original version of the image you want to permanently retain.</p>
+      <figure>
+        <img src="images/features/ocr/grooper-ocr-image-pre-processing.jpg" />
+        <figcaption class="text_left">
+          <h3>Examples</h3>
+          <ul>
+            <li><strong>Remove lines</strong><br>(Line Removal, Blob Removal, Scan Line Removal)</li>
+            <li><strong>Ensure edges are clean.</strong><br>(Auto Border Crop, Border Fill)</li>
+            <li><strong>Remove small specks.</strong><br>(Blob Removal, Document Despeckle, Median Noise Filter)</li>
+            <li><strong>Remove large non-text objects</strong><br>(Blob Removal)</li>
+            <li><strong>Invert white-on-black zones.</strong><br>(Auto Invert Text)</li>
+            <li><strong>Remove Hole Punches</strong><br>(Hole Punch Removal, Blob Removal)</li>
+          </ul>
+        </figcaption>
+      </figure>
+    </section>
+
+
+		<blockquote class="bg-dark orange tile">
+			<p>Grooper is a perfect balance of structure and flexibility. It gives you only what you need, lets you easily create the rest specifically for the project, and then it gets out of your way.</p>
+			<span>WebDevCorner.com</div>
+		</blockquote>
+
+
+    <section class="col-1 side_by_side figure_large shadow_img">
+      <h2>OCR Synthesis</h2>
+      <p>No matter how clean and pristine your images may appear, OCR engines still have a difficult time collecting accurate text from images with multiple columns, different font sizes, and image shear. Grooper's patent-pending OCR synthesis engine intelligently performs multiple passess of OCR on different portions of the image and <strong>synthesizes</strong> the results together as a single unit.</p>
+
+      <figure>
+        <figcaption>
+          <i class="fa fa-repeat" aria-hidden="true"></i>
+          <h3>Iterative OCR</h3>
+          <p>Iterative OCR is a technique we've developed as a way to capture text the OCR Engine simply misses the first time around. The idea is that we run a pass of OCR on the entire document, drop out any portions of the page where we were able to obtain text, then run another OCR iteration on the new image. With the new image having far less distractions, it is able to more clearly find text it missed during the previous passes./p>
+        </figcaption>
+        <img src="images/features/natural-language-processing/grooper-natural-language-processing-spacial-analysis-zonal.jpg" />
+      </figure>
+      <figure>
+        <figcaption>
+          <i class="fa fa-th" aria-hidden="true"></i>
+					<h3>Cellular Validation</h3>
+					<p>Multi-column layouts present a unique OCR challenge. Horizontally aligned text on each side of a multi-column document may have different font sizes and the lines may be slightly offset from each other. A standard OCR process will have a complete breakdown of accuracy in one of the two sides. Grooper's Cellular Validation OCR splits the image into a grid of multiple areas and OCRs them independently.</p>
+        </figcaption>
+        <img src="images/features/natural-language-processing/grooper-natural-language-processing-spacial-analysis-radial.jpg" />
+      </figure>
+      <figure>
+        <figcaption>
+          <i class="fa fa-align-center" aria-hidden="true"></i>
+					<h3>Segment Reprocessing</h3>
+					<p>The final synthesis task is to perform segment analysis. A "segment" is a string of characters, all on one row of text, that are separated by large space like carriage returns, line feeds, and tabs. We then determine the average OCR accuracy of each tab and independently re-run OCR on all segments that aren't of optimum quality.</p>
+        </figcaption>
+        <img src="images/features/natural-language-processing/grooper-natural-language-processing-feature-truncation.jpg" />
+      </figure>
+    </section>
+
+
+    <section class="col-3 align_top">
+      <figure>
+        <i class="fa fa-tachometer" aria-hidden="true"></i>
+        <figcaption>
+					<h3>Performance Balancing</h3>
+					<p>Grooper's new “Run Speed” option gives you control to achieve an ideal balanace between accuracy and performance.</p>
+				</figcaption>
+			</figure>
+      <figure>
+        <i class="fa fa-globe" aria-hidden="true"></i>
+        <figcaption>
+					<h3>Language Support</h3>
+					<p>Supports 35 languages, which can be individually enabled or disabled. Performs automatic language detection.</p>
+				</figcaption>
+			</figure>
+      <figure>
+        <i class="fa fa-file" aria-hidden="true"></i>
+        <figcaption>
+					<h3>Electronic Text</h3>
+					<p>Once the paragraphs with an ideal match are recognized, they can be <i>Grooped</i> together as a single paragraph for further analysis or text export - even when they are not adjacent in the original document or are spread across multiple pages.</p>
+				</figcaption>
+			</figure>
+		</section>
+
+
+		<blockquote class="bg-dark orange tile">
+			<p>Lease and contract analysis is a major strength for Grooper. We have successfully built a working model that finds all of the key provisions throughout the body of the main document. Then it automatically searches for modifications to each within addendums/exhibits and brings them inline with the main provision. This speeds up our analysis and ensures we are correctly interpreting the data.</p>
+			<!--<span>WebDevCorner.com</div>-->
+		</blockquote>
+
+
+    <section class="col-1 align_bottom shadow_img border_none">
+      <h2>Spacial Analysis</h2>
+      <p>Pattern-matching on its own is great for efficiently finding common values like dates, amounts, and phone numbers. But when multiple choices are found on a document, how will the system know which one is the "best match"? The answer is spacial analysis. Each choice is ranked by analyzing the words and features nearby.</p>
+      <figure>
+        <img src="images/features/natural-language-processing/grooper-natural-language-processing-spacial-analysis-radial.png" />
+        <figcaption>
+          <p>In the example above, we are easily able to differentiate information pertaining to the borrower vs. co-borrower through radial spacial analysis.</p>
+        </figcaption>
+      </figure>
+    </section>
+
+
+<!--
+    <section class="col-4 align_top">
+      <figure>
+        <i class="fa fa-expand" aria-hidden="true"></i>
+        <figcaption>
+					<h3>Relational Zones</h3>
+					<p>Perfect for structured, value candidates can be ranked by looking spatially in one or more general directions to determine meaning. For example, field labels are generally written above or to the left of the value they define.</p>
+				</figcaption>
+			</figure>
+      <figure>
+        <i class="fa fa-bullseye" aria-hidden="true"></i>
+        <figcaption>
+					<h3>Radial Boundary</h3>
+					<p>Collect features in all directions </p>
+				</figcaption>
+			</figure>
+      <figure>
+        <i class="fa fa-compass" aria-hidden="true"></i>
+        <figcaption>
+					<h3>Geotagging</h3>
+					<p>Use not only the word features nearby, but also the direction each feature is found in relation to the candidate as a mechanism to more accurately capture field values from documents.</p>
+				</figcaption>
+			</figure>
+      <figure>
+        <i class="fa fa-cut" aria-hidden="true"></i>
+        <figcaption>
+					<h3>Feature Truncation</h3>
+					<p>You decide how many nearby features should be considered and how far away from each candidate Grooper is allowed to look.</p>
+				</figcaption>
+			</figure>
+		</section>
+
+    <section class="col-3 align_top">
+      <figure>
+        <i class="fa fa-cut" aria-hidden="true"></i>
+        <figcaption>
+					<h3>Feature Truncation</h3>
+					<p>You decide how many nearby features should be considered and how far away from each candidate Grooper is allowed to look.</p>
+				</figcaption>
+			</figure>
+      <figure>
+        <i class="fa fa-filter" aria-hidden="true"></i>
+        <figcaption>
+					<h3>Confidence Filtering</h3>
+					<p>Perform initial training, then let Grooper remove the lowest scoring candidates. This keeps data analysts and data entry team members focused on better data.</p>
+				</figcaption>
+			</figure>
+		</section>
+-->
+    <section id="next_feature">
+      <a href="#">Next Feature:<br>INSERT A FEATURE HERE</a>
+    </section>
+
+  </main>
+
+
+	<div id="calltoaction">
+		<div class="bg-light teal">
+			<h3>Get Support</h3>
+			<p>
+				Our support technicians are standing by, ready to take your call.  Feel free to ask questions, report problems, and give us general feedback on your experience.  Lively discussion is the key to our continued innovation. We're listening.
+			</p>
+			<a class="btn-lrg">Connect</a>
+		</div>
+		<div class="bg-light orange">
+			<h3>Request a Demo</h3>
+			<p>Use the online calendar to setup a zoom meeting with one of our Grooper Gurus.  They'll answer any basic questions you have about Grooper's functionality and pricing model.  Then you'll see a platform presentation that demonstrates Grooper's uniqueness, the end-user experience, and how we build things behind the scenes. No "smoke and mirrors" here.
+			</p>
+			<a class="btn-lrg">Schedule Now</a>
+		</div>
+	</div>
+
+
+  <footer>
+    <div id="footer_links">
+
+      <div id="contact">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@grooper.com">info@grooper.com</a></li>
+          <li><a href="tel:1-800-408-5668">Support: 1-800-408-5668</a></li>
+          <li><a href="tel:1-405-507-7000">Sales: 1-405-507-7000</a></li>
+          <li>13900 N. Harvey Avenue</li>
+          <li>Edmond, OK 73013</li>
+        </ul>
+      </div>
+
+      <div id="discover">
+        <h4>Discover</h4>
+        <ul>
+          <li><a href="features.html">Features</a></li>
+          <li><a href="pricing.html">Plans & Pricing</a></li>
+          <li><a href="showcase.html">Solution Showcase</a></li>
+          <li><a href="training.html">Training Program</a></li>
+          <li><a href="https://grooper.vanillacommunities.com">GrooperxChange</a></li>
+          <li><a href="support.html">Get Support</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div id="signup">
+        <h4>Newsletter</h4>
+
+        <form action="//mc.us2.list-manage.com/subscribe/form-post?u=2e3eeca20c1420746bffa37d4&amp;id=98680ff514&amp;popup=true" accept-charset="UTF-8" method="post" enctype="multipart/form-data" data-dojo-attach-point="formNode" novalidate="">
+          <div class="content__formFields" data-dojo-attach-point="formFieldsContainer">
+            <div class="field-wrapper" id="uniqName_3_0" widgetid="uniqName_3_0">
+              <input type="email" name="EMAIL" value="" id="mc-EMAIL" placeholder="Email Address">
+              <div class="invalid-error"></div>
+            </div>
+            <div class="field-wrapper" id="uniqName_3_1" widgetid="uniqName_3_1">
+              <input type="text" name="FNAME" value="" id="mc-FNAME" placeholder="First Name">
+              <div class="invalid-error"></div>
+            </div>
+            <div class="field-wrapper" id="uniqName_3_2" widgetid="uniqName_3_2">
+              <input type="text" name="LNAME" value="" id="mc-LNAME" placeholder="Last Name">
+              <div class="invalid-error"></div>
+            </div>
+            <div class="field-wrapper" id="uniqName_3_3" widgetid="uniqName_3_3">
+              <input type="text" name="COMPANY" value="" id="mc-COMPANY" placeholder="Company">
+              <div class="invalid-error"></div>
+            </div>
+            <div style="position:absolute;left:-5000px;">
+              <input type="text" name="b_2e3eeca20c1420746bffa37d4_98680ff514" tabindex="-1" value="">
+            </div>
+          </div>
+          <div class="content__button">
+            <input class="button btn-sml" type="submit" value="Submit" data-dojo-attach-point="submitButton">
+          </div>
+        </form>
+      </div>
+    </div>
+
+  	<div class="social">
+  		<a href="https://www.facebook.com/BusinessImagingSystems"><i class="fa fa-facebook"></i></a>
+  		<a href="https://plus.google.com/u/0/b/115220706750340433625/+Bisok/posts"><i class="fa fa-google-plus"></i></a>
+  		<a href="https://twitter.com/BIS_Tweets"><i class="fa fa-twitter"></i></a>
+  		<a href="https://www.linkedin.com/company/business-imaging-systems?trk=prof-exp-company-name"><i class="fa fa-linkedin"></i></a>
+  		<a href="https://www.youtube.com/channel/UCiJPKqS_enHrFsX49cngqag"><i class="fa fa-youtube"></i></a>
+  	</div>
+
+    <div id="copyright">
+      <span>©2017 Grooper, LLC. All Rights Reserved.</span>
+      <img src="images/g_symbol_64.png" />
+    </div>
+  </footer>
+
+
+  <script src="js/nav-primary.js"></script>
+	<script src="js/nav-secondary.js"></script>
+
+
+</body>
+</html>
