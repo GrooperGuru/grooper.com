@@ -76,7 +76,20 @@
 	</div>
 
   <main>
-
+		<section class="col-1 align_bottom shadow_img border_none slideshow">
+      <h2>Testing Apple Style Slideshow</h2>
+			<ul>
+				<li><a href="#~" onclick="slideshow('https://images.apple.com/v/imac-pro/b/images/overview/graphics_app1_large_2x.jpg', this)">Before Grooper</a></li>
+				<li><a href="#~" onclick="slideshow('https://images.apple.com/v/imac-pro/b/images/overview/graphics_app2_large_2x.jpg', this)">After Grooper</a></li>
+				<li><a href="#~" onclick="slideshow('https://images.apple.com/v/imac-pro/b/images/overview/graphics_app3_large_2x.jpg', this)">Other</a></li>
+			</ul>
+      <figure>
+        <img src="images/features/natural-language-processing/grooper-natural-language-processing-spacial-analysis-radial.png" />
+        <figcaption>
+          <p>In the example above, we are easily able to differentiate information pertaining to the borrower vs. co-borrower through radial spacial analysis.</p>
+        </figcaption>
+      </figure>
+    </section>
     <section class="col-1 side_by_side figure_large">
 			<h2>It all starts with image quality</h2>
 			<p>Before any OCR action takes place, you want to make sure you're handing the OCR activity an image that is conducive to OCR analysis. The key is to remove everything from the page that isn't text. Grooper lets you process images through a growing arsenal of tools and out-of-the-box profiles specifically designed for this task. And the best part is that they won't alter the original version of the image you want to permanently retain.</p>
@@ -163,69 +176,6 @@
 			<p>Lease and contract analysis is a major strength for Grooper. We have successfully built a working model that finds all of the key provisions throughout the body of the main document. Then it automatically searches for modifications to each within addendums/exhibits and brings them inline with the main provision. This speeds up our analysis and ensures we are correctly interpreting the data.</p>
 			<!--<span>WebDevCorner.com</div>-->
 		</blockquote>
-
-
-    <section class="col-1 align_bottom shadow_img border_none">
-      <h2>Spacial Analysis</h2>
-      <p>Pattern-matching on its own is great for efficiently finding common values like dates, amounts, and phone numbers. But when multiple choices are found on a document, how will the system know which one is the "best match"? The answer is spacial analysis. Each choice is ranked by analyzing the words and features nearby.</p>
-      <figure>
-        <img src="images/features/natural-language-processing/grooper-natural-language-processing-spacial-analysis-radial.png" />
-        <figcaption>
-          <p>In the example above, we are easily able to differentiate information pertaining to the borrower vs. co-borrower through radial spacial analysis.</p>
-        </figcaption>
-      </figure>
-    </section>
-
-
-<!--
-    <section class="col-4 align_top">
-      <figure>
-        <i class="fa fa-expand" aria-hidden="true"></i>
-        <figcaption>
-					<h3>Relational Zones</h3>
-					<p>Perfect for structured, value candidates can be ranked by looking spatially in one or more general directions to determine meaning. For example, field labels are generally written above or to the left of the value they define.</p>
-				</figcaption>
-			</figure>
-      <figure>
-        <i class="fa fa-bullseye" aria-hidden="true"></i>
-        <figcaption>
-					<h3>Radial Boundary</h3>
-					<p>Collect features in all directions </p>
-				</figcaption>
-			</figure>
-      <figure>
-        <i class="fa fa-compass" aria-hidden="true"></i>
-        <figcaption>
-					<h3>Geotagging</h3>
-					<p>Use not only the word features nearby, but also the direction each feature is found in relation to the candidate as a mechanism to more accurately capture field values from documents.</p>
-				</figcaption>
-			</figure>
-      <figure>
-        <i class="fa fa-cut" aria-hidden="true"></i>
-        <figcaption>
-					<h3>Feature Truncation</h3>
-					<p>You decide how many nearby features should be considered and how far away from each candidate Grooper is allowed to look.</p>
-				</figcaption>
-			</figure>
-		</section>
-
-    <section class="col-3 align_top">
-      <figure>
-        <i class="fa fa-cut" aria-hidden="true"></i>
-        <figcaption>
-					<h3>Feature Truncation</h3>
-					<p>You decide how many nearby features should be considered and how far away from each candidate Grooper is allowed to look.</p>
-				</figcaption>
-			</figure>
-      <figure>
-        <i class="fa fa-filter" aria-hidden="true"></i>
-        <figcaption>
-					<h3>Confidence Filtering</h3>
-					<p>Perform initial training, then let Grooper remove the lowest scoring candidates. This keeps data analysts and data entry team members focused on better data.</p>
-				</figcaption>
-			</figure>
-		</section>
--->
 
 
   </main>
@@ -340,6 +290,7 @@
 
   <script src="js/nav-primary.js"></script>
 	<script src="js/nav-secondary.js"></script>
+	<script src="js/slideshow.js"></script>
 
 
 </body>

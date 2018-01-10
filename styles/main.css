@@ -436,16 +436,14 @@
     header                          { margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
     header                          { padding: 144px 15% 240px; } /* bottom padding should be equal to top padding + margin-top */
     footer                          { padding: 96px 18% 16px 18%; } /* 96px 336px 16px 336px; */
-
-		section, blockquote             { padding-top: 72px; }
-    figure                          { padding-top: 72px; }
+		section, blockquote, figure     { padding-top: 72px; }
     .col-1 > *:first-child          { padding-top: 0; }
-    section, blockquote             { padding-bottom: 72px;} /* responsible for the bottom padding of each section and blockquote within the main area of the site */
+    article, section, blockquote    { padding-bottom: 72px;} /* responsible for the bottom padding of each section and blockquote within the main area of the site */
     section > p                     { padding-bottom: 0; }
     figcaption li                   { padding-bottom: 1em; }
 		#brands                         { padding-top: 144px; padding-bottom: 144px; }
-		section, #nav_primary           { padding-left: 5%; padding-right: 5%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
-    #brands                         { padding-left: 0; padding-right: 0; }
+		article, section, #nav_primary  { padding-left: 5%; padding-right: 5%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+    article section, #brands        { padding-left: 0; padding-right: 0; }
 		section > h2, section > p       { padding-left: 12%; padding-right: 12%; }
     blockquote                      { padding-left: 18%; padding-right: 18%; }
     #calltoaction div               { padding: 7%; }
@@ -672,20 +670,18 @@
 	.typography h3, .typography h4		{ margin: 32px 0 16px !important; }
 	.typography p											{ margin: 16px 0 !important; }
 	.typography li										{ margin: 8px 0 !important; }
-
-
-
-  section.typography                {
+  /*section.typography                {
                                       padding-left: 10%;
                                       padding-right: 10%;
                                     }
+  */
   .typography                       { display:block; }
   aside                             {
                                       flex-basis: 30%;
                                       border: 1px solid #aaa;
-                                      margin-right: 5%;
                                       margin-top: 72px;
-                                      padding: 72px;
+                                      margin-left: 5%;
+                                      padding: 72px 5%;
                                     }
   .typography figure                { align-items: flex-start; }
 
@@ -786,6 +782,37 @@
                                       transform-origin: left;
                                       /*transform: rotate(294deg);*/
                                     }
+
+  .slideshow ul                     {
+                                      display: inline-block;
+                                      border-bottom: 1px solid #eee;
+                                      margin: 0 auto;
+                                    }
+  .slideshow li                     {
+                                      display: inline-flex;
+                                      align-items: center;
+                                      position: relative;
+                                      margin: 0px 24px;
+                                      line-height: 40px;
+                                      font-size: 16px;
+                                      font-weight: 400;
+                                    }
+  .slideshow li a:visited,
+  .slideshow li a:link              { color: #999; }
+  .slideshow li a:hover,
+  .slideshow li a:active            { color: #000; }
+  .slideshow li a:hover:before      {
+                                      content: "";
+                                      left: 0;
+                                      bottom: -1px;
+                                      position: absolute;
+                                      width: 100%;
+                                      height: 1px;
+                                      background: #000;
+                                    }
+  .slideshow li:first-child         { margin-left: 0; }
+  .slideshow li:last-child          { margin-right: 0; }
+
 
   /* The .shadow classes are designed to be applied to containers and style child objects with a shadow */
   .shadow_img img                   {
@@ -1016,7 +1043,8 @@
 																					        transition: transform .2s ease-in-out;
 																					        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
 																				}
-	nav .social														{
+	nav .social,
+  .slideshow img												{
 																					-webkit-transition: all 0.3s linear !important;
 																					     -o-transition: all 0.3s linear !important;
 																					        transition: all 0.3s linear !important;
@@ -1032,13 +1060,14 @@
 /* MEDIA QUERIES */
   @media only screen and (min-width: 1921px) {
     header                          { padding: 144px 18% 240px; } /* bottom padding should be equal to top padding + margin-top */
-    section, blockquote             { padding-top: 128px; padding-bottom: 128px; }
+    article, section, blockquote    { padding-top: 128px; padding-bottom: 128px; }
     .side_by_side figure ~ figure   { padding-top: 128px !important; }
-    section, #nav_primary           { padding-left: 10%; padding-right: 10%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+    article, section, #nav_primary  { padding-left: 10%; padding-right: 10%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
     #brands                         { padding-left: 5%; padding-right: 5%; }
     section > h2, section > p       { padding-left: 12%; padding-right: 12%; }
     blockquote                      { padding-left: 20%; padding-right: 20%; }
     #calltoaction div               { padding: 7% 12%; }
+    aside                           { margin-left: 10%; } /* this should always be the same as the left padding of the parent article */
     #prev_next a span.direction     { font-size: 18px; }
     #prev_next a span:last-child    { font-size: 22px; }
     #prev_next div:first-child a    { padding-left: 15%; }
@@ -1062,20 +1091,22 @@
 
   @media only screen and (min-width: 2160px) {
     header                          { padding: 144px 18% 240px; } /* bottom padding should be equal to top padding + margin-top */
-    section, #nav_primary           { padding-left: 13%; padding-right: 13%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+    article, section, #nav_primary  { padding-left: 13%; padding-right: 13%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
     #brands                         { padding-left: 10%; padding-right: 10%; }
     section > h2, section > p       { padding-left: 15%; padding-right: 15%; }
     blockquote                      { padding-left: 23%; padding-right: 23%; }
     #calltoaction div               { padding: 10% 15%; }
+    aside                           { margin-left: 13%; } /* this should always be the same as the left padding of the parent article */
   }
 
   @media only screen and (min-width: 2561px) {
     header                          { padding: 144px 18% 240px; } /* bottom padding should be equal to top padding + margin-top */
-    section, #nav_primary           { padding-left: 15%; padding-right: 15%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
+    article, section, #nav_primary  { padding-left: 15%; padding-right: 15%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
     #brands                         { padding-left: 10%; padding-right: 10%; }
     section > h2, section > p       { padding-left: 15%; padding-right: 15%; }
     blockquote                      { padding-left: 25%; padding-right: 25%; }
     #calltoaction div               { padding: 10% 15%; }
+    aside                           { margin-left: 15%; } /* this should always be the same as the left padding of the parent article */
   }
 
   @media only screen and (max-width: 1680px) {
