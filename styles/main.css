@@ -783,11 +783,14 @@
                                       /*transform: rotate(294deg);*/
                                     }
 
-  .slideshow ul                     {
+  /* The slideshow class should be added to a parent figure or section. These should onyl be applied to sections with a single figure, and the figure must be an image */
+  .slideshow                        {
                                       display: inline-block;
                                       border-bottom: 1px solid #eee;
                                       margin: 0 auto;
                                     }
+  .slideshow + figure,
+  figure + .slideshow               { padding-top: 24px !important; } /* when a slideshow list is right next to a figure, we need to include padding between the items */
   .slideshow li                     {
                                       display: inline-flex;
                                       align-items: center;
@@ -797,23 +800,25 @@
                                       font-size: 16px;
                                       font-weight: 400;
                                     }
-  .slideshow li a:visited,
-  .slideshow li a:link              { color: #999; }
-  .slideshow li a:hover,
-  .slideshow li a:active            { color: #000; }
-  .slideshow li a:hover:before      {
+  .slideshow li a:hover:before,
+  .slideshow li a.active:before     {
                                       content: "";
                                       left: 0;
                                       bottom: -1px;
                                       position: absolute;
                                       width: 100%;
                                       height: 1px;
-                                      background: #000;
                                     }
+  .slideshow li a:visited,
+  .slideshow li a:link              { color: #9e9e9e; }
+  .slideshow li a:hover,
+  .slideshow li a:active            { color: #616161; }
+  .slideshow li a.active            { color: #212121; }
+  .slideshow li a.active:before     { background: #212121; }
   .slideshow li:first-child         { margin-left: 0; }
   .slideshow li:last-child          { margin-right: 0; }
 
-
+  .twentytwenty-container div       { background: transparent; }
   /* The .shadow classes are designed to be applied to containers and style child objects with a shadow */
   .shadow_img img                   {
                                       -webkit-box-shadow: 5px 1px 27px rgba(0,0,0,0.2), 2px 2px 3px rgba(0,0,0,0.4);
@@ -1044,7 +1049,9 @@
 																					        transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
 																				}
 	nav .social,
-  .slideshow img												{
+  .slideshow img,
+  .slideshow li a,
+  .slideshow li a:before               {
 																					-webkit-transition: all 0.3s linear !important;
 																					     -o-transition: all 0.3s linear !important;
 																					        transition: all 0.3s linear !important;
@@ -1072,6 +1079,7 @@
     #prev_next a span:last-child    { font-size: 22px; }
     #prev_next div:first-child a    { padding-left: 15%; }
     #prev_next div:last-child a     { padding-right: 15%; }
+    #prev_next a                    { width: 85%; } /* set to equal 100% minus the padding listed above */
     #prev_next div, #prev_next a    { height: 128px; }
     #prev_next a span               { top: 16px; }
     #prev_next .fa                  { bottom: -58px; }
