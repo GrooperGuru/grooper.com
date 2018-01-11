@@ -28,7 +28,8 @@
   /* 1.4 - Cursor and Touch - 1.4 */
     table, i, nav ul, nav ul a,
     .btn-sml, .btn-lrg,
-    .social, .social a              { cursor: default; }
+    .social, .social a,
+    .slideshow ul                   { cursor: default; }
     #nav_secondary button:hover,
     nav input                       { cursor: pointer; }
     nav input                       { -webkit-touch-callout: none; }
