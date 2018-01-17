@@ -11,5 +11,5 @@ function hideFlyout(){
     if (screen.width < 433){
       Flyouts.css("display", "none");
     }
-  }, 300);
+  }, 50);
 };
