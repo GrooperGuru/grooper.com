@@ -161,6 +161,8 @@
     h2                              { font-size: 350%; }
 		h3                              { font-size: 200%; }
 		h4                              { font-size: 150%; }
+    h5                              { font-size: 16px; }
+    h6                              { font-size: 14px; }
 		p, figcaption li                { font-size: 112.5%; }
     figure .fa                      { font-size: 600% !important; }
     label, input                    { font-size: 16px; }
@@ -185,7 +187,8 @@
   /* 2.6 - Font Weight - 2.6 */
     *                               { font-weight: 300; } /* Establishes a baseline font-weight for all items which overrides the browsers defaults */
     h1                              { font-weight: 100; }
-    h2                              { font-weight: 200; }
+    h2                              { font-weight: 300; }
+    h4, h5, h6                      { font-weight: 400; }
     td, em, strong                  { font-weight: 400; }
     thead, th,
     header strong, header em, i     { font-weight: 500; }
@@ -197,18 +200,20 @@
     p                               { color: rgba(17,17,17,.7); }
     h1, footer h4, header p,
     #footer_links a:hover,
-    #footer_links label             { color: #fff; }
-    h2, em, i                       { color: #f4511e; }
-		h3, h4, .col-1 p                { color: #000; }
+    #footer_links label             { color: #ffffff; }
+    /*h2, */em, i                   { color: #f4511e; }
+		h3, h4, .col-1 p                { color: #000000; }
+    h2                              { color: #212121; }
+    h5                              { color: #757575; }
 		blockquote::before,
 		blockquote::after               { color: #4db6ac; } /*#78C0A8;*/
 		a:link, a:visited               { color: #039be5; } /* normal state links */
 		a:hover, a:active               { color: #29b6f6; } /* links during hover and click */
-    h2 ~ p                          { color: #000; } /* paragraphs immediately after a h2 */
-    header p                        { color: #fff; }
+    h2 ~ p                          { color: #000000; } /* paragraphs immediately after a h2 */
+    header p                        { color: #ffffff; }
     figure i                        { color: #311b92 !important; }
   	nav ul ul li a                  { color: #333 !important; } /* set important to override the different default link states active, visited, etc. */
-  	#nav_primary i, #copyright      { color: #666; }
+  	#nav_primary i, #copyright      { color: #616161; }
     #nav_secondary a                { color: #888; }
     #nav_secondary a[aria-selected="true"] { color: #111 !important; }
 		.content__button input          { color: #bbb !important; }

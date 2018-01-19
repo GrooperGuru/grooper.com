@@ -8,8 +8,8 @@ window.onscroll = hideFlyout;
 function hideFlyout(){
   clearTimeout(scrollitTimer);
   scrollitTimer = setTimeout(function(e) {
-    if (screen.width < 433){
+    //if (screen.width < 433){
       Flyouts.css("display", "none");
-    }
+    //}
   }, 50);
 };
