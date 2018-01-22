@@ -34,6 +34,14 @@
     nav input                       { cursor: pointer; }
     nav input                       { -webkit-touch-callout: none; }
     button:focus                    { outline: 0; }
+    nav ul, nav ul a,
+    .btn-sml, .btn-lrg,
+    .social, .social a              {
+                                      -webkit-user-select: none; /* Chrome all / Safari all */
+                                         -moz-user-select: none; /* Firefox all */
+                                          -ms-user-select: none; /* IE 10+ */
+                                              user-select: none; /* future */
+                                    }
 
 
   /* 1.5 - Reset Lists and Tables - 1.5 */
@@ -963,20 +971,41 @@
   .btn-sml, .btn-lrg										{
 																					text-transform: uppercase;
 																					border-radius: 3px;
-																					border: 1px solid rgba(255,255,255,0.6);
-																					color: #ffffff;
-																					background: rgba(255,255,255,.066);
+																					border: 1px solid #4db6ac;
+																					color: #009688 !important;
+																					background: transparent;
 																				}
+  .btn-sml:hover, .btn-lrg:hover        {
+                                          -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
+                                                  box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
+                                          background: #4db6ac !important;
+                                          color: #f5f5f5 !important;
+                                        }
+  .bg-dark .btn-sml, .bg-dark .btn-lrg,
+  .bg-light .btn-sml, .bg-light .btn-lrg{
+                                          border: 1px solid rgba(255,255,255,0.6) !important;
+                                          color: #ffffff !important;
+                                          background: rgba(255,255,255,.066) !important;
+                                        }
+.bg-dark .btn-sml:hover,
+.bg-dark .btn-lrg:hover,
+.bg-light .btn-sml:hover,
+.bg-light .btn-lrg:hover                {
+                                          -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
+                                                  box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
+                                          background: rgba(255,255,255,0.97) !important;
+                                          color: rgba(0,0,0,0.8) !important;
+                                        }
   .btn-sml                              { padding: 6px 12px; }
   .btn-lrg                              { padding: 16px 32px; }
   p + .btn-sml                          { margin: 16px auto 0; } /* left/right auto margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
 	p + .btn-lrg                          { margin: 32px auto 0; } /* left/right auto margins are keeping the buttons horizontally centered within the div without stretching to fill the space */
-	.btn-sml:hover, .btn-lrg:hover				{
-																					-webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
-																					        box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
-																					        background: rgba(255,255,255,0.97) !important;
-																					             color: rgba(0,0,0,0.8) !important;
-																				}
+  section > .btn-sml,
+  section > .btn-lrg                    {
+                                          flex-basis: auto;
+                                          margin-left: auto;
+                                          margin-right: auto;
+                                        }
 
 
   .icon-phase                           {

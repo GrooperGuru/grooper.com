@@ -10,6 +10,9 @@
 	<link rel="stylesheet" href="styles/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!--<link rel="stylesheet" type="text/css" href="js/animated-header/normalize.css">-->
+	<!--<link rel="stylesheet" type="text/css" href="/js/animated-header/demo.css">-->
+	<link rel="stylesheet" type="text/css" href="js/animated-header/component.css">
 </head>
 
 
@@ -40,7 +43,8 @@
   </nav>
 
 
-  <header>
+  <header id="large-header">
+		<canvas id="header-canvas"></canvas>
 		<h1>Built for document scientists</h1>
 		<p>Grooper is a platform that instantly obsoletes decades of attempts at automating the most challenging document processing tasks. Organizing, understanding, <strong>Grooping</strong>, and collecting information from documents has never been this easy. Or fast. Or accurate.</p>
     <!--<img src="images/features/image-processing/grooper-image-processing.jpg">-->
@@ -69,7 +73,8 @@
     <section class="col-1 align-bottom">
       <figure>
         <figcaption>
-					<h2>Classification</h2>
+					<h5>Built on modern technologies</h5>
+					<h2>Built on modern technologies</h2>
 					<p>Manually selecting doc types is a thing of the past.  Use ESP to find and make decisions based on the distinguishing features of each page. ESP uses three key feature collection mechanisms:</p>
 				</figcaption>
         <!--img src="images/features/image-processing/grooper-image-processing.jpg"-->
@@ -77,7 +82,9 @@
 		</section>
 
     <section class="col-3 border-img">
+			<h5>More efficient implementations</h5>
 			<h2>Classification</h2>
+			<a class="btn-lrg" onclick="moreInfo(this)">More Info</a>
 			<p>Manually selecting doc types is a thing of the past.  Use ESP to find and make decisions based on the distinguishing features of each page. ESP uses three key feature collection mechanisms:</p>
       <figure>
         <figcaption>
@@ -102,6 +109,17 @@
       </figure>
     </section>
 
+
+		<section class="col-1 align-bottom">
+      <figure>
+        <figcaption>
+					<h5>Easily collect more data</h5>
+					<h2>Built on modern technologies</h2>
+					<p>Manually selecting doc types is a thing of the past.  Use ESP to find and make decisions based on the distinguishing features of each page. ESP uses three key feature collection mechanisms:</p>
+				</figcaption>
+        <!--img src="images/features/image-processing/grooper-image-processing.jpg"-->
+			</figure>
+		</section>
 
 		<section id="brands" class="bg-dark gray tile">
 			<p>Our passion for solving the problems other platforms fail to address is why these amazing organizations trust Grooper.</p>
@@ -221,6 +239,11 @@
 
 
   <script src="js/nav-primary.js"></script>
+	<script src="js/slide-toggle.js"></script>
+	<script src="js/animated-header/TweenLite.min.js"></script>
+	<script src="js/animated-header/EasePack.min.js"></script>
+	<script src="js/animated-header/rAF.js"></script>
+	<script src="js/animated-header/demo-1.js"></script>
 
 
 </body>
