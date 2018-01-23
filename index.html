@@ -10,9 +10,6 @@
 	<link rel="stylesheet" href="styles/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<!--<link rel="stylesheet" type="text/css" href="js/animated-header/normalize.css">-->
-	<!--<link rel="stylesheet" type="text/css" href="/js/animated-header/demo.css">-->
-	<link rel="stylesheet" type="text/css" href="js/animated-header/component.css">
 </head>
 
 
@@ -43,11 +40,11 @@
   </nav>
 
 
-  <header id="large-header">
-		<canvas id="header-canvas"></canvas>
+  <header class="align_bottom">
+		<canvas id="header_canvas"></canvas>
 		<h1>Built for document scientists</h1>
-		<p>Grooper is a platform that instantly obsoletes decades of attempts at automating the most challenging document processing tasks. Organizing, understanding, <strong>Grooping</strong>, and collecting information from documents has never been this easy. Or fast. Or accurate.</p>
-    <!--<img src="images/features/image-processing/grooper-image-processing.jpg">-->
+		<p>Grooper is a software platform that uses artificial intelligence to conquer the most challenging document processing tasks. Organizing, understanding, <strong>Grooping</strong>, and collecting information from documents has never been this easy. Or fast. Or accurate.</p>
+    <img src="images/features/classification/grooper-classification-lexical.jpg" style="z-index: 1000000;">
 	</header>
 
 
@@ -64,8 +61,8 @@
 
 
     <section class="col-1-2 border-img">
-			<h5>Process every document</h5>
-			<h2>Any File. Any Source.</h2>
+			<h5>Process every file</h5>
+			<h2>Any Document. Any Source.</h2>
 			<p>Manually selecting doc types is a thing of the past.  Use ESP to find and make decisions based on the distinguishing features of each page. ESP uses three key feature collection mechanisms:</p>
     </section>
 
@@ -238,12 +235,10 @@
   </footer>
 
 
+	<script src="js/animate-header.js"></script>
   <script src="js/nav-primary.js"></script>
 	<script src="js/slide-toggle.js"></script>
-	<script src="js/animated-header/TweenLite.min.js"></script>
-	<script src="js/animated-header/EasePack.min.js"></script>
-	<script src="js/animated-header/rAF.js"></script>
-	<script src="js/animated-header/demo-1.js"></script>
+	<script src="js/animate-header.js"></script>
 
 
 </body>

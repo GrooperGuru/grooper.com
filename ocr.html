@@ -41,8 +41,9 @@
 
 
   <header>
+		<canvas id="header_canvas"></canvas>
 		<h1>OCR and Electronic Text Collection</h1>
-		<p>Identify paragraphs, sentences, or other language elements which convey a specific meaning. Based on supervised machine learning – simply train examples. Powerful n-gram analysis ensures reliable interpretation – regardless of wording differences.</p>
+		<p>Who said you can't teach an old dog new tricks? We've taken dated OCR technology and brought it into modern times. Grooper's patent-pending OCR techniques generate the most accurate text from images and electronic files, regardless of which OCR engine you use. </p>
 	</header>
 
   <div id="nav_secondary">
@@ -80,21 +81,23 @@
 
     <section class="col-1 side_by_side figure_large">
 			<h2>It all starts with image quality</h2>
-			<p>Before any OCR action takes place, you want to make sure you're handing the OCR activity an image that is conducive to OCR analysis. The key is to remove everything from the page that isn't text. Grooper lets you process images through a growing arsenal of tools and out-of-the-box profiles specifically designed for this task. And the best part is that they won't alter the original version of the image you want to permanently retain.</p>
+			<p>Before any OCR action takes place, you'll want to make sure you're handing the OCR activity an image that is straight and free of artifacts. The key is to remove everything from the page that isn't text. Grooper lets you process images through a growing arsenal of tools and out-of-the-box profiles specifically designed for this task. And the best part is that they won't alter the original version of the image you want to permanently retain.</p>
       <figure>
         <img src="images/features/ocr/grooper-ocr-image-pre-processing.jpg" />
         <figcaption class="text_left">
+					<a class="btn-lrg">Deep Dive</a>
           <h3>Examples</h3>
           <ul>
-            <li><strong>Remove lines</strong><br>(Line Removal, Blob Removal, Scan Line Removal)</li>
-            <li><strong>Ensure edges are clean.</strong><br>(Auto Border Crop, Border Fill)</li>
-            <li><strong>Remove small specks.</strong><br>(Blob Removal, Document Despeckle, Median Noise Filter)</li>
-            <li><strong>Remove large non-text objects</strong><br>(Blob Removal)</li>
-            <li><strong>Invert white-on-black zones.</strong><br>(Auto Invert Text)</li>
-            <li><strong>Remove Hole Punches</strong><br>(Hole Punch Removal, Blob Removal)</li>
+            <li>Remove lines</li>
+            <li>Ensure edges are clean.</li>
+            <li>Remove small specks.</li>
+            <li>Remove large non-text objects</li>
+            <li>Invert white-on-black zones.</li>
+            <li>Remove Hole Punches</li>
           </ul>
         </figcaption>
       </figure>
+
     </section>
 
 
@@ -106,13 +109,13 @@
 
     <section class="col-1 side_by_side figure_large shadow_img">
       <h2>OCR Synthesis</h2>
-      <p>No matter how clean and pristine your images may appear, OCR engines still have a difficult time collecting accurate text from images with multiple columns, different font sizes, and image shear. Grooper's patent-pending OCR synthesis engine intelligently performs multiple passess of OCR on different portions of the image and <strong>synthesizes</strong> the results together as a single unit.</p>
+      <p>No matter how clean and pristine your images may appear, OCR engines still have a difficult time collecting accurate text from images with multiple columns, different font sizes, and image shear. Grooper's patent-pending OCR synthesis engine intelligently performs multiple passess of OCR on different portions of the image and <strong>synthesizes</strong> the results together as a single unit, keeping only the most accurate text.</p>
 
       <figure>
         <figcaption>
           <i class="fa fa-repeat" aria-hidden="true"></i>
           <h3>Iterative OCR</h3>
-          <p>Iterative OCR is a technique we've developed as a way to capture text the OCR Engine simply misses the first time around. The idea is that we run a pass of OCR on the entire document, drop out any portions of the page where we were able to obtain text, then run another OCR iteration on the new image. With the new image having far less distractions, it is able to more clearly find text it missed during the previous passes./p>
+          <p>Iterative OCR is a technique we've developed as a way to capture text the OCR Engine simply misses the first time around. The idea is that we run a pass of OCR on the entire document, drop out any portions of the page where we were able to obtain text, then run another OCR iteration on the new image. With the new image having far less distractions, it is able to more clearly find text it missed during the previous passes.</p>
         </figcaption>
         <img src="images/features/natural-language-processing/grooper-natural-language-processing-spacial-analysis-zonal.jpg" />
       </figure>
@@ -128,7 +131,7 @@
         <figcaption>
           <i class="fa fa-align-center" aria-hidden="true"></i>
 					<h3>Segment Reprocessing</h3>
-					<p>The final synthesis task is to perform segment analysis. A "segment" is a string of characters, all on one row of text, that are separated by large space like carriage returns, line feeds, and tabs. We then determine the average OCR accuracy of each tab and independently re-run OCR on all segments that aren't of optimum quality.</p>
+					<p>The final synthesis task is to perform segment analysis. A "segment" is a string of characters, all on one row of text, that is separated by large space like carriage returns, line feeds, and tabs. We then determine the average OCR accuracy of each segment and independently re-run OCR on all segments that aren't of optimum quality.</p>
         </figcaption>
         <img src="images/features/natural-language-processing/grooper-natural-language-processing-feature-truncation.jpg" />
       </figure>
@@ -154,7 +157,7 @@
         <i class="fa fa-file" aria-hidden="true"></i>
         <figcaption>
 					<h3>Electronic Text</h3>
-					<p>Once the paragraphs with an ideal match are recognized, they can be <i>Grooped</i> together as a single paragraph for further analysis or text export - even when they are not adjacent in the original document or are spread across multiple pages.</p>
+					<p>When dealing with original text-based files like Word, Excel, and Text PDFs, Grooper avoids OCR altogether. Instead, it pulls complete and perfect text directly out of the file.</p>
 				</figcaption>
 			</figure>
 		</section>
@@ -276,6 +279,7 @@
   </footer>
 
 
+	<script src="js/animate-header.js"></script>
   <script src="js/nav-primary.js"></script>
 	<script src="js/nav-secondary.js"></script>
 	<script src="js/slideshow.js"></script>
