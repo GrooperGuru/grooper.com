@@ -1,6 +1,6 @@
 (function() {
 
-    var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+    var offset, width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
 
     // Main
     initHeader();
@@ -12,23 +12,45 @@
         height = window.innerHeight;
         target = {x: width/2, y: height/2};
 
-        largeHeader = document.getElementById('large-header');
-        /*largeHeader.style.height = height+'px';*/
-
+        //largeHeader = document.getElementById('large-header');
+        largeHeader = $('header');
+        /*largeHeader.style.height = height+'px';*/ //we are using stadard 100% width, we don't need to calc anything here*/
         canvas = document.getElementById('header-canvas');
         canvas.width = width;
-        canvas.height = height;
+        /*canvas.height = height;*/
+        offset = $('main').offset();
+        canvas.height = offset.top;
         ctx = canvas.getContext('2d');
 
         // create points
         points = [];
-        for(var x = 0; x < width; x = x + width/20) {
-            for(var y = 0; y < height; y = y + height/20) {
-                var px = x + Math.random()*width/20;
-                var py = y + Math.random()*height/20;
-                var p = {x: px, originX: px, y: py, originY: py };
-                points.push(p);
-            }
+        if ( width > 1250) {
+          for(var x = 0; x < width; x = x + width/6) { //Create this many horizontal clusters
+              for(var y = 0; y < height; y = y + height/36) {
+                  var px = x + Math.random()*width/3;
+                  var py = y + Math.random()*height/24;
+                  var p = {x: px, originX: px, y: py, originY: py };
+                  points.push(p);
+              }
+          }
+        } else if ( width > 600) {
+          for(var x = 0; x < width; x = x + width/8) { //Create this many horizontal clusters
+              for(var y = 0; y < height; y = y + height/8) {
+                  var px = x + Math.random()*width/8;
+                  var py = y + Math.random()*height/8;
+                  var p = {x: px, originX: px, y: py, originY: py };
+                  points.push(p);
+              }
+          }
+        } else {
+          for(var x = 0; x < width; x = x + width/4) { //Create this many horizontal clusters
+              for(var y = 0; y < height; y = y + height/4) {
+                  var px = x + Math.random()*width/4;
+                  var py = y + Math.random()*height/4;
+                  var p = {x: px, originX: px, y: py, originY: py };
+                  points.push(p);
+              }
+          }
         }
 
         // for each point find the 5 closest points
@@ -99,9 +121,11 @@
     function resize() {
         width = window.innerWidth;
         height = window.innerHeight;
-        largeHeader.style.height = height+'px';
+        offset = $('main').offset();
+        /*largeHeader.style.height = height+'px';*/
         canvas.width = width;
-        canvas.height = height;
+        //canvas.height = height;
+        canvas.height = offset.top;
     }
 
     // animation
