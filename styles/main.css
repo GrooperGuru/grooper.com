@@ -310,7 +310,7 @@
 
 			/* 4.2.1.1 - Flex Display - 4.2.1.1 */
 			/* Tells a container to display its contents using a flexible box model */
-				article, figure,
+				header, article, figure,
         section:not(.col-1),
         section:not(.col-1) > figure,
         section:not(.col-1) > div,
@@ -350,6 +350,7 @@
 
 			/* 4.2.1.3 - Flex Wrap - 4.2.1.3 */
 			/* Controls whether the flex container is single-line or multi-line, and the direction of the cross axis */
+        header,
         section:not(.col-1),
         #footer_links,
 				#calltoaction > div					{
@@ -374,7 +375,8 @@
 																			          -ms-flex-pack: justify;
 																			        justify-content: space-between;
 																		}
-				#brands, #calltoaction,
+				header,
+        #brands, #calltoaction,
 				#footer_links								{
                                              -webkit-box-pack: center;
 																			-webkit-justify-content: center;
@@ -427,17 +429,18 @@
 
 			/* 4.2.2.4 - Flex Basis - 4.2.2.4 */
 			/* The initial width or height (whichever is on the main axis) of the flex item, before free space is distributed according to the flex factors. */
-        section:not(.col-1) > *             { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%; } /* this is a catch-all for direct h2, p, and other potential text elements inside a section that don't fall inside a specific column */
-				.col-1 > figure, .col-1 > div       { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%; }
-				.col-2 > figure, .col-2 > div       { -webkit-flex-basis: 47.21%;  -ms-flex-preferred-size: 47.21%;  flex-basis: 47.21%; } /*42.5%*/
+        header > *:not(canvas)              { -webkit-flex-basis: 90%;     -ms-flex-preferred-size: 90%;     flex-basis: 90%;     }
+        section:not(.col-1) > *             { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%;    } /* this is a catch-all for direct h2, p, and other potential text elements inside a section that don't fall inside a specific column */
+				.col-1 > figure, .col-1 > div       { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%;    }
+				.col-2 > figure, .col-2 > div       { -webkit-flex-basis: 47.21%;  -ms-flex-preferred-size: 47.21%;  flex-basis: 47.21%;  } /*42.5%*/
 				.col-3 > figure, .col-3 > div       { -webkit-flex-basis: 29.629%; -ms-flex-preferred-size: 29.629%; flex-basis: 29.629%; } /*28.33*/
-        .col-4 > figure, .col-4 > div       { -webkit-flex-basis: 20.83%;  -ms-flex-preferred-size: 20.83%;  flex-basis: 20.83%; }
-				.col-1-2 > .first, .col-2-1 > .last { -webkit-flex-basis: 37.77%;  -ms-flex-preferred-size: 37.77%;  flex-basis: 37.77%; } /*34*/
-				.col-2-1 > .first, .col-1-2 > .last { -webkit-flex-basis: 56.66%;  -ms-flex-preferred-size: 56.66%;  flex-basis: 56.66%; } /*51*/
-				#footer_links > div                 { -webkit-flex-basis: 33.33%;  -ms-flex-preferred-size: 33.33%;  flex-basis: 33.33%; }
-				#calltoaction > div                 { -webkit-flex-basis: 50%;     -ms-flex-preferred-size: 50%;     flex-basis: 50%; }
-				#brands p                           { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%; }
-        #brands img                         { -webkit-flex-basis: auto;    -ms-flex-preferred-size: auto;    flex-basis: auto; }
+        .col-4 > figure, .col-4 > div       { -webkit-flex-basis: 20.83%;  -ms-flex-preferred-size: 20.83%;  flex-basis: 20.83%;  }
+				.col-1-2 > .first, .col-2-1 > .last { -webkit-flex-basis: 37.77%;  -ms-flex-preferred-size: 37.77%;  flex-basis: 37.77%;  } /*34*/
+				.col-2-1 > .first, .col-1-2 > .last { -webkit-flex-basis: 56.66%;  -ms-flex-preferred-size: 56.66%;  flex-basis: 56.66%;  } /*51*/
+				#footer_links > div                 { -webkit-flex-basis: 33.33%;  -ms-flex-preferred-size: 33.33%;  flex-basis: 33.33%;  }
+				#calltoaction > div                 { -webkit-flex-basis: 50%;     -ms-flex-preferred-size: 50%;     flex-basis: 50%;     }
+				#brands p                           { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%;    }
+        #brands img                         { -webkit-flex-basis: auto;    -ms-flex-preferred-size: auto;    flex-basis: auto;    }
 
 
 			/* 4.2.2.5 - Align Self - 4.2.2.5 */
@@ -449,9 +452,11 @@
 																		}
 
 
-  /* 4.3 - Margin & Padding - 4.3 */
+  /* 4.3 - Margin, Padding, & Width - 4.3 */
     header                          { margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
-    header                          { padding: 144px 15% 240px; } /* bottom padding should be equal to top padding + margin-top */
+    /*header                          { padding: 144px 15% 240px; }*/ /* bottom padding should be equal to top padding + margin-top */
+    header                          { padding: 144px 0 240px; } /* bottom padding should be equal to top padding + margin-top */
+    header > *:not(canvas)          { max-width: 1280px; }
     footer                          { padding: 96px 18% 16px 18%; } /* 96px 336px 16px 336px; */
 		section, blockquote, figure     { padding-top: 72px; }
     .col-1 > *:first-child          { padding-top: 0; }
@@ -1168,7 +1173,8 @@
   }
 
   @media only screen and (max-width: 1680px) {
-    header											{ padding: 96px 10% 192px; }
+    /*header											{ padding: 96px 10% 192px; }*/
+    header											{ padding: 96px 0 192px; }
 		section > h2, section > p   { padding-left: 8%; padding-right: 8%; }
 	}
 
@@ -1211,7 +1217,8 @@
     figcaption li               { font-size: 16px; }
     figure .fa                  { font-size: 72px !important; }
     nav ul ul a                 { line-height: 42px; }
-    header                      { padding: 88px 10% 152px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
+    /*header                      { padding: 88px 10% 152px; margin-top: 64px; }*/ /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
+    header                      { padding: 88px 0 152px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
 		section > h2, section > p   { padding-left: 5%; padding-right: 5%; }
     .social                     { margin: 72px auto 16px auto; }
     nav > li                    { height: 64px; } /* shrink to match the new height of the navbar */
@@ -1251,12 +1258,16 @@
   @media only screen and (max-width: 1024px) {
 		html, body                  { font-size: 13px; }
 		p                           { font-size: 15px; }
-    header p                    { font-size: 156% }
-    h2 ~ p                      { font-size: 17px; }
+    header h1                   { font-size: 46px; }
+    header p                    { font-size: 21px; }
     blockquote p                { font-size: 19px; }
-		#brands p                   { font-size: 175%; }
+    h2 ~ p                      { font-size: 17px; }
+		/*
+    #brands p                   { font-size: 175%; }
 		#nav_secondary a            { font-size: 14px; }
-		header                      { padding: 64px 7% 112px; }
+    */
+    /*header                      { padding: 64px 7% 112px; }*/
+    header                      { padding: 64px 0 112px; }
     footer                      { padding: 64px 7% 8px 7%; }
 		#nav_secondary              { padding: 0; }
     section, blockquote         { padding-top: 64px; }
@@ -1314,7 +1325,10 @@
 
 
   @media (max-width: 768px) {
-		html, body									{ font-size: 12px; }
+    header h1                   { font-size: 42px; }
+    header p                    { font-size: 19px; }
+		/*
+    html, body									{ font-size: 12px; }
     h1                          { font-size: 325%; }
     h2                          { font-size: 300%; }
     h4                          { font-size: 175%; }
@@ -1322,6 +1336,7 @@
     h2 ~ p                      { font-size: 135%; }
     #calltoaction h3            { font-size: 240%; }
     #calltoaction p             { font-size: 110%; }
+    */
     footer,
 		footer h4, footer ul				{ text-align: center; }
 		section											{ padding: 64px; }
@@ -1384,12 +1399,16 @@
 
 
   @media (max-width: 600px){
-  	html, body                    { font-size: 11px; }
+    header h1                     { font-size: 38px; }
+    header p                      { font-size: 18px; }
+  	/*
+    html, body                    { font-size: 11px; }
     footer h4                     { font-size: 28px; }
     footer li                     { font-size: 18px; }
-    nav > ul > li > a             { font-size: 18px; } /*  increase from 16px to 18px now that this is in a full screen mobile style menu */
+    nav > ul > li > a             { font-size: 18px; }
     #calltoaction h3              { font-size: 275%; }
     #calltoaction p               { font-size: 140%; }
+    */
     nav > ul > li > a             { line-height: 48px; }
     footer h4, footer ul          { text-align: center; }
   	nav li, nav input,
@@ -1489,6 +1508,8 @@
 
 
   @media (max-width: 432px){
+    header h1                     { font-size: 36px; }
+    header p                      { font-size: 18px; }
     section                       { padding: 32px 24px !important; } /* hard coding padding here for small devices and phones, as responsive sizing will no longer yield predictable results */
 
 
