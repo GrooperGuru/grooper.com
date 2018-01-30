@@ -75,7 +75,8 @@
 			nav ul ul li:hover a          { background: #fff; }
 			nav ul ul li                  { background: rgba(238,238,238,.94); }
 			#nav_primary                  { background: rgba(0,0,0,.94); }
-      #nav_secondary button         { background: transparent; }
+      #nav_secondary button,
+      #schedule_demo                { background: transparent; }
 			#map *                        { background: transparent; } /* transparent */
 
 		/* 1.6.2 - Tiled Backgrounds - 1.6.2 */
@@ -232,7 +233,7 @@
     nav > ul > li > a               { color: #f5faf9 !important; } /* set important to override the different default link states active, visited, etc. */
     #footer_links a:hover,
     #footer_links label,
-    .social a:hover .fa             { color: #fff; }
+    .social a:hover .fab            { color: #fff; }
     nav ul ul li:hover a            { color: #009688; } /* teal */
 		footer li,
 		#footer_links a                 { color: rgba(255,255,255,.46); }
@@ -293,7 +294,7 @@
     #nav_secondary_container::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
                                     { display: none; }
     nav input, nav i,
-    nav .fa, nav .social            { display: none;}
+    nav .fa, nav .fab, nav .social  { display: none;}
     h1, h2, h3, h4, h5, h6, p, img,
     nav ul a, nav > ul > li:hover > ul,
     blockquote span                 { display: block; }
@@ -457,9 +458,9 @@
     /*header                          { padding: 144px 15% 240px; }*/ /* bottom padding should be equal to top padding + margin-top */
     header                          { padding: 144px 0 240px; } /* bottom padding should be equal to top padding + margin-top */
     header > *:not(canvas)          { max-width: 1280px; }
-    footer                          { padding: 96px 18% 16px 18%; } /* 96px 336px 16px 336px; */
+    footer                          { padding: 0 18% 16px 18%; } /* 96px 18% 16px 18%; 96px 336px 16px 336px; */
 		section, blockquote, figure     { padding-top: 72px; }
-    .col-1 > *:first-child          { padding-top: 0; }
+    .col-1 > *:first-child:not(.btn-lrg) { padding-top: 0; }
     article, section, blockquote    { padding-bottom: 72px;} /* responsible for the bottom padding of each section and blockquote within the main area of the site */
     section > p                     { padding-bottom: 0; }
     figcaption li                   { padding-bottom: 1em; }
@@ -468,11 +469,12 @@
     section, #brands                { padding-left: 0; padding-right: 0; }
 		section > h2, section > p       { padding-left: 12%; padding-right: 12%; }
     blockquote                      { padding-left: 18%; padding-right: 18%; }
-    #calltoaction div               { padding: 7%; }
+    #calltoaction div               { padding: 64px 7%; }
 		figcaption                      { margin: 0 0 auto 0; }
 		.social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
     * + figcaption, figcaption + *  { margin-top: 36px; } /* adds margin between each figure's subject and its corresponding figcaption */
-    figure .fa + *                  { margin-top: 1em; } /*add margin between icons and captions within a figure */
+    figure .fa + *,
+    h3 + ul                         { margin-top: 1em; } /*add margin between icons and captions within a figure */
 		.col-2-1 figure:first-child figcaption,
 		.col-1-2 figure:last-child figcaption,
 		.col-1 figcaption								{ width: 70%; }
@@ -538,6 +540,7 @@
   /* 4.7 - Borders - 4.7 */
     section, blockquote							{ border-bottom: 1px solid #b2dfdb; } /* gives each section & blockquote a light teal bottom border */
     .comparison > *:last-child			{ border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
+    #schedule_demo                  { border: none; }
 
 
 	/* 4.8 - Z-Index - 4.8 */
@@ -657,7 +660,7 @@
     .social a:nth-child(3):hover    { background: #55acee; } /* twitter */
     .social a:nth-child(4):hover    { background: #0976b4; } /* linkedin */
     .social a:nth-child(5):hover    { background: #cd201f; } /* youtube */
-    .fa                             { color: rgba(255,255,255,.26); }
+    .fa, .fab                       { color: rgba(255,255,255,.26); }
     #copyright img                  { margin: 16px auto; }
 
 
@@ -686,6 +689,7 @@
                                       font-size: 18px;
                                       line-height: 32px;
                                     }
+  .typography th                    { font-weight: 500; }
   table .fa                         { font-size: 250% !important;}
 	.typography, .typography *				{	color: #212121 !important; }
   .typography figcaption *          {	color: #616161 !important; }
@@ -699,7 +703,8 @@
 																			padding: 0 !important;
 																		}
 	.typography h2										{ margin: 0 0 20px !important; }
-	.typography h3, .typography h4		{ margin: 32px 0 16px !important; }
+	.typography * + h3,
+  .typography * + h4                { margin: 32px 0 16px !important; }
 	.typography p											{ margin: 16px 0 !important; }
 	.typography li										{ margin: 8px 0 !important; }
   /*section.typography                {
@@ -815,7 +820,49 @@
                                       /*transform: rotate(294deg);*/
                                     }
 
-  /* The slideshow class should be added to a parent figure or section. These should onyl be applied to sections with a single figure, and the figure must be an image */
+section.features a { width:50%; margin:16px !important; box-sizing: border-box;}
+  /*section.features { justify-content: space-between; flex-wrap: wrap;}*/
+  section.features > * { margin-left: auto !important; margin-right: auto !important; }
+  section.features > p { margin-bottom: 16px; }
+  section.features a {
+    flex-basis:46.5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 16px 0;
+  }
+  section.features span h3 { margin-bottom: 0; }
+  section.features i {
+    color:#000;
+    font-size: 64px !important;
+    width: 64px;
+
+  }
+  section.features a i {
+    float: left;
+    margin-right: 16px;
+    margin-top: 2px;
+  }
+  section.features a span,
+  section.features a h3 { text-align: left; }
+  section.features div {
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+
+  @media (max-width: 768px) {
+    section.features a { width: 75%; }
+    section.features a i { float: none; text-align: center; width: 100%; }
+    section.features a,
+    section.features a h3,
+    section.features span { text-align: center !important; }
+section.features span { display: inline-block; }
+  }
+
+
+  /* The slideshow class should be added to a parent figure or section. These should only be applied to sections with a single figure, and the figure must be an image */
   .slideshow                        {
                                       display: inline-block;
                                       border-bottom: 1px solid #eee;
@@ -919,7 +966,7 @@
 	/*.align-bottom img {transform: scale(1.2); margin: 100px 0 -100px 0; }*/
 
 
-  /* The bg-dark and bg-light classes control the child elements of the colored container, the specific color is added via the adition of a specific color class */
+  /* The bg-dark and bg-light classes control the child elements of the colored container, the specific color is added via the addition of a specific color class */
 	/* The teal and orange classes can then be added to apply background color to main sections and alter the color of the text therein appropriately */
 	.bg-dark *,	.bg-light *           { background: transparent !important; }
 	.bg-dark *                        { color: rgba(238,238,238,.75); }
@@ -992,6 +1039,7 @@
 																					border: 1px solid #4db6ac;
 																					color: #009688 !important;
 																					background: transparent;
+                                          display: inline-block;
 																				}
   .btn-sml:hover, .btn-lrg:hover        {
                                           -webkit-box-shadow: 2px 2px 4px rgba(0,0,0,0.2) !important;
@@ -1091,7 +1139,8 @@
 	#nav_secondary button,
   .roadmap div,
   #prev_next a,
-  .btn-lrg, .btn-sml, .social a, .fa		{
+  .btn-lrg, .btn-sml, .social a,
+  .fa, .fab                             {
 																					-webkit-transition: all 0.2s linear 0s !important;
 																					     -o-transition: all 0.2s linear 0s !important;
 																					        transition: all 0.2s linear 0s !important;
@@ -1232,7 +1281,8 @@
     /* 1280px updates for convenience classes */
       figure .fa + *              { margin-top: 0; } /* becuase the fa icons disappear at this screen res, we no longer need to add margin to the element right after these */
       section.side_by_side        { padding-left: 5%; padding-right: 5%; } /*only make change if the side_by_side class is applied to a section itself */
-      .side_by_side figure .fa    { display: none; }
+      /*.side_by_side figure .fa    { display: none; }*/
+      .side_by_side figcaption .fa{ display: none; }
       .col-1.figure_small img,
       .col-1.figure_small table   { width: 70%; }
       .side_by_side img,
@@ -1268,7 +1318,7 @@
     */
     /*header                      { padding: 64px 7% 112px; }*/
     header                      { padding: 64px 0 112px; }
-    footer                      { padding: 64px 7% 8px 7%; }
+    footer                      { padding: 0 7% 8px 7%; } /* 64px 7% 8px 7%; */
 		#nav_secondary              { padding: 0; }
     section, blockquote         { padding-top: 64px; }
     figure                      { padding-top: 64px !important; }
@@ -1338,7 +1388,10 @@
     #calltoaction p             { font-size: 110%; }
     */
     footer,
-		footer h4, footer ul				{ text-align: center; }
+		footer h4, footer ul,
+    .text_left, .text_left *,
+    .text_right, .text_right *  { text-align: center; }
+    .text_left, .text_right     { text-align:center !important; }
 		section											{ padding: 64px; }
     #footer_links > div					{ padding: 32px 0; }
     section > figure ~ figure   { padding-top: 96px !important; }
@@ -1370,16 +1423,16 @@
   		.comparison > *:last-child	{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
       .col-1.figure_small img,
       .col-1.figure_small table   { width: 100%; }
-      section.side_by_side        { padding-left: 64px; padding-right: 64px; }
+      /*section.side_by_side        { padding-left: 64px; padding-right: 64px; }*/
   		.side_by_side img,
       .side_by_side table         { max-width: 70%; }
       .side_by_side figcaption    {
-                                    max-width: 85%;
-                                    width: 85%;
+                                    max-width: 100%;
+                                    width: 100%;
                                   }
       .side_by_side.figure_large img,
       .side_by_side.figure_large table
-                                  { max-width: 85%; }
+                                  { max-width: 100%; } /* { max-width: 85%; } */
       .side_by_side figure        {
                                        -webkit-box-orient: vertical !important;
                                     -webkit-box-direction: normal !important;
@@ -1428,7 +1481,7 @@
                                   }
   	#nav_primary input:checked ~ i,
     nav ul ul                     { display: none !important; }
-    .social .fa                   { display: inline-block !important; }
+    .social .fab                  { display: inline-block !important; }
   	nav input                     { position: absolute !important; }
   	nav > ul, nav .social         { position: fixed !important; }
     nav > ul                      {
@@ -1503,16 +1556,16 @@
                                     max-width: 95%;
                                     width: 95%;
                                   }
+      .side_by_side li            { width: calc(100% - 2em); }
       .comparison > *:last-child  { border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
   }
 
 
   @media (max-width: 432px){
     header h1                     { font-size: 36px; }
-    header p                      { font-size: 18px; }
+    header p                      { font-size: 16px; }
     section                       { padding: 32px 24px !important; } /* hard coding padding here for small devices and phones, as responsive sizing will no longer yield predictable results */
 
 
     /* 432px updates for convenience classes */
-      .side_by_side li            { width: calc(100% - 2em); }
   }

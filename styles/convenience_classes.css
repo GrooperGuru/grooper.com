@@ -1,0 +1,48 @@
+.col-1
+.col-2
+.col-3
+.col-4
+.col-1-2
+.col-2-1
+
+/* The bg-dark and bg-light classes control the child elements of the colored container, the specific color is added via the addition of a specific color class */
+/* The teal and orange classes can then be added to apply background color to main sections and alter the color of the text therein appropriately */
+.bg-dark, .bg-light
+.teal, .orange, .gray
+
+/* Applied to sections, generally col-1, and re-aligns the figure and figcaption to be side by side instead of top/bottom */
+.side-by-side
+
+/* The text alignment classes force alignment of the element receiving the class and all of its children to match the alignment specified */
+.text_left, .text_left
+.text_center, .text_center
+.text_right, .text_right
+
+/* The align classes are used to remove -bottom class allows large primary images to align to the bottom of their section so that they appear to be emerging from behind the following */
+.align_top                        { padding-top: 0 !important; }
+.align_bottom                     { padding-bottom: 0 !important; }
+.align_left                       { padding-left: 0 !important; }
+.align_right                      { padding-right: 0 !important; }
+
+/* Removes the bottom border of the element to which this is applied */
+.merge_below
+
+
+/* Adds a box shadow to all child img objects of the container to which this is applied */
+.shadow_image
+
+/* Adds a border to all child img objects of the container to which this is applied */
+.border_image
+
+/* Removes all borders from the object to which this is applied */
+.border_none
+
+
+
+.typography
+
+table.roadmap
+.pie
+.slideshow
+.btn-lrg, .btn-sml
+.icon-phase

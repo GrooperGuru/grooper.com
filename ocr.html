@@ -20,15 +20,15 @@
     <i class="fa fa-bars"></i>
     <i class="fa fa-times"></i>
     <ul>
-      <li><a href="features.html">Features</a></li>
+      <li><a href="http://www.grooper.com/features.html">Features</a></li>
         <!--<ul>
           <li><a href="#">placeholder</a></li>
         </ul>-->
-      <li><a href="pricing.html">Pricing</a></li>
-      <li><a href="showcase.html">Showcase</a></li>
-      <li><a href="training.html">Training</a></li>
-      <li><a href="support.html">Support</a></li>
-      <li><a href="https://grooper.vanillacommunities.com">GrooperXchange</a></li>
+      <li><a href="http://www.grooper.com/pricing.html">Pricing</a></li>
+      <li><a href="http://www.grooper.com/showcase.html">Showcase</a></li>
+      <li><a href="http://www.grooper.com/training.html">Training</a></li>
+      <li><a href="http://www.grooper.com/support.html">Support</a></li>
+      <li><a href="https://xchange.grooper.com">GrooperXchange</a></li>
     </ul>
     <div class="social">
       <a href="https://www.facebook.com/BusinessImagingSystems"><i class="fa fa-facebook"></i></a>
@@ -50,7 +50,7 @@
 		<nav id="nav_secondary_container">
 			<div id="nav_secondary_contents" class="nav_secondary_contents">
 				<a href="scan-once.html" aria-selected="true">ScanOnce</a>
-				<a href="image-optimization-for-ocr.html">Image Optimization for OCR</a>
+				<a href="image-processing-for-ocr.html">Image Optimization for OCR</a>
 				<a href="document-classification.html">Document Classification</a>
 				<a href="esp-document-sorting.html">ESP Document Sorting</a>
 				<a href="computer-vision.html">Computer Vision</a>
@@ -85,7 +85,7 @@
       <figure>
         <img src="images/features/ocr/grooper-ocr-image-pre-processing.jpg" />
         <figcaption class="text_left">
-					<a class="btn-lrg">Deep Dive</a>
+					<a class="btn-lrg" href="image-processing-for-ocr.html">Deep Dive</a>
           <h3>Examples</h3>
           <ul>
             <li>Remove lines</li>
@@ -97,7 +97,6 @@
           </ul>
         </figcaption>
       </figure>
-
     </section>
 
 
@@ -107,9 +106,9 @@
 		</blockquote>
 
 
-    <section class="col-1 side_by_side figure_large shadow_img">
+    <section class="col-1 side_by_side figure_large">
       <h2>OCR Synthesis</h2>
-      <p>No matter how clean and pristine your images may appear, OCR engines still have a difficult time collecting accurate text from images with multiple columns, different font sizes, and image shear. Grooper's patent-pending OCR synthesis engine intelligently performs multiple passess of OCR on different portions of the image and <strong>synthesizes</strong> the results together as a single unit, keeping only the most accurate text.</p>
+      <p>No matter how clean and pristine your images may appear, OCR engines still have a difficult time collecting accurate text from images with multiple columns, different font sizes, and image shear. Grooper's patent-pending OCR synthesis engine intelligently performs multiple passess of OCR on different portions of the image and <em>Groops</em> the results together as a single unit, keeping only the most accurate text.</p>
 
       <figure>
         <figcaption>
@@ -123,9 +122,9 @@
         <figcaption>
           <i class="fa fa-th" aria-hidden="true"></i>
 					<h3>Cellular Validation</h3>
-					<p>Multi-column layouts present a unique OCR challenge. Horizontally aligned text on each side of a multi-column document may have different font sizes and the lines may be slightly offset from each other. A standard OCR process will have a complete breakdown of accuracy in one of the two sides. Grooper's Cellular Validation OCR splits the image into a grid of multiple areas and OCRs them independently.</p>
+					<p>Multi-column layouts present a unique OCR challenge. Text on each side of the document may have different font sizes and the lines may be slightly offset from each other. A standard OCR process will have a complete breakdown of accuracy in one of the two sides. Grooper's Cellular Validation OCR splits the image into a grid of multiple areas and OCRs them independently.</p>
         </figcaption>
-        <img src="images/features/natural-language-processing/grooper-natural-language-processing-spacial-analysis-radial.jpg" />
+        <img src="images/features/ocr/grooper-ocr-cellular-validation.jpg" />
       </figure>
       <figure>
         <figcaption>
@@ -133,7 +132,28 @@
 					<h3>Segment Reprocessing</h3>
 					<p>The final synthesis task is to perform segment analysis. A "segment" is a string of characters, all on one row of text, that is separated by large space like carriage returns, line feeds, and tabs. We then determine the average OCR accuracy of each segment and independently re-run OCR on all segments that aren't of optimum quality.</p>
         </figcaption>
-        <img src="images/features/natural-language-processing/grooper-natural-language-processing-feature-truncation.jpg" />
+        <img src="images/features/ocr/grooper-ocr-segment-reprocessing.jpg" />
+      </figure>
+    </section>
+
+
+		<section class="col-1 side_by_side figure_large">
+			<h5>And when all else fails</h5>
+			<h2>We've got spell-correction</h2>
+			<p>Powered by our <strong>Atomic RegEx</strong> engine, Grooper can perform OCR correction to fix some pretty ugly stuff.</p>
+      <figure>
+        <img src="images/features/ocr/grooper-ocr-spell-correction.jpg" />
+        <figcaption class="text_left">
+					<a class="btn-lrg" href="image-processing-for-ocr.html">Deep Dive</a>
+          <h3>Examples</h3>
+          <ul>
+            <li>Correct simple OCR mistakes in strings that don't match words in a language of your choice</li>
+						<li>Fix legitimate, user-created typos on documents</li>
+            <li>Re-insert spaces where OCR falsely jammed multiple words together</li>
+            <li>Delete strings of non alpha-numeric characters that resemble sombody's attempt at censorship, like "$#@! ^&*"</li>
+						<li>Repair numeric values where overly-aggresive image cleanup has inadvertently removed commas and periods</li>
+          </ul>
+        </figcaption>
       </figure>
     </section>
 
@@ -163,31 +183,25 @@
 		</section>
 
 
-		<blockquote class="bg-dark orange tile">
-			<p>Lease and contract analysis is a major strength for Grooper. We have successfully built a working model that finds all of the key provisions throughout the body of the main document. Then it automatically searches for modifications to each within addendums/exhibits and brings them inline with the main provision. This speeds up our analysis and ensures we are correctly interpreting the data.</p>
-			<!--<span>WebDevCorner.com</div>-->
-		</blockquote>
-
-
   </main>
 
 	<div id="prev_next" style="display:flex">
 	  <div>
-	    <a href="#">
+	    <a href="http://www.grooper.com/image-processing-for-ocr.html">
 	      <i class="fa fa-arrow-left" aria-hidden="true"></i>
 	      <span class="direction">Previous</span>
-	      <span>[Insert Feature Here]</span>
+	      <span>Image Processing</span>
 	    </a>
 	  </div>
 	  <div>
-	    <a href="#">
+	    <a href="http://www.grooper.com/features.html">
 	      <i class="fa fa-arrow-right" aria-hidden="true"></i>
 	      <span class="direction">Next</span>
-	      <span>[Insert Feature Here]</span>
+	      <span>Classification</span>
 	    </a>
 	  </div>
 	</div>
-
+	<!--
 	<div id="calltoaction">
 		<div class="bg-light teal">
 			<h3>Get Support</h3>
@@ -203,9 +217,17 @@
 			<a class="btn-lrg">Schedule Now</a>
 		</div>
 	</div>
+	-->
 
 
-  <footer>
+	<footer>
+
+		<section id="schedule_demo" class="col-1 bg-dark gray">
+			<a class="btn-lrg" onclick="popup_demo()">Schedule Demo</a>
+			<h2></h2>
+			<p style="color:#bbb">Meet with one of our Grooper Gurus to ask questions you have about Grooper's functionality and pricing model.  Then, see a live presentation that demonstrates Grooper's uniqueness, the end-user experience, and how the magic works behind the scenes. No "smoke and mirrors" here.</p>
+		</section>
+
     <div id="footer_links">
 
       <div id="contact">
@@ -222,13 +244,13 @@
       <div id="discover">
         <h4>Discover</h4>
         <ul>
-          <li><a href="features.html">Features</a></li>
-          <li><a href="pricing.html">Plans & Pricing</a></li>
-          <li><a href="showcase.html">Solution Showcase</a></li>
-          <li><a href="training.html">Training Program</a></li>
-          <li><a href="https://grooper.vanillacommunities.com">GrooperxChange</a></li>
-          <li><a href="support.html">Get Support</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="http://www.grooper.com/features.html">Features</a></li>
+          <li><a href="http://www.grooper.com/pricing.html">Plans & Pricing</a></li>
+          <li><a href="http://www.grooper.com/showcase.html">Solution Showcase</a></li>
+          <li><a href="http://www.grooper.com/training.html">Training Program</a></li>
+          <li><a href="https://xchange.grooper.com">GrooperxChange</a></li>
+          <li><a href="http://www.grooper.com/support.html">Get Support</a></li>
+          <li><a href="http://www.grooper.com/contact.html">Contact Us</a></li>
         </ul>
       </div>
 
@@ -273,7 +295,7 @@
   	</div>
 
     <div id="copyright">
-      <span>©2017 Grooper, LLC. All Rights Reserved.</span>
+      <span>©2018 Grooper, LLC. All Rights Reserved.</span>
       <img src="images/g_symbol_64.png" />
     </div>
   </footer>
