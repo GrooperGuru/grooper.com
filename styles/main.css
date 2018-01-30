@@ -689,10 +689,12 @@
                                       font-size: 18px;
                                       line-height: 32px;
                                     }
+  .typography em                    { font-weight: 400; }
   .typography th                    { font-weight: 500; }
   table .fa                         { font-size: 250% !important;}
 	.typography, .typography *				{	color: #212121 !important; }
   .typography figcaption *          {	color: #616161 !important; }
+  .typography em                    { color: #f4511e !important; }
   .typography div                   { display: block !important; }
   .typography h2, .typography p     {
                                       padding-left: 0;
@@ -820,35 +822,47 @@
                                       /*transform: rotate(294deg);*/
                                     }
 
-section.features a { width:50%; margin:16px !important; box-sizing: border-box;}
+  section.features a { width:50%; box-sizing: border-box;}
   /*section.features { justify-content: space-between; flex-wrap: wrap;}*/
   section.features > * { margin-left: auto !important; margin-right: auto !important; }
   section.features > p { margin-bottom: 16px; }
   section.features a {
-    flex-basis:46.5%;
+    flex-basis:50%;
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    margin: 16px 0;
+    /*margin: 16px 0; */
+    margin: 0;
+    padding: 24px;
+    border: 1px solid transparent;
+    transition: all 0.2s linear 0s !important;
   }
-  section.features span h3 { margin-bottom: 0; }
+  section.features a:hover {
+    border: 1px solid #b2dfdb;
+    background: #fff;
+    box-shadow: 1px 2px 24px #eeeeee;
+  }
+  section.features span h3 {
+    margin-bottom: 0.3em;
+    line-height: 22px;
+  }
   section.features i {
     color:#000;
-    font-size: 64px !important;
-    width: 64px;
+    font-size: 36px !important;
+    width: 36px;
 
   }
   section.features a i {
-    float: left;
+    /*float: left;*/
     margin-right: 16px;
-    margin-top: 2px;
+    /*margin-top: 2px;*/
   }
   section.features a span,
   section.features a h3 { text-align: left; }
   section.features div {
     flex-wrap: wrap;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: stretch;
   }
 
 
@@ -858,7 +872,7 @@ section.features a { width:50%; margin:16px !important; box-sizing: border-box;}
     section.features a,
     section.features a h3,
     section.features span { text-align: center !important; }
-section.features span { display: inline-block; }
+    section.features span { display: inline-block; }
   }
 
 
