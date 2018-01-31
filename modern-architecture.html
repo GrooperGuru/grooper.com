@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge;" />
 	<meta http-equiv="Cache-Control" content="no-store, must-revalidate" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Unified Content Processing with Grooper</title>
+	<title>Parallel Processing with Grooper</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="styles/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
@@ -49,14 +49,14 @@
 		<nav id="nav_secondary_container">
 			<div id="nav_secondary_contents" class="nav_secondary_contents">
 				<a href="paper-capture.html">Paper Capture</a>
-				<a href="electronic-documents.html" aria-selected="true">Electronic Document Processing</a>
+				<a href="electronic-documents.html">Electronic Document Processing</a>
 				<a href="image-processing-for-ocr.html">Image Optimization for OCR</a>
 				<a href="ocr.html">OCR Synthesis</a>
 				<a href="atomic-regex.html">Atomic RegEx</a>
 				<a href="classification.html">Document Classification</a>
 				<a href="natural-language-processing.html">Natural Language Processing (NLP)</a>
 				<a href="design-studio.html">Design Studio</a>
-				<a href="modern-architecture.html">Modern Architecture</a>
+				<a href="modern-architecture.html" aria-selected="true">Modern Architecture</a>
 				<span id="nav_secondary_indicator"></span>
 			</div>
 		</nav>
@@ -70,146 +70,107 @@
 
   <main>
 
-		<section class="col-3 ">
-			<!--<h5>Process every file</h5>-->
-			<h2>Process Every File.</h2>
-			<!--<a class="btn-lrg" onclick="moreInfo(this)">More Info</a>-->
-			<p>Freely move documents out of, into, and between different information repositories, including: File Systems, Mail Servers, FTP Sites, and CMIS-compliant ECM systems.</p>
-      <figure>
-				<i class="fa fa-files-o" aria-hidden="true"></i>
+
+    <section class="col-1 side_by_side">
+		  <figure>
+        <img src="images/features/parallel-processing/grooper-thread-pool.png" />
+				<figcaption>
+          <h2>Scalable Parallel Processing</h2>
+        	<p>Grooper's shared computing infrastructure makes parallel processing on a large scale easy.</p>
+          <p>Leverage hundreds of processing cores spread across multiple servers and workstations.</p>
+          <p>Perform in minutes what takes hours or even days using traditional processing methods.</p>
+				</figcaption>
+      </figure>
+    </section>
+
+
+    <section class="col-1">
+			<figure>
         <figcaption>
-          <h3>File Systems</h3>
-          <p>Reorganize and recondition archived documents to uncover valuable dark data</p>
+    		  <h2>The Power of Parallel Processing</h2>
+    	    <p>The performance benefits of parallel processing are significant, particularly for low latency, CPU-intensive activities. Consider the job below, executed on a 56-core thread pool.  CPU-intensive activities experience a <strong>massive speed increase – up to 50X!</strong></p>
         </figcaption>
-        <!--img src="images/features/classification/grooper-classification-lexical.jpg" /-->
+        <table>
+					<thead>
+						<tr>
+							<th>Activity</th>
+							<th>Description</th>
+							<th>Serial</th>
+							<th>Parallel</th>
+							<th>Factor</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Import</td>
+							<td>Loaded 46K TIF & PDF documents from CMIS.</td>
+							<td>13 hours</td>
+							<td>3.2 hours</td>
+							<td>4x</td>
+						</tr>
+						<tr>
+							<td>Split</td>
+							<td>Split documents into 426K pages.</td>
+							<td>11.7 hours</td>
+							<td>27 minutes</td>
+							<td>26x</td>
+						</tr>
+						<tr>
+							<td>Enhance</td>
+							<td>Applied image cleanup to 426K pages.</td>
+							<td>4.2 days</td>
+							<td>2.0 hours</td>
+							<td>50x</td>
+						</tr>
+						<tr>
+							<td>OCR</td>
+							<td>Performed full text OCR on 426K pages.</td>
+							<td>1.9 days</td>
+							<td>1.3 hours</td>
+							<td>35x</td>
+						</tr>
+						<tr>
+							<td>Extract</td>
+							<td>Extracted additional fields from 46K documents.</td>
+							<td>3.7 hours</td>
+							<td>9.3 minutes</td>
+							<td>25x</td>
+						</tr>
+						<tr>
+							<td>Merge</td>
+							<td>Merged 426K pages back into multipage files.</td>
+							<td>8.5 hours</td>
+							<td>24 minutes</td>
+							<td>21x</td>
+						</tr>
+						<tr>
+							<td>Export</td>
+							<td>Exported 46K documents to CMIS.</td>
+							<td>18.0 hours</td>
+							<td>3.5 hours</td>
+							<td>5x</td>
+						</tr>
+					</tbody>
+				</table>
       </figure>
+    </section>
+
+		<blockquote class="bg-dark orange tile">
+			<p>We realized even in the earliest stages of Grooper's life the importance of parallel processing. Conditioning documents for complete data collection requires a tremendous amount of computational cycles for image processing, text collection, and data analysis. This was the correct architecture to maintain reasonable processing times without having to compromise our ability to get every piece of data we wanted.</p>
+        <span>Matt Harrison, Grooper Product Manager</div>
+		</blockquote>
+
+    <section id="gpu_acceleration" class="col-1 align_bottom">
       <figure>
-				<i class="fa fa-sitemap" aria-hidden="true"></i>
-				<figcaption>
-          <h3>ECM Repositories</h3>
-          <p>Migrate data from one ECM system to another and capture more data along the way</p>
-        </figcaption>
-        <!--img src="images/features/classification/grooper-classification-rules-based.jpg" /-->
-      </figure>
-      <figure>
-				<i class="fa fa-envelope-o" aria-hidden="true"></i>
         <figcaption>
-          <h3>Mail Servers</h3>
-          <p>Perform email archival to reduce pressure on top-tier storage</p>
+					<h2>GPU Acceleration</h2>
+					<p>Grooper uses hardware acceleration to speed up Image Processing, Computer Vision, and Fuzzy RegEx. This acceleration offloads compute-intensive operations to specialized hardware which performs operations in parallel.</p>
         </figcaption>
-        <!--img src="images/features/classification/grooper-classification-computer-vision.jpg" /-->
-      </figure>
-    </section>
-
-		<section id="sparse_importing" class="col-1 side_by_side figure_large">
-			<h2>Sparse Document Import</h2>
-			<p>Rapidly process massive amounts of digital assets during a migration or import without the hassles of file copy errors, access violations, and other unmanaged I/O exceptions.</p>
-      <figure>
-        <img src="images/features/ocr/grooper-ocr-image-pre-processing.jpg" />
-        <figcaption class="text_left">
-          <h3>Examples</h3>
-          <ul>
-            <li>With sparse imports, each Grooper document starts its life as only a link back to the original file rather than a copy of the file itself.</li>
-						<li>As the batch moves through the steps in a process, the content is processed “in-place” from the original location.</li>
-						<li>This enables use of parallel processing to perform high-speed content loading.</li>
-						<li>Provides monitored and (if needed) throttled data requests.</li>
-						<li>Avoids unnecessarily duplicating files and increasing your storage footprint during the project.</li>
-          </ul>
-        </figcaption>
-      </figure>
-    </section>
-
-		<section class="col-1">
-			<h2>Normalize & Preserve Electronic Files</h2>
-			<p>Rendering <em>generates a PDF</em> version of each document, providing a standards-based representation of document layout and content. Supports <em>all major formats</em> of electronic document.</p>
-      <!--<figure>
-        <img src="images/features/unified-processing/grooper-unified-processing-normalize-content.png" />
-        <figcaption class="text_left">
-          <h3>Examples</h3>
-          <ul>
-            <li>100% accurate rendering, as the document would appear in the native application.</li>
-						<li>Allows users without the native software application to view and leverage valuable content.</li>
-						<li>Preservation in PDF format ensures the long-term usability of digital documents.</li>
-						<li>Full access to the native text content.  No need for error-prone OCR!</li>
-          </ul>
-				</figcaption>-->
-					<ul class="slideshow">
-						<li><a href="#~" onclick="slideshow('images/features/unified-processing/grooper-unified-processing-normalize-content_01.png', this)">Before Grooper</a></li>
-						<li><a href="#~" onclick="slideshow('images/features/unified-processing/grooper-unified-processing-normalize-content_02.png', this)">After Grooper</a></li>
-					</ul>
-					<figure>
-						<img src="images/features/unified-processing/grooper-unified-processing-normalize-content_01.png" />
-
-      </figure>
-    </section>
-
-
-		<section class="col-1 bg-dark gray">
-      <h2>Testing Apple Style Slideshow</h2>
-			<ul class="slideshow">
-				<li><a href="#~" onclick="slideshow('images/features/unified-processing/grooper-unified-processing-normalize-content_01.png', this)">Before Grooper</a></li>
-				<li><a href="#~" onclick="slideshow('images/features/unified-processing/grooper-unified-processing-normalize-content_02.png', this)">After Grooper</a></li>
-			</ul>
-      <figure>
-        <img src="images/features/unified-processing/grooper-unified-processing-normalize-content_01.png" />
-        <!--figcaption>
-          <p>In the example above, we are easily able to differentiate information pertaining to the borrower vs. co-borrower through radial spacial analysis.</p>
-        </figcaption-->
-      </figure>
-    </section>
-
-
-
-
-
-
-
-
-    <section class="col-3">
-      <h2>5-Phase Batch Processing Approach</h2>
-		  <figure>
-        <span class="icon-phase acquire">Acquire</span>
-				<figcaption>
-          <h3>Scalable Parallel Processing</h3>
-        	<p>Grooper's shared computing infrastructure makes parallel processing on a large scale easy.</p>
-				</figcaption>
-      </figure>
-
-		  <figure>
-        <span class="icon-phase condition">Condition</span>
-				<figcaption>
-          <h3>Scalable Parallel Processing</h3>
-        	<p>Grooper's shared computing infrastructure makes parallel processing on a large scale easy.</p>
-				</figcaption>
-      </figure>
-
-		  <figure>
-        <span class="icon-phase organize">Organize</span>
-				<figcaption>
-          <h3>Scalable Parallel Processing</h3>
-        	<p>Grooper's shared computing infrastructure makes parallel processing on a large scale easy.</p>
-				</figcaption>
-      </figure>
-
-		  <figure>
-        <span class="icon-phase collect">Collect</span>
-				<figcaption>
-          <h3>Scalable Parallel Processing</h3>
-        	<p>Grooper's shared computing infrastructure makes parallel processing on a large scale easy.</p>
-				</figcaption>
-      </figure>
-
-		  <figure>
-        <span class="icon-phase deliver">Deliver</span>
-				<figcaption>
-          <h3>Scalable Parallel Processing</h3>
-        	<p>Grooper's shared computing infrastructure makes parallel processing on a large scale easy.</p>
-				</figcaption>
-      </figure>
-    </section>
+        <img src="images/features/parallel-processing/grooper-nvidia-gpu-acceleration.jpg">
+			</figure>
+		</section>
 
   </main>
-
 
 	<div id="prev_next">
 	  <div>
@@ -253,13 +214,12 @@
       <div id="discover">
         <h4>Discover</h4>
         <ul>
-          <li><a href="http://www.grooper.com/features.html">Features</a></li>
-          <li><a href="http://www.grooper.com/pricing.html">Plans & Pricing</a></li>
-          <li><a href="http://www.grooper.com/showcase.html">Solution Showcase</a></li>
-          <li><a href="http://www.grooper.com/training.html">Training Program</a></li>
+          <li><a href="./features.html">Features</a></li>
+          <li><a href="./pricing.html">Plans & Pricing</a></li>
+          <li><a href="./training.html">Training Program</a></li>
           <li><a href="https://xchange.grooper.com">GrooperxChange</a></li>
-          <li><a href="http://www.grooper.com/support.html">Get Support</a></li>
-          <li><a href="http://www.grooper.com/contact.html">Contact Us</a></li>
+          <li><a href="./support.html">Get Support</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
         </ul>
       </div>
 
@@ -313,8 +273,6 @@
 	<script src="js/animate-header.js"></script>
   <script src="js/nav-primary.js"></script>
 	<script src="js/nav-secondary.js"></script>
-	<script src="js/slide-toggle.js"></script>
-	<script src="js/slideshow.js"></script>
 
 
 </body>
