@@ -227,6 +227,7 @@
   	nav ul ul li a                  { color: #333 !important; } /* set important to override the different default link states active, visited, etc. */
   	#nav_primary i, #copyright      { color: #616161; }
     #nav_secondary a                { color: #888; }
+    #schedule_demo p                { color: #bdbdbd; }
     #nav_secondary a[aria-selected="true"] { color: #111 !important; }
 		.content__button input          { color: #bbb !important; }
 		.content__button input:hover    { color: #fff !important; }
@@ -458,7 +459,8 @@
     /*header                          { padding: 144px 15% 240px; }*/ /* bottom padding should be equal to top padding + margin-top */
     header                          { padding: 144px 0 240px; } /* bottom padding should be equal to top padding + margin-top */
     header > *:not(canvas)          { max-width: 1280px; }
-    footer                          { padding: 0 18% 16px 18%; } /* 96px 18% 16px 18%; 96px 336px 16px 336px; */
+    footer                          { padding: 0 18% 16px 18%; } /*96px 336px 16px 336px; */
+    footer.no_schedule              { padding: 96px 18% 16px 18%; }
 		section, blockquote, figure     { padding-top: 72px; }
     .col-1 > *:first-child:not(.btn-lrg) { padding-top: 0; }
     article, section, blockquote    { padding-bottom: 72px;} /* responsible for the bottom padding of each section and blockquote within the main area of the site */
@@ -1296,7 +1298,7 @@
     #copyright                  { font-size: 12px; }
     .social a                   { font-size: 24px; }
   	.social a                   { padding-top: 32px; }
-  	#footer_links input         { height: 28px; }
+  	#footer_links input         { height: 32px; }
   	.social a                   { height: 96px; width: 96px; }
   	#copyright img              { height: 38px; }
     .col-1 figcaption           { width: 80%; }
@@ -1373,7 +1375,8 @@
     */
     /*header                      { padding: 64px 7% 112px; }*/
     header                      { padding: 64px 0 112px; }
-    footer                      { padding: 0 7% 8px 7%; } /* 64px 7% 8px 7%; */
+    footer                      { padding: 0 7% 8px 7%; }
+    footer.no_schedule          { padding: 64px 7% 8px 7%; }
 		#nav_secondary              { padding: 0; }
     section, blockquote         { padding-top: 64px; }
     figure                      { padding-top: 64px !important; }
@@ -1518,6 +1521,7 @@
     #calltoaction p               { font-size: 140%; }
     */
     nav > ul > li > a             { line-height: 48px; }
+    footer li                     { line-height: 24px; }
     footer h4, footer ul          { text-align: center; }
   	nav li, nav input,
     .col-4, #calltoaction         { display: block !important; }
@@ -1619,6 +1623,7 @@
   @media (max-width: 432px){
     header h1                     { font-size: 36px; }
     header p                      { font-size: 16px; }
+    footer li                     { line-height: 32px; }
     section                       { padding: 32px 24px !important; } /* hard coding padding here for small devices and phones, as responsive sizing will no longer yield predictable results */
 
 
