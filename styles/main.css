@@ -822,15 +822,29 @@
                                       /*transform: rotate(294deg);*/
                                     }
 
+
+
   section.features div              {
-                                      -webkit-flex-basis: 80%;
+                                           -webkit-flex-basis: 80%;
                                       -ms-flex-preferred-size: 80%;
-                                      flex-basis: 80%;
+                                                   flex-basis: 80%;
+                                      -webkit-flex-wrap: wrap;
+                                          -ms-flex-wrap: wrap;
+                                              flex-wrap: wrap;
+                                          -webkit-box-orient: horizontal;
+                                       -webkit-box-direction: normal;
+                                      -webkit-flex-direction: row;
+                                          -ms-flex-direction: row;
+                                              flex-direction: row;
+                                        -webkit-box-align: stretch;
+                                      -webkit-align-items: stretch;
+                                           -ms-flex-align: stretch;
+                                              align-items: stretch;
                                     }
-  section.features a                { width:50%; box-sizing: border-box; }
   section.features > *              { margin-left: auto !important; margin-right: auto !important; }
   section.features > p              { margin-bottom: 16px; }
   section.features a {
+    box-sizing: border-box;
     -webkit-flex-basis: 50%;
     -ms-flex-preferred-size: 50%;
     flex-basis: 50%;
@@ -838,7 +852,6 @@
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
-    /*flex-direction: row;*/
     -webkit-flex-wrap: nowrap;
         -ms-flex-wrap: nowrap;
             flex-wrap: nowrap;
@@ -851,13 +864,13 @@
     -o-transition: all 0.2s linear 0s !important;
     transition: all 0.2s linear 0s !important;
   }
-  section.features a:hover i { color: #f4511e !important; }
   section.features a:hover {
     border: 1px solid #eeeeee;
     background: #fff;
     -webkit-box-shadow: 1px 2px 12px rgba(0,0,0,0.05);
     box-shadow: 1px 2px 12px rgba(0,0,0,0.05);
   }
+  section.features a:hover i { color: #f4511e !important; }
   section.features span h3 {
     margin-bottom: 0.3em;
     line-height: 22px;
@@ -866,28 +879,13 @@
     color:#000;
     font-size: 36px !important;
     width: 36px;
-
-  }
-  section.features a i {
     margin-right: 16px;
   }
   section.features a span,
   section.features a h3 { text-align: left; }
-  section.features div {
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-    -ms-flex-direction: row;
-    flex-direction: row;
-    -webkit-box-align: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-  }
-  .video { height: 360px; width: 640px; margin: 0 auto; }
+  header .video { position: relative; padding-bottom: 56.25%; overflow:hidden; z-index:1243576; max-width: 768px; }
+  header .video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
   @media (max-width:1024px) {
     section.features div {
       -webkit-flex-basis: 85%;
@@ -917,28 +915,7 @@
       flex-basis: 90%;
     }
   }
-/*
-  @media (max-width: 1024px) {
-    section.features a {
-      flex-direction: column;
-      align-items: center;
-    }
-    section.features a i { margin-right: 0; }
-    section.features a span,
-    section.features a h3 {
-      text-align: center !important;
-    }
-  }
 
-  @media (max-width: 768px) {
-    section.features a { width: 75%; }
-    section.features a i { float: none; text-align: center; width: 100%; }
-    section.features a,
-    section.features a h3,
-    section.features span { text-align: center !important; }
-    section.features span { display: inline-block; }
-  }
-*/
 
   /* The slideshow class should be added to a parent figure or section. These should only be applied to sections with a single figure, and the figure must be an image */
   .slideshow                        {
@@ -1218,7 +1195,7 @@
   .roadmap div,
   #prev_next a,
   .btn-lrg, .btn-sml, .social a,
-  .fa, .fab                             {
+  .fa, .fal, .fab                       {
 																					-webkit-transition: all 0.2s linear 0s !important;
 																					     -o-transition: all 0.2s linear 0s !important;
 																					        transition: all 0.2s linear 0s !important;
@@ -1342,7 +1319,7 @@
     h2 ~ p                      { font-size: 18px; }
     blockquote p                { font-size: 21px; }
     figcaption li               { font-size: 16px; }
-    figure .fa                  { font-size: 72px !important; }
+    figure .fa, figure .fal     { font-size: 72px !important; }
     nav ul ul a                 { line-height: 42px; }
     /*header                      { padding: 88px 10% 152px; margin-top: 64px; }*/ /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
     header                      { padding: 88px 0 152px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
