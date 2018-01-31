@@ -872,21 +872,20 @@
     -webkit-box-shadow: 1px 2px 12px rgba(0,0,0,0.05);
     box-shadow: 1px 2px 12px rgba(0,0,0,0.05);
   }
-  section.features a:hover i { color: #f4511e !important; }
+  section.features a:hover i,
+  section.features a:hover h3 { color: #f4511e !important; }
   section.features span h3 {
     margin-bottom: 0.3em;
     line-height: 22px;
   }
   section.features i {
-    color:#000;
+    color: #333 !important; /*ff8a65 */
     font-size: 36px !important;
     width: 36px;
     margin-right: 16px;
   }
   section.features a span,
   section.features a h3 { text-align: left; }
-  header .video { position: relative; padding-bottom: 56.25%; overflow:hidden; z-index:1243576; max-width: 768px; }
-  header .video iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
   @media (max-width:1024px) {
     section.features div {
