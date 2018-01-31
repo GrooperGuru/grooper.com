@@ -461,7 +461,8 @@
     header > *:not(canvas)          { max-width: 1280px; }
     footer                          { padding: 0 18% 16px 18%; } /*96px 336px 16px 336px; */
     footer.no_schedule              { padding: 96px 18% 16px 18%; }
-		section, blockquote, figure     { padding-top: 72px; }
+		section, blockquote, figure,
+    section > div                   { padding-top: 72px; }
     .col-1 > *:first-child:not(.btn-lrg) { padding-top: 0; }
     article, section, blockquote    { padding-bottom: 72px;} /* responsible for the bottom padding of each section and blockquote within the main area of the site */
     section > p                     { padding-bottom: 0; }
@@ -844,7 +845,21 @@
                                               align-items: stretch;
                                     }
   section.features > *              { margin-left: auto !important; margin-right: auto !important; }
-  section.features > p              { margin-bottom: 16px; }
+  section.features > h4,
+  section.features > h2,
+  section.features > p              { box-sizing: border-box; }
+  /*section.features > p              { margin-bottom: 3em; }*/
+  section.features i                {
+                                      color: #333 !important; /*ff8a65 */
+                                      font-size: 36px !important;
+                                      width: 36px;
+                                      margin-right: 16px;
+                                    }
+  section.features > i              {
+                                      font-size: 8em !important;
+                                      margin-bottom: 24px;
+                                      color: #e0e0e0 !important;
+                                    }
   section.features a {
     box-sizing: border-box;
     -webkit-flex-basis: 50%;
@@ -877,12 +892,6 @@
   section.features span h3 {
     margin-bottom: 0.3em;
     line-height: 22px;
-  }
-  section.features i {
-    color: #333 !important; /*ff8a65 */
-    font-size: 36px !important;
-    width: 36px;
-    margin-right: 16px;
   }
   section.features a span,
   section.features a h3 { text-align: left; }
@@ -966,6 +975,11 @@
   .border_none                      { border: none; } /*should be applied directly to item which should have no border */
 
 
+  .img-sml                          { max-width: 600px; }
+  .img-med                          { max-width: 768px; }
+  .img-lrg                          { max-width: 1024px; }
+
+  
   /* The side_by_side class is a special layout, primarily designed for 1-col presentation that will align the figcaption and its figure to the left and right sides, then wrap as the site shrinks in width */
   /*section.side_by_side              { padding-left: 10%; padding-right: 10%; }*/
   .side_by_side figure              {
@@ -1627,4 +1641,10 @@
 
 
     /* 432px updates for convenience classes */
+    section.features a {
+      -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+      padding: 16px 0;
+    }
   }
