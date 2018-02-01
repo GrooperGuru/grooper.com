@@ -67,26 +67,76 @@
 
   <main>
 
-    <section class="col-2">
+		<section class="col-1 align_bottom bg-light gray tile">
+			<figure>
+				<figcaption>
+					<h5>Our first goal was to</h5>
+					<h2>Prepare Images for Optimal OCR</h2>
+					<p>Our R&D team has proven that good OCR starts with images free of non-text artifacts. Grooper has dozens of features that remove everything that isn’t text to ensure you get distraction-free OCR. Let's look at a few examples.</p>
+				</figcaption>
+        <img class="img-lrg" src="images/features/image-processing/grooper-image-enhancement-for-ocr.png" />
+      </figure>
+		</section>
+
+    <section class="col-2 figure-large">
+			<h5>Safe and clean</h5>
 			<h2>Halftone Removal</h2>
-			<p>Dithering and other halftone patterns are a direct result of legacy document imaging platforms poorly converting color images to black and white. These artifacts must be eliminated to prevent massive errors in OCR results.</p>
+			<p>Dithering and other halftone patterns are a direct result of legacy document imaging platforms poorly converting color images to black and white. These artifacts must be eliminated to prevent massive errors in OCR results, particularly with punctuation like periods and commas.</p>
 
 			<figure>
         <img src="images/features/image-processing/grooper-halftone-removal-01.png" />
 				<figcaption>
-        	<h3>Safe Zones</h3>
-        	<p>Grooper understands the location of characters throughout each page and is smart enough to use its "Safe-zone" technology to avoid accidentally removing punctuation.</p>
+					<h3>Before</h3>
+					<p>Halftone artifacts completely surround text we'd like to capture. OCR stands very little chance at seeing these characters.</p>
 				</figcaption>
       </figure>
 
       <figure>
         <img src="images/features/image-processing/grooper-halftone-removal-02.png" />
 				<figcaption>
-        	<h3>Pixel-Perfect</h3>
-        	<p>The Best of page helps users find your community’s best content by browsing a fun, infinite-scrolling page. Content shows up on this page if it receives positive reactions or if promoted by a moderator.</p>
+					<h3>After</h3>
+					<p>Grooper recognizes dithered patterns and safely removes them without eliminating legitimate punctuation that is close to letters on the page.</p>
 				</figcaption>
       </figure>
     </section>
+
+		<section class="col-1 side_by_side figure-medium">
+			<figure>
+				<img class="img-med" src="images/features/image-processing/grooper-image-optimization-border-removal.jpg" />
+				<figcaption>
+					<h5>Seriously brilliant</h5>
+					<h2>Border Removal</h2>
+					<p>Borders have historically been very tricky to remove when the black region doesn't extend all the way to the edge of the page. Grooper understands how to address a variety of uncommon border scenarios to cleanly remove them.</p>
+				</figcaption>
+      </figure>
+		</section>
+
+		<section class="col-1 side_by_side figure-small">
+			<figure>
+				<figcaption>
+					<h5>Wait, is this Photoshop?</h5>
+					<h2>Inpainted Removal</h2>
+					<p>You work with full-color documents every day. Why shouldn't your image processing do the same? Our object removal strategies break out of the black and white color space and allow you to remove artifacts from color images like they were never there.</p>
+				</figcaption>
+        <img class="img-sml" src="images/features/image-processing/grooper-image-optimization-object-removal-with-inpainting.jpg" />
+      </figure>
+		</section>
+
+		<section class="col-1 side_by_side figure-medium">
+			<h5>Pixel-perfect</h5>
+			<h2>Line Detection & Removal</h2>
+			<p>Borders have historically been very tricky to remove when the black region doesn't extend all the way to the edge of the page. Grooper understands how to address a variety of uncommon border scenarios to cleanly remove them.</p>
+			<figure>
+        <img class="img-med" src="images/features/image-processing/grooper-image-optimization-line-removal.jpg" />
+				<figcaption>
+					<ul>
+						<li>Dropout is performed using a very precise, pixel-by-pixel mask of lines rather than a generic point-to-point/thickness approach. This technique leaves no edge artifacts behind, providing a cleaner OCR image.</li>
+						<li>Works well with very short lines, even those smaller than many of the letters on your page. Grooper knows the difference between lines that should be removed and characters like "l, I, and 1".</li>
+						<li>Characters connected to lines are detected and preserved, keeping valuable data for your OCR process.</li>
+					</ul>
+				</figcaption>
+      </figure>
+		</section>
 
   </main>
 

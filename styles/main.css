@@ -542,7 +542,10 @@
 																		}
 
   /* 4.7 - Borders - 4.7 */
-    section, blockquote							{ border-bottom: 1px solid #b2dfdb; } /* gives each section & blockquote a light teal bottom border */
+    section, blockquote							  { border-bottom: 1px solid #b2dfdb; }
+    section.teal, blockquote.teal		  { border-bottom: 1px solid #b2dfdb; }
+    section.gray, blockquote.gray		  { border-bottom: 1px solid #9e9e9e; }
+    section.orange, blockquote.orange	{ border-bottom: 1px solid #ffccbc; }
     .comparison > *:last-child			{ border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
     #schedule_demo                  { border: none; }
 
@@ -1000,10 +1003,13 @@
   .side_by_side.figure-small figure { max-width: 1176px; }
   .side_by_side.figure-medium figure{ max-width: 1344px; }
   .side_by_side.figure-large figure { max-width: 1600px; }
-  .side_by_side.figure-small img    { max-width: 600px; }
-  .side_by_side.figure-medium img   { max-width: 768px; }
+  .side_by_side.figure-small img,
+  .col-2.figure-medium img          { max-width: 600px; }
+  .side_by_side.figure-medium img,
+  .col-2.figure-large img           { max-width: 768px; }
   .side_by_side.figure-large img    { max-width: 1024px; }
-  .side_by_side figcaption          { max-width: 512px; }
+  .side_by_side figcaption,
+  .col-2.figure-small img           { max-width: 512px; }
   .side_by_side figcaption h3,
   .side_by_side figcaption p,
   .side_by_side figcaption li       { text-align: left; }
