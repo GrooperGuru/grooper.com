@@ -495,6 +495,7 @@
                                       margin-right: auto;
                                       max-width: 1024px;
                                     }
+    #brands p                       { max-width: 100%; }
 
 	/* 4.4 - Position - 4.4 */
 		.noScroll, #nav_primary					{ position: fixed; }
@@ -979,7 +980,7 @@
   .img-med                          { max-width: 768px; }
   .img-lrg                          { max-width: 1024px; }
 
-  
+
   /* The side_by_side class is a special layout, primarily designed for 1-col presentation that will align the figcaption and its figure to the left and right sides, then wrap as the site shrinks in width */
   /*section.side_by_side              { padding-left: 10%; padding-right: 10%; }*/
   .side_by_side figure              {
@@ -996,6 +997,17 @@
   .side_by_side img,
   .side_by_side table,
   .side_by_side figcaption          { -webkit-flex-basis: 43.75%; -ms-flex-preferred-size: 43.75%; flex-basis: 43.75%; }
+  .side_by_side.figure-small figure { max-width: 1176px; }
+  .side_by_side.figure-medium figure{ max-width: 1344px; }
+  .side_by_side.figure-large figure { max-width: 1600px; }
+  .side_by_side.figure-small img    { max-width: 600px; }
+  .side_by_side.figure-medium img   { max-width: 768px; }
+  .side_by_side.figure-large img    { max-width: 1024px; }
+  .side_by_side figcaption          { max-width: 512px; }
+  .side_by_side figcaption h3,
+  .side_by_side figcaption p,
+  .side_by_side figcaption li       { text-align: left; }
+  .side_by_side figcaption ul       { padding-left: 24px; }
   .side_by_side img,
   .side_by_side table               { max-width: 43.75%; } /* should match the flex basis defined above */
   .side_by_side > p + figure,
