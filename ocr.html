@@ -39,7 +39,7 @@
   <header>
 		<canvas id="header_canvas"></canvas>
 		<h1>OCR and Electronic Text Collection</h1>
-		<p>Who said you can't teach an old dog new tricks? We've taken dated OCR technology and brought it into modern times. Grooper's patent-pending OCR techniques generate the most accurate text from images and electronic files, regardless of which OCR engine you use. </p>
+		<p>Who said you can't teach an old dog new tricks? We've taken dated OCR technology and brought it into modern times. Grooper's patented OCR techniques generate the most accurate text from images and electronic files, regardless of which OCR engine you use. </p>
 	</header>
 
   <div id="nav_secondary">
@@ -70,7 +70,7 @@
 
     <section class="col-1 side_by_side figure_large">
 			<h2>It all starts with image quality</h2>
-			<p>Before any OCR action takes place, you'll want to make sure you're handing the OCR activity an image that is straight and free of artifacts. The key is to remove everything from the page that isn't text. Grooper lets you process images through a growing arsenal of tools and out-of-the-box profiles specifically designed for this task. And the best part is that they won't alter the original version of the image you want to permanently retain.</p>
+			<p>Before any OCR action takes place, you'll want to make sure you're handing the OCR activity an image that is straight and free of artifacts. The key is to remove everything from the page that isn't text. Grooper lets you process images through a growing arsenal of exclusive tools and out-of-the-box profiles specifically designed for this task. The best part is these tools won't alter the original version of the image you want to permanently retain.</p>
       <figure>
         <img src="images/features/ocr/grooper-ocr-image-pre-processing.jpg" />
         <figcaption class="text_left">
@@ -82,7 +82,7 @@
             <li>Remove small specks.</li>
             <li>Remove large non-text objects</li>
             <li>Invert white-on-black zones.</li>
-            <li>Remove Hole Punches</li>
+            <li>Remove hole punches</li>
           </ul>
         </figcaption>
       </figure>
@@ -97,13 +97,13 @@
 
     <section class="col-1 side_by_side figure_large">
       <h2>OCR Synthesis</h2>
-      <p>No matter how clean and pristine your images may appear, OCR engines still have a difficult time collecting accurate text from images with multiple columns, different font sizes, and image shear. Grooper's patent-pending OCR synthesis engine intelligently performs multiple passess of OCR on different portions of the image and <em>Groops</em> the results together as a single unit, keeping only the most accurate text.</p>
+      <p>No matter how clean and pristine your images may appear, outdated OCR engines still have a difficult time collecting accurate text from images with multiple columns, different font sizes, and image shear. Grooper's patented OCR synthesis engine intelligently performs multiple passess of OCR on different portions of the image and <em>Groops</em> the results together as a single unit, keeping only the most accurate text results.</p>
 
       <figure>
         <figcaption>
           <i class="fa fa-repeat" aria-hidden="true"></i>
           <h3>Iterative OCR</h3>
-          <p>Iterative OCR is a technique we've developed as a way to capture text the OCR Engine simply misses the first time around. The idea is that we run a pass of OCR on the entire document, drop out any portions of the page where we were able to obtain text, then run another OCR iteration on the new image. With the new image having far less distractions, it is able to more clearly find text it missed during the previous passes.</p>
+          <p>Iterative OCR is a technique we've developed as a way to capture text that the OCR engines simply miss the first time around. The idea is that we run a pass of OCR on the entire document, drop out any portions of the page where we were able to obtain text, then run another OCR iteration on the new image. With the new image having far less distractions, OCR is able to more clearly find text it missed during the previous passes.</p>
         </figcaption>
         <img src="images/features/natural-language-processing/grooper-natural-language-processing-spacial-analysis-zonal.jpg" />
       </figure>
@@ -111,7 +111,7 @@
         <figcaption>
           <i class="fa fa-th" aria-hidden="true"></i>
 					<h3>Cellular Validation</h3>
-					<p>Multi-column layouts present a unique OCR challenge. Text on each side of the document may have different font sizes and the lines may be slightly offset from each other. A standard OCR process will have a complete breakdown of accuracy in one of the two sides. Grooper's Cellular Validation OCR splits the image into a grid of multiple areas and OCRs them independently.</p>
+					<p>Multi-column layouts present a unique challenge for OCR. Text on each side of a document may have different font sizes or the lines of text may be slightly offset from each other. A standard OCR process will have a complete breakdown of accuracy in one of the two sides. Grooper's Cellular Validation OCR splits the image into a grid of multiple areas and OCRs them independently. The result - industry leading accuracy when it comes to OCRing your documents.</p>
         </figcaption>
         <img src="images/features/ocr/grooper-ocr-cellular-validation.jpg" />
       </figure>
@@ -119,7 +119,7 @@
         <figcaption>
           <i class="fa fa-align-center" aria-hidden="true"></i>
 					<h3>Segment Reprocessing</h3>
-					<p>The final synthesis task is to perform segment analysis. A "segment" is a string of characters, all on one row of text, that is separated by large space like carriage returns, line feeds, and tabs. We then determine the average OCR accuracy of each segment and independently re-run OCR on all segments that aren't of optimum quality.</p>
+					<p>The final synthesis task is to perform segment analysis. A "segment" is a small block or line of text on a page. If any segment gets a low OCR confidence score, Grooper independently re-runs OCR on that segment to obtain optimum quality.</p>
         </figcaption>
         <img src="images/features/ocr/grooper-ocr-segment-reprocessing.jpg" />
       </figure>
@@ -137,7 +137,7 @@
           <h3>Examples</h3>
           <ul>
             <li>Correct simple OCR mistakes in strings that don't match words in a language of your choice</li>
-						<li>Fix legitimate, user-created typos on documents</li>
+						<li>Fix existing, human-generated typos on documents</li>
             <li>Re-insert spaces where OCR falsely jammed multiple words together</li>
             <li>Delete strings of non alpha-numeric characters that resemble sombody's attempt at censorship, like "$#@! ^&*"</li>
 						<li>Repair numeric values where overly-aggresive image cleanup has inadvertently removed commas and periods</li>
@@ -159,14 +159,14 @@
         <i class="fa fa-globe" aria-hidden="true"></i>
         <figcaption>
 					<h3>Language Support</h3>
-					<p>Supports 35 languages, which can be individually enabled or disabled. Performs automatic language detection.</p>
+					<p>Grooper supports 35 languages, which can be individually enabled or disabled. Performs automatic language detection.</p>
 				</figcaption>
 			</figure>
       <figure>
         <i class="fa fa-file" aria-hidden="true"></i>
         <figcaption>
 					<h3>Electronic Text</h3>
-					<p>When dealing with original text-based files like Word, Excel, and Text PDFs, Grooper avoids OCR altogether. Instead, it pulls complete and perfect text directly out of the file.</p>
+					<p>Grooper avoids OCR altogether When dealing with original text-based files like Word, Excel, and Text PDFs, Instead, Grooper pulls complete and perfect text directly out of the file.</p>
 				</figcaption>
 			</figure>
 		</section>
