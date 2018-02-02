@@ -295,7 +295,8 @@
     #nav_secondary_container::-webkit-scrollbar /* Remove the default scrollbar for WebKit implementations */
                                     { display: none; }
     nav input, nav i,
-    nav .fa, nav .fab, nav .social  { display: none;}
+    nav .fa, nav .fal,
+    nav .fab, nav .social           { display: none;}
     h1, h2, h3, h4, h5, h6, p, img,
     nav ul a, nav > ul > li:hover > ul,
     blockquote span                 { display: block; }
@@ -667,7 +668,7 @@
     .social a:nth-child(3):hover    { background: #55acee; } /* twitter */
     .social a:nth-child(4):hover    { background: #0976b4; } /* linkedin */
     .social a:nth-child(5):hover    { background: #cd201f; } /* youtube */
-    .fa, .fab                       { color: rgba(255,255,255,.26); }
+    .fa, .fal, .fab                 { color: rgba(255,255,255,.26); }
     #copyright img                  { margin: 16px auto; }
 
 
