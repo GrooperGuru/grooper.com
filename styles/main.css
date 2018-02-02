@@ -174,7 +174,7 @@
     h6                              { font-size: 14px; }
 		p                               { font-size: 16px; }
     figcaption li                   { font-size: 18px; } /* 112.5% */
-    figure .fa                      { font-size: 600% !important; }
+    figure .fa, figure .fal         { font-size: 600% !important; }
     label, input                    { font-size: 16px; }
     header h1                       { font-size: 64px; } /* 425% */
     header p                        { font-size: 28px; } /* 175% */
@@ -477,7 +477,7 @@
 		figcaption                      { margin: 0 0 auto 0; }
 		.social                         { margin: 96px auto 16px auto; } /*top margin should equal the top padding of the footer itself */
     * + figcaption, figcaption + *  { margin-top: 36px; } /* adds margin between each figure's subject and its corresponding figcaption */
-    figure .fa + *,
+    figure .fa + *, figure .fal + *,
     h3 + ul                         { margin-top: 1em; } /*add margin between icons and captions within a figure */
 		.col-2-1 figure:first-child figcaption,
 		.col-1-2 figure:last-child figcaption,
@@ -699,8 +699,8 @@
                                     }
   .typography em                    { font-weight: 400; }
   .typography th                    { font-weight: 500; }
-  table .fa                         { font-size: 250% !important;}
-	.typography, .typography *				{	color: #212121 !important; }
+  table .fa, table .fal             { font-size: 250% !important;}
+  .typography, .typography *				{	color: #212121 !important; }
   .typography figcaption *          {	color: #616161 !important; }
   .typography em                    { color: #f4511e !important; }
   .typography div                   { display: block !important; }
@@ -738,14 +738,16 @@
   #prev_next a                      { display: block; }
   #prev_next div:first-child a,
   #prev_next div:first-child .fa,
+  #prev_next div:first-child .fal,
   #prev_next div:first-child span   { float: left; }
   #prev_next div:last-child a,
   #prev_next div:last-child .fa,
+  #prev_next div:last-child .fal,
   #prev_next div:last-child span    { float: right; }
   #prev_next a span                 { clear: both; }
   #prev_next a span.direction       { font-size: 16px; }
   #prev_next a span:last-child      { font-size: 20px; }
-  #prev_next .fa                    { font-size: 24px; }
+  #prev_next .fa, #prev_next .fal   { font-size: 24px; }
   #prev_next a span.direction       { font-weight: 400; }
   #prev_next a span:last-child      { font-weight: 500; }
   #prev_next div:first-child        { text-align: left; }
@@ -760,9 +762,10 @@
   #prev_next div, #prev_next a      { height: 96px; }
   #prev_next a                      { width: 90%; }
   #prev_next div                    { flex-basis: 50%; }
-  #prev_next .fa, #prev_next a span { position: relative; }
+  #prev_next .fa, #prev_next .fal,
+  #prev_next a span                 { position: relative; }
   #prev_next a span                 { top: 0px; }
-  #prev_next .fa                    { bottom: -42px; }
+  #prev_next .fa, #prev_next .fal   { bottom: -42px; }
   #prev_next div:first-child span   { left: 32px; }
   #prev_next div:last-child span    { right: 32px; }
   #prev_next div:first-child        { background: #26a69a; }
@@ -1275,7 +1278,7 @@
     #prev_next a                    { width: 85%; } /* set to equal 100% minus the padding listed above */
     #prev_next div, #prev_next a    { height: 128px; }
     #prev_next a span               { top: 16px; }
-    #prev_next .fa                  { bottom: -58px; }
+    #prev_next .fa, #prev_next .fal { bottom: -58px; }
     .side_by_side.figure_large figcaption {
                                            -webkit-flex-basis: 30.625%;
                                       -ms-flex-preferred-size: 30.625%;
@@ -1368,10 +1371,12 @@
 		blockquote::after						{ right: 54px; }
 
     /* 1280px updates for convenience classes */
-      figure .fa + *              { margin-top: 0; } /* becuase the fa icons disappear at this screen res, we no longer need to add margin to the element right after these */
+      figure .fa + *,
+      figure .fal + *             { margin-top: 0; } /* becuase the fa icons disappear at this screen res, we no longer need to add margin to the element right after these */
       section.side_by_side        { padding-left: 5%; padding-right: 5%; } /*only make change if the side_by_side class is applied to a section itself */
       /*.side_by_side figure .fa    { display: none; }*/
-      .side_by_side figcaption .fa{ display: none; }
+      .side_by_side figcaption .fa,
+      .side_by_side figcaption .fal { display: none; }
       .col-1.figure_small img,
       .col-1.figure_small table   { width: 70%; }
       .side_by_side img,
@@ -1635,7 +1640,8 @@
 
     /* 600px updates for convenience classes */
       #prev_next a span           { top: -10px; }
-      #prev_next .fa              { bottom: -32px; }
+      #prev_next .fa,
+      #prev_next .fal             { bottom: -32px; }
       #prev_next div, #prev_next a{ height: 72px; }
 
       .side_by_side figcaption    { margin-top: 24px !important; }
