@@ -38,3 +38,7 @@ function transitionOff(){
     }
   }, 300);
 };
+
+function popup_demo(){
+	$('#pop_schedule_demo').fadeToggle(500);
+}
