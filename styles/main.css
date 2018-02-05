@@ -676,6 +676,15 @@
 
 /* CONVENIENCE CLASSES */
 
+
+  .contact_map                  { background:  url("../images/map.jpg") center;}
+  .contact_map section          { z-index: 10000; }
+  .contact_map *                { background: transparent;  border: none !important; }
+  .contact_map *                { color: #fff !important; }
+  .contact_map ul               { list-style: none; text-align: center; }
+  .contact_map li               { font-size: 16px; line-height: 24px;}
+
+
 	/* The typography class should be applied to text-heavy sections, like FAQs, and other long, informatoinal articles needing a more consistent and condensed text layout to increase legibility and reduce reader fatigue */
 	.typography, .typography *:not(i) { text-align:left !important; }
 	.typography, .typography *:not(i) {
