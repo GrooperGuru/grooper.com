@@ -342,8 +342,8 @@
 
 			/* 4.2.1.2 - Flex Direction - 4.2.1.2 */
 			/* Direction of the flex container's main axis */
-        section:not(.col-1) > *,
-        .col-1 figure,
+        /*section:not(.col-1) > *,*/
+        /*.col-1 figure,*/
         #calltoaction > div         {
                                       -webkit-box-orient: vertical;
                                       -webkit-box-direction: normal;
@@ -357,6 +357,9 @@
 			/* Controls whether the flex container is single-line or multi-line, and the direction of the cross axis */
         header,
         section:not(.col-1),
+        .col-1 figure,
+        .col-2 figure,
+        .col-3 figure,
         #footer_links,
 				#calltoaction > div					{
 																			-webkit-flex-wrap: wrap;
@@ -380,7 +383,15 @@
 																			          -ms-flex-pack: justify;
 																			        justify-content: space-between;
 																		}
+      /*.col-1 figure,                {
+                                      -webkit-justify-content: space-around;
+                                                -ms-flex-pack: distribute;
+                                              justify-content: space-around;
+																		}*/
 				header,
+        .col-1 figure,
+        .col-2 figure,
+        .col-3 figure,
         #brands, #calltoaction,
 				#footer_links								{
                                              -webkit-box-pack: center;
@@ -1499,12 +1510,23 @@
                                     -ms-flex-preferred-size: 37.77%;
                                                  flex-basis: 37.77%;
                                   }
+                                  /*
       .side_by_side figure        {
                                        -webkit-box-orient: vertical !important;
                                     -webkit-box-direction: normal !important;
                                        -ms-flex-direction: column !important;
                                            flex-direction: column !important;
                                   }
+                                  */
+      .side_by_side figure        { -webkit-flex-wrap: wrap;
+                                        -ms-flex-wrap: wrap;
+                                            flex-wrap: wrap;
+                                           -webkit-box-pack: center;
+                                    -webkit-justify-content: center;
+                                              -ms-flex-pack: center;
+                                            justify-content: center
+                                  }
+
       /*.side_by_side.figure-medium figure { width: 90%; }*/
       .col-1 > figure,
       .col-1 > div                { width: 90%; -webkit-flex-basis: 90%; -ms-flex-preferred-size: 90%; flex-basis: 90%; }
