@@ -57,8 +57,9 @@
   /* 1.5 - Set basic background colors - 1.5 */
 
 		/* 1.6.1 - Solid Backgrounds - 1.6.1 */
-			body                          { background: #000; } /* black */
-			main, div, section,
+			/*body                          { background: #000; }*/ /* black */
+			body,
+      main, div, section,
       figure, figcaption, article   { background: #fbfdfe; } /* off-white */
 			footer                        { background: #091413; } /* off-black */
 			footer div                    { background: transparent; } /* transparent */
@@ -74,7 +75,7 @@
 			nav > ul > li > a:before,
 			nav ul ul li:hover a          { background: #fff; }
 			nav ul ul li                  { background: rgba(238,238,238,.94); }
-			#nav_primary                  { background: rgba(0,0,0,.94); }
+			#nav_primary                  { background: rgba(0,0,0,1); }
       #nav_secondary button,
       #schedule_demo                { background: transparent; }
 			#map *                        { background: transparent; } /* transparent */
