@@ -174,7 +174,7 @@
     h6                              { font-size: 14px; }
 		p                               { font-size: 16px; }
     figcaption li                   { font-size: 18px; } /* 112.5% */
-    figure .fa, figure .fal         { font-size: 600% !important; }
+    figure .fa, figure .fal         { font-size: 400% !important; }
     label, input                    { font-size: 16px; }
     header h1                       { font-size: 64px; } /* 425% */
     header p                        { font-size: 28px; } /* 175% */
@@ -188,7 +188,7 @@
     .btn-sml                        { font-size: 16px; } /* 100% */
     #calltoaction h3                { font-size: 300%; } /* 300% */
     #nav_primary i, .social a       { font-size: 32px; }
-		#brands p                       { font-size: 200%; }
+		#brands p                       { font-size: 24px; }
     #calltoaction p                 { font-size: 125%; }
     nav > ul > li > a,
     footer li                       { font-size: 16px; }
@@ -432,8 +432,10 @@
 
 			/* 4.2.2.4 - Flex Basis - 4.2.2.4 */
 			/* The initial width or height (whichever is on the main axis) of the flex item, before free space is distributed according to the flex factors. */
-        header > *:not(canvas)              { -webkit-flex-basis: 90%;     -ms-flex-preferred-size: 90%;     flex-basis: 90%;     }
-        section:not(.col-1) > *             { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%;    } /* this is a catch-all for direct h2, p, and other potential text elements inside a section that don't fall inside a specific column */
+        header h1, header p                 { -webkit-flex-basis: 80%;     -ms-flex-preferred-size: 80%;     flex-basis: 80%;     }
+        section:not(.col-1) > *             { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%;    }
+        .features > h5, .features > h2,
+        .features > p                       { -webkit-flex-basis: 80%;     -ms-flex-preferred-size: 80%;     flex-basis: 80%;    }
 				.col-1 > figure, .col-1 > div       { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%;    }
 				.col-2 > figure, .col-2 > div       { -webkit-flex-basis: 47.21%;  -ms-flex-preferred-size: 47.21%;  flex-basis: 47.21%;  } /*42.5%*/
 				.col-3 > figure, .col-3 > div       { -webkit-flex-basis: 29.629%; -ms-flex-preferred-size: 29.629%; flex-basis: 29.629%; } /*28.33*/
@@ -459,7 +461,7 @@
     header                          { margin-top: 96px; } /* needs to be equal to the full height of the main nav bar */
     /*header                          { padding: 144px 15% 240px; }*/ /* bottom padding should be equal to top padding + margin-top */
     header                          { padding: 144px 0 240px; } /* bottom padding should be equal to top padding + margin-top */
-    header > *:not(canvas)          { max-width: 1280px; }
+    header h1, header p             { max-width: 1280px; }
     footer                          { padding: 0 18% 16px 18%; } /*96px 336px 16px 336px; */
     footer.no_schedule              { padding: 96px 18% 16px 18%; }
 		section, blockquote, figure,
@@ -472,6 +474,8 @@
 		article, #nav_primary           { padding-left: 5%; padding-right: 5%; } /* initially set all sections to 5% side padding, then override immediately below as needed. */
     section, #brands                { padding-left: 0; padding-right: 0; }
 		section > h2, section > p       { padding-left: 12%; padding-right: 12%; }
+    #brands > p                     { padding-left: 15%; padding-right: 15%; }
+    .features > h2, .features > p   { padding-left: 0; padding-right: 0; }
     blockquote                      { padding-left: 18%; padding-right: 18%; }
     #calltoaction div               { padding: 64px 7%; }
 		figcaption                      { margin: 0 0 auto 0; }
@@ -479,6 +483,8 @@
     * + figcaption, figcaption + *  { margin-top: 36px; } /* adds margin between each figure's subject and its corresponding figcaption */
     figure .fa + *, figure .fal + *,
     h3 + ul                         { margin-top: 1em; } /*add margin between icons and captions within a figure */
+    .col-2, .col-3                  { margin-left: auto; margin-right: auto; }
+    .col-2, .col-3                  { width: 80%; max-width: 1440px; }
 		.col-2-1 figure:first-child figcaption,
 		.col-1-2 figure:last-child figcaption,
 		.col-1 figcaption								{ width: 70%; }
@@ -547,8 +553,8 @@
     section.teal, blockquote.teal		  { border-bottom: 1px solid #b2dfdb; }
     section.gray, blockquote.gray		  { border-bottom: 1px solid #9e9e9e; }
     section.orange, blockquote.orange	{ border-bottom: 1px solid #ffccbc; }
-    .comparison > *:last-child			{ border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
-    #schedule_demo                  { border: none; }
+    .comparison > *:last-child			  { border-left: 1px solid #b2dfdb; } /* inserts a vertical line between the two figures being compared here */
+    #schedule_demo                    { border: none; }
 
 
 	/* 4.8 - Z-Index - 4.8 */
@@ -848,7 +854,7 @@
 
 
 
-  section.features div              {
+  .features div              {
                                            -webkit-flex-basis: 80%;
                                       -ms-flex-preferred-size: 80%;
                                                    flex-basis: 80%;
@@ -865,23 +871,23 @@
                                            -ms-flex-align: stretch;
                                               align-items: stretch;
                                     }
-  section.features > *              { margin-left: auto !important; margin-right: auto !important; }
-  section.features > h4,
-  section.features > h2,
-  section.features > p              { box-sizing: border-box; }
+  .features > *              { margin-left: auto !important; margin-right: auto !important; }
+  .features > h4,
+  .features > h2,
+  .features > p              { box-sizing: border-box; }
   /*section.features > p              { margin-bottom: 3em; }*/
-  section.features i                {
+  .features i                {
                                       color: #333 !important; /*ff8a65 */
                                       font-size: 36px !important;
                                       width: 36px;
                                       margin-right: 16px;
                                     }
-  section.features > i              {
+  .features > i              {
                                       font-size: 8em !important;
                                       margin-bottom: 24px;
                                       color: #e0e0e0 !important;
                                     }
-  section.features a {
+  .features a {
     box-sizing: border-box;
     -webkit-flex-basis: 50%;
     -ms-flex-preferred-size: 50%;
@@ -897,56 +903,56 @@
     padding: 24px;
     border: 1px solid transparent;
   }
-  section.features a, section.features a * {
+  .features a, section.features a * {
     -webkit-transition: all 0.2s linear 0s !important;
     -o-transition: all 0.2s linear 0s !important;
     transition: all 0.2s linear 0s !important;
   }
-  section.features a:hover {
+  .features a:hover {
     border: 1px solid #eeeeee;
     background: #fff;
     -webkit-box-shadow: 1px 2px 12px rgba(0,0,0,0.05);
     box-shadow: 1px 2px 12px rgba(0,0,0,0.05);
   }
-  section.features a:hover i,
-  section.features a:hover h3 { color: #f4511e !important; }
-  section.features span h3 {
+  .features a:hover i,
+  .features a:hover h3 { color: #f4511e !important; }
+  .features span h3 {
     margin-bottom: 0.3em;
     line-height: 22px;
   }
-  section.features a span,
-  section.features a h3 { text-align: left; }
+  .features a span,
+  .features a h3 { text-align: left; }
 
   @media (max-width:1024px) {
-    section.features div {
+    .features div {
       -webkit-flex-basis: 85%;
       -ms-flex-preferred-size: 85%;
       flex-basis: 85%;
     }
-    section.features a { padding: 16px; }
+    .features a { padding: 16px; }
   }
   @media (max-width:768px) {
-    section.features div {
-      -webkit-flex-basis: 90%;
-      -ms-flex-preferred-size: 90%;
-      flex-basis: 90%;
+    .features div {
+      -webkit-flex-basis: 90%; -ms-flex-preferred-size: 90%; flex-basis: 90%;
     }
-    section.features { padding: 64px 32px; }
+    .features { padding: 64px 0; }
   }
   @media (max-width:600px) {
-    section.features div {
+    .features div {
       -webkit-box-pack: center;
       -webkit-justify-content: center;
       -ms-flex-pack: center;
       justify-content: center;
     }
-    section.features a {
+    .features a {
       -webkit-flex-basis: 90%;
       -ms-flex-preferred-size: 90%;
       flex-basis: 90%;
     }
   }
-
+  @media (max-width:432px) {
+    .features > div { -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important; }
+  }
 
   /* The slideshow class should be added to a parent figure or section. These should only be applied to sections with a single figure, and the figure must be an image */
   .slideshow                        {
@@ -1032,7 +1038,7 @@
   .side_by_side figcaption li       { text-align: left; }
   .side_by_side figcaption ul       { padding-left: 24px; }
   .side_by_side img,
-  .side_by_side table               { max-width: 43.75%; } /* should match the flex basis defined above */
+  .side_by_side table               { max-width: 55%; } /* should match the flex basis defined above */
   .side_by_side > p + figure,
   .side_by_side > h2 + figure       { margin-top: 36px; }
   .side_by_side figure > *          { margin: 0; /*margin-left: 36px;*/ }
@@ -1330,15 +1336,16 @@
     /*header											{ padding: 96px 10% 192px; }*/
     header											{ padding: 96px 0 192px; }
 		section > h2, section > p   { padding-left: 8%; padding-right: 8%; }
+    .side_by_side.figure-large figure        { width: 90%; }
+    .side_by_side.figure-large img           { max-width: 60%; width: 60%; -webkit-flex-basis: 60%; -ms-flex-preferred-size: 60%; flex-basis: 60%; }
+    .side_by_side.figure-large figcaption    { max-width: 35%; width: 35%; -webkit-flex-basis: 35%; -ms-flex-preferred-size: 35%; flex-basis: 35%; }
+    .side_by_side.figure-large img,
+    .side_by_side.figure-large figcaption    { -webkit-flex-basis: 50%; -ms-flex-preferred-size: 50%; flex-basis: 50%; }
 	}
 
 
   @media only screen and (max-width: 1440px) {
 		html, body									{ font-size: 15px; }
-    /*h2                          { font-size: 325%; }
-		#calltoaction h3            { font-size: 275%; }
-		#calltoaction p             { font-size: 120%; }
-    */
     .field-wrapper input        { font-size: 12px; }
 		.content__button input			{ font-size: 14px; }
     footer li                   { font-size: 16px; }
@@ -1352,6 +1359,12 @@
     .col-1 figcaption           { width: 80%; }
 		blockquote::before					{ top: -8px; }
 		blockquote::after						{ bottom: -76px; }
+    .side_by_side figure        { width: 90%; }
+    .side_by_side img           { max-width: 55%; width: 55%; -webkit-flex-basis: 55%; -ms-flex-preferred-size: 55%; flex-basis: 55%; }
+    .side_by_side figcaption    { max-width: 40%; width: 40%; -webkit-flex-basis: 40%; -ms-flex-preferred-size: 40%; flex-basis: 40%; }
+    .side_by_side img           { -webkit-flex-basis: 50%; -ms-flex-preferred-size: 50%; flex-basis: 50%; }
+    /*.side_by_side figcaption p  { text-align: center; }*/
+    /* NEED TO COME BACK I HERE AND DO SOME OERRIDES FOR .side_by_side figure-large */
   }
 
 
@@ -1374,10 +1387,11 @@
     nav ul ul a                 { line-height: 42px; }
     /*header                      { padding: 88px 10% 152px; margin-top: 64px; }*/ /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
     header                      { padding: 88px 0 152px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
-		section > h2, section > p   { padding-left: 5%; padding-right: 5%; }
+		section > h2/*, section > p*/{ padding-left: 5%; padding-right: 5%; }
     .social                     { margin: 72px auto 16px auto; }
     nav > li                    { height: 64px; } /* shrink to match the new height of the navbar */
     #nav_primary                { height: 64px; } /* Shrink the height of the navbar for the first time */
+    #brands img                 { height: 64px; }
     .col-1 figcaption           { width: 90%; }
     nav > a                     { background: url(../images/grooper_logo_140x46.png); height: 46px; width: 140px; }
     nav ul ul										{ top: 64px; }
@@ -1387,8 +1401,7 @@
     /* 1280px updates for convenience classes */
       figure .fa + *,
       figure .fal + *             { margin-top: 0; } /* becuase the fa icons disappear at this screen res, we no longer need to add margin to the element right after these */
-      section.side_by_side        { padding-left: 5%; padding-right: 5%; } /*only make change if the side_by_side class is applied to a section itself */
-      /*.side_by_side figure .fa    { display: none; }*/
+      /*section.side_by_side        { padding-left: 5%; padding-right: 5%; }*/ /*only make change if the side_by_side class is applied to a section itself */
       .side_by_side figcaption .fa,
       .side_by_side figcaption .fal { display: none; }
       .col-1.figure_small img,
@@ -1412,7 +1425,6 @@
       .side_by_side.figure_large table  { max-width: 66.11%; } /* should match the flex basis defined above */
   }
 
-
   @media only screen and (max-width: 1024px) {
 		html, body                  { font-size: 13px; }
 		p                           { font-size: 15px; }
@@ -1420,6 +1432,7 @@
     header p                    { font-size: 21px; }
     blockquote p                { font-size: 19px; }
     h2 ~ p                      { font-size: 17px; }
+    #brands p                   { font-size: 20px; }
 		/*
     #brands p                   { font-size: 175%; }
 		#nav_secondary a            { font-size: 14px; }
@@ -1430,7 +1443,7 @@
     footer.no_schedule          { padding: 64px 7% 8px 7%; }
 		#nav_secondary              { padding: 0; }
     section, blockquote         { padding-top: 64px; }
-    figure                      { padding-top: 64px !important; }
+    section * + figure          { padding-top: 64px !important; }
 		#brands                     { padding-top: 96px; }
 		.social a                   { padding-top: 32px; }
 		section, blockquote         { padding-bottom: 64px;}
@@ -1447,6 +1460,8 @@
     figcaption + img,
     figcaption + table          { margin-top: 32px; } /* adds margin between images/tables and the text they belong to */
 		.btn-sml                    { margin-top: 8px; }
+    .features > h5, .features > h2,
+    .features > p               { -webkit-flex-basis: 85%; -ms-flex-preferred-size: 85%; flex-basis: 85%; }
 		.col-3 > figure, .col-3 > div,
     .col-4 > figure, .col-4 > div
                                 { -webkit-flex-basis: 47.22%; -ms-flex-preferred-size: 47.22%; flex-basis: 47.22%; }
@@ -1454,8 +1469,9 @@
 		#nav_secondary a,
 		#nav_secondary button       { height: 36px; }
 		.nav_advancer_icon          { height: 28px; }
-		#nav_secondary a            { min-height: 36px; }
-    .col-1 table                { width: 90%; }
+    #brands img                 { height: 56px; }
+    #nav_secondary a            { min-height: 36px; }
+    .col-1 table                { width: 100%; }
 		.col-3 figcaption           { width: 80%; }
 		#nav_secondary_container    { width: calc(100% - 72px); } /*set to 100% - ( 2 x width of advancer ) */
 		#nav_secondary button       { width: 36px; }
@@ -1470,7 +1486,7 @@
       .col-1.figure_small table   { width: 80%; }
       .side_by_side img,
       .side_by_side table         {
-                                    max-width: 56.66%;
+                                    max-width: 100%;
                                          -webkit-flex-basis: 56.66%;
                                     -ms-flex-preferred-size: 56.66%;
                                                  flex-basis: 56.66%;
@@ -1480,35 +1496,53 @@
                                     -ms-flex-preferred-size: 37.77%;
                                                  flex-basis: 37.77%;
                                   }
+      .side_by_side figure        {
+                                       -webkit-box-orient: vertical !important;
+                                    -webkit-box-direction: normal !important;
+                                       -ms-flex-direction: column !important;
+                                           flex-direction: column !important;
+                                  }
+      /*.side_by_side.figure-medium figure { width: 90%; }*/
+      .col-1 > figure,
+      .col-1 > div                { width: 90%; -webkit-flex-basis: 90%; -ms-flex-preferred-size: 90%; flex-basis: 90%; }
+      .side_by_side figcaption    { -webkit-box-ordinal-group: 2; -webkit-order: 1; -ms-flex-order: 1; order: 1; }
+      .side_by_side img,
+      .side_by_side table         { -webkit-box-ordinal-group: 3; -webkit-order: 2; -ms-flex-order: 2; order: 2; }
+      .side_by_side.figure-large img,
+      .figure-large img,
+      .side_by_side img           { max-width: 90%; width: 90%; -webkit-flex-basis: 90%; -ms-flex-preferred-size: 90%; flex-basis: 90%; }
+      .side_by_side figcaption    { max-width: 70%; width: 70%; -webkit-flex-basis: 70%; -ms-flex-preferred-size: 70%; flex-basis: 70%; }
+      .side_by_side.figure-large figcaption { max-width: 60%; width: 60%; -webkit-flex-basis: 60%; -ms-flex-preferred-size: 60%; flex-basis: 60%; }
+      .side_by_side.figure-large.text_left figcaption { max-width: 100%; width: 100%; -webkit-flex-basis: 100%; -ms-flex-preferred-size: 100%; flex-basis: 100%; }
+      .side_by_side:not(.text_left) figcaption h3 { text-align: center !important; }
+      .side_by_side figure        { padding-top: 0 !important; }
+      .side_by_side img           { padding-top: 32px !important; }
+      .roadmap + figcaption       { display: none !important; }
   }
 
 
   @media (max-width: 768px) {
+    h2                          { font-size: 32px; }
     header h1                   { font-size: 42px; }
     header p                    { font-size: 19px; }
-		/*
-    html, body									{ font-size: 12px; }
-    h1                          { font-size: 325%; }
-    h2                          { font-size: 300%; }
-    h4                          { font-size: 175%; }
-    header p                    { font-size: 145%; }
-    h2 ~ p                      { font-size: 135%; }
-    #calltoaction h3            { font-size: 240%; }
-    #calltoaction p             { font-size: 110%; }
-    */
+    #brands p                   { font-size: 18px; }
+    h2 ~ p                      { font-size: 16px; }
     footer,
 		footer h4, footer ul,
     .text_left, .text_left *,
     .text_right, .text_right *  { text-align: center; }
     .text_left, .text_right     { text-align:center !important; }
-		section											{ padding: 64px; }
+		section											{ padding: 64px 48px; }
     #footer_links > div					{ padding: 32px 0; }
     section > figure ~ figure   { padding-top: 96px !important; }
     section > h2, section > p   { padding-left: 0; padding-right: 0; }
   	#signup											{ margin: 32px 32px 0 32px; }
   	#contact, #discover					{ -webkit-flex-basis: 50% !important;  -ms-flex-preferred-size: 50% !important;  flex-basis: 50% !important }
   	#signup											{ -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
-		section:not(.col-4) > *     { -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
+		section:not(.col-4):not(.features) > *     { -webkit-flex-basis: 100% !important; -ms-flex-preferred-size: 100% !important; flex-basis: 100% !important }
+    .features > h5, .features > h2,
+    .features > p               { -webkit-flex-basis: 85%; -ms-flex-preferred-size: 85%; flex-basis: 85%; }
+    .features > div             { -webkit-flex-basis: 90%; -ms-flex-preferred-size: 90%; flex-basis: 90%; }
     .col-4 > *                  { -webkit-flex-basis: 43.75% !important; -ms-flex-preferred-size: 43.75% !important; flex-basis: 43.75% !important }
 		#brands img									{ -webkit-flex-basis: auto !important; -ms-flex-preferred-size: auto !important; flex-basis: auto !important }
   	.col-2, .col-3              { display: block !important; } /*this prevents divs from overlaying on ie11 and android mobile default browser */
@@ -1530,6 +1564,7 @@
 
 
   		.comparison > *:last-child	{ border-left: 0; } /* we no longer need the left border to separate each compared item as they are vertically stacked */
+      .col-2 figure, .col-3 figure{ width:80%; }
       .col-1.figure_small img,
       .col-1.figure_small table   { width: 100%; }
       /*section.side_by_side        { padding-left: 64px; padding-right: 64px; }*/
@@ -1539,30 +1574,26 @@
                                     max-width: 100%;
                                     width: 100%;
                                   }
-      .side_by_side.figure_large img,
-      .side_by_side.figure_large table
-                                  { max-width: 100%; } /* { max-width: 85%; } */
-      .side_by_side figure        {
-                                       -webkit-box-orient: vertical !important;
-                                    -webkit-box-direction: normal !important;
-                                       -ms-flex-direction: column !important;
-                                           flex-direction: column !important;
-                                  }
-      .side_by_side figure h3,
-      .side_by_side figure p      { text-align: center !important; }
+      .side_by_side figure        { width: 100%; }
+      .side_by_side figcaption    { padding-top: 0 !important; width: 100%; max-width: 100%; -webkit-flex-basis: 100%; -ms-flex-preferred-size: 100%; flex-basis: 100%; }
+      .side_by_side.figure-large figcaption,
+      .side_by_side img,
+      .side_by_side table         { max-width: 100%; width: 100%; -webkit-flex-basis: 100%; -ms-flex-preferred-size: 100%; flex-basis: 100%; }
+      .side_by_side:not(.text_left) figure h3,
+      .side_by_side:not(.text_left) figure p      { text-align: center !important; }
       .side_by_side li            { margin-left: 1em; padding-right: 1em; width: calc(50% - 2em); float:left;}
       .side_by_side figure h3,
       .side_by_side figure p,
       .side_by_side figure ul     { flex-basis: 100%; }
       .side_by_side figcaption    { padding-left: 0 !important; }
-      .side_by_side figcaption    { -webkit-box-ordinal-group: 3; -webkit-order: 2; -ms-flex-order: 2; order: 2; } /* moves the subject of the figure to above the figcaption text */
-      .side_by_side figcaption    { margin-top: 36px !important; } /* adds margin between images/tables and the text they belong to */
-  }
+    }
 
 
   @media (max-width: 600px){
+    h2                            { font-size: 28px; }
     header h1                     { font-size: 38px; }
     header p                      { font-size: 18px; }
+    #brands p                     { font-size: 17px; }
   	/*
     html, body                    { font-size: 11px; }
     footer h4                     { font-size: 28px; }
@@ -1610,6 +1641,7 @@
     nav ul, nav .social           { margin-left: 100%; }
     nav input:checked ~ ul/*,
     nav input:checked ~ .social */{ margin-left: -5%; }
+    #brands img                   { margin: 16px 24px 0 24px; }
   	section                       { padding: 64px 48px; }
     nav ul                        { padding: 48px 0 64px; }
     #calltoaction > div           { padding: 48px; }
@@ -1621,7 +1653,8 @@
     #nav_primary, #brands img     { height: 48px; }
     nav li                        { max-height: 14%; } /* ensures all line items fit on the screen, even on devices with less height */
     nav input                     { width: 15%; }
-    .col-1 table                  { width: 90%; }
+    .col-2 figure, .col-3 figure  { width: 90%; }
+    .col-1 table                  { width: 100%; }
     #nav_primary, nav ul          { width: 100%; }
     .social a                     { height: auto; }
     .social a                     { width: auto; }
@@ -1660,9 +1693,9 @@
 
       .side_by_side figcaption    { margin-top: 24px !important; }
       .side_by_side figure ~ figure { padding-top: 72px !important; }
-      section.side_by_side        { padding-left: 48px; padding-right: 48px; }
+      section.side_by_side        { padding-left: 36px; padding-right: 36px; }
       .side_by_side img,
-      .side_by_side table         { max-width: 80%; }
+      .side_by_side table         { max-width: 100%; }
       .side_by_side figcaption    {
                                     max-width: 95%;
                                     width: 95%;
