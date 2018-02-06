@@ -302,6 +302,7 @@
     blockquote span                 { display: block; }
     nav ul ul li, /* changes submenu items to inline-block as the normal top level menu uses inline-flex for vertical centering */
     footer .social a                { display: inline-block; }
+    .features i                     { display: inline-table; }
 
 
   /* 4.2 - Flexible Box Model Control - 4.2 */
@@ -889,9 +890,9 @@
                                     }
   .features a {
     box-sizing: border-box;
-    -webkit-flex-basis: 50%;
-    -ms-flex-preferred-size: 50%;
-    flex-basis: 50%;
+    -webkit-flex-basis: 45%;
+    -ms-flex-preferred-size: 45%;
+    flex-basis: 45%;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
