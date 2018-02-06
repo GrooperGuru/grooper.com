@@ -1024,7 +1024,8 @@
                                     }
   .side_by_side img,
   .side_by_side table,
-  .side_by_side figcaption          { -webkit-flex-basis: 43.75%; -ms-flex-preferred-size: 43.75%; flex-basis: 43.75%; }
+  .side_by_side figcaption          /*{ -webkit-flex-basis: 43.75%; -ms-flex-preferred-size: 43.75%; flex-basis: 43.75%; }*/
+                                    { -webkit-flex-basis: 100%; -ms-flex-preferred-size: 100%; flex-basis: 100%; }
   .side_by_side.figure-small figure { max-width: 1176px; }
   .side_by_side.figure-medium figure{ max-width: 1344px; }
   .side_by_side.figure-large figure { max-width: 1600px; }
