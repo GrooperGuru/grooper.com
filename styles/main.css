@@ -678,7 +678,7 @@
 
 
   .contact_map                  { background:  url("../images/map.jpg") center;}
-  .contact_map section          { z-index: 10000; }
+  .contact_map section          { z-index: 1000; }
   .contact_map *                { background: transparent;  border: none !important; }
   .contact_map *                { color: #fff !important; }
   .contact_map ul               { list-style: none; text-align: center; }
@@ -712,6 +712,10 @@
   .typography, .typography *				{	color: #212121 !important; }
   .typography figcaption *          {	color: #616161 !important; }
   .typography em                    { color: #f4511e !important; }
+  .typography a:not(.btn-lrg):link,
+  .typography a:not(.btn-lrg):visited             { color: #039be5 !important; } /* normal state links */
+  .typography a:not(.btn-lrg):hover,
+  .typography a:not(.btn-lrg):active              { color: #29b6f6 !important; } /* links during hover and click */
   .typography div                   { display: block !important; }
   .typography h2, .typography p     {
                                       padding-left: 0;
@@ -1366,6 +1370,7 @@
     blockquote p                { font-size: 21px; }
     figcaption li               { font-size: 16px; }
     figure .fa, figure .fal     { font-size: 72px !important; }
+    table .fa, table .fal       { font-size: 250% !important; }
     nav ul ul a                 { line-height: 42px; }
     /*header                      { padding: 88px 10% 152px; margin-top: 64px; }*/ /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
     header                      { padding: 88px 0 152px; margin-top: 64px; } /* margin-top and padding here must be adjusted now that the height of the navbar is only 64px */
