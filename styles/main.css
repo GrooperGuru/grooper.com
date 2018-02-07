@@ -422,7 +422,13 @@
 																			-ms-flex-align: center;
 																			align-items: center;
 																		}
-
+        .col-1 figure, .col-2 figure, .col-3 figure
+                                    {
+                                      -webkit-box-align: start;
+                                      -webkit-align-items: flex-start;
+                                          -ms-flex-align: start;
+                                              align-items: flex-start;
+                                    }
 
 		/* 4.2.2 - Flex Items - 4.2.2 */
 		/* Properties impacting the individual items within a flexible container */
@@ -452,7 +458,8 @@
         section:not(.col-1) > *             { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%;    }
         .features > h5, .features > h2,
         .features > p                       { -webkit-flex-basis: 80%;     -ms-flex-preferred-size: 80%;     flex-basis: 80%;    }
-				.col-1 > figure, .col-1 > div       { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%;    }
+				.col-1 > figure, .col-1 > div,
+        figure > .fal, figure > .fa         { -webkit-flex-basis: 100%;    -ms-flex-preferred-size: 100%;    flex-basis: 100%;    }
 				.col-2 > figure, .col-2 > div       { -webkit-flex-basis: 47.21%;  -ms-flex-preferred-size: 47.21%;  flex-basis: 47.21%;  } /*42.5%*/
 				.col-3 > figure, .col-3 > div       { -webkit-flex-basis: 29.629%; -ms-flex-preferred-size: 29.629%; flex-basis: 29.629%; } /*28.33*/
         .col-4 > figure, .col-4 > div       { -webkit-flex-basis: 20.83%;  -ms-flex-preferred-size: 20.83%;  flex-basis: 20.83%;  }
@@ -1516,9 +1523,9 @@
       .side_by_side img,
       .side_by_side table         {
                                     max-width: 100%;
-                                         -webkit-flex-basis: 56.66%;
-                                    -ms-flex-preferred-size: 56.66%;
-                                                 flex-basis: 56.66%;
+                                         -webkit-flex-basis: 100%;
+                                    -ms-flex-preferred-size: 100%;
+                                                 flex-basis: 100%;
                                   }
       .side_by_side figcaption    { max-width: 37.77%;
                                          -webkit-flex-basis: 37.77%;
